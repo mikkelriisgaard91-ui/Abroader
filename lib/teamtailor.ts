@@ -1,8 +1,24 @@
 const API_VERSION = "20161108";
 
+/**
+ * Read secrets at runtime. Next.js may inline `process.env.FOO` at build time; if the var was
+ * missing during `next build`, it stays empty on Vercel even after you add the env. Dynamic keys
+ * avoid that replacement so Vercel's runtime env is used.
+ */
+function envString(key: string): string | undefined {
+  const v = process.env[key];
+  return typeof v === "string" && v.trim() !== "" ? v.trim() : undefined;
+}
+
+function teamtailorApiToken(): string | undefined {
+  const key = ["TEAMTAILOR", "API", "TOKEN"].join("_");
+  return envString(key);
+}
+
 /** EU (default). US West accounts: set `TEAMTAILOR_API_BASE=https://api.na.teamtailor.com/v1` in env. */
 function apiBase(): string {
-  const raw = process.env.TEAMTAILOR_API_BASE?.trim();
+  const key = ["TEAMTAILOR", "API", "BASE"].join("_");
+  const raw = envString(key);
   if (raw) {
     return raw.replace(/\/$/, "");
   }
@@ -128,9 +144,13 @@ export type RemoteJobsResult =
  * Loads published jobs where Teamtailor remote status is **fully remote** only (no hybrid or temporary).
  */
 export async function fetchAllRemoteJobs(): Promise<RemoteJobsResult> {
-  const token = process.env.TEAMTAILOR_API_TOKEN;
-  if (!token?.trim()) {
-    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured." };
+  const token = teamtailorApiToken();
+  if (!token) {
+    return {
+      ok: false,
+      error:
+        "TEAMTAILOR_API_TOKEN is not configured. In Vercel: Project → Settings → Environment Variables — add TEAMTAILOR_API_TOKEN for Production, save, then Redeploy (required for the value to apply).",
+    };
   }
 
   try {

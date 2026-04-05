@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import { verticals } from "@/lib/verticals";
 import {
   fetchAllRemoteJobs,
@@ -128,6 +129,7 @@ function JobCard({ job }: { job: TeamtailorJob }) {
 }
 
 export default async function RemoteJobsPage() {
+  await connection();
   const result = await fetchAllRemoteJobs();
 
   return (
