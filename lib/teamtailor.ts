@@ -1,5 +1,13 @@
-const API_BASE = "https://api.teamtailor.com/v1";
 const API_VERSION = "20161108";
+
+/** EU (default). US West accounts: set `TEAMTAILOR_API_BASE=https://api.na.teamtailor.com/v1` in env. */
+function apiBase(): string {
+  const raw = process.env.TEAMTAILOR_API_BASE?.trim();
+  if (raw) {
+    return raw.replace(/\/$/, "");
+  }
+  return "https://api.teamtailor.com/v1";
+}
 
 export type TeamtailorRemoteStatus = "fully" | "hybrid" | "temporary" | "none";
 
@@ -71,16 +79,17 @@ async function fetchRemoteJobsForStatus(
 ): Promise<TeamtailorJob[]> {
   const jobs: TeamtailorJob[] = [];
   const params = new URLSearchParams();
+  params.set("filter[status]", "published");
   params.set("filter[remote-status]", remoteStatus);
   params.set("page[size]", "30");
   params.set("page[number]", "1");
 
-  let url: string | null = `${API_BASE}/jobs?${params.toString()}`;
+  let url: string | null = `${apiBase()}/jobs?${params.toString()}`;
 
   while (url) {
     const res = await fetch(url, {
       headers: authHeaders(token),
-      next: { revalidate: 300 },
+      cache: "no-store",
     });
     if (!res.ok) {
       throw new Error(`Teamtailor API error ${res.status}`);

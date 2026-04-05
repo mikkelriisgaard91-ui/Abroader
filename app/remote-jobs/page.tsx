@@ -13,6 +13,9 @@ export const metadata = {
   description: vertical.description,
 };
 
+/** Always read `TEAMTAILOR_API_TOKEN` at request time and avoid caching a stale empty list. */
+export const dynamic = "force-dynamic";
+
 function JobCard({ job }: { job: TeamtailorJob }) {
   return (
     <article
@@ -204,7 +207,9 @@ export default async function RemoteJobsPage() {
             borderRadius: "12px",
           }}
         >
-          No remote listings right now. Check back soon or explore our other categories.
+          No fully remote roles are listed here yet. In Teamtailor, each job must have remote work set
+          to <strong>Fully remote</strong> (hybrid or on-site jobs are not shown on this page). Check
+          back soon or explore our other categories.
         </p>
       ) : (
         <>
