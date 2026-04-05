@@ -27,6 +27,9 @@ export type FeaturedJobDto = {
   pictureUrl: string | null;
 };
 
+/** Teamtailor featured row plus `browseId` for internal job URLs (see `/api/remote-jobs/featured`). */
+export type FeaturedJobWithBrowseId = FeaturedJobDto & { browseId: string };
+
 type JsonApiResource = {
   id: string;
   type: string;

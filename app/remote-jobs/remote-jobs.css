@@ -1,12 +1,12 @@
 /* Remote jobs route — scoped under .rj-page only */
 
 .rj-page {
-  /* Aligned with /remote-jobs Luminescent-style Tailwind theme */
+  /* Aligned with /remote-jobs Tailwind rj-* theme (globals.css) */
   --rj-teal: #005b68;
   --rj-gold: #fdbb37;
-  --rj-frost: #8dd1e0;
-  --rj-snow: #fafafa;
-  --rj-teal-light: #002f39;
+  --rj-frost: #7ec8d4;
+  --rj-snow: #f4f9fa;
+  --rj-teal-light: #002a33;
   --rj-heading: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --rj-body: Inter, system-ui, -apple-system, sans-serif;
   --rj-glass: rgba(255, 255, 255, 0.07);

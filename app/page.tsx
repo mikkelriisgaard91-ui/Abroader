@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HomeVerticalCard from "@/components/HomeVerticalCard";
 import { verticals } from "@/lib/verticals";
 

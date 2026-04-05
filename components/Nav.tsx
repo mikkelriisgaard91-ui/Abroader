@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 import { verticals } from "@/lib/verticals";
 
 function MenuIcon({ open }: { open: boolean }) {
@@ -26,7 +26,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    setMenuOpen(false);
+    startTransition(() => setMenuOpen(false));
   }, [pathname]);
 
   useEffect(() => {

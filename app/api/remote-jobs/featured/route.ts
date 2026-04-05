@@ -1,7 +1,13 @@
-import { fetchTeamtailorFeaturedJobs } from "@/lib/remote-jobs/teamtailor-featured";
+import { jobIdForBrowseEntry } from "@/lib/remote-jobs/browse-job-id";
+import {
+  fetchTeamtailorFeaturedJobs,
+  type FeaturedJobWithBrowseId,
+} from "@/lib/remote-jobs/teamtailor-featured";
 import { NextResponse } from "next/server";
 
-export type { FeaturedJobDto } from "@/lib/remote-jobs/teamtailor-featured";
+export type { FeaturedJobDto, FeaturedJobWithBrowseId } from "@/lib/remote-jobs/teamtailor-featured";
+
+const TEAMTAILOR_SOURCE = "Teamtailor";
 
 export async function GET() {
   /** Request a larger page so after English-only filtering we can still return up to 9 roles. */
@@ -13,6 +19,9 @@ export async function GET() {
       jobs: result.jobs,
     });
   }
-  const jobs = result.jobs.slice(0, 9);
+  const jobs: FeaturedJobWithBrowseId[] = result.jobs.slice(0, 9).map((j) => ({
+    ...j,
+    browseId: jobIdForBrowseEntry(TEAMTAILOR_SOURCE, j.applyUrl.trim()),
+  }));
   return NextResponse.json({ ok: true as const, jobs, error: null as string | null });
 }

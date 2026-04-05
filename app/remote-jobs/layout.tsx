@@ -28,7 +28,7 @@ export default function RemoteJobsLayout({
 }>) {
   return (
     <div
-      className={`${inter.variable} ${plusJakarta.variable} ${rockSalt.variable} font-rj-body bg-rj-bg text-rj-on-bg antialiased selection:bg-rj-primary selection:text-rj-on-primary`}
+      className={`${inter.variable} ${plusJakarta.variable} ${rockSalt.variable} font-rj-body bg-rj-bg text-rj-fg antialiased selection:bg-rj-primary selection:text-rj-on-primary`}
       style={{ margin: 0, padding: 0 }}
     >
       {children}

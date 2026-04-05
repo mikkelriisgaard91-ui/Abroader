@@ -1,15 +1,33 @@
-import { createHash } from "crypto";
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
+import { jobIdForBrowseEntry } from "@/lib/remote-jobs/browse-job-id";
+import { jobMatchesRole, type RoleFilter } from "@/lib/remote-jobs/job-filters";
+import { fetchTeamtailorFeaturedJobs } from "@/lib/remote-jobs/teamtailor-featured";
 
 /**
  * Aggregates remote listings from Himalayas, Remotive, Remote OK, and Jobicy.
  * Shared by `/api/remote-jobs/browse` and the job detail page.
  */
 
-/** Max listings per board (merged then sorted). Jobicy caps `count` at 100. */
-const PER_SOURCE = 150;
-const JOBICY_COUNT = Math.min(PER_SOURCE, 100);
+/** Himalayas browse API: max 20 per request; paginate with offset. */
+const HIMALAYAS_PAGE_SIZE = 20;
+/** Cap Himalayas rows per aggregate fetch (rate limits + latency). */
+const HIMALAYAS_MAX_JOBS = 360;
+const HIMALAYAS_MAX_PAGES = 22;
+const HIMALAYAS_PAGE_DELAY_MS = 120;
+
+/** Jobicy API caps `count` at 100 per request. */
+const JOBICY_COUNT = 100;
+
+/** Target listings after dedupe + role mix (≥500). */
+const TARGET_BROWSE_JOBS = 500;
+
+/** Safety caps so a single source cannot dominate memory/response size. */
+const REMOTIVE_MAX_JOBS = 4000;
+const REMOTE_OK_MAX_JOBS = 800;
+
+/** Browse payload: seniority matching uses at most 800 chars of description. */
+const BROWSE_DESCRIPTION_MAX_CHARS = 800;
 
 export type BrowseJobDto = {
   /** Stable id from source + application link (for detail URLs). */
@@ -23,13 +41,52 @@ export type BrowseJobDto = {
   source: string;
   /** Plain text from provider HTML/markdown (optional). */
   descriptionPlain?: string;
+  /** Publication time (ms) from the job board when available; omit or 0 if unknown. */
+  postedAtMs?: number;
 };
 
 type Sortable = { job: BrowseJobDto; sortKey: number };
 
-export function jobIdForBrowseEntry(source: string, applicationLink: string): string {
-  return createHash("sha256").update(`${source}\0${applicationLink}`).digest("hex").slice(0, 20);
+/**
+ * First matching role wins for round-robin buckets — order places specific roles before broad
+ * keywords (e.g. `data` before `finance-ops` so "Data Analyst" maps to data).
+ */
+const PRIMARY_ROLE_BUCKET_ORDER: Exclude<RoleFilter, "all">[] = [
+  "engineering",
+  "data",
+  "product-strategy",
+  "design",
+  "marketing",
+  "sales",
+  "customer-success",
+  "content",
+  "hr",
+  "legal",
+  "healthcare",
+  "finance-ops",
+];
+
+function minimalJobForRoleProbe(title: string): BrowseJobDto {
+  return {
+    id: "_",
+    title,
+    companyName: "",
+    employmentType: "Full-time",
+    locationRestrictions: [],
+    applicationLink: "https://example.invalid/",
+    source: "Himalayas",
+  };
 }
+
+function inferPrimaryBrowseRole(title: string): Exclude<RoleFilter, "all"> | "other" {
+  const minimal = minimalJobForRoleProbe(title);
+  for (const role of PRIMARY_ROLE_BUCKET_ORDER) {
+    if (jobMatchesRole(minimal, role)) return role;
+  }
+  return "other";
+}
+
+export { jobIdForBrowseEntry };
 
 function htmlToPlainText(html: string): string {
   let s = html
@@ -132,60 +189,109 @@ function withId(job: Omit<BrowseJobDto, "id">): BrowseJobDto {
   };
 }
 
-async function loadHimalayas(): Promise<Sortable[]> {
-  const res = await fetch(`https://himalayas.app/jobs/api?limit=${PER_SOURCE}`, {
-    cache: "no-store",
-    headers: { Accept: "application/json" },
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
   });
-  if (!res.ok) return [];
-  const json: unknown = await res.json();
-  const jobs = json && typeof json === "object" && "jobs" in json ? (json as { jobs: unknown }).jobs : null;
-  if (!Array.isArray(jobs)) return [];
-  const out: Sortable[] = [];
-  for (const j of jobs) {
-    if (!j || typeof j !== "object") continue;
-    const o = j as Record<string, unknown>;
-    const title = typeof o.title === "string" ? o.title : "";
-    const applicationLink = typeof o.applicationLink === "string" ? o.applicationLink : "";
-    if (!title || !applicationLink) continue;
-    const companyName = typeof o.companyName === "string" ? o.companyName : "";
-    const employmentType =
-      typeof o.employmentType === "string" && o.employmentType.trim()
-        ? o.employmentType
-        : "Full-time";
-    const locationRestrictions = Array.isArray(o.locationRestrictions)
-      ? o.locationRestrictions.filter((x): x is string => typeof x === "string")
-      : [];
-    let salary: string | undefined;
-    const minS = o.minSalary;
-    const maxS = o.maxSalary;
-    if (typeof minS === "number" || typeof maxS === "number") {
-      const parts: string[] = [];
-      if (typeof minS === "number") parts.push(String(minS));
-      if (typeof maxS === "number") parts.push(String(maxS));
-      if (parts.length) salary = parts.join("–");
-    }
-    const descHtml =
-      typeof o.description === "string" && o.description.trim()
-        ? o.description
-        : typeof o.excerpt === "string"
-          ? o.excerpt
-          : "";
-    const descriptionPlain = optionalPlainFromHtml(descHtml);
-    out.push({
-      sortKey: parseTimeMs(o.pubDate),
-      job: withId({
-        title,
-        companyName,
-        employmentType,
-        locationRestrictions,
-        applicationLink,
-        salary,
-        source: "Himalayas",
-        descriptionPlain,
-      }),
-    });
+}
+
+function dedupeApplicationLinkKey(applicationLink: string): string {
+  const raw = applicationLink.trim();
+  try {
+    const u = new URL(raw);
+    return `${u.hostname.replace(/^www\./, "")}${u.pathname}`.toLowerCase();
+  } catch {
+    return raw.toLowerCase();
   }
+}
+
+function truncateDescriptionForBrowse(plain: string | undefined): string | undefined {
+  if (!plain) return undefined;
+  if (plain.length <= BROWSE_DESCRIPTION_MAX_CHARS) return plain;
+  return `${plain.slice(0, BROWSE_DESCRIPTION_MAX_CHARS).trimEnd()}…`;
+}
+
+function himalayasRecordToSortable(o: Record<string, unknown>): Sortable | null {
+  const title = typeof o.title === "string" ? o.title : "";
+  const applicationLink = typeof o.applicationLink === "string" ? o.applicationLink : "";
+  if (!title || !applicationLink) return null;
+  const companyName = typeof o.companyName === "string" ? o.companyName : "";
+  const employmentType =
+    typeof o.employmentType === "string" && o.employmentType.trim()
+      ? o.employmentType
+      : "Full-time";
+  const locationRestrictions = Array.isArray(o.locationRestrictions)
+    ? o.locationRestrictions.filter((x): x is string => typeof x === "string")
+    : [];
+  let salary: string | undefined;
+  const minS = o.minSalary;
+  const maxS = o.maxSalary;
+  if (typeof minS === "number" || typeof maxS === "number") {
+    const parts: string[] = [];
+    if (typeof minS === "number") parts.push(String(minS));
+    if (typeof maxS === "number") parts.push(String(maxS));
+    if (parts.length) salary = parts.join("–");
+  }
+  const descHtml =
+    typeof o.description === "string" && o.description.trim()
+      ? o.description
+      : typeof o.excerpt === "string"
+        ? o.excerpt
+        : "";
+  const descriptionPlain = optionalPlainFromHtml(descHtml);
+  return {
+    sortKey: parseTimeMs(o.pubDate),
+    job: withId({
+      title,
+      companyName,
+      employmentType,
+      locationRestrictions,
+      applicationLink,
+      salary,
+      source: "Himalayas",
+      descriptionPlain,
+    }),
+  };
+}
+
+async function loadHimalayas(): Promise<Sortable[]> {
+  const out: Sortable[] = [];
+  let offset = 0;
+  let pages = 0;
+
+  while (out.length < HIMALAYAS_MAX_JOBS && pages < HIMALAYAS_MAX_PAGES) {
+    const url = `https://himalayas.app/jobs/api?limit=${HIMALAYAS_PAGE_SIZE}&offset=${offset}`;
+    let res: Response | null = null;
+    for (let attempt = 0; attempt < 5; attempt++) {
+      res = await fetch(url, {
+        cache: "no-store",
+        headers: { Accept: "application/json" },
+      });
+      if (res.status === 429) {
+        await delay(400 * (attempt + 1));
+        continue;
+      }
+      break;
+    }
+    if (!res || !res.ok) break;
+
+    const json: unknown = await res.json();
+    const jobs =
+      json && typeof json === "object" && "jobs" in json ? (json as { jobs: unknown }).jobs : null;
+    if (!Array.isArray(jobs) || jobs.length === 0) break;
+
+    for (const j of jobs) {
+      if (!j || typeof j !== "object") continue;
+      const s = himalayasRecordToSortable(j as Record<string, unknown>);
+      if (s) out.push(s);
+    }
+
+    if (jobs.length < HIMALAYAS_PAGE_SIZE) break;
+    offset += HIMALAYAS_PAGE_SIZE;
+    pages += 1;
+    await delay(HIMALAYAS_PAGE_DELAY_MS);
+  }
+
   return out;
 }
 
@@ -202,7 +308,7 @@ async function loadRemotive(): Promise<Sortable[]> {
   const out: Sortable[] = [];
   let n = 0;
   for (const j of jobs) {
-    if (n >= PER_SOURCE) break;
+    if (n >= REMOTIVE_MAX_JOBS) break;
     if (!j || typeof j !== "object") continue;
     const o = j as Record<string, unknown>;
     const title = typeof o.title === "string" ? o.title : "";
@@ -247,7 +353,7 @@ async function loadRemoteOk(): Promise<Sortable[]> {
   const out: Sortable[] = [];
   let n = 0;
   for (const j of json) {
-    if (n >= PER_SOURCE) break;
+    if (n >= REMOTE_OK_MAX_JOBS) break;
     if (!j || typeof j !== "object") continue;
     const o = j as Record<string, unknown>;
     if (!("position" in o) || typeof o.position !== "string") continue;
@@ -357,13 +463,81 @@ function isBrowseSourceId(s: string): s is BrowseSourceId {
   return Object.prototype.hasOwnProperty.call(SOURCE_LOADERS, s);
 }
 
+function dedupeSortables(sortables: Sortable[]): Sortable[] {
+  const byKey = new Map<string, Sortable>();
+  for (const s of sortables) {
+    const key = dedupeApplicationLinkKey(s.job.applicationLink);
+    const prev = byKey.get(key);
+    if (!prev || s.sortKey > prev.sortKey) {
+      byKey.set(key, s);
+    }
+  }
+  return Array.from(byKey.values()).sort((a, b) => b.sortKey - a.sortKey);
+}
+
+function roundRobinByPrimaryRole(sortables: Sortable[], target: number): Sortable[] {
+  type Bucket = Exclude<RoleFilter, "all"> | "other";
+  const order: Bucket[] = [...PRIMARY_ROLE_BUCKET_ORDER, "other"];
+  const buckets = new Map<Bucket, Sortable[]>();
+  for (const k of order) {
+    buckets.set(k, []);
+  }
+
+  for (const s of sortables) {
+    const r = inferPrimaryBrowseRole(s.job.title);
+    const b: Bucket = r === "other" ? "other" : r;
+    buckets.get(b)!.push(s);
+  }
+  for (const arr of buckets.values()) {
+    arr.sort((a, b) => b.sortKey - a.sortKey);
+  }
+
+  const result: Sortable[] = [];
+  let round = 0;
+  for (;;) {
+    let addedThisRound = false;
+    for (const k of order) {
+      const arr = buckets.get(k)!;
+      if (arr.length > round) {
+        result.push(arr[round]!);
+        addedThisRound = true;
+        if (result.length >= target) {
+          return result;
+        }
+      }
+    }
+    if (!addedThisRound) break;
+    round += 1;
+  }
+
+  const used = new Set(result.map((s) => s.job.id));
+  const rest = sortables
+    .filter((s) => !used.has(s.job.id))
+    .sort((a, b) => b.sortKey - a.sortKey);
+  for (const s of rest) {
+    if (result.length >= target) break;
+    result.push(s);
+  }
+  return result;
+}
+
+function sortablesToBrowseDtos(sortables: Sortable[]): BrowseJobDto[] {
+  return sortables.map((x) => ({
+    ...x.job,
+    postedAtMs: x.sortKey > 0 ? x.sortKey : undefined,
+    descriptionPlain: truncateDescriptionForBrowse(x.job.descriptionPlain),
+  }));
+}
+
 async function fetchBrowseJobsUncached(): Promise<BrowseJobsResult> {
   const [h, r, ro, jc] = await Promise.all([loadHimalayas(), loadRemotive(), loadRemoteOk(), loadJobicy()]);
 
   const combined = [...h, ...r, ...ro, ...jc];
   combined.sort((a, b) => b.sortKey - a.sortKey);
 
-  const jobs: BrowseJobDto[] = combined.map((x) => x.job);
+  const deduped = dedupeSortables(combined);
+  const mixed = roundRobinByPrimaryRole(deduped, TARGET_BROWSE_JOBS);
+  const jobs = sortablesToBrowseDtos(mixed);
 
   if (jobs.length === 0) {
     return {
@@ -375,7 +549,7 @@ async function fetchBrowseJobsUncached(): Promise<BrowseJobsResult> {
   return { jobs, error: null };
 }
 
-const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-jobs-browse-v1"], {
+const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-jobs-browse-v3"], {
   revalidate: 180,
 });
 
@@ -413,7 +587,13 @@ async function getBrowseJobByIdImpl(
     if (found) return found;
   }
   const { jobs } = await getBrowseJobs();
-  return findBrowseJobById(jobs, id) ?? null;
+  const fromBrowse = findBrowseJobById(jobs, id);
+  if (fromBrowse) return fromBrowse;
+
+  const { featuredJobToBrowseDto } = await import("@/lib/remote-jobs/featured-as-browse");
+  const tt = await fetchTeamtailorFeaturedJobs({ englishOnly: true, pageSize: 30 });
+  const mapped = tt.jobs.map(featuredJobToBrowseDto);
+  return findBrowseJobById(mapped, id) ?? null;
 }
 
 export const getBrowseJobById = cache(getBrowseJobByIdImpl);

@@ -6,17 +6,20 @@
   --font-rj-body: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
   --font-rj-accent: var(--font-rock-salt), "Rock Salt", cursive;
 
+  /* Core canvas: one teal family so sections blend instead of competing */
   --color-rj-bg: #00161d;
-  --color-rj-on-bg: #b2ebff;
+  --color-rj-on-bg: #e8f4f6;
   --color-rj-primary: #fdbb37;
-  --color-rj-on-primary: #422c00;
-  --color-rj-secondary: #8dd1e0;
-  --color-rj-surface-low: #001f27;
-  --color-rj-surface-high: #002f39;
-  --color-rj-elevated: #003a47;
-  --color-rj-muted: #bfc8cb;
-  --color-rj-fg: #fafafa;
+  --color-rj-on-primary: #2a1f0a;
+  --color-rj-secondary: #7ec8d4;
+  --color-rj-surface-low: #001c24;
+  --color-rj-surface-high: #002a33;
+  --color-rj-elevated: #003440;
+  --color-rj-muted: #a8b8bc;
+  --color-rj-fg: #f4f9fa;
   --color-rj-bright: #003f4d;
+  /* Mid band for vertical gradients between sections */
+  --color-rj-band: #001a22;
 }
 
 :root {

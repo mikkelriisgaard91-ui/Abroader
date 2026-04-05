@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { BrowseJobDto } from "@/lib/remote-jobs/browse-data";
+import {
+  jobMatchesEmploymentType,
+  jobMatchesLocationRegion,
+  jobMatchesPostedAt,
+  jobMatchesRole,
+  jobMatchesSalaryFilter,
+  type LocationRegionFilter,
+  type PostedFilter,
+  type RoleFilter,
+  type SalaryFilter,
+  type TypeFilter,
+} from "@/lib/remote-jobs/job-filters";
 import { TestimonialsSection } from "./testimonials-section";
 
-/** Glass panel matching Luminescent reference */
+/** Glass panel — aligned with rj-elevated + rj-secondary */
 const glassPanel =
-  "rounded-xl border border-[rgba(141,209,224,0.1)] bg-[rgba(0,58,71,0.4)] backdrop-blur-[12px]";
+  "rounded-xl border border-rj-secondary/15 bg-rj-elevated/45 backdrop-blur-[12px]";
 
 /** Teamtailor careersite — speak with a recruiter / book a meeting (same as hero + bottom CTA). */
 const RECRUITER_CONTACT_URL =
@@ -30,305 +43,7 @@ type FeaturedApiResponse = {
 /** Always read `TEAMTAILOR_API_TOKEN` at request time and avoid caching a stale empty list. */
 export const dynamic = "force-dynamic";
 
-type RemoteJobListing = {
-  /** Stable id for `/remote-jobs/job/[id]` (aggregated feed only). */
-  id: string;
-  title: string;
-  companyName: string;
-  employmentType: string;
-  locationRestrictions: string[];
-  applicationLink: string;
-  salary?: string;
-  /** Board that provided the listing (Himalayas, Remotive, Remote OK, Jobicy). */
-  source?: string;
-  descriptionPlain?: string;
-};
-
-type LocationRegionFilter =
-  | "all"
-  | "worldwide"
-  | "americas"
-  | "europe"
-  | "asia-pacific"
-  | "africa"
-  | "middle-east";
-
-type RoleFilter =
-  | "all"
-  | "engineering"
-  | "marketing"
-  | "design"
-  | "sales"
-  | "customer-success"
-  | "finance-ops"
-  | "hr"
-  | "product-strategy"
-  | "data"
-  | "content"
-  | "legal"
-  | "healthcare";
-
-type TypeFilter = "all" | "full-time" | "part-time" | "freelance" | "internship" | "volunteer";
-
-type SalaryFilter =
-  | "all"
-  | "under-30k"
-  | "30-60"
-  | "60-100"
-  | "100-150"
-  | "150plus"
-  | "not-specified";
-
-const LOCATION_KEYWORDS: Record<Exclude<LocationRegionFilter, "all" | "worldwide">, string[]> = {
-  americas: [
-    "usa",
-    "united states",
-    "canada",
-    "mexico",
-    "brazil",
-    "latin america",
-    "south america",
-    "north america",
-  ],
-  europe: [
-    "uk",
-    "united kingdom",
-    "germany",
-    "france",
-    "spain",
-    "portugal",
-    "netherlands",
-    "europe",
-    " eu",
-    "remote eu",
-  ],
-  "asia-pacific": [
-    "asia",
-    "japan",
-    "australia",
-    "singapore",
-    "india",
-    "china",
-    "pacific",
-    "apac",
-  ],
-  africa: ["africa", "nigeria", "kenya", "south africa"],
-  "middle-east": ["uae", "dubai", "middle east", "israel"],
-};
-
-const ROLE_KEYWORDS: Record<Exclude<RoleFilter, "all">, string[]> = {
-  engineering: [
-    "engineer",
-    "developer",
-    " dev",
-    "software",
-    "frontend",
-    "front-end",
-    "backend",
-    "back-end",
-    "fullstack",
-    "full-stack",
-    "devops",
-    "cloud",
-    "mobile",
-    "ios",
-    "android",
-    " qa",
-    "quality assurance",
-    "security",
-    "data engineer",
-    "sre",
-    "site reliability",
-  ],
-  marketing: [
-    "marketing",
-    "growth",
-    "seo",
-    "sem",
-    "paid",
-    "social media",
-    "brand",
-    "campaign",
-    "demand gen",
-  ],
-  design: [
-    "design",
-    "designer",
-    " ux",
-    " ui",
-    "creative",
-    "art director",
-    "motion",
-    "graphic",
-  ],
-  sales: [
-    "sales",
-    "account executive",
-    "bdr",
-    "sdr",
-    "business development",
-    "partnerships",
-  ],
-  "customer-success": [
-    "customer success",
-    "support",
-    "account manager",
-    " cx",
-    "helpdesk",
-    "onboarding",
-  ],
-  "finance-ops": [
-    "finance",
-    "accounting",
-    "operations",
-    "cfo",
-    "controller",
-    "analyst",
-    "payroll",
-  ],
-  hr: ["hr", "recruiter", "recruiting", "talent", "people ops", "hrbp"],
-  "product-strategy": [
-    "product manager",
-    "product management",
-    "product owner",
-    "product strategy",
-    "program manager",
-    "head of product",
-    "vp product",
-    "director of product",
-    "chief product",
-    "strategy",
-    "coo",
-    "chief of staff",
-  ],
-  data: [
-    "data analyst",
-    "data scientist",
-    "analytics",
-    " bi",
-    "business intelligence",
-    "sql",
-  ],
-  content: [
-    "content",
-    "writer",
-    "copywriter",
-    "editor",
-    "journalist",
-    "blogger",
-    "technical writer",
-  ],
-  legal: ["legal", "lawyer", "compliance", "counsel", "paralegal", "privacy"],
-  healthcare: [
-    "nurse",
-    "doctor",
-    "medical",
-    "health",
-    "clinical",
-    "therapist",
-    "pharmacist",
-  ],
-};
-
-function locationText(job: RemoteJobListing): string {
-  return (job.locationRestrictions ?? []).join(" ").toLowerCase();
-}
-
-function isWorldwideJob(job: RemoteJobListing): boolean {
-  const arr = job.locationRestrictions ?? [];
-  if (arr.length === 0) return true;
-  return arr.some((x) => x.toLowerCase().includes("worldwide"));
-}
-
-function jobMatchesLocationRegion(job: RemoteJobListing, region: LocationRegionFilter): boolean {
-  if (region === "all") return true;
-  if (region === "worldwide") return isWorldwideJob(job);
-  const loc = locationText(job);
-  if (isWorldwideJob(job)) return false;
-  const keywords = LOCATION_KEYWORDS[region];
-  return keywords.some((kw) => loc.includes(kw.trim()));
-}
-
-function jobMatchesRole(job: RemoteJobListing, role: RoleFilter): boolean {
-  if (role === "all") return true;
-  const t = job.title.toLowerCase();
-  const keywords = ROLE_KEYWORDS[role];
-  return keywords.some((kw) => t.includes(kw.trim()));
-}
-
-function jobMatchesEmploymentType(job: RemoteJobListing, typeKey: TypeFilter): boolean {
-  if (typeKey === "all") return true;
-  const e = job.employmentType.toLowerCase();
-  switch (typeKey) {
-    case "full-time":
-      return (
-        e.includes("full-time") ||
-        e.includes("full time") ||
-        (e.includes("full") && !e.includes("part"))
-      );
-    case "part-time":
-      return e.includes("part-time") || e.includes("part time") || /\bpart\b/.test(e);
-    case "freelance":
-      return (
-        e.includes("freelance") ||
-        e.includes("contract") ||
-        e.includes("consultant")
-      );
-    case "internship":
-      return e.includes("intern") || e.includes("internship");
-    case "volunteer":
-      return e.includes("volunteer");
-    default:
-      return true;
-  }
-}
-
-/** Parse min/max USD from salary strings; overlap used against filter buckets. */
-function parseSalaryUsd(raw: string): { min: number; max: number } | null {
-  const s = raw.replace(/,/g, "").toLowerCase();
-  const values: number[] = [];
-  const reK = /(\d+(?:\.\d+)?)\s*k\b/gi;
-  let m: RegExpExecArray | null;
-  while ((m = reK.exec(s)) !== null) {
-    values.push(parseFloat(m[1]) * 1000);
-  }
-  const reD = /\$?\s*(\d{4,})\b/g;
-  while ((m = reD.exec(s)) !== null) {
-    values.push(parseFloat(m[1]));
-  }
-  if (values.length === 0) return null;
-  return { min: Math.min(...values), max: Math.max(...values) };
-}
-
-function salaryIsNotSpecified(job: RemoteJobListing): boolean {
-  const raw = job.salary?.trim();
-  if (!raw) return true;
-  return parseSalaryUsd(raw) === null;
-}
-
-function jobMatchesSalaryFilter(job: RemoteJobListing, filter: SalaryFilter): boolean {
-  if (filter === "all") return true;
-  if (filter === "not-specified") return salaryIsNotSpecified(job);
-  const raw = job.salary?.trim();
-  if (!raw) return false;
-  const range = parseSalaryUsd(raw);
-  if (!range) return false;
-  const overlaps = (lo: number, hi: number) => range.max >= lo && range.min <= hi;
-  switch (filter) {
-    case "under-30k":
-      return overlaps(0, 29_999);
-    case "30-60":
-      return overlaps(30_000, 60_000);
-    case "60-100":
-      return overlaps(60_000, 100_000);
-    case "100-150":
-      return overlaps(100_000, 150_000);
-    case "150plus":
-      return range.min >= 150_000;
-    default:
-      return true;
-  }
-}
+type RemoteJobListing = BrowseJobDto;
 
 type BrowseApiResponse = {
   jobs: RemoteJobListing[];
@@ -364,6 +79,21 @@ function featuredBadge(index: number, employmentTypeLabel: string): string {
   if (index === 0) return upper || "FEATURED";
   if (index === 1) return upper || "HAND-PICKED";
   return upper || "PRIORITY";
+}
+
+const MS_PER_DAY_LABEL = 86_400_000;
+
+function formatPostedLabel(postedAtMs: number, nowMs = Date.now()): string {
+  const d = new Date(nowMs);
+  const startLocalDay = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+  if (postedAtMs >= startLocalDay) return "Posted today";
+  const days = Math.floor((nowMs - postedAtMs) / MS_PER_DAY_LABEL);
+  if (days === 1) return "Posted yesterday";
+  if (days < 7) return `Posted ${days}d ago`;
+  if (days < 30) return `Posted ${Math.floor(days / 7)}w ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `Posted ${months}mo ago`;
+  return `Posted ${Math.floor(months / 12)}y+ ago`;
 }
 
 function jobRowEmoji(title: string): string {
@@ -516,11 +246,11 @@ function RemoteJobsStatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative border-y border-white/10 bg-gradient-to-b from-rj-surface-low via-rj-bg/95 to-rj-surface-low py-14 backdrop-blur-md"
+      className="relative border-y border-white/[0.06] bg-gradient-to-b from-rj-band via-rj-bg to-rj-surface-low py-14 backdrop-blur-md"
       aria-label="Platform statistics"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(253,187,55,0.08),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_0%,rgba(126,200,212,0.07),transparent_55%),radial-gradient(ellipse_70%_45%_at_50%_100%,rgba(253,187,55,0.05),transparent_50%)]"
         aria-hidden
       />
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-5 px-6 sm:grid-cols-3 sm:gap-6">
@@ -565,11 +295,12 @@ export default function RemoteJobsPage() {
   const [roleFilter, setRoleFilter] = useState<RoleFilter>("all");
   const [typeFilter, setTypeFilter] = useState<TypeFilter>("all");
   const [salaryFilter, setSalaryFilter] = useState<SalaryFilter>("all");
+  const [postedFilter, setPostedFilter] = useState<PostedFilter>("all");
   const [showAllFilteredJobs, setShowAllFilteredJobs] = useState(false);
 
   useEffect(() => {
     setShowAllFilteredJobs(false);
-  }, [searchQuery, locationFilter, roleFilter, typeFilter, salaryFilter]);
+  }, [searchQuery, locationFilter, roleFilter, typeFilter, salaryFilter, postedFilter]);
 
   useEffect(() => {
     let cancelled = false;
@@ -650,6 +381,7 @@ export default function RemoteJobsPage() {
     setRoleFilter("all");
     setTypeFilter("all");
     setSalaryFilter("all");
+    setPostedFilter("all");
     setSearchQuery("");
   };
 
@@ -657,7 +389,8 @@ export default function RemoteJobsPage() {
     locationFilter !== "all" ||
     roleFilter !== "all" ||
     typeFilter !== "all" ||
-    salaryFilter !== "all";
+    salaryFilter !== "all" ||
+    postedFilter !== "all";
 
   const filteredRemoteJobs = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -672,9 +405,10 @@ export default function RemoteJobsPage() {
       if (!jobMatchesRole(job, roleFilter)) return false;
       if (!jobMatchesEmploymentType(job, typeFilter)) return false;
       if (!jobMatchesSalaryFilter(job, salaryFilter)) return false;
+      if (!jobMatchesPostedAt(job, postedFilter)) return false;
       return true;
     });
-  }, [remoteJobs, searchQuery, locationFilter, roleFilter, typeFilter, salaryFilter]);
+  }, [remoteJobs, searchQuery, locationFilter, roleFilter, typeFilter, salaryFilter, postedFilter]);
 
   const visibleRemoteJobs = useMemo(() => {
     if (showAllFilteredJobs || filteredRemoteJobs.length <= INITIAL_VISIBLE_REMOTE_JOBS) {
@@ -692,15 +426,19 @@ export default function RemoteJobsPage() {
     "w-full rounded-lg border-0 bg-rj-elevated px-3 py-2.5 text-sm text-rj-fg shadow-sm ring-1 ring-white/5 focus:outline-none focus:ring-2 focus:ring-rj-primary/40";
 
   return (
-    <main className="w-full min-h-full overflow-x-hidden bg-rj-bg font-rj-body text-rj-on-bg">
+    <main className="w-full min-h-full overflow-x-hidden bg-rj-bg font-rj-body text-rj-fg">
       {/* Hero */}
-      <section className="relative flex min-h-[min(716px,88vh)] flex-col items-center justify-center overflow-hidden px-6 text-center bg-[radial-gradient(circle_at_center,#003f4d_0%,#00161d_70%)]">
+      <section className="relative flex min-h-[min(716px,88vh)] flex-col items-center justify-center overflow-hidden px-6 text-center bg-[radial-gradient(ellipse_120%_80%_at_50%_-10%,#003f4d_0%,#00161d_45%,#00161d_100%)]">
         <div
-          className="pointer-events-none absolute -left-24 -top-24 h-96 w-96 rounded-full bg-rj-secondary/10 blur-[100px]"
+          className="pointer-events-none absolute -left-24 -top-24 h-96 w-96 rounded-full bg-rj-secondary/[0.12] blur-[100px]"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-rj-primary/10 blur-[100px]"
+          className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-rj-primary/[0.09] blur-[100px]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-rj-band to-transparent"
           aria-hidden
         />
 
@@ -715,15 +453,13 @@ export default function RemoteJobsPage() {
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-rj-muted md:text-xl">
             Join thousands of professionals working remotely from anywhere in the world.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href={RECRUITER_CONTACT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/remote-jobs/ai-search"
               className="inline-flex items-center justify-center rounded-xl bg-rj-primary px-8 py-4 text-lg font-bold text-rj-on-primary shadow-[0_0_20px_rgba(253,187,55,0.2)] transition-all hover:shadow-[0_0_30px_rgba(253,187,55,0.3)] active:scale-95"
             >
-              Speak to a Recruiter
-            </a>
+              Smart Matching
+            </Link>
             <button
               type="button"
               onClick={scrollToJobs}
@@ -736,7 +472,11 @@ export default function RemoteJobsPage() {
       </section>
 
       {/* Featured */}
-      <section className="bg-rj-surface-low px-6 py-24">
+      <section className="relative bg-gradient-to-b from-rj-band via-rj-surface-low to-rj-surface-low px-6 py-24">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rj-secondary/25 to-transparent"
+          aria-hidden
+        />
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row">
             <div>
@@ -845,13 +585,28 @@ export default function RemoteJobsPage() {
       <RemoteJobsStatsSection />
 
       {/* Browse */}
-      <section id="jobs" className="bg-rj-bg px-6 py-24">
+      <section
+        id="jobs"
+        className="relative bg-gradient-to-b from-rj-bg via-rj-band/60 to-rj-bg px-6 py-24"
+      >
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-rj-secondary/[0.04] to-transparent"
+          aria-hidden
+        />
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
             <h2 className="font-rj-headline mb-2 text-3xl font-bold text-rj-fg md:text-4xl">
               Remote Jobs Worldwide
             </h2>
             <p className="text-lg text-rj-muted">Opportunities from top remote job boards</p>
+            <p className="mt-3">
+              <Link
+                href="/remote-jobs/ai-search"
+                className="text-sm font-semibold text-rj-secondary underline-offset-4 hover:underline"
+              >
+                Try the AI job search
+              </Link>
+            </p>
           </div>
 
           <div className="mb-6 max-w-2xl">
@@ -881,7 +636,7 @@ export default function RemoteJobsPage() {
               ) : null}
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               <div>
                 <label
                   htmlFor="rj-filter-location"
@@ -982,6 +737,28 @@ export default function RemoteJobsPage() {
                   <option value="not-specified">Not specified</option>
                 </select>
               </div>
+
+              <div>
+                <label
+                  htmlFor="rj-filter-posted"
+                  className="mb-2 block text-xs font-bold uppercase tracking-wider text-rj-muted"
+                >
+                  Posted
+                </label>
+                <select
+                  id="rj-filter-posted"
+                  className={filterSelectClass}
+                  value={postedFilter}
+                  onChange={(e) => setPostedFilter(e.target.value as PostedFilter)}
+                  aria-label="Filter by when the job was posted"
+                >
+                  <option value="all">Any time</option>
+                  <option value="today">Today</option>
+                  <option value="7d">Last 7 days</option>
+                  <option value="14d">Last 2 weeks</option>
+                  <option value="30d">Last 30 days</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -1071,6 +848,11 @@ export default function RemoteJobsPage() {
                           <span className="rounded border border-rj-secondary/15 bg-rj-secondary/10 px-2 py-0.5 text-xs text-rj-secondary">
                             {job.employmentType}
                           </span>
+                          {typeof job.postedAtMs === "number" && job.postedAtMs > 0 ? (
+                            <span className="rounded border border-white/10 bg-rj-elevated/80 px-2 py-0.5 text-xs text-rj-muted">
+                              {formatPostedLabel(job.postedAtMs)}
+                            </span>
+                          ) : null}
                         </div>
                         <span className="inline-flex items-center gap-1 font-bold text-rj-primary transition-transform group-hover:translate-x-0.5">
                           View job
@@ -1114,21 +896,27 @@ export default function RemoteJobsPage() {
       <TestimonialsSection />
 
       {/* CTA */}
-      <section className="border-t border-rj-primary/25 bg-gradient-to-b from-rj-bright/40 to-rj-surface-high px-6 py-16 text-center">
-        <h2 className="font-rj-headline mb-3 text-3xl font-bold text-rj-primary md:text-4xl">
-          Ready to work from anywhere?
-        </h2>
-        <p className="mx-auto mb-8 max-w-xl text-lg text-rj-on-bg/95">
-          Speak to one of our recruiters today and take the first step.
-        </p>
-        <a
-          href={RECRUITER_CONTACT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-xl bg-rj-primary px-8 py-4 text-lg font-bold text-rj-on-primary shadow-lg transition hover:brightness-105 active:scale-95"
-        >
-          Get in Touch
-        </a>
+      <section className="relative border-t border-rj-primary/20 bg-gradient-to-b from-rj-surface-low via-rj-bright/45 to-rj-surface-high px-6 py-16 text-center shadow-[0_-24px_48px_-24px_rgba(0,22,29,0.6)]">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(253,187,55,0.08),transparent_55%)]"
+          aria-hidden
+        />
+        <div className="relative z-[1]">
+          <h2 className="font-rj-headline mb-3 text-3xl font-bold text-rj-primary md:text-4xl">
+            Ready to work from anywhere?
+          </h2>
+          <p className="mx-auto mb-8 max-w-xl text-lg text-rj-fg/90">
+            Speak to one of our recruiters today and take the first step.
+          </p>
+          <a
+            href={RECRUITER_CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-xl bg-rj-primary px-8 py-4 text-lg font-bold text-rj-on-primary shadow-lg transition hover:brightness-105 active:scale-95"
+          >
+            Get in Touch
+          </a>
+        </div>
       </section>
     </main>
   );

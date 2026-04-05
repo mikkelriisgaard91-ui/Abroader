@@ -1,7 +1,7 @@
 import { REMOTE_JOBS_TESTIMONIALS, type RemoteJobsTestimonial } from "./testimonials-data";
 
 const glassPanel =
-  "rounded-xl border border-[rgba(141,209,224,0.1)] bg-[rgba(0,58,71,0.4)] backdrop-blur-[12px]";
+  "rounded-xl border border-rj-secondary/15 bg-rj-elevated/45 backdrop-blur-[12px]";
 
 function TestimonialCard({ t, className }: { t: RemoteJobsTestimonial; className?: string }) {
   return (
@@ -28,8 +28,12 @@ export function TestimonialsSection() {
   const loop = [...items, ...items];
 
   return (
-    <section className="border-t border-white/10 bg-rj-surface-low/90 px-6 py-24">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative border-t border-white/[0.06] bg-gradient-to-b from-rj-bg via-rj-surface-low/95 to-rj-band px-6 py-24">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rj-secondary/20 to-transparent"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-7xl">
         <h2 className="font-rj-headline mb-12 text-center text-3xl font-bold text-rj-fg md:text-4xl">
           What our candidates say
         </h2>
