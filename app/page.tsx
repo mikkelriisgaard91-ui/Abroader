@@ -66,13 +66,29 @@ export default function Home() {
         <div
           aria-hidden="true"
           style={{
-            width: "16px",
-            height: "16px",
-            borderRadius: "50%",
-            backgroundColor: "#22c55e",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
             margin: "0 auto 1.5rem",
           }}
-        />
+        >
+          <span
+            style={{
+              width: "16px",
+              height: "16px",
+              borderRadius: "50%",
+              backgroundColor: "#22c55e",
+            }}
+          />
+          <span
+            style={{
+              width: "16px",
+              height: "16px",
+              backgroundColor: "#2563eb",
+            }}
+          />
+        </div>
         <input
           type="text"
           placeholder="Search jobs, locations, or keywords..."
