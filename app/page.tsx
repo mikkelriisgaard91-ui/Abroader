@@ -1,6 +1,7 @@
-"use client";
-
 import Link from "next/link";
+
+/** Static for SSR/client HTML match (avoid hydration mismatch from Date, etc.). */
+const COPYRIGHT_YEAR = 2026;
 
 const verticals = [
   {
@@ -9,7 +10,7 @@ const verticals = [
     href: "/remote-jobs",
     accent: "#246374",
     light: "#e8f4f7",
-    emoji: "💻",
+    mark: "R",
   },
   {
     title: "Language Jobs",
@@ -17,7 +18,7 @@ const verticals = [
     href: "/language-jobs",
     accent: "#fcba36",
     light: "#fff8ec",
-    emoji: "🗣️",
+    mark: "L",
   },
   {
     title: "Hospitality",
@@ -25,7 +26,7 @@ const verticals = [
     href: "/hospitality",
     accent: "#8ed2e1",
     light: "#f0fafc",
-    emoji: "🏨",
+    mark: "H",
   },
   {
     title: "Volunteering",
@@ -33,9 +34,9 @@ const verticals = [
     href: "/volunteering",
     accent: "#246374",
     light: "#e8f4f7",
-    emoji: "🌍",
+    mark: "V",
   },
-];
+] as const;
 
 export default function Home() {
   return (
@@ -81,6 +82,7 @@ export default function Home() {
               backgroundColor: "#22c55e",
             }}
           />
+          <span className="hero-decor-triangle" aria-hidden="true" />
           <span
             style={{
               width: "16px",
@@ -118,7 +120,25 @@ export default function Home() {
                   cursor: "pointer",
                 }}
               >
-                <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>{v.emoji}</div>
+                <div
+                  aria-hidden
+                  style={{
+                    width: "3rem",
+                    height: "3rem",
+                    marginBottom: "1rem",
+                    borderRadius: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.35rem",
+                    fontWeight: 700,
+                    color: v.accent,
+                    backgroundColor: "#fff",
+                    border: `2px solid ${v.accent}`,
+                  }}
+                >
+                  {v.mark}
+                </div>
                 <h3 style={{ color: v.accent, fontSize: "1.2rem", fontWeight: "600", marginBottom: "0.75rem" }}>
                   {v.title}
                 </h3>
@@ -126,7 +146,7 @@ export default function Home() {
                   {v.description}
                 </p>
                 <div style={{ marginTop: "1.5rem", color: v.accent, fontWeight: "600", fontSize: "0.9rem" }}>
-                  Browse {v.title} →
+                  Browse {v.title}{" ->"}
                 </div>
               </div>
             </Link>
@@ -136,7 +156,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ backgroundColor: "#246374", padding: "2rem", textAlign: "center", color: "#8ed2e1", fontSize: "0.85rem" }}>
-        © {new Date().getFullYear()} Abroader — Your life abroad starts here
+        © {COPYRIGHT_YEAR} Abroader — Your life abroad starts here
       </footer>
 
     </main>
