@@ -735,8 +735,6 @@ export default function RemoteJobsPage() {
         </div>
       </section>
 
-      <RemoteJobsStatsSection />
-
       {/* Featured */}
       <section className="bg-rj-surface-low px-6 py-24">
         <div className="mx-auto max-w-7xl">
@@ -843,6 +841,8 @@ export default function RemoteJobsPage() {
           )}
         </div>
       </section>
+
+      <RemoteJobsStatsSection />
 
       {/* Browse */}
       <section id="jobs" className="bg-rj-bg px-6 py-24">
