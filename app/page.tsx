@@ -63,6 +63,16 @@ export default function Home() {
         <p style={{ color: "#fafafa", fontSize: "1.2rem", maxWidth: "560px", margin: "0 auto 2rem", lineHeight: "1.7" }}>
           Browse thousands of opportunities to work, teach, volunteer and live abroad — all in one place.
         </p>
+        <div
+          aria-hidden="true"
+          style={{
+            width: "16px",
+            height: "16px",
+            borderRadius: "50%",
+            backgroundColor: "#22c55e",
+            margin: "0 auto 1.5rem",
+          }}
+        />
         <input
           type="text"
           placeholder="Search jobs, locations, or keywords..."
