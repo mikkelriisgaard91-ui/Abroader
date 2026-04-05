@@ -24,6 +24,7 @@ type FeaturedJob = {
 type FeaturedApiResponse = {
   ok: boolean;
   jobs: FeaturedJob[];
+  error?: string | null;
 };
 
 /** Always read `TEAMTAILOR_API_TOKEN` at request time and avoid caching a stale empty list. */
@@ -554,6 +555,7 @@ export default function RemoteJobsPage() {
   const [featuredJobs, setFeaturedJobs] = useState<FeaturedJob[]>([]);
   const [featuredLoading, setFeaturedLoading] = useState(true);
   const [featuredShowPlaceholders, setFeaturedShowPlaceholders] = useState(false);
+  const [featuredError, setFeaturedError] = useState<string | null>(null);
 
   const [remoteJobs, setRemoteJobs] = useState<RemoteJobListing[]>([]);
   const [remoteJobsLoading, setRemoteJobsLoading] = useState(true);
@@ -580,14 +582,25 @@ export default function RemoteJobsPage() {
         if (data.ok && Array.isArray(data.jobs) && data.jobs.length > 0) {
           setFeaturedJobs(data.jobs);
           setFeaturedShowPlaceholders(false);
+          setFeaturedError(null);
         } else {
           setFeaturedJobs([]);
           setFeaturedShowPlaceholders(true);
+          if (!data.ok) {
+            const msg =
+              typeof data.error === "string" && data.error.trim()
+                ? data.error.trim()
+                : "Could not load featured listings.";
+            setFeaturedError(msg);
+          } else {
+            setFeaturedError(null);
+          }
         }
       } catch {
         if (!cancelled) {
           setFeaturedJobs([]);
           setFeaturedShowPlaceholders(true);
+          setFeaturedError("Could not load featured listings.");
         }
       } finally {
         if (!cancelled) setFeaturedLoading(false);
@@ -738,6 +751,12 @@ export default function RemoteJobsPage() {
               Highly recommended →
             </span>
           </div>
+
+          {!featuredLoading && featuredError ? (
+            <p className="mb-8 max-w-2xl text-sm text-rj-muted" role="status">
+              {featuredError}
+            </p>
+          ) : null}
 
           {featuredLoading ? (
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

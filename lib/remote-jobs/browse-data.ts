@@ -380,10 +380,16 @@ const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-job
 });
 
 /**
- * Aggregated listings (cached ~3 min) for the browse API and job-detail fallback.
+ * Aggregated listings (cached ~3 min when non-empty) for the browse API and job-detail fallback.
+ * Empty aggregates are not served from cache alone: a follow-up uncached fetch avoids pinning
+ * a transient “all sources failed” result for the full revalidate window.
  */
 export async function getBrowseJobs(): Promise<BrowseJobsResult> {
-  return getBrowseJobsCached();
+  const cached = await getBrowseJobsCached();
+  if (cached.jobs.length > 0) {
+    return cached;
+  }
+  return fetchBrowseJobsUncached();
 }
 
 export function findBrowseJobById(jobs: BrowseJobDto[], id: string): BrowseJobDto | undefined {
