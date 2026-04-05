@@ -1,0 +1,37 @@
+import type { Metadata } from "next";
+import { Inter, Plus_Jakarta_Sans, Rock_Salt } from "next/font/google";
+import "./remote-jobs.css";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-plus-jakarta",
+});
+const rockSalt = Rock_Salt({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-rock-salt",
+});
+
+export const metadata: Metadata = {
+  title: "Remote Jobs — Abroader",
+  description:
+    "Work from anywhere in the world. Browse fully remote roles across every industry and timezone.",
+};
+
+export default function RemoteJobsLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <div
+      className={`${inter.variable} ${plusJakarta.variable} ${rockSalt.variable} font-rj-body bg-rj-bg text-rj-on-bg antialiased selection:bg-rj-primary selection:text-rj-on-primary`}
+      style={{ margin: 0, padding: 0 }}
+    >
+      {children}
+    </div>
+  );
+}
