@@ -31,6 +31,15 @@ export const verticals = [
     light: "#e8f4f7",
     emoji: "🌍",
   },
+  {
+    title: "Country Guides",
+    description:
+      "Visas, cost of living and best cities for remote workers across Europe — in-depth guides for your next base.",
+    href: "/guides",
+    accent: "#fcba36",
+    light: "#fff8ec",
+    emoji: "🗺️",
+  },
 ];
 
 export type Vertical = (typeof verticals)[number];

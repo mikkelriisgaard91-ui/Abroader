@@ -12,15 +12,16 @@ import { fetchTeamtailorFeaturedJobs } from "@/lib/remote-jobs/teamtailor-featur
 /** Himalayas browse API: max 20 per request; paginate with offset. */
 const HIMALAYAS_PAGE_SIZE = 20;
 /** Cap Himalayas rows per aggregate fetch (rate limits + latency). */
-const HIMALAYAS_MAX_JOBS = 360;
-const HIMALAYAS_MAX_PAGES = 22;
-const HIMALAYAS_PAGE_DELAY_MS = 120;
+const HIMALAYAS_MAX_JOBS = 120;
+const HIMALAYAS_MAX_PAGES = 8;
+/** Throttle between pages to avoid 429s; keep as low as practical for TTFB. */
+const HIMALAYAS_PAGE_DELAY_MS = 65;
 
 /** Jobicy API caps `count` at 100 per request. */
-const JOBICY_COUNT = 100;
+const JOBICY_COUNT = 70;
 
-/** Target listings after dedupe + role mix (≥500). */
-const TARGET_BROWSE_JOBS = 500;
+/** Target listings after dedupe + role mix (large list without oversized payloads). */
+const TARGET_BROWSE_JOBS = 220;
 
 /** Safety caps so a single source cannot dominate memory/response size. */
 const REMOTIVE_MAX_JOBS = 4000;
@@ -295,6 +296,50 @@ async function loadHimalayas(): Promise<Sortable[]> {
   return out;
 }
 
+/**
+ * Paginates Himalayas until the browse id is found (or pages exhausted). Avoids loading the full
+ * Himalayas crawl when the listing is on an early page.
+ */
+async function findHimalayasJobByBrowseId(targetId: string): Promise<BrowseJobDto | undefined> {
+  let offset = 0;
+  let pages = 0;
+
+  while (pages < HIMALAYAS_MAX_PAGES) {
+    const url = `https://himalayas.app/jobs/api?limit=${HIMALAYAS_PAGE_SIZE}&offset=${offset}`;
+    let res: Response | null = null;
+    for (let attempt = 0; attempt < 5; attempt++) {
+      res = await fetch(url, {
+        cache: "no-store",
+        headers: { Accept: "application/json" },
+      });
+      if (res.status === 429) {
+        await delay(400 * (attempt + 1));
+        continue;
+      }
+      break;
+    }
+    if (!res || !res.ok) break;
+
+    const json: unknown = await res.json();
+    const jobs =
+      json && typeof json === "object" && "jobs" in json ? (json as { jobs: unknown }).jobs : null;
+    if (!Array.isArray(jobs) || jobs.length === 0) break;
+
+    for (const j of jobs) {
+      if (!j || typeof j !== "object") continue;
+      const s = himalayasRecordToSortable(j as Record<string, unknown>);
+      if (s && s.job.id === targetId) return s.job;
+    }
+
+    if (jobs.length < HIMALAYAS_PAGE_SIZE) break;
+    offset += HIMALAYAS_PAGE_SIZE;
+    pages += 1;
+    await delay(HIMALAYAS_PAGE_DELAY_MS);
+  }
+
+  return undefined;
+}
+
 async function loadRemotive(): Promise<Sortable[]> {
   const res = await fetch("https://remotive.com/api/remote-jobs", {
     cache: "no-store",
@@ -450,16 +495,25 @@ export type BrowseJobsResult = {
 };
 
 /** Labels returned on each job — use as `?source=` on detail URLs for a faster lookup. */
-export type BrowseSourceId = "Himalayas" | "Remotive" | "Remote OK" | "Jobicy";
+export type BrowseSourceId = "Himalayas" | "Remotive" | "Remote OK" | "Jobicy" | "Teamtailor";
 
-const SOURCE_LOADERS: Record<BrowseSourceId, () => Promise<Sortable[]>> = {
-  Himalayas: loadHimalayas,
+type SourceLoaderKey = Exclude<BrowseSourceId, "Himalayas">;
+
+async function loadTeamtailorAsSortables(): Promise<Sortable[]> {
+  const tt = await fetchTeamtailorFeaturedJobs({ englishOnly: true, pageSize: 30 });
+  const { featuredJobToBrowseDto } = await import("@/lib/remote-jobs/featured-as-browse");
+  if (!tt.ok) return [];
+  return tt.jobs.map((j) => ({ sortKey: 0, job: featuredJobToBrowseDto(j) }));
+}
+
+const SOURCE_LOADERS: Record<SourceLoaderKey, () => Promise<Sortable[]>> = {
   Remotive: loadRemotive,
   "Remote OK": loadRemoteOk,
   Jobicy: loadJobicy,
+  Teamtailor: loadTeamtailorAsSortables,
 };
 
-function isBrowseSourceId(s: string): s is BrowseSourceId {
+function isSourceLoaderKey(s: string): s is SourceLoaderKey {
   return Object.prototype.hasOwnProperty.call(SOURCE_LOADERS, s);
 }
 
@@ -549,7 +603,7 @@ async function fetchBrowseJobsUncached(): Promise<BrowseJobsResult> {
   return { jobs, error: null };
 }
 
-const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-jobs-browse-v3"], {
+const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-jobs-browse-v4"], {
   revalidate: 180,
 });
 
@@ -571,8 +625,9 @@ export function findBrowseJobById(jobs: BrowseJobDto[], id: string): BrowseJobDt
 }
 
 /**
- * Resolves one job by id. When `sourceHint` matches the board label, only that API is fetched
- * (much faster than loading all four). Falls back to the cached full list if needed.
+ * Resolves one job by id. When `sourceHint` matches the board label, only that source is queried
+ * (Himalayas paginates until found; Teamtailor uses one Partner API call). Falls back to the cached
+ * full aggregate if needed.
  * Wrapped in React `cache` so metadata + page in one request share one lookup.
  */
 async function getBrowseJobByIdImpl(
@@ -580,7 +635,10 @@ async function getBrowseJobByIdImpl(
   sourceHint?: string | null
 ): Promise<BrowseJobDto | null> {
   const hint = sourceHint?.trim();
-  if (hint && isBrowseSourceId(hint)) {
+  if (hint === "Himalayas") {
+    const fromHimalayas = await findHimalayasJobByBrowseId(id);
+    if (fromHimalayas) return fromHimalayas;
+  } else if (hint && isSourceLoaderKey(hint)) {
     const sortables = await SOURCE_LOADERS[hint]();
     const jobs = sortables.map((x) => x.job);
     const found = findBrowseJobById(jobs, id);

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap");
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Teal-tinted glass — matches rj-elevated / remote-jobs surfaces */
+.lj-glass-panel {
+  background: rgba(0, 52, 64, 0.42);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.lj-handwritten-stamp {
+  font-family: var(--font-rock-salt), "Rock Salt", cursive;
+  transform: rotate(-5deg);
+}
+
+.lj-blurred-orb {
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.lj-hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.lj-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Success stories — slower loop for 18 cards (right-to-left via shared keyframes) */
+.lj-success-marquee .rj-testimonials-marquee__track {
+  animation: rj-testimonial-marquee 130s linear infinite;
+}
+
+.lj-success-marquee .rj-testimonials-marquee__track:hover {
+  animation-play-state: paused;
+}

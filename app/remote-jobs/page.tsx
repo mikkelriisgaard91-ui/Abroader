@@ -4,6 +4,11 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { BrowseJobDto } from "@/lib/remote-jobs/browse-data";
 import {
+  featuredJobToBrowseDto,
+  mergeTeamtailorFirstThenBrowse,
+} from "@/lib/remote-jobs/featured-as-browse";
+import type { FeaturedJobDto } from "@/lib/remote-jobs/teamtailor-featured";
+import {
   jobMatchesEmploymentType,
   jobMatchesLocationRegion,
   jobMatchesPostedAt,
@@ -15,6 +20,7 @@ import {
   type SalaryFilter,
   type TypeFilter,
 } from "@/lib/remote-jobs/job-filters";
+import { RemoteJobsFAQ } from "./remote-jobs-faq";
 import { TestimonialsSection } from "./testimonials-section";
 
 /** Glass panel — aligned with rj-elevated + rj-secondary */
@@ -51,7 +57,7 @@ type BrowseApiResponse = {
 };
 
 /** Max job rows shown before "View more" (current search + filters). */
-const INITIAL_VISIBLE_REMOTE_JOBS = 14;
+const INITIAL_VISIBLE_REMOTE_JOBS = 13;
 
 const PLACEHOLDER_FEATURED: Omit<FeaturedJob, "id">[] = [
   {
@@ -288,8 +294,13 @@ export default function RemoteJobsPage() {
   const [featuredError, setFeaturedError] = useState<string | null>(null);
 
   const [remoteJobs, setRemoteJobs] = useState<RemoteJobListing[]>([]);
+  /** True until Teamtailor (featured) fetch finishes — browse list skeleton. */
   const [remoteJobsLoading, setRemoteJobsLoading] = useState(true);
+  /** True while board aggregate loads after Teamtailor rows are shown. */
+  const [aggregateLoading, setAggregateLoading] = useState(false);
   const [remoteJobsError, setRemoteJobsError] = useState<string | null>(null);
+  /** Board fetch failed but Teamtailor listings are still shown. */
+  const [aggregateError, setAggregateError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [locationFilter, setLocationFilter] = useState<LocationRegionFilter>("all");
   const [roleFilter, setRoleFilter] = useState<RoleFilter>("all");
@@ -297,6 +308,13 @@ export default function RemoteJobsPage() {
   const [salaryFilter, setSalaryFilter] = useState<SalaryFilter>("all");
   const [postedFilter, setPostedFilter] = useState<PostedFilter>("all");
   const [showAllFilteredJobs, setShowAllFilteredJobs] = useState(false);
+
+  const hasActiveFilters =
+    locationFilter !== "all" ||
+    roleFilter !== "all" ||
+    typeFilter !== "all" ||
+    salaryFilter !== "all" ||
+    postedFilter !== "all";
 
   useEffect(() => {
     setShowAllFilteredJobs(false);
@@ -306,6 +324,17 @@ export default function RemoteJobsPage() {
     let cancelled = false;
     (async () => {
       setFeaturedLoading(true);
+      setRemoteJobsLoading(true);
+      setRemoteJobsError(null);
+      setAggregateError(null);
+      setAggregateLoading(false);
+
+      let featuredDtos: FeaturedJobDto[] = [];
+
+      const browseResPromise = fetch("/api/remote-jobs/browse", {
+        cache: "no-store",
+      });
+
       try {
         const res = await fetch("/api/remote-jobs/featured", { cache: "no-store" });
         const data = (await res.json()) as FeaturedApiResponse;
@@ -314,9 +343,12 @@ export default function RemoteJobsPage() {
           setFeaturedJobs(data.jobs);
           setFeaturedShowPlaceholders(false);
           setFeaturedError(null);
+          featuredDtos = data.jobs;
+          setRemoteJobs(data.jobs.map((j) => featuredJobToBrowseDto(j)));
         } else {
           setFeaturedJobs([]);
           setFeaturedShowPlaceholders(true);
+          setRemoteJobs([]);
           if (!data.ok) {
             const msg =
               typeof data.error === "string" && data.error.trim()
@@ -332,25 +364,20 @@ export default function RemoteJobsPage() {
           setFeaturedJobs([]);
           setFeaturedShowPlaceholders(true);
           setFeaturedError("Could not load featured listings.");
+          setRemoteJobs([]);
         }
       } finally {
-        if (!cancelled) setFeaturedLoading(false);
+        if (!cancelled) {
+          setFeaturedLoading(false);
+          setRemoteJobsLoading(false);
+        }
       }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      setRemoteJobsLoading(true);
-      setRemoteJobsError(null);
+      if (cancelled) return;
+
+      setAggregateLoading(true);
       try {
-        const res = await fetch("/api/remote-jobs/browse", {
-          cache: "no-store",
-        });
+        const res = await browseResPromise;
         if (!res.ok) {
           throw new Error(`Could not load listings (${res.status}).`);
         }
@@ -359,16 +386,21 @@ export default function RemoteJobsPage() {
           throw new Error(data.error);
         }
         if (cancelled) return;
-        setRemoteJobs(Array.isArray(data.jobs) ? data.jobs : []);
+        const board = Array.isArray(data.jobs) ? data.jobs : [];
+        setRemoteJobs(mergeTeamtailorFirstThenBrowse(featuredDtos, board));
+        setAggregateError(null);
       } catch (e) {
         if (!cancelled) {
-          setRemoteJobs([]);
-          setRemoteJobsError(
-            e instanceof Error ? e.message : "Something went wrong loading remote listings."
-          );
+          const msg =
+            e instanceof Error ? e.message : "Something went wrong loading remote listings.";
+          if (featuredDtos.length === 0) {
+            setRemoteJobsError(msg);
+          } else {
+            setAggregateError(msg);
+          }
         }
       } finally {
-        if (!cancelled) setRemoteJobsLoading(false);
+        if (!cancelled) setAggregateLoading(false);
       }
     })();
     return () => {
@@ -384,13 +416,6 @@ export default function RemoteJobsPage() {
     setPostedFilter("all");
     setSearchQuery("");
   };
-
-  const hasActiveFilters =
-    locationFilter !== "all" ||
-    roleFilter !== "all" ||
-    typeFilter !== "all" ||
-    salaryFilter !== "all" ||
-    postedFilter !== "all";
 
   const filteredRemoteJobs = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -472,7 +497,10 @@ export default function RemoteJobsPage() {
       </section>
 
       {/* Featured */}
-      <section className="relative bg-gradient-to-b from-rj-band via-rj-surface-low to-rj-surface-low px-6 py-24">
+      <section
+        id="featured-opportunities"
+        className="relative bg-gradient-to-b from-rj-band via-rj-surface-low to-rj-surface-low px-6 py-24"
+      >
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rj-secondary/25 to-transparent"
           aria-hidden
@@ -763,6 +791,13 @@ export default function RemoteJobsPage() {
           </div>
 
           <div className="min-w-0 space-y-4">
+              {aggregateError ? (
+                <div className={`${glassPanel} p-4 text-sm text-rj-fg`} role="alert">
+                  {aggregateError} Board listings could not be loaded; Abroader roles above may still be
+                  available.
+                </div>
+              ) : null}
+
               {!remoteJobsLoading && !remoteJobsError && filteredRemoteJobs.length > 0 ? (
                 <p className="text-sm text-rj-muted">
                   {filteredRemoteJobs.length <= INITIAL_VISIBLE_REMOTE_JOBS || showAllFilteredJobs
@@ -770,6 +805,11 @@ export default function RemoteJobsPage() {
                         filteredRemoteJobs.length === 1 ? "" : "s"
                       }`
                     : `Showing ${INITIAL_VISIBLE_REMOTE_JOBS} of ${filteredRemoteJobs.length} remote jobs`}
+                  {aggregateLoading ? (
+                    <span className="block pt-1 text-rj-muted/90" aria-live="polite">
+                      Loading more listings from job boards…
+                    </span>
+                  ) : null}
                 </p>
               ) : null}
 
@@ -811,7 +851,8 @@ export default function RemoteJobsPage() {
                         locationFilter !== "all" ||
                         roleFilter !== "all" ||
                         typeFilter !== "all" ||
-                        salaryFilter !== "all"
+                        salaryFilter !== "all" ||
+                        postedFilter !== "all"
                       ? "No jobs match your search or filters."
                       : "No jobs match your search. Try different keywords."}
                 </p>
@@ -887,6 +928,23 @@ export default function RemoteJobsPage() {
                       )}
                     </div>
                   ) : null}
+
+                  {aggregateLoading ? (
+                    <div className="space-y-4 pt-2" aria-hidden>
+                      {[0, 1].map((i) => (
+                        <div
+                          key={i}
+                          className="flex animate-pulse gap-4 rounded-xl bg-rj-elevated/40 p-6 ring-1 ring-white/5"
+                        >
+                          <div className="h-14 w-14 shrink-0 rounded-lg bg-rj-elevated" />
+                          <div className="flex-1 space-y-2 pt-1">
+                            <div className="h-4 w-[55%] rounded bg-rj-elevated" />
+                            <div className="h-3 w-[35%] rounded bg-rj-elevated/70" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
                 </>
               )}
           </div>
@@ -894,6 +952,8 @@ export default function RemoteJobsPage() {
       </section>
 
       <TestimonialsSection />
+
+      <RemoteJobsFAQ />
 
       {/* CTA */}
       <section className="relative border-t border-rj-primary/20 bg-gradient-to-b from-rj-surface-low via-rj-bright/45 to-rj-surface-high px-6 py-16 text-center shadow-[0_-24px_48px_-24px_rgba(0,22,29,0.6)]">

@@ -1,5 +1,14 @@
 /** Fetches published fully-remote jobs from Teamtailor Partner API (shared by /api/remote-jobs/featured and job detail sidebar). */
 
+import { unstable_cache } from "next/cache";
+import { cache } from "react";
+
+import {
+  LANGUAGE_JOB_DEPARTMENT_NAMES,
+  LANGUAGE_JOB_TAB_ORDER,
+  type LanguageJobTabId,
+} from "@/lib/remote-jobs/language-job-tabs";
+
 export const FEATURED_TEAMTAILOR_API_VERSION = "20210218";
 
 function envString(key: string): string | undefined {
@@ -43,6 +52,7 @@ type JsonApiResource = {
 type JsonApiDoc = {
   data?: JsonApiResource[];
   included?: JsonApiResource[];
+  links?: { next?: string | null };
 };
 
 function pickString(obj: Record<string, unknown> | undefined, keys: string[]): string | undefined {
@@ -156,8 +166,9 @@ export type TeamtailorFeaturedResult =
 
 /**
  * Loads published fully-remote jobs from Teamtailor. Used by the featured API route and the job detail sidebar.
+ * The common `{ englishOnly: true, pageSize: 30 }` path is cached across requests to speed job pages and APIs.
  */
-export async function fetchTeamtailorFeaturedJobs(
+async function fetchTeamtailorFeaturedJobsUncached(
   options: FetchTeamtailorFeaturedOptions = {}
 ): Promise<TeamtailorFeaturedResult> {
   const { englishOnly = false, pageSize = 9 } = options;
@@ -223,4 +234,214 @@ export async function fetchTeamtailorFeaturedJobs(
     const message = e instanceof Error ? e.message : "Unknown error";
     return { ok: false, error: message, jobs: [] };
   }
+}
+
+const teamtailorFeaturedEnglish30CrossRequest = unstable_cache(
+  () => fetchTeamtailorFeaturedJobsUncached({ englishOnly: true, pageSize: 30 }),
+  ["teamtailor-featured-en-30-v1"],
+  { revalidate: 120 }
+);
+
+/** Same-request dedupe when job resolution + sidebar both need the English page-30 payload. */
+const teamtailorFeaturedEnglish30 = cache(teamtailorFeaturedEnglish30CrossRequest);
+
+export async function fetchTeamtailorFeaturedJobs(
+  options: FetchTeamtailorFeaturedOptions = {}
+): Promise<TeamtailorFeaturedResult> {
+  const englishOnly = options.englishOnly ?? false;
+  const pageSize = options.pageSize ?? 9;
+  if (englishOnly && pageSize === 30) {
+    return teamtailorFeaturedEnglish30();
+  }
+  return fetchTeamtailorFeaturedJobsUncached(options);
+}
+
+/**
+ * Paginate GET /departments into a name→id map, then resolve aliases in list order
+ * (first listed alias wins — keeps "German Speaking Jobs" ahead of broader names like "German Jobs").
+ */
+async function findDepartmentIdByNames(names: readonly string[]): Promise<string | null> {
+  const token = teamtailorApiToken();
+  if (!token) return null;
+
+  const aliases = names.map((n) => n.trim().toLowerCase()).filter((n) => n.length > 0);
+  if (aliases.length === 0) return null;
+
+  const headers: HeadersInit = {
+    Authorization: `Token token=${token}`,
+    "X-Api-Version": FEATURED_TEAMTAILOR_API_VERSION,
+  };
+
+  const nameToId = new Map<string, string>();
+  let url: string | null = `${apiBase()}/departments?page[size]=30&page[number]=1`;
+  let pages = 0;
+  const maxPages = 80;
+
+  while (url && pages < maxPages) {
+    pages += 1;
+    const res = await fetch(url, { headers, cache: "no-store" });
+    if (!res.ok) return null;
+    const json = (await res.json()) as JsonApiDoc;
+    for (const item of json.data ?? []) {
+      if (item.type !== "departments") continue;
+      const attr = item.attributes ?? {};
+      const deptName = typeof attr.name === "string" ? attr.name.trim().toLowerCase() : "";
+      if (deptName && !nameToId.has(deptName)) nameToId.set(deptName, String(item.id));
+    }
+    const next = json.links?.next;
+    url = typeof next === "string" && next.length > 0 ? next : null;
+  }
+
+  for (const alias of aliases) {
+    const id = nameToId.get(alias);
+    if (id) return id;
+  }
+
+  return null;
+}
+
+/**
+ * All published jobs for a Teamtailor department (any remote status). Paginates until exhausted.
+ */
+export async function fetchPublishedJobsForDepartment(departmentId: string): Promise<TeamtailorFeaturedResult> {
+  const token = teamtailorApiToken();
+  if (!token) {
+    return {
+      ok: false,
+      error: "TEAMTAILOR_API_TOKEN is not configured.",
+      jobs: [],
+    };
+  }
+
+  const headers: HeadersInit = {
+    Authorization: `Token token=${token}`,
+    "X-Api-Version": FEATURED_TEAMTAILOR_API_VERSION,
+  };
+
+  const params = new URLSearchParams();
+  params.set("filter[status]", "published");
+  params.set("filter[department]", departmentId);
+  params.set("page[size]", "30");
+  params.set("page[number]", "1");
+  params.set("include", "locations");
+
+  let url: string | null = `${apiBase()}/jobs?${params.toString()}`;
+  const jobs: FeaturedJobDto[] = [];
+  let pages = 0;
+  const maxPages = 200;
+
+  try {
+    while (url && pages < maxPages) {
+      pages += 1;
+      const res = await fetch(url, { headers, cache: "no-store" });
+      if (!res.ok) {
+        const text = await res.text();
+        return {
+          ok: false,
+          error: `Teamtailor API error ${res.status}: ${text.slice(0, 200)}`,
+          jobs: [],
+        };
+      }
+
+      const json = (await res.json()) as JsonApiDoc;
+      const locationById = buildLocationMap(json.included);
+      for (const item of json.data ?? []) {
+        const mapped = mapFeaturedJob(item, locationById);
+        if (mapped) jobs.push(mapped);
+      }
+
+      const next = json.links?.next;
+      url = typeof next === "string" && next.length > 0 ? next : null;
+    }
+
+    return { ok: true, jobs, error: null };
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Unknown error";
+    return { ok: false, error: message, jobs: [] };
+  }
+}
+
+export type { LanguageJobTabId } from "@/lib/remote-jobs/language-job-tabs";
+export {
+  LANGUAGE_JOB_DEPARTMENT_NAMES,
+  LANGUAGE_JOB_TAB_LABELS,
+  LANGUAGE_JOB_TAB_ORDER,
+} from "@/lib/remote-jobs/language-job-tabs";
+
+const DEPARTMENT_ID_ENV_BY_TAB: Record<LanguageJobTabId, string> = {
+  danish: "TEAMTAILOR_DANISH_DEPARTMENT_ID",
+  swedish: "TEAMTAILOR_SWEDISH_DEPARTMENT_ID",
+  norwegian: "TEAMTAILOR_NORWEGIAN_DEPARTMENT_ID",
+  german: "TEAMTAILOR_GERMAN_DEPARTMENT_ID",
+  dutch: "TEAMTAILOR_DUTCH_DEPARTMENT_ID",
+  finnish: "TEAMTAILOR_FINNISH_DEPARTMENT_ID",
+  english: "TEAMTAILOR_ENGLISH_DEPARTMENT_ID",
+  french: "TEAMTAILOR_FRENCH_DEPARTMENT_ID",
+  spanish: "TEAMTAILOR_SPANISH_DEPARTMENT_ID",
+};
+
+function departmentIdOverrideForTab(tab: LanguageJobTabId): string | undefined {
+  return envString(DEPARTMENT_ID_ENV_BY_TAB[tab]);
+}
+
+async function fetchPublishedJobsForDepartmentTab(tab: LanguageJobTabId): Promise<TeamtailorFeaturedResult> {
+  const names = LANGUAGE_JOB_DEPARTMENT_NAMES[tab];
+  const override = departmentIdOverrideForTab(tab);
+  const token = teamtailorApiToken();
+  if (!token) {
+    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured.", jobs: [] };
+  }
+
+  const departmentId = override ?? (await findDepartmentIdByNames(names));
+  if (!departmentId) {
+    const tried = names.join(", ");
+    return {
+      ok: false,
+      error: `No department matched (${tried}). Set ${DEPARTMENT_ID_ENV_BY_TAB[tab]} to the Teamtailor department id, or add the exact department name to LANGUAGE_JOB_DEPARTMENT_NAMES in language-job-tabs.ts.`,
+      jobs: [],
+    };
+  }
+
+  return fetchPublishedJobsForDepartment(departmentId);
+}
+
+async function fetchAllLanguageDepartmentJobsUncached(): Promise<Record<LanguageJobTabId, TeamtailorFeaturedResult>> {
+  const token = teamtailorApiToken();
+  if (!token) {
+    const empty: TeamtailorFeaturedResult = {
+      ok: false,
+      error: "TEAMTAILOR_API_TOKEN is not configured.",
+      jobs: [],
+    };
+    return Object.fromEntries(LANGUAGE_JOB_TAB_ORDER.map((id) => [id, empty])) as Record<
+      LanguageJobTabId,
+      TeamtailorFeaturedResult
+    >;
+  }
+
+  const pairs = await Promise.all(
+    LANGUAGE_JOB_TAB_ORDER.map(async (tab) => {
+      const result = await fetchPublishedJobsForDepartmentTab(tab);
+      return [tab, result] as const;
+    })
+  );
+
+  return Object.fromEntries(pairs) as Record<LanguageJobTabId, TeamtailorFeaturedResult>;
+}
+
+const allLanguageDepartmentJobsCrossRequest = unstable_cache(
+  () => fetchAllLanguageDepartmentJobsUncached(),
+  ["teamtailor-all-language-dept-jobs-v2"],
+  { revalidate: 180 }
+);
+
+/** All language-department job lists in one round-trip (cached ~3 min). */
+export async function fetchAllLanguageDepartmentJobs(): Promise<Record<LanguageJobTabId, TeamtailorFeaturedResult>> {
+  return allLanguageDepartmentJobsCrossRequest();
+}
+
+/** @deprecated Prefer fetchAllLanguageDepartmentJobs — kept for any import sites. */
+export async function fetchDanishSpeakingDepartmentJobs(): Promise<TeamtailorFeaturedResult> {
+  const all = await fetchAllLanguageDepartmentJobs();
+  return all.danish;
 }

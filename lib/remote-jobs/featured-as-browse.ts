@@ -50,3 +50,26 @@ export function mergeBrowseAndFeaturedTeamtailor(
   }
   return out;
 }
+
+/** Teamtailor rows first, then board listings; dedupe by application URL (Teamtailor wins on overlap). */
+export function mergeTeamtailorFirstThenBrowse(
+  featuredJobs: FeaturedJobDto[],
+  browseJobs: BrowseJobDto[]
+): BrowseJobDto[] {
+  const mapped = featuredJobs.map(featuredJobToBrowseDto);
+  const seen = new Set<string>();
+  const out: BrowseJobDto[] = [];
+  for (const j of mapped) {
+    const key = j.applicationLink.trim().toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(j);
+  }
+  for (const j of browseJobs) {
+    const key = j.applicationLink.trim().toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(j);
+  }
+  return out;
+}

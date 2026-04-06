@@ -34,12 +34,14 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
 export default async function RemoteJobDetailPage({ params, searchParams }: PageProps) {
   const { id } = await params;
   const sp = searchParams ? await searchParams : {};
-  const job = await getBrowseJobById(id, sp.source);
+  const [job, featuredResult] = await Promise.all([
+    getBrowseJobById(id, sp.source),
+    fetchTeamtailorFeaturedJobs({ englishOnly: true, pageSize: 30 }),
+  ]);
   if (!job) notFound();
 
   const loc = (job.locationRestrictions ?? []).join(", ") || "Location flexible";
 
-  const featuredResult = await fetchTeamtailorFeaturedJobs({ englishOnly: true, pageSize: 24 });
   const featuredSidebarJobs = featuredResult.ok ? featuredResult.jobs.slice(0, 5) : [];
 
   return (
