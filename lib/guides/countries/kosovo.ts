@@ -13,9 +13,9 @@ export const kosovo: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 800,
-  seoTitle: "Working Remotely in Kosovo 2026 — Pristina Tech Scene & Costs",
+  seoTitle: "Working in Kosovo: The Complete Expat Guide (2026)",
   seoDescription:
-    "Kosovo remote work: visa context, Pristina startup energy, low costs, regional travel notes.",
+    "Thinking about working in Kosovo or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Young population and growing English",
     "Very affordable European base",

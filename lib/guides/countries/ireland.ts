@@ -13,9 +13,9 @@ export const ireland: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2700,
-  seoTitle: "Working Remotely in Ireland 2026 — Critical Skills & Dublin Costs",
+  seoTitle: "Working in Ireland: The Complete Expat Guide (2026)",
   seoDescription:
-    "Ireland remote work: critical skills employment permit context, Dublin and Cork rents, tax and EU gateway benefits.",
+    "Thinking about working in Ireland or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "English-speaking EU hub for US HQs",
     "Strong tech and pharma clusters",

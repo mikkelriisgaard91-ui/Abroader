@@ -13,9 +13,9 @@ export const denmark: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Very High",
   avgMonthlyCost: 3000,
-  seoTitle: "Working Remotely in Denmark 2026 — Pay Limit Scheme & Copenhagen",
+  seoTitle: "Working in Denmark: The Complete Expat Guide (2026)",
   seoDescription:
-    "Denmark remote work: positive list / pay limit schemes, Copenhagen and Aarhus costs, hygge lifestyle and taxes.",
+    "Thinking about working in Denmark or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Strong work-life balance and bike culture",
     "English widely spoken professionally",

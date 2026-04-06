@@ -13,9 +13,9 @@ export const albania: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 850,
-  seoTitle: "Working Remotely in Albania 2026 — Digital Nomad Visa & Coast",
+  seoTitle: "Working in Albania: The Complete Expat Guide (2026)",
   seoDescription:
-    "Albania remote work: unique permit for remote workers, Tirana buzz, Riviera beaches, low costs.",
+    "Thinking about working in Albania or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Special law for remote workers (digital nomad-style permit)",
     "Stunning Riviera and mountain drives",

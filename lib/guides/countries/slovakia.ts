@@ -13,9 +13,9 @@ export const slovakia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 1100,
-  seoTitle: "Working Remotely in Slovakia 2026 — Bratislava & Tatras Access",
+  seoTitle: "Working in Slovakia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Slovakia remote work: Schengen context, Bratislava and Košice costs, mountains, taxes and coworking.",
+    "Thinking about working in Slovakia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Affordable vs Vienna just across the river",
     "Carpathian mountains and hiking",

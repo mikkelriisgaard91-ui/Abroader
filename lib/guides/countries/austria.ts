@@ -13,9 +13,9 @@ export const austria: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2300,
-  seoTitle: "Working Remotely in Austria 2026 — Red-White-Red Card & Vienna",
+  seoTitle: "Working in Austria: The Complete Expat Guide (2026)",
   seoDescription:
-    "Austria remote work: Red-White-Red Card routes, Vienna and Salzburg costs, Alps access, taxes.",
+    "Thinking about working in Austria or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Red-White-Red Card for skilled third-country workers",
     "Vienna: liveable, cultural, coffee house tradition",

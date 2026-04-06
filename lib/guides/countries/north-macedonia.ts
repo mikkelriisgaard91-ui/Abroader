@@ -13,9 +13,9 @@ export const northMacedonia: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 800,
-  seoTitle: "Working Remotely in North Macedonia 2026 — Skopje & Ohrid",
+  seoTitle: "Working in North Macedonia: The Complete Expat Guide (2026)",
   seoDescription:
-    "North Macedonia remote work: visa stays, Skopje and Ohrid costs, lake lifestyle, growing IT sector.",
+    "Thinking about working in North Macedonia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Very low cost of living",
     "Lake Ohrid UNESCO weekends",

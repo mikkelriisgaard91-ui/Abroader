@@ -13,9 +13,9 @@ export const bulgaria: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 950,
-  seoTitle: "Working Remotely in Bulgaria 2026 — Sofia, Taxes & Lifestyle",
+  seoTitle: "Working in Bulgaria: The Complete Expat Guide (2026)",
   seoDescription:
-    "Bulgaria remote work guide: visa routes, Sofia and Plovdiv costs, 10% flat tax context, Black Sea and ski trips.",
+    "Thinking about working in Bulgaria or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Low personal and corporate tax rates vs much of EU",
     "Fast internet in Sofia and major cities",

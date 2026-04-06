@@ -13,9 +13,9 @@ export const norway: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Very High",
   avgMonthlyCost: 3200,
-  seoTitle: "Working Remotely in Norway 2026 — Skilled Worker Rules & Oslo Costs",
+  seoTitle: "Working in Norway: The Complete Expat Guide (2026)",
   seoDescription:
-    "Norway remote work: skilled worker residence, Oslo and Bergen costs, oil wealth services, outdoor lifestyle.",
+    "Thinking about working in Norway or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Exceptional nature and work-life balance",
     "High salaries offset high prices",

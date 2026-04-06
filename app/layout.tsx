@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Abroader — Your life abroad starts here",
   description:
-    "Browse remote jobs, language jobs, hospitality and volunteering opportunities abroad",
+    "Browse remote jobs, language jobs, seasonal jobs and volunteering opportunities abroad",
 };
 
 export default function RootLayout({

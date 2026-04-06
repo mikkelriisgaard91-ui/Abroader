@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { parseLanguageJobsUiTabParam } from "@/lib/remote-jobs/language-job-tabs";
 import { fetchAllLanguageDepartmentJobs } from "@/lib/remote-jobs/teamtailor-featured";
@@ -11,6 +12,10 @@ import {
 import { HERO_BENEFIT_ICONS } from "./hero-benefit-icons";
 import LanguageJobsFAQ from "@/components/LanguageJobsFAQ";
 import { LanguageJobsListingSection } from "./language-jobs-listing";
+
+/** European city at dusk — Unsplash (images.unsplash.com allowed in next.config.ts) */
+const LANGUAGE_JOBS_HERO_IMAGE =
+  "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1920&q=80";
 
 function MaterialIcon({ name, className }: { name: string; className?: string }) {
   return (
@@ -60,21 +65,39 @@ export default async function LanguageJobsPage({
   return (
     <main className="lj-page overflow-x-hidden bg-rj-bg pb-12 font-rj-body text-rj-fg selection:bg-rj-primary selection:text-rj-on-primary">
       {/* Hero — full-width band; copy + benefits split on large screens */}
-      <section className="relative flex min-h-[min(880px,92vh)] w-full items-center overflow-hidden bg-[radial-gradient(ellipse_140%_90%_at_50%_-15%,#004a5c_0%,#00161d_42%,#001016_100%)] px-4 py-16 sm:px-6 md:px-10 lg:min-h-[min(820px,90vh)] lg:px-12 lg:py-20 xl:px-16 2xl:px-20">
+      <section className="relative flex min-h-[min(880px,92vh)] w-full items-center overflow-hidden bg-[#001016] px-4 py-16 sm:px-6 md:px-10 lg:min-h-[min(820px,90vh)] lg:px-12 lg:py-20 xl:px-16 2xl:px-20">
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <Image
+            src={LANGUAGE_JOBS_HERO_IMAGE}
+            alt="Historic European city rooftops and church spires at dusk, evoking work abroad"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(126,200,212,0.12)_0%,transparent_55%)]"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/75 via-[#00161d]/72 to-[#001016] max-md:from-black/82 max-md:via-[#00161d]/78 md:from-black/58 md:via-[#00161d]/60"
           aria-hidden
         />
         <div
-          className="lj-blurred-orb pointer-events-none absolute -left-16 top-[18%] h-[28rem] w-[28rem] rounded-full bg-rj-primary/18 md:left-[-4rem] md:h-[32rem] md:w-[32rem]"
+          className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_140%_90%_at_50%_-15%,rgba(0,74,92,0.42)_0%,transparent_58%)]"
           aria-hidden
         />
         <div
-          className="lj-blurred-orb pointer-events-none absolute bottom-[12%] -right-20 h-[26rem] w-[26rem] rounded-full bg-rj-secondary/12 md:right-[-6rem] md:h-[30rem] md:w-[30rem]"
+          className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(126,200,212,0.12)_0%,transparent_55%)]"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-rj-band/90 via-rj-band/20 to-transparent"
+          className="lj-blurred-orb pointer-events-none absolute -left-16 top-[18%] z-[2] h-[28rem] w-[28rem] rounded-full bg-rj-primary/18 md:left-[-4rem] md:h-[32rem] md:w-[32rem]"
+          aria-hidden
+        />
+        <div
+          className="lj-blurred-orb pointer-events-none absolute bottom-[12%] -right-20 z-[2] h-[26rem] w-[26rem] rounded-full bg-rj-secondary/12 md:right-[-6rem] md:h-[30rem] md:w-[30rem]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-40 bg-gradient-to-t from-rj-band/90 via-rj-band/20 to-transparent"
           aria-hidden
         />
 
@@ -82,7 +105,9 @@ export default async function LanguageJobsPage({
           <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-14 xl:gap-20 2xl:gap-24">
             <div className="min-w-0 flex-1 lg:max-w-[min(52rem,54%)] xl:max-w-[min(56rem,52%)]">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-rj-secondary/30 bg-rj-surface-high/75 px-4 py-1.5 shadow-[0_4px_24px_rgba(0,0,0,0.2)] backdrop-blur-md">
-                <MaterialIcon name="flight_takeoff" className="text-lg text-rj-secondary" />
+                <span className="text-lg leading-none text-rj-secondary" aria-hidden>
+                  🛫
+                </span>
                 <span className="text-sm font-semibold uppercase tracking-wide text-rj-secondary">Relo Paid!</span>
               </div>
               <h1 className="font-rj-headline mb-6 text-balance text-4xl font-extrabold leading-[1.08] tracking-tight text-rj-fg sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.25rem] xl:leading-[1.05] 2xl:text-8xl">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { BrowseJobDto } from "@/lib/remote-jobs/browse-data";
@@ -26,6 +27,10 @@ import { TestimonialsSection } from "./testimonials-section";
 /** Glass panel — aligned with rj-elevated + rj-secondary */
 const glassPanel =
   "rounded-xl border border-rj-secondary/15 bg-rj-elevated/45 backdrop-blur-[12px]";
+
+/** Remote work hero — laptop, coffee, workspace; Unsplash (images.unsplash.com in next.config.ts) */
+const REMOTE_JOBS_HERO_IMAGE =
+  "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2560&q=88";
 
 /** Teamtailor careersite — speak with a recruiter / book a meeting (same as hero + bottom CTA). */
 const RECRUITER_CONTACT_URL =
@@ -452,18 +457,41 @@ export default function RemoteJobsPage() {
 
   return (
     <main className="w-full min-h-full overflow-x-hidden bg-rj-bg font-rj-body text-rj-fg">
-      {/* Hero */}
-      <section className="relative flex min-h-[min(716px,88vh)] flex-col items-center justify-center overflow-hidden px-6 text-center bg-[radial-gradient(ellipse_120%_80%_at_50%_-10%,#003f4d_0%,#00161d_45%,#00161d_100%)]">
+      {/* Hero — full-bleed remote-work photography + teal/gold brand overlays */}
+      <section className="relative flex min-h-[min(760px,90vh)] flex-col items-center justify-center overflow-hidden bg-[#00161d] px-6 text-center">
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <Image
+            src={REMOTE_JOBS_HERO_IMAGE}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={88}
+            className="object-cover object-[center_42%] scale-105 motion-reduce:scale-100"
+          />
+        </div>
         <div
-          className="pointer-events-none absolute -left-24 -top-24 h-96 w-96 rounded-full bg-rj-secondary/[0.12] blur-[100px]"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-br from-[#00161d]/92 via-[#002a33]/78 to-[#00161d]/95 max-md:from-[#00161d]/94 max-md:via-[#002530]/82"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-rj-primary/[0.09] blur-[100px]"
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#00161d] via-transparent to-black/45"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-rj-band to-transparent"
+          className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_100%_70%_at_50%_20%,rgba(0,90,104,0.35)_0%,transparent_55%)]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -left-24 -top-24 z-[2] h-96 w-96 rounded-full bg-rj-secondary/[0.12] blur-[100px]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -bottom-24 -right-24 z-[2] h-96 w-96 rounded-full bg-rj-primary/[0.09] blur-[100px]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-40 bg-gradient-to-t from-rj-band to-transparent"
           aria-hidden
         />
 

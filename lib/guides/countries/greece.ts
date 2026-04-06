@@ -13,9 +13,9 @@ export const greece: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1500,
-  seoTitle: "Working Remotely in Greece 2026 — Digital Nomad Visa & Islands",
+  seoTitle: "Working in Greece: The Complete Expat Guide (2026)",
   seoDescription:
-    "Greece remote work guide: digital nomad visa, Athens and Thessaloniki costs, islands, taxes and community tips.",
+    "Thinking about working in Greece or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa with income threshold",
     "Island lifestyle options off-season",

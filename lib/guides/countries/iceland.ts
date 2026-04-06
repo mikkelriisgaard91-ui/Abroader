@@ -13,9 +13,9 @@ export const iceland: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Very High",
   avgMonthlyCost: 2900,
-  seoTitle: "Working Remotely in Iceland 2026 — Digital Nomad Visa & Reykjavík",
+  seoTitle: "Working in Iceland: The Complete Expat Guide (2026)",
   seoDescription:
-    "Iceland remote work: long-term remote work visa, volcanic landscapes, Reykjavík costs and tax notes.",
+    "Thinking about working in Iceland or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad / long-term remote work visa for qualifying earners",
     "Otherworldly nature between work blocks",

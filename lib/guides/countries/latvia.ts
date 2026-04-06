@@ -13,9 +13,9 @@ export const latvia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Medium",
   avgMonthlyCost: 1400,
-  seoTitle: "Working Remotely in Latvia 2026 — Digital Nomad Visa & Riga",
+  seoTitle: "Working in Latvia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Latvia remote work guide: digital nomad visa, Riga Art Nouveau living, Baltic travel, costs and taxes.",
+    "Thinking about working in Latvia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital nomad visa for remote employees and freelancers",
     "Riga: affordable Baltic capital",

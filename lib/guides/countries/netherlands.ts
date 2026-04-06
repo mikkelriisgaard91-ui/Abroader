@@ -13,9 +13,9 @@ export const netherlands: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2600,
-  seoTitle: "Working Remotely in the Netherlands 2026 — DAFT, Housing & Taxes",
+  seoTitle: "Working in the Netherlands: The Complete Expat Guide (2026)",
   seoDescription:
-    "Guide to remote work in NL: highly skilled migrant route, DAFT for US citizens, Amsterdam and Rotterdam costs, 30% ruling context.",
+    "Thinking about working in the Netherlands or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Excellent English in business",
     "World-class cycling and public transport",

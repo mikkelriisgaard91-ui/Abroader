@@ -9,55 +9,8 @@ import {
   LANGUAGE_JOBS_UI_TAB_ORDER,
 } from "@/lib/remote-jobs/language-job-tabs";
 import type { FeaturedJobDto, TeamtailorFeaturedResult } from "@/lib/remote-jobs/teamtailor-featured";
+import { FeaturedJobCard } from "@/components/FeaturedJobCard";
 import { RECRUITER_CONTACT_URL } from "./content";
-
-const glassCard =
-  "rounded-2xl border border-white/10 bg-rj-elevated/45 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.25)]";
-
-function LanguageJobCard({ job }: { job: FeaturedJobDto }) {
-  return (
-    <article
-      className={`${glassCard} group relative flex flex-col overflow-hidden transition-all hover:border-rj-secondary/25 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]`}
-    >
-      <div className="relative h-48 w-full shrink-0 overflow-hidden bg-gradient-to-br from-rj-elevated to-rj-surface-high">
-        {job.pictureUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element -- Teamtailor careersite URLs
-          <img
-            src={job.pictureUrl}
-            alt=""
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center text-4xl text-rj-secondary/50">✦</div>
-        )}
-        <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(0,22,29,0.72)] via-transparent to-transparent opacity-90"
-          aria-hidden
-        />
-      </div>
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-rj-headline mb-2 text-lg font-bold leading-snug text-rj-fg md:text-xl">{job.title}</h3>
-        <p className="mb-3 text-sm text-rj-muted">📍 {job.locationLabel}</p>
-        <span className="mb-4 inline-flex w-fit rounded-full border border-rj-secondary/20 bg-rj-secondary/10 px-3 py-1 text-xs text-rj-secondary">
-          {job.employmentTypeLabel}
-        </span>
-        <div className="mt-auto">
-          <a
-            href={job.applyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-bold text-rj-primary transition-transform group-hover:translate-x-0.5"
-          >
-            Apply now
-            <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
-        </div>
-      </div>
-    </article>
-  );
-}
 
 const filterBtnBase =
   "rounded-full border px-4 py-2 text-sm font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rj-secondary sm:px-5 sm:py-2.5 sm:text-base";
@@ -97,7 +50,7 @@ function renderPanel(
       <>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {result.jobs.map((job) => (
-            <LanguageJobCard key={job.id} job={job} />
+            <FeaturedJobCard key={job.id} job={job} />
           ))}
         </div>
         <div className="mt-12 flex justify-center">

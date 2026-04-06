@@ -13,9 +13,9 @@ export const poland: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 1200,
-  seoTitle: "Working Remotely in Poland 2026 — Kraków, Warsaw & Cost of Living",
+  seoTitle: "Working in Poland: The Complete Expat Guide (2026)",
   seoDescription:
-    "Poland remote work guide: visa types, Kraków and Warsaw rents, fast internet, taxes and expat tips.",
+    "Thinking about working in Poland or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Very strong fibre and mobile speeds in cities",
     "Affordable cost base vs western EU",

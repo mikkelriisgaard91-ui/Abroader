@@ -1,6 +1,39 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/guides/united-kingdom",
+        destination: "/guides/uk",
+        permanent: true,
+      },
+      {
+        source: "/guides/great-britain",
+        destination: "/guides/uk",
+        permanent: true,
+      },
+      {
+        source: "/guides/britain",
+        destination: "/guides/uk",
+        permanent: true,
+      },
+    ];
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
+  },
   turbopack: {},
   webpack: (config, { dev }) => {
     if (dev) {

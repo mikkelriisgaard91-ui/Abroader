@@ -13,9 +13,9 @@ export const france: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2400,
-  seoTitle: "Working Remotely in France 2026 — Visas, Paris vs Regions & Taxes",
+  seoTitle: "Working in France: The Complete Expat Guide (2026)",
   seoDescription:
-    "Remote work in France: talent passport routes, cost of living in Paris and Lyon, healthcare, taxes and coworking.",
+    "Thinking about working in France or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Strong infrastructure in major metros",
     "Passeport Talent for qualifying employees and founders",

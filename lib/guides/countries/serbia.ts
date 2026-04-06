@@ -13,9 +13,9 @@ export const serbia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 900,
-  seoTitle: "Working Remotely in Serbia 2026 — Digital Nomad Visa & Belgrade",
+  seoTitle: "Working in Serbia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Serbia remote work: digital nomad temporary stay, Belgrade and Novi Sad costs, nightlife, taxes overview.",
+    "Thinking about working in Serbia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa (temporary residence for remote work)",
     "Belgrade nightlife and café culture",

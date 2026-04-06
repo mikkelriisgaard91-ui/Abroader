@@ -13,9 +13,9 @@ export const montenegro: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 1000,
-  seoTitle: "Working Remotely in Montenegro 2026 — Kotor Bay & Digital Nomads",
+  seoTitle: "Working in Montenegro: The Complete Expat Guide (2026)",
   seoDescription:
-    "Montenegro remote work: residence by investment context, Kotor and Podgorica costs, Adriatic lifestyle.",
+    "Thinking about working in Montenegro or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Stunning Bay of Kotor",
     "Euro currency adoption",

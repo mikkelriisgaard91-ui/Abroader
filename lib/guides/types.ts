@@ -30,6 +30,9 @@ export type CountryGuide = {
 
   highlights: string[];
 
+  /** Material Symbols names for Overview cards (optional; aligns icons with highlight text). */
+  overviewHighlightIcons?: string[];
+
   visaOptions: {
 
     name: string;
@@ -51,6 +54,9 @@ export type CountryGuide = {
     avgRent: string;
 
     coworkingSpaces: string;
+
+    /** Optional hero photo for this city (Top Nomad Hubs). When omitted, a flag + gradient placeholder is shown. */
+    imageUrl?: string;
 
   }[];
 

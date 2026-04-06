@@ -13,9 +13,9 @@ export const spain: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1800,
-  seoTitle: "Working Remotely in Spain 2026 — Visa, Cost of Living & Jobs",
+  seoTitle: "Working in Spain: The Complete Expat Guide (2026)",
   seoDescription:
-    "Complete guide to working remotely in Spain. Digital nomad visa, cost of living, best cities, tax info and remote jobs available now.",
+    "Thinking about working in Spain or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa available since 2023",
     "300+ days of sunshine per year",

@@ -13,9 +13,9 @@ export const estonia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Medium",
   avgMonthlyCost: 1800,
-  seoTitle: "Working Remotely in Estonia 2026 — Digital Nomad Visa & e-Residency",
+  seoTitle: "Working in Estonia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Estonia for remote workers: digital nomad visa vs e-Residency, Tallinn costs, startup scene and taxes.",
+    "Thinking about working in Estonia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa for location-independent workers",
     "e-Residency for online EU company — not a personal immigration visa",

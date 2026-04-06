@@ -13,9 +13,9 @@ export const cyprus: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1550,
-  seoTitle: "Working Remotely in Cyprus 2026 — Digital Nomad Visa & Limassol",
+  seoTitle: "Working in Cyprus: The Complete Expat Guide (2026)",
   seoDescription:
-    "Cyprus remote work: digital nomad visa, Limassol tech scene, tax incentives context, island lifestyle.",
+    "Thinking about working in Cyprus or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa with income threshold",
     "Non-dom tax regime interest for HNWIs — seek advice",

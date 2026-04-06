@@ -13,9 +13,9 @@ export const belgium: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2200,
-  seoTitle: "Working Remotely in Belgium 2026 — EU Hub, Brussels & Taxes",
+  seoTitle: "Working in Belgium: The Complete Expat Guide (2026)",
   seoDescription:
-    "Belgium remote work: single permit employment, Brussels and Antwerp costs, multilingual life, tax complexity.",
+    "Thinking about working in Belgium or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "EU and NATO institutions in Brussels",
     "Excellent trains to London, Paris, Amsterdam",

@@ -13,9 +13,9 @@ export const moldova: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 750,
-  seoTitle: "Working Remotely in Moldova 2026 — Chișinău & Wine Country",
+  seoTitle: "Working in Moldova: The Complete Expat Guide (2026)",
   seoDescription:
-    "Moldova remote work: stay permits, Chișinău costs, wine culture, regional context and safety awareness.",
+    "Thinking about working in Moldova or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Europe's lowest cost bases",
     "World-class wine cellars (Cricova, Mileștii Mici)",

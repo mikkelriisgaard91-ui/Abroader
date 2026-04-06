@@ -13,9 +13,9 @@ export const czechia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Medium",
   avgMonthlyCost: 1400,
-  seoTitle: "Working Remotely in Czechia 2026 — Digital Nomad Visa & Prague",
+  seoTitle: "Working in the Czech Republic: The Complete Expat Guide (2026)",
   seoDescription:
-    "Remote work in the Czech Republic: digital nomad visa, Prague and Brno costs, taxes and coworking scene.",
+    "Thinking about working in the Czech Republic or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital nomad visa for qualifying remote workers",
     "Prague: affordable vs western Europe with strong tech talent",

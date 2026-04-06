@@ -13,9 +13,9 @@ export const malta: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1700,
-  seoTitle: "Working Remotely in Malta 2026 — Nomad Residence & Gaming Hub",
+  seoTitle: "Working in Malta: The Complete Expat Guide (2026)",
   seoDescription:
-    "Malta remote work: Nomad Residence Permit, iGaming industry, Sliema costs, English-speaking island life.",
+    "Thinking about working in Malta or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Nomad Residence Permit for remote workers",
     "English official — easy admin language",

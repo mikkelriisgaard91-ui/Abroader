@@ -13,9 +13,9 @@ export const sweden: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2800,
-  seoTitle: "Working Remotely in Sweden 2026 — Work Permits, Stockholm & Taxes",
+  seoTitle: "Working in Sweden: The Complete Expat Guide (2026)",
   seoDescription:
-    "Sweden remote work guide: employer sponsorship, personnummer life, Stockholm and Gothenburg costs, parental leave culture.",
+    "Thinking about working in Sweden or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "World-class infrastructure and English proficiency",
     "Strong labour protections and parental leave",

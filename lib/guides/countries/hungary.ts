@@ -13,9 +13,9 @@ export const hungary: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 1150,
-  seoTitle: "Working Remotely in Hungary 2026 — White Card & Budapest",
+  seoTitle: "Working in Hungary: The Complete Expat Guide (2026)",
   seoDescription:
-    "Hungary remote work: White Card digital nomad visa, Budapest costs, baths, taxes and coworking.",
+    "Thinking about working in Hungary or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "White Card for non-EU remote workers",
     "Budapest: spas, ruin bars, Danube lifestyle",

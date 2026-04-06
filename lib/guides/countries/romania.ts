@@ -13,9 +13,9 @@ export const romania: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 1000,
-  seoTitle: "Working Remotely in Romania 2026 — Digital Nomad Visa & Bucharest",
+  seoTitle: "Working in Romania: The Complete Expat Guide (2026)",
   seoDescription:
-    "Romania for remote workers: digital nomad visa, Bucharest and Cluj costs, mountains, taxes and tips.",
+    "Thinking about working in Romania or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital nomad visa for qualifying applicants",
     "Among Europe's fastest internet",

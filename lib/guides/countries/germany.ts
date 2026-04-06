@@ -13,9 +13,9 @@ export const germany: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Medium",
   avgMonthlyCost: 2200,
-  seoTitle: "Working Remotely in Germany 2026 — Freelance Visa, Cities & Taxes",
+  seoTitle: "Working in Germany: The Complete Expat Guide (2026)",
   seoDescription:
-    "Guide to remote work in Germany: freelance visa, Blue Card context, Berlin and Munich costs, healthcare and tax basics.",
+    "Thinking about working in Germany or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Strong fibre and mobile data in cities",
     "Freelance (§21) and employment routes well documented",

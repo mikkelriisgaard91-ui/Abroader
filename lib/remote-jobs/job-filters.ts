@@ -99,7 +99,7 @@ export const LOCATION_KEYWORDS: Record<Exclude<LocationRegionFilter, "all" | "wo
     "pacific",
     "apac",
   ],
-  africa: ["africa", "nigeria", "kenya", "south africa"],
+  africa: ["africa", "nigeria", "kenya", "south africa", "ethiopia"],
   "middle-east": ["uae", "dubai", "middle east", "israel"],
 };
 

@@ -13,9 +13,9 @@ export const bosnia: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 850,
-  seoTitle: "Working Remotely in Bosnia & Herzegovina 2026 — Sarajevo & Mostar",
+  seoTitle: "Working in Bosnia and Herzegovina: The Complete Expat Guide (2026)",
   seoDescription:
-    "Bosnia remote work: stay rules, Sarajevo and Banja Luka costs, mountains, community and practical tips.",
+    "Thinking about working in Bosnia and Herzegovina or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Dramatic mountains and affordable living",
     "Sarajevo's east-meets-west history",

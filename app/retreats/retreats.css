@@ -1,0 +1,28 @@
+/* Retreats — light mode, aligned with Abroader brand (:root --teal, --gold, --snow, --teal-light) */
+
+.retreats-surface {
+  /* Soft snow → teal wash → warm neutral (no harsh cyan) */
+  background: linear-gradient(180deg, #fafafa 0%, #e8f4f7 42%, #f2efe9 100%);
+  min-height: 100%;
+  color: #2a3d42;
+}
+
+.retreats-hero-breathe {
+  animation: retreats-floaty 14s ease-in-out infinite;
+}
+
+@keyframes retreats-floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .retreats-hero-breathe {
+    animation: none;
+  }
+}

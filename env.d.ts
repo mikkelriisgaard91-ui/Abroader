@@ -14,5 +14,9 @@ declare namespace NodeJS {
     TEAMTAILOR_ENGLISH_DEPARTMENT_ID?: string;
     TEAMTAILOR_FRENCH_DEPARTMENT_ID?: string;
     TEAMTAILOR_SPANISH_DEPARTMENT_ID?: string;
+    /** Optional override for `/hospitality` seasonal jobs department (Partner API /departments). */
+    TEAMTAILOR_SEASONAL_DEPARTMENT_ID?: string;
+    /** Optional override for `/volunteering` department (Partner API /departments). */
+    TEAMTAILOR_VOLUNTEER_DEPARTMENT_ID?: string;
   }
 }

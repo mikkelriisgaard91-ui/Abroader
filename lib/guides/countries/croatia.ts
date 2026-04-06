@@ -13,9 +13,9 @@ export const croatia: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1600,
-  seoTitle: "Working Remotely in Croatia 2026 — Digital Nomad Visa & Coast",
+  seoTitle: "Working in Croatia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Croatia for remote workers: digital nomad permit, Split and Zagreb costs, Adriatic lifestyle and tax notes.",
+    "Thinking about working in Croatia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Residence Permit (well-known EU remote route)",
     "Stunning Adriatic coastline",

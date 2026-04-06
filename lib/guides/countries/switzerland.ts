@@ -13,9 +13,9 @@ export const switzerland: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Very High",
   avgMonthlyCost: 3800,
-  seoTitle: "Working Remotely in Switzerland 2026 — Permits, Zurich & Geneva Costs",
+  seoTitle: "Working in Switzerland: The Complete Expat Guide (2026)",
   seoDescription:
-    "Switzerland remote work: L / B permits context, Zurich and Geneva living costs, taxes by canton, mountains.",
+    "Thinking about working in Switzerland or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Highest salaries in Europe for many roles",
     "Cantonal tax competition — choose wisely",

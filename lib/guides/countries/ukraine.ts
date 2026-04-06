@@ -13,9 +13,9 @@ export const ukraine: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 900,
-  seoTitle: "Working Remotely in Ukraine 2026 — Context, Cities & Safety",
+  seoTitle: "Working in Ukraine: The Complete Expat Guide (2026)",
   seoDescription:
-    "Ukraine remote work overview: current conflict context, historical IT strength, Lviv and Kyiv notes — verify safety and law before travel.",
+    "Thinking about working in Ukraine or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Historically strong engineering talent pool",
     "Improving digital infrastructure pre-2022",

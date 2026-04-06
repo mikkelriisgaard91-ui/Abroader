@@ -13,9 +13,9 @@ export const turkey: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1200,
-  seoTitle: "Working Remotely in Turkey 2026 — Istanbul & Coastal Cities",
+  seoTitle: "Working in Turkey: The Complete Expat Guide (2026)",
   seoDescription:
-    "Turkey remote work: residence permits, Istanbul and Antalya costs, inflation context, taxes and community.",
+    "Thinking about working in Turkey or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Istanbul bridges Europe and Asia",
     "Tourism residence and property-linked options common",

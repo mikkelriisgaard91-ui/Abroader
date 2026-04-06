@@ -13,9 +13,9 @@ export const scotland: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2400,
-  seoTitle: "Working Remotely in Scotland 2026 — Edinburgh, Glasgow & Highlands",
+  seoTitle: "Working in Scotland: The Complete Expat Guide (2026)",
   seoDescription:
-    "Scotland remote work: UK visa context applies, Edinburgh Festival city, Glasgow tech, cost of living and nature.",
+    "Thinking about working in Scotland or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Same UK visa rules — apply UK-wide guidance",
     "Edinburgh: culture and festivals",

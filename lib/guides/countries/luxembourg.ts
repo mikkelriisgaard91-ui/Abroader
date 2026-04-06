@@ -13,9 +13,9 @@ export const luxembourg: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Very High",
   avgMonthlyCost: 3100,
-  seoTitle: "Working Remotely in Luxembourg 2026 — Finance Hub & Housing",
+  seoTitle: "Working in Luxembourg: The Complete Expat Guide (2026)",
   seoDescription:
-    "Luxembourg remote work: EU worker mobility, high salaries, housing shortage tips, tax and cross-border life.",
+    "Thinking about working in Luxembourg or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Top GDP per capita and finance sector",
     "Easy weekend trips to neighbours",

@@ -8,6 +8,8 @@ import {
   LANGUAGE_JOB_TAB_ORDER,
   type LanguageJobTabId,
 } from "@/lib/remote-jobs/language-job-tabs";
+import { SEASONAL_JOB_DEPARTMENT_NAMES } from "@/lib/remote-jobs/seasonal-job-config";
+import { VOLUNTEER_JOB_DEPARTMENT_NAMES } from "@/lib/volunteering/volunteer-job-config";
 
 export const FEATURED_TEAMTAILOR_API_VERSION = "20210218";
 
@@ -444,4 +446,68 @@ export async function fetchAllLanguageDepartmentJobs(): Promise<Record<LanguageJ
 export async function fetchDanishSpeakingDepartmentJobs(): Promise<TeamtailorFeaturedResult> {
   const all = await fetchAllLanguageDepartmentJobs();
   return all.danish;
+}
+
+async function fetchSeasonalDepartmentJobsUncached(): Promise<TeamtailorFeaturedResult> {
+  const override = envString("TEAMTAILOR_SEASONAL_DEPARTMENT_ID");
+  if (override) {
+    return fetchPublishedJobsForDepartment(override);
+  }
+  const token = teamtailorApiToken();
+  if (!token) {
+    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured.", jobs: [] };
+  }
+  const departmentId = await findDepartmentIdByNames(SEASONAL_JOB_DEPARTMENT_NAMES);
+  if (!departmentId) {
+    const tried = SEASONAL_JOB_DEPARTMENT_NAMES.join(", ");
+    return {
+      ok: false,
+      error: `No department matched (${tried}). Set TEAMTAILOR_SEASONAL_DEPARTMENT_ID to the Teamtailor department id, or add the exact department name to SEASONAL_JOB_DEPARTMENT_NAMES in seasonal-job-config.ts.`,
+      jobs: [],
+    };
+  }
+  return fetchPublishedJobsForDepartment(departmentId);
+}
+
+const seasonalDepartmentJobsCrossRequest = unstable_cache(
+  () => fetchSeasonalDepartmentJobsUncached(),
+  ["teamtailor-seasonal-dept-jobs-v1"],
+  { revalidate: 180 }
+);
+
+/** Published jobs for the Seasonal Jobs Teamtailor department (cached ~3 min). */
+export async function fetchSeasonalDepartmentJobs(): Promise<TeamtailorFeaturedResult> {
+  return seasonalDepartmentJobsCrossRequest();
+}
+
+async function fetchVolunteerDepartmentJobsUncached(): Promise<TeamtailorFeaturedResult> {
+  const override = envString("TEAMTAILOR_VOLUNTEER_DEPARTMENT_ID");
+  if (override) {
+    return fetchPublishedJobsForDepartment(override);
+  }
+  const token = teamtailorApiToken();
+  if (!token) {
+    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured.", jobs: [] };
+  }
+  const departmentId = await findDepartmentIdByNames(VOLUNTEER_JOB_DEPARTMENT_NAMES);
+  if (!departmentId) {
+    const tried = VOLUNTEER_JOB_DEPARTMENT_NAMES.join(", ");
+    return {
+      ok: false,
+      error: `No department matched (${tried}). Set TEAMTAILOR_VOLUNTEER_DEPARTMENT_ID to the Teamtailor department id, or add the exact department name to VOLUNTEER_JOB_DEPARTMENT_NAMES in volunteer-job-config.ts.`,
+      jobs: [],
+    };
+  }
+  return fetchPublishedJobsForDepartment(departmentId);
+}
+
+const volunteerDepartmentJobsCrossRequest = unstable_cache(
+  () => fetchVolunteerDepartmentJobsUncached(),
+  ["teamtailor-volunteer-dept-jobs-v1"],
+  { revalidate: 180 }
+);
+
+/** Published jobs for the Volunteering Teamtailor department (cached ~3 min). */
+export async function fetchVolunteerDepartmentJobs(): Promise<TeamtailorFeaturedResult> {
+  return volunteerDepartmentJobsCrossRequest();
 }

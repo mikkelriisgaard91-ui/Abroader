@@ -13,9 +13,9 @@ export const italy: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1900,
-  seoTitle: "Working Remotely in Italy 2026 — Digital Nomad Visa, Cities & Taxes",
+  seoTitle: "Working in Italy: The Complete Expat Guide (2026)",
   seoDescription:
-    "Remote work in Italy: digital nomad visa overview, Milan vs Rome vs south, cost of living and tax planning tips.",
+    "Thinking about working in Italy or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "National digital nomad visa pathway for non-EU remote workers",
     "Regional lifestyle from Alps to Sicily",

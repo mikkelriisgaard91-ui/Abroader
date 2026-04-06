@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { startTransition, useEffect, useState } from "react";
+import { GET_CONTACTED_URL } from "@/lib/employers";
 import { verticals } from "@/lib/verticals";
 
 function MenuIcon({ open }: { open: boolean }) {
@@ -64,17 +65,6 @@ export default function Nav() {
           <img src="/logo-abroader.png" alt="" className="site-nav__logo" />
         </Link>
 
-        <button
-          type="button"
-          className="site-nav__menu-btn"
-          aria-expanded={menuOpen}
-          aria-controls="site-nav-menu"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          <MenuIcon open={menuOpen} />
-        </button>
-
         <nav id="site-nav-menu" className="site-nav__links" aria-label="Main navigation">
           {verticals.map((v) => {
             const active = pathname === v.href || pathname.startsWith(`${v.href}/`);
@@ -92,7 +82,46 @@ export default function Nav() {
               </Link>
             );
           })}
+          <Link
+            href="/about-us"
+            className={`site-nav__link${pathname === "/about-us" || pathname.startsWith("/about-us/") ? " site-nav__link--active" : ""}`}
+            aria-current={pathname === "/about-us" || pathname.startsWith("/about-us/") ? "page" : undefined}
+          >
+            <span aria-hidden style={{ marginRight: "0.4rem" }}>
+              📖
+            </span>
+            About us
+          </Link>
         </nav>
+
+        <div className="site-nav__actions">
+          <Link
+            href="/employers"
+            className={`site-nav__cta site-nav__cta--employers${pathname === "/employers" || pathname.startsWith("/employers/") ? " site-nav__cta--employers-active" : ""}`}
+            aria-current={pathname === "/employers" || pathname.startsWith("/employers/") ? "page" : undefined}
+          >
+            Employers
+          </Link>
+          <a
+            href={GET_CONTACTED_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="site-nav__cta site-nav__cta--contacted"
+          >
+            Get contacted
+          </a>
+        </div>
+
+        <button
+          type="button"
+          className="site-nav__menu-btn"
+          aria-expanded={menuOpen}
+          aria-controls="site-nav-menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <MenuIcon open={menuOpen} />
+        </button>
       </div>
 
       {menuOpen ? (

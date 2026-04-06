@@ -13,9 +13,9 @@ export const finland: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "High",
   avgMonthlyCost: 2600,
-  seoTitle: "Working Remotely in Finland 2026 — Helsinki Tech & Quality of Life",
+  seoTitle: "Working in Finland: The Complete Expat Guide (2026)",
   seoDescription:
-    "Finland remote work: residence permits for work, Helsinki and Tampere costs, sauna culture, taxes and tips.",
+    "Thinking about working in Finland or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Top education and safety rankings",
     "Helsinki gaming and tech scene",

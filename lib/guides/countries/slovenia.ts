@@ -13,9 +13,9 @@ export const slovenia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Medium",
   avgMonthlyCost: 1500,
-  seoTitle: "Working Remotely in Slovenia 2026 — Ljubljana & Alpine Lifestyle",
+  seoTitle: "Working in Slovenia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Slovenia remote work: single work permit, Ljubljana and Maribor costs, Alps and Adriatic nearby, taxes.",
+    "Thinking about working in Slovenia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Green capital with dragon charm",
     "Single work and residence permit process",

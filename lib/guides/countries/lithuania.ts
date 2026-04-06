@@ -13,9 +13,9 @@ export const lithuania: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Medium",
   avgMonthlyCost: 1350,
-  seoTitle: "Working Remotely in Lithuania 2026 — Vilnius Fintech & Cost of Living",
+  seoTitle: "Working in Lithuania: The Complete Expat Guide (2026)",
   seoDescription:
-    "Lithuania remote work: startup visa options, Vilnius and Kaunas costs, Baltic lifestyle and taxes.",
+    "Thinking about working in Lithuania or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Startup visa for qualifying founders",
     "Vilnius old town + strong fibre",

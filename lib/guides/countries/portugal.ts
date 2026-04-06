@@ -13,9 +13,9 @@ export const portugal: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Medium",
   avgMonthlyCost: 1700,
-  seoTitle: "Working Remotely in Portugal 2026 — D7, Digital Nomad & Cost of Living",
+  seoTitle: "Working in Portugal: The Complete Expat Guide (2026)",
   seoDescription:
-    "Remote work in Portugal: Digital Nomad Visa, D7 passive income route, Lisbon and Porto costs, taxes and where to find remote jobs.",
+    "Thinking about working in Portugal or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa (temporary stay for remote workers)",
     "D7 visa popular with retirees and passive-income holders",

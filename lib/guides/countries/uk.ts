@@ -13,9 +13,9 @@ export const uk: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Very High",
   avgMonthlyCost: 3200,
-  seoTitle: "Working Remotely in the UK 2026 — Skilled Worker & London Costs",
+  seoTitle: "Working in the UK: The Complete Expat Guide (2026)",
   seoDescription:
-    "UK remote work: post-Brexit visa routes, London and Manchester costs, NHS, tax and coworking scene.",
+    "Thinking about working in the UK or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Global finance and tech hub in London",
     "Skilled Worker visa for sponsored roles",

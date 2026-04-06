@@ -13,9 +13,9 @@ export const armenia: CountryGuide = {
   internetSpeed: "Good",
   costOfLiving: "Low",
   avgMonthlyCost: 900,
-  seoTitle: "Working Remotely in Armenia 2026 — Yerevan & Tech Scene",
+  seoTitle: "Working in Armenia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Armenia remote work: long visa-free stays for many passports, Yerevan costs, diaspora returnees, taxes.",
+    "Thinking about working in Armenia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Long visa-free stays (180+ days) for many countries",
     "Growing tech product scene post-relocation wave",

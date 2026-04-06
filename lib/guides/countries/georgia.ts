@@ -13,9 +13,9 @@ export const georgia: CountryGuide = {
   internetSpeed: "Excellent",
   costOfLiving: "Low",
   avgMonthlyCost: 950,
-  seoTitle: "Working Remotely in Georgia 2026 — Digital Nomad Visa & Tbilisi",
+  seoTitle: "Working in Georgia: The Complete Expat Guide (2026)",
   seoDescription:
-    "Georgia remote work: digital nomad visa, 1% tax scheme context, Tbilisi and Batumi costs, Caucasus lifestyle.",
+    "Thinking about working in Georgia or moving there? Our expat guide covers visas, jobs, salaries, cost of living, and everything you need to know before you go.",
   highlights: [
     "Digital Nomad Visa / high-trust remote stay options",
     "365-day visa-free entry for many nationalities",
