@@ -25,6 +25,15 @@ function MenuIcon({ open }: { open: boolean }) {
 export default function Nav() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobileNav, setIsMobileNav] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => setIsMobileNav(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     startTransition(() => setMenuOpen(false));
@@ -65,51 +74,52 @@ export default function Nav() {
           <img src="/logo-abroader.png" alt="" className="site-nav__logo" />
         </Link>
 
-        <nav id="site-nav-menu" className="site-nav__links" aria-label="Main navigation">
-          {verticals.map((v) => {
-            const active = pathname === v.href || pathname.startsWith(`${v.href}/`);
-            return (
-              <Link
-                key={v.href}
-                href={v.href}
-                className={`site-nav__link${active ? " site-nav__link--active" : ""}`}
-                aria-current={active ? "page" : undefined}
-              >
-                <span aria-hidden style={{ marginRight: "0.4rem" }}>
-                  {v.emoji}
-                </span>
-                {v.title}
-              </Link>
-            );
-          })}
-          <Link
-            href="/about-us"
-            className={`site-nav__link${pathname === "/about-us" || pathname.startsWith("/about-us/") ? " site-nav__link--active" : ""}`}
-            aria-current={pathname === "/about-us" || pathname.startsWith("/about-us/") ? "page" : undefined}
-          >
-            <span aria-hidden style={{ marginRight: "0.4rem" }}>
-              📖
-            </span>
-            About us
-          </Link>
-        </nav>
+        <div
+          className="site-nav__drawer"
+          id="site-nav-menu"
+          aria-hidden={isMobileNav && !menuOpen ? true : undefined}
+          {...(isMobileNav && !menuOpen ? { inert: true } : {})}
+        >
+          <nav className="site-nav__links" aria-label="Main navigation">
+            {verticals.map((v) => {
+              const active = pathname === v.href || pathname.startsWith(`${v.href}/`);
+              return (
+                <Link
+                  key={v.href}
+                  href={v.href}
+                  className={`site-nav__link${active ? " site-nav__link--active" : ""}`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {v.title}
+                </Link>
+              );
+            })}
+            <Link
+              href="/about-us"
+              className={`site-nav__link${pathname === "/about-us" || pathname.startsWith("/about-us/") ? " site-nav__link--active" : ""}`}
+              aria-current={pathname === "/about-us" || pathname.startsWith("/about-us/") ? "page" : undefined}
+            >
+              About us
+            </Link>
+          </nav>
 
-        <div className="site-nav__actions">
-          <Link
-            href="/employers"
-            className={`site-nav__cta site-nav__cta--employers${pathname === "/employers" || pathname.startsWith("/employers/") ? " site-nav__cta--employers-active" : ""}`}
-            aria-current={pathname === "/employers" || pathname.startsWith("/employers/") ? "page" : undefined}
-          >
-            Employers
-          </Link>
-          <a
-            href={GET_CONTACTED_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="site-nav__cta site-nav__cta--contacted"
-          >
-            Get contacted
-          </a>
+          <div className="site-nav__actions">
+            <Link
+              href="/employers"
+              className={`site-nav__cta site-nav__cta--employers${pathname === "/employers" || pathname.startsWith("/employers/") ? " site-nav__cta--employers-active" : ""}`}
+              aria-current={pathname === "/employers" || pathname.startsWith("/employers/") ? "page" : undefined}
+            >
+              Employers
+            </Link>
+            <a
+              href={GET_CONTACTED_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="site-nav__cta site-nav__cta--contacted"
+            >
+              Get contacted
+            </a>
+          </div>
         </div>
 
         <button

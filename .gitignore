@@ -40,3 +40,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Do not commit a Git for Windows portable bundle if extracted here by mistake
+/mingw64/
+/bin/
+/cmd/
+/dev/
+/etc/
+/usr/
+git-bash.exe
+git-cmd.exe
+ReleaseNotes.html
+unins000.dat
+unins000.exe
+unins000.msg
