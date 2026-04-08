@@ -1,82 +1,165 @@
 import HomeVerticalCard from "@/components/HomeVerticalCard";
 import { verticals } from "@/lib/verticals";
 
+const stats = [
+  { value: "10,000+", label: "live opportunities" },
+  { value: "120+", label: "countries" },
+  { value: "Free", label: "always" },
+];
+
 export default function Page() {
   return (
-    <main
-      style={{
-        backgroundColor: "var(--snow)",
-        flex: 1,
-        width: "100%",
-        fontFamily: "Arial, Helvetica, sans-serif",
-      }}
-    >
+    <main style={{ backgroundColor: "#f5f5f3", flex: 1, width: "100%" }}>
+      {/* Hero */}
       <section
         style={{
-          backgroundColor: "#246374",
-          padding: "5rem 2rem 4rem",
+          background: "#0d1117",
+          padding: "7rem 2rem 6rem",
           textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
+        {/* Ambient glow */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -60%)",
+            width: "700px",
+            height: "450px",
+            background:
+              "radial-gradient(ellipse, rgba(36,99,116,0.45) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-100px",
+            right: "10%",
+            width: "300px",
+            height: "300px",
+            background:
+              "radial-gradient(ellipse, rgba(252,186,54,0.08) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Eyebrow badge */}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.45rem",
+            background: "rgba(252,186,54,0.1)",
+            border: "1px solid rgba(252,186,54,0.25)",
+            borderRadius: "999px",
+            padding: "0.4rem 1.1rem",
+            marginBottom: "2.25rem",
+            color: "#fcba36",
+            fontSize: "0.78rem",
+            fontWeight: 600,
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+          }}
+        >
+          <span>✦</span>
+          <span>Work · Travel · Live Abroad</span>
+        </div>
+
         <h1
           style={{
-            color: "#fcba36",
-            fontSize: "3rem",
-            fontWeight: 700,
-            marginBottom: "1rem",
+            fontSize: "clamp(2.75rem, 6vw, 5rem)",
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: "-0.025em",
+            marginBottom: "1.5rem",
             fontFamily: "Georgia, serif",
           }}
         >
-          Your life abroad starts here
+          <span style={{ color: "#ffffff" }}>Your life abroad</span>
+          <br />
+          <span
+            style={{
+              background: "linear-gradient(90deg, #fcba36 0%, #ffd97a 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            starts here
+          </span>
         </h1>
+
         <p
           style={{
-            color: "#ffffff",
-            fontSize: "1.2rem",
-            maxWidth: "560px",
-            margin: "0 auto 2rem",
-            lineHeight: 1.7,
+            color: "rgba(255,255,255,0.45)",
+            fontSize: "1.1rem",
+            maxWidth: "460px",
+            margin: "0 auto 3.25rem",
+            lineHeight: 1.75,
           }}
         >
-          Browse thousands of opportunities to work, teach, volunteer and live abroad — all in one
-          place.
+          Thousands of opportunities to work, teach, volunteer and live abroad —
+          all in one place.
         </p>
-        <input
-          type="text"
-          placeholder="Search jobs, locations, or keywords..."
+
+        {/* Stats pills */}
+        <div
           style={{
-            width: "100%",
-            maxWidth: "520px",
-            padding: "1rem 1.5rem",
-            borderRadius: "999px",
-            border: "none",
-            fontSize: "1rem",
-            outline: "none",
-            boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+            display: "flex",
+            justifyContent: "center",
+            gap: "0.6rem",
+            flexWrap: "wrap",
           }}
-        />
+        >
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                borderRadius: "999px",
+                padding: "0.5rem 1.25rem",
+                fontSize: "0.88rem",
+                color: "#fff",
+              }}
+            >
+              <span style={{ fontWeight: 700 }}>{s.value}</span>
+              <span style={{ color: "rgba(255,255,255,0.4)", marginLeft: "0.4rem" }}>
+                {s.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section style={{ padding: "4rem 2rem", maxWidth: "1100px", margin: "0 auto" }}>
-        <h2
-          style={{
-            textAlign: "center",
-            fontSize: "1.6rem",
-            fontWeight: 600,
-            color: "#246374",
-            marginBottom: "2.5rem",
-          }}
-        >
-          What are you looking for?
-        </h2>
+      {/* Cards */}
+      <section style={{ padding: "5rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <h2
+            style={{
+              fontSize: "clamp(1.6rem, 3vw, 2.25rem)",
+              fontWeight: 700,
+              color: "#0d1117",
+              letterSpacing: "-0.025em",
+              marginBottom: "0.6rem",
+            }}
+          >
+            Opportunities at abroader.io
+          </h2>
+        </div>
+
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "repeat(auto-fill, minmax(270px, 1fr))",
+            gap: "1rem",
           }}
         >
-          {verticals.map((v) => (
+          {verticals.filter((v) => v.href !== "/guides").map((v) => (
             <HomeVerticalCard key={v.href} v={v} />
           ))}
         </div>

@@ -195,6 +195,30 @@ export const REGIONS: RegionBlock[] = [
   },
 ];
 
+/** Listing plus parent region (for detail pages and breadcrumbs). */
+export type ColivingListingResolved = ColivingListing & {
+  regionId: string;
+  regionName: string;
+};
+
+export function getAllColivingSlugs(): string[] {
+  return REGIONS.flatMap((region) => region.listings.map((l) => l.id));
+}
+
+export function getColivingBySlug(slug: string): ColivingListingResolved | undefined {
+  for (const region of REGIONS) {
+    const listing = region.listings.find((l) => l.id === slug);
+    if (listing) {
+      return {
+        ...listing,
+        regionId: region.id,
+        regionName: region.name,
+      };
+    }
+  }
+  return undefined;
+}
+
 export const EXPLAINERS: { id: string; title: string; body: string; bullets?: string[] }[] = [
   {
     id: "what",

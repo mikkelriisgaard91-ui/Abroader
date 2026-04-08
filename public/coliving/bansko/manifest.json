@@ -1,0 +1,81 @@
+{
+  "id": "bansko",
+  "url": "https://www.nomadico.io/bansko-coliving",
+  "manifest": [
+    {
+      "uri": "d04e79_d212fa4281f14e3fbce3bdebe3ec5461~mv2.jpeg",
+      "filename": "bansko-01-d212fa4281f1.jpeg",
+      "bytes": 424509
+    },
+    {
+      "uri": "d04e79_d6cf47f12b6a4657b766d671c47d79f9~mv2.jpeg",
+      "filename": "bansko-02-d6cf47f12b6a.jpeg",
+      "bytes": 365875
+    },
+    {
+      "uri": "d04e79_a3120b15051a492095a1b05d84318664~mv2.jpeg",
+      "filename": "bansko-03-a3120b15051a.jpeg",
+      "bytes": 674055
+    },
+    {
+      "uri": "d04e79_6c45f9347eb94188bf2bff6ce696bacc~mv2.jpeg",
+      "filename": "bansko-04-6c45f9347eb9.jpeg",
+      "bytes": 301356
+    },
+    {
+      "uri": "d04e79_755aa618930643849f7cd20cb56a669f~mv2.jpeg",
+      "filename": "bansko-05-755aa6189306.jpeg",
+      "bytes": 369004
+    },
+    {
+      "uri": "d04e79_6f42f567a7944b2b94894d59a4ec7147~mv2.jpeg",
+      "filename": "bansko-06-6f42f567a794.jpeg",
+      "bytes": 267007
+    },
+    {
+      "uri": "d04e79_c1b220c45c0a4f6c80d5e6ff2c0ebc14~mv2.jpeg",
+      "filename": "bansko-07-c1b220c45c0a.jpeg",
+      "bytes": 283542
+    },
+    {
+      "uri": "d04e79_b10613585bdf48f0970a2d9629a7b997~mv2.jpeg",
+      "filename": "bansko-08-b10613585bdf.jpeg",
+      "bytes": 450034
+    },
+    {
+      "uri": "d04e79_a5250c118dc240d8a38187827970c792~mv2.jpeg",
+      "filename": "bansko-09-a5250c118dc2.jpeg",
+      "bytes": 316153
+    },
+    {
+      "uri": "d04e79_5a7167150f934db4b578c857d3b32505~mv2.jpg",
+      "filename": "bansko-10-5a7167150f93.jpg",
+      "bytes": 488008
+    },
+    {
+      "uri": "d04e79_9d6dd62c3aa042ebacd90916de1a8763~mv2.jpeg",
+      "filename": "bansko-11-9d6dd62c3aa0.jpeg",
+      "bytes": 400262
+    },
+    {
+      "uri": "d04e79_5eb8a4c2bbb24f56937230c5800ac41b~mv2.jpeg",
+      "filename": "bansko-12-5eb8a4c2bbb2.jpeg",
+      "bytes": 462944
+    },
+    {
+      "uri": "d04e79_39bdeef02eb6430bb69a870431287ffc~mv2.jpeg",
+      "filename": "bansko-13-39bdeef02eb6.jpeg",
+      "bytes": 507960
+    },
+    {
+      "uri": "d04e79_b7a4db2d5ab347fd9024b56c67f900c0~mv2.jpeg",
+      "filename": "bansko-14-b7a4db2d5ab3.jpeg",
+      "bytes": 566386
+    },
+    {
+      "uri": "d04e79_ce3123f7c42445eab2f8965d88cb6189~mv2.jpeg",
+      "filename": "bansko-15-ce3123f7c424.jpeg",
+      "bytes": 411021
+    }
+  ]
+}

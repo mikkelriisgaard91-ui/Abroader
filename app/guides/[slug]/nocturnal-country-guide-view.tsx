@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Inter, Plus_Jakarta_Sans, Rock_Salt } from "next/font/google";
 import type { CountryGuide } from "@/lib/guides";
+import { getHeroPills } from "@/lib/guides/hero-pills";
 import { getCityHeroImagePath } from "@/lib/guides/city-hero-images";
 import { nocturnalHeroFlagUrl } from "@/lib/guides/nocturnal-media-overrides";
 import { NocturnalGuideFAQ } from "./guide-nocturnal-faq";
@@ -29,56 +30,6 @@ function parseLifestyleTotal(guide: CountryGuide): string {
   return guide.avgMonthlyCost.toLocaleString("en-US");
 }
 
-function costPillLabel(cost: CountryGuide["costOfLiving"]): string {
-  switch (cost) {
-    case "Low":
-      return "LOW COST";
-    case "Medium":
-      return "MODERATE COST";
-    case "High":
-      return "HIGHER COST";
-    case "Very High":
-      return "PREMIUM COST";
-    default:
-      return "MODERATE COST";
-  }
-}
-
-function visaPillLabel(visa: CountryGuide["visaDifficulty"]): string {
-  switch (visa) {
-    case "Easy":
-      return "EASY VISA";
-    case "Medium":
-      return "PLAN VISA";
-    case "Hard":
-      return "VISA RESEARCH";
-    default:
-      return "PLAN VISA";
-  }
-}
-
-function internetPillLabel(speed: CountryGuide["internetSpeed"]): string {
-  switch (speed) {
-    case "Excellent":
-    case "Good":
-      return "GOOD INTERNET";
-    case "Average":
-      return "OK INTERNET";
-    case "Poor":
-      return "CHECK INTERNET";
-    default:
-      return "CHECK INTERNET";
-  }
-}
-
-function formatPills(guide: CountryGuide): { icon: string; label: string }[] {
-  return [
-    { icon: "payments", label: costPillLabel(guide.costOfLiving) },
-    { icon: "description", label: visaPillLabel(guide.visaDifficulty) },
-    { icon: "wifi", label: internetPillLabel(guide.internetSpeed) },
-  ];
-}
-
 function visaIntroBlurb(guide: CountryGuide): string {
   const s = guide.seoDescription.trim();
   if (s.length <= 320) return s;
@@ -96,7 +47,7 @@ export default function NocturnalCountryGuideView({
   const pros = guide.prosAndCons?.pros.slice(0, 3) ?? [];
   const cons = guide.prosAndCons?.cons.slice(0, 3) ?? [];
   const communities = guide.expatCommunities?.slice(0, 3) ?? [];
-  const pills = formatPills(guide);
+  const pills = getHeroPills(guide);
   const overviewHighlights =
     guide.highlights.length > 0 ? guide.highlights.slice(0, 4) : [guide.seoDescription];
   const heroFlagUrl = nocturnalHeroFlagUrl[guide.slug];
@@ -137,13 +88,20 @@ export default function NocturnalCountryGuideView({
             </p>
           ) : null}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {pills.map((p, i) => (
+            {pills.map((pill) => (
               <span
-                key={`${p.icon}-${i}`}
-                className="px-5 py-2 gg-glass-card rounded-full text-xs font-bold text-gg-secondary flex items-center gap-2 uppercase tracking-widest"
+                key={pill.label}
+                className="px-5 py-2 gg-glass-card rounded-full text-xs font-bold text-gg-secondary flex items-center gap-2 tracking-widest"
               >
-                <span className="material-symbols-gg text-[16px]">{p.icon}</span>
-                {p.label}
+                <img
+                  src={pill.src}
+                  alt=""
+                  width={18}
+                  height={18}
+                  className="shrink-0 size-[18px]"
+                  aria-hidden
+                />
+                <span className="uppercase">{pill.label}</span>
               </span>
             ))}
           </div>

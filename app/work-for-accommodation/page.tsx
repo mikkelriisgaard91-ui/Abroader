@@ -5,9 +5,8 @@ import { PlatformCard } from "./platform-card";
 const recruiterPrimaryCtaClass =
   "inline-flex items-center justify-center rounded-full bg-rj-primary px-8 py-4 text-base font-bold text-rj-on-primary shadow-[0_8px_28px_rgba(253,187,55,0.22)] transition-all hover:brightness-105 active:scale-[0.98] sm:px-10 sm:text-lg";
 
-/** European coastal town at sunset — Unsplash (images.unsplash.com in next.config.ts) */
-const HERO_SIDE_IMAGE =
-  "https://images.unsplash.com/photo-1499678329028-101435549a4a?auto=format&fit=crop&w=1200&q=85";
+/** Hostel dorm with European city view — Unsplash photo-1555854877-bab0e564b8d5 (local: public/work-for-accommodation/hero.jpg) */
+const HERO_SIDE_IMAGE = "/work-for-accommodation/hero.jpg";
 
 function MaterialIcon({ name, className }: { name: string; className?: string }) {
   return (
@@ -66,11 +65,11 @@ export default function WorkForAccommodationPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.45)] sm:aspect-[3/4] lg:aspect-[4/5]">
               <Image
                 src={HERO_SIDE_IMAGE}
-                alt="Traveler enjoying a sunset in a European coastal town"
+                alt="Bright hostel dorm with bunk beds and a window view over a European city street"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover object-[50%_35%]"
+                className="object-cover object-[50%_45%]"
               />
               <div
                 className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#001016]/80 via-transparent to-transparent"

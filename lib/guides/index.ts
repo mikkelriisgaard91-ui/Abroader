@@ -1,6 +1,7 @@
 import type { CountryGuide } from "./types";
 
 export type { CountryGuide } from "./types";
+export { getHeroPills, HERO_PILL_SRC } from "./hero-pills";
 import { albania } from "./countries/albania";
 import { antiguaAndBarbuda } from "./countries/antigua-and-barbuda";
 import { argentina } from "./countries/argentina";

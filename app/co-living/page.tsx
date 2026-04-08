@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   EXPLAINERS,
   HERO,
@@ -13,7 +14,7 @@ const recruiterPrimaryCtaClass =
   "inline-flex items-center justify-center rounded-full bg-rj-primary px-8 py-4 text-base font-bold text-rj-on-primary shadow-[0_8px_28px_rgba(253,187,55,0.22)] transition-all hover:brightness-105 active:scale-[0.98] sm:px-10 sm:text-lg";
 
 const readMoreButtonClass =
-  "mt-4 inline-flex w-full items-center justify-center rounded-full border border-rj-secondary/55 bg-rj-secondary/10 px-5 py-2.5 text-sm font-semibold text-rj-secondary transition hover:bg-rj-secondary/18 active:scale-[0.98] sm:w-auto sm:min-w-[10rem]";
+  "inline-flex w-full items-center justify-center rounded-full border border-rj-secondary/55 bg-rj-secondary/10 px-5 py-2.5 text-sm font-semibold text-rj-secondary transition hover:bg-rj-secondary/18 active:scale-[0.98] sm:w-auto sm:min-w-[10rem]";
 
 /** Sticky sub-nav sits under site header (min-height ~64px) */
 const CONTINENT_NAV_STICKY_TOP = "top-16";
@@ -43,7 +44,14 @@ const HERO_IMAGE =
 function ListingCard({ listing }: { listing: ColivingListing }) {
   return (
     <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-rj-surface-high/80 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm md:p-8">
-      <h3 className="font-rj-headline mb-2 text-xl font-bold leading-snug text-rj-fg sm:text-2xl">{listing.title}</h3>
+      <h3 className="font-rj-headline mb-2 text-xl font-bold leading-snug text-rj-fg sm:text-2xl">
+        <Link
+          href={`/co-living/${listing.id}`}
+          className="rounded-sm text-rj-fg transition hover:text-rj-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rj-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-rj-surface-high"
+        >
+          {listing.title}
+        </Link>
+      </h3>
       <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-rj-secondary">{listing.location}</p>
       <p className="mb-5 text-pretty text-base leading-relaxed text-rj-muted">{listing.description}</p>
       <ul className="mb-6 flex flex-1 flex-col gap-2 text-sm text-rj-fg/90">
@@ -60,14 +68,22 @@ function ListingCard({ listing }: { listing: ColivingListing }) {
             {p}
           </p>
         ))}
-        <a
-          href={listing.readMoreUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={readMoreButtonClass}
-        >
-          Read more
-        </a>
+        <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <Link
+            href={`/co-living/${listing.id}`}
+            className="inline-flex w-full items-center justify-center rounded-full border border-rj-primary/45 bg-rj-primary/12 px-5 py-2.5 text-sm font-semibold text-rj-primary transition hover:bg-rj-primary/20 active:scale-[0.98] sm:w-auto sm:min-w-[10rem]"
+          >
+            Full details
+          </Link>
+          <a
+            href={listing.readMoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={readMoreButtonClass}
+          >
+            Partner site
+          </a>
+        </div>
       </div>
     </article>
   );

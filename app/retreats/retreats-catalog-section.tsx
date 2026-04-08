@@ -23,12 +23,20 @@ const MAX_PRICE_OPTIONS: { value: number | null; label: string }[] = [
 ];
 
 function parseCategory(raw: string | null): RetreatCategory | "all" {
-  if (raw === "yoga" || raw === "surf") return raw;
+  if (raw === "yoga" || raw === "surf" || raw === "martial-arts" || raw === "motorcycle-trips") return raw;
   return "all";
 }
 
 function parseTypeFacet(raw: string | null): RetreatTypeFacet | "all" {
-  if (raw === "surf-camp" || raw === "surf-yoga" || raw === "kitesurf" || raw === "yoga-retreat") return raw;
+  if (
+    raw === "surf-camp" ||
+    raw === "surf-yoga" ||
+    raw === "kitesurf" ||
+    raw === "yoga-retreat" ||
+    raw === "martial-arts" ||
+    raw === "motorcycle-tour"
+  )
+    return raw;
   return "all";
 }
 
@@ -153,7 +161,7 @@ export function RetreatsCatalogSection() {
             Category
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4" role="radiogroup" aria-label="Retreat category">
-            {(["all", "surf", "yoga"] as const).map((cat) => {
+            {(["all", "surf", "yoga", "martial-arts", "motorcycle-trips"] as const).map((cat) => {
               const active = filters.category === cat;
               const label = cat === "all" ? "All" : RETREAT_CATEGORY_LABELS[cat];
               return (
@@ -306,7 +314,11 @@ export function RetreatsCatalogSection() {
                     rel="noopener noreferrer sponsored"
                     className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-[rgba(36,99,116,0.2)] bg-[#e8f4f7]/80 px-6 py-3.5 text-center text-sm font-semibold text-[#246374] transition-colors hover:border-[rgba(36,99,116,0.35)] hover:bg-[#e8f4f7]"
                   >
-                    {p.partner === "bookyogaretreats" ? "View on BookYogaRetreats" : "View on BookSurfCamps"}
+                    {p.partner === "bookyogaretreats"
+                      ? "View on BookYogaRetreats"
+                      : p.partner === "tripaneer"
+                        ? "View on Tripaneer"
+                        : "View on BookSurfCamps"}
                   </a>
                 </div>
               </article>
@@ -316,8 +328,8 @@ export function RetreatsCatalogSection() {
 
         <p className="mx-auto mt-12 max-w-3xl text-center text-xs leading-relaxed text-[#5a6c70]">
           Abroader may earn a commission when you book through these links. Listings without a &ldquo;from&rdquo; price
-          still appear when you set a max price. Always confirm current pricing on BookSurfCamps or BookYogaRetreats
-          before you pay.
+          still appear when you set a max price. Always confirm current pricing on BookSurfCamps, BookYogaRetreats, or
+          Tripaneer before you pay.
         </p>
       </div>
     </section>

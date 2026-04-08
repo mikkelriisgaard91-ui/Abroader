@@ -1,0 +1,76 @@
+{
+  "id": "medellin",
+  "url": "https://www.nomadico.io/medellin-coliving",
+  "manifest": [
+    {
+      "uri": "d04e79_4c111fbfe9824f2bb461d49abf04b185~mv2.jpg",
+      "filename": "medellin-01-4c111fbfe982.jpg",
+      "bytes": 772493
+    },
+    {
+      "uri": "d04e79_01a076af513e4b668db12fac1abbcfb7~mv2.jpg",
+      "filename": "medellin-02-01a076af513e.jpg",
+      "bytes": 437403
+    },
+    {
+      "uri": "d04e79_c0e72de48bd548849c1d08f36f5b88ba~mv2.jpeg",
+      "filename": "medellin-03-c0e72de48bd5.jpeg",
+      "bytes": 752362
+    },
+    {
+      "uri": "d04e79_6881cdd388e24b89830174945de91e73~mv2.jpg",
+      "filename": "medellin-04-6881cdd388e2.jpg",
+      "bytes": 396375
+    },
+    {
+      "uri": "d04e79_353d25194c824d65bb5fa6cce36fc534~mv2.jpg",
+      "filename": "medellin-05-353d25194c82.jpg",
+      "bytes": 351243
+    },
+    {
+      "uri": "d04e79_ead3c30db74e4bd8972759ad3a138b8a~mv2.jpeg",
+      "filename": "medellin-06-ead3c30db74e.jpeg",
+      "bytes": 373638
+    },
+    {
+      "uri": "d04e79_c4f22b7acb15401ab42491f85c9d0e5a~mv2.jpeg",
+      "filename": "medellin-07-c4f22b7acb15.jpeg",
+      "bytes": 528649
+    },
+    {
+      "uri": "d04e79_14d202c551f54643be64edb42d9686e9~mv2.jpeg",
+      "filename": "medellin-08-14d202c551f5.jpeg",
+      "bytes": 526118
+    },
+    {
+      "uri": "d04e79_9282c6dc8cdf4962ada49e6b350373ce~mv2.jpg",
+      "filename": "medellin-09-9282c6dc8cdf.jpg",
+      "bytes": 518530
+    },
+    {
+      "uri": "d04e79_a822648da3554185b9a63519c93e97c9~mv2.jpeg",
+      "filename": "medellin-10-a822648da355.jpeg",
+      "bytes": 405927
+    },
+    {
+      "uri": "d04e79_beefd95fe3474816be13805d05f6de87~mv2.jpeg",
+      "filename": "medellin-11-beefd95fe347.jpeg",
+      "bytes": 591714
+    },
+    {
+      "uri": "d04e79_1f7c7dc19c5243a49e9d28d203f4f953~mv2.jpeg",
+      "filename": "medellin-12-1f7c7dc19c52.jpeg",
+      "bytes": 649443
+    },
+    {
+      "uri": "d04e79_8c176dc5c037479aa66e85a783a832ea~mv2.jpg",
+      "filename": "medellin-13-8c176dc5c037.jpg",
+      "bytes": 693735
+    },
+    {
+      "uri": "d04e79_0b82e6a994c64d3abb7f2009861d80ac~mv2.jpg",
+      "filename": "medellin-14-0b82e6a994c6.jpg",
+      "bytes": 681246
+    }
+  ]
+}

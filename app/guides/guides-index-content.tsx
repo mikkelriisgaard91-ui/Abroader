@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
   allGuides,
+  getHeroPills,
   guideHasDigitalNomadVisa,
   type CountryGuide,
 } from "@/lib/guides";
@@ -485,9 +486,28 @@ function GuideCard({ g }: { g: CountryGuide }) {
         </h3>
         <p style={{ color: "#666", fontSize: "0.95rem", margin: "0 0 0.85rem" }}>{g.capital}</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginBottom: "1rem" }}>
-          <StatPill label={g.costOfLiving} />
-          <StatPill label={g.visaDifficulty} />
-          <StatPill label={g.internetSpeed} />
+          {getHeroPills(g).map((pill) => (
+            <span
+              key={`${g.slug}-${pill.label}`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.3rem",
+                fontSize: "0.65rem",
+                fontWeight: 600,
+                padding: "0.28rem 0.5rem",
+                borderRadius: "999px",
+                backgroundColor: tealLight,
+                color: teal,
+                border: "1px solid rgba(36,99,116,0.15)",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              <img src={pill.src} alt="" width={14} height={14} style={{ flexShrink: 0 }} aria-hidden />
+              {pill.label}
+            </span>
+          ))}
         </div>
         <span
           style={{
@@ -504,20 +524,3 @@ function GuideCard({ g }: { g: CountryGuide }) {
   );
 }
 
-function StatPill({ label }: { label: string }) {
-  return (
-    <span
-      style={{
-        fontSize: "0.72rem",
-        fontWeight: 600,
-        padding: "0.25rem 0.5rem",
-        borderRadius: "999px",
-        backgroundColor: tealLight,
-        color: teal,
-        border: "1px solid rgba(36,99,116,0.15)",
-      }}
-    >
-      {label}
-    </span>
-  );
-}
