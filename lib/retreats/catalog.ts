@@ -16724,10 +16724,10 @@ export const RETREAT_TYPE_LABELS: Record<RetreatTypeFacet, string> = {
 };
 
 export const RETREAT_CATEGORY_LABELS: Record<RetreatCategory, string> = {
-  surf: "Surfing",
-  yoga: "Yoga",
-  "martial-arts": "Martial arts",
-  "motorcycle-trips": "Motorcycle trips",
+  surf: "Surfing retreats",
+  yoga: "Yoga retreats",
+  "martial-arts": "Martial arts retreats",
+  "motorcycle-trips": "Motorcycle retreats",
 };
 
 export const REGION_LABELS: Record<string, string> = {

@@ -11,7 +11,7 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
-import { GET_CONTACTED_URL } from "@/lib/employers";
+import { EMPLOYERS_NAV, GET_CONTACTED_URL } from "@/lib/employers";
 import {
   groupChildren,
   isGroupActive,
@@ -47,6 +47,14 @@ function MenuIcon({ open }: { open: boolean }) {
           <path d="M4 7h16M4 12h16M4 17h16" />
         </>
       )}
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg className="site-nav__drawer-close-icon" viewBox="0 0 24 24" aria-hidden fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18M6 6l12 12" />
     </svg>
   );
 }
@@ -389,12 +397,6 @@ export default function Nav() {
   }, [openDropdownId]);
 
   useEffect(() => {
-    if (!menuOpen || !isMobileNavLayout) return;
-    const group = navMainItems.find((it): it is NavGroupItem => it.kind === "group" && isGroupActive(pathname, it));
-    setOpenAccordionId(group ? group.id : null);
-  }, [menuOpen, pathname, isMobileNavLayout]);
-
-  useEffect(() => {
     if (!menuOpen || !isMobileNavLayout) {
       wasMenuOpenRef.current = false;
       return;
@@ -463,8 +465,24 @@ export default function Nav() {
           className="site-nav__drawer"
           id="site-nav-menu"
           aria-hidden={isMobileNavLayout && !menuOpen ? true : undefined}
+          {...(isMobileNavLayout && menuOpen
+            ? { role: "dialog", "aria-modal": true, "aria-labelledby": "site-nav-drawer-title" }
+            : {})}
           {...(isMobileNavLayout && !menuOpen ? { inert: true } : {})}
         >
+          <div className="site-nav__drawer-header" aria-hidden={!isMobileNavLayout}>
+            <h2 id="site-nav-drawer-title" className="site-nav__drawer-title">
+              Menu
+            </h2>
+            <button
+              type="button"
+              className="site-nav__drawer-close"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <CloseIcon />
+            </button>
+          </div>
           <div className="site-nav__viewport site-nav__viewport--desktop">
             <NavDesktop pathname={pathname} openDropdownId={openDropdownId} setOpenDropdownId={setOpenDropdownId} />
           </div>
@@ -478,11 +496,11 @@ export default function Nav() {
 
           <div className="site-nav__actions">
             <Link
-              href="/employers"
-              className={`site-nav__cta site-nav__cta--employers${pathname === "/employers" || pathname.startsWith("/employers/") ? " site-nav__cta--employers-active" : ""}`}
-              aria-current={pathname === "/employers" || pathname.startsWith("/employers/") ? "page" : undefined}
+              href={EMPLOYERS_NAV.href}
+              className={`site-nav__cta site-nav__cta--employers${pathname === EMPLOYERS_NAV.href || pathname.startsWith(`${EMPLOYERS_NAV.href}/`) ? " site-nav__cta--employers-active" : ""}`}
+              aria-current={pathname === EMPLOYERS_NAV.href || pathname.startsWith(`${EMPLOYERS_NAV.href}/`) ? "page" : undefined}
             >
-              Employers
+              {EMPLOYERS_NAV.label}
             </Link>
             <a
               href={GET_CONTACTED_URL}
@@ -501,7 +519,18 @@ export default function Nav() {
           aria-expanded={menuOpen}
           aria-controls="site-nav-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMenuOpen((o) => !o)}
+          onClick={() => {
+            setMenuOpen((o) => {
+              const next = !o;
+              if (next && isMobileNavLayout) {
+                const group = navMainItems.find(
+                  (it): it is NavGroupItem => it.kind === "group" && isGroupActive(pathname, it),
+                );
+                setOpenAccordionId(group ? group.id : null);
+              }
+              return next;
+            });
+          }}
         >
           <MenuIcon open={menuOpen} />
         </button>

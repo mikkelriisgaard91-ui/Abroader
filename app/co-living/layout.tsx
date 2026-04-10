@@ -17,9 +17,9 @@ const rockSalt = Rock_Salt({
 });
 
 export const metadata: Metadata = {
-  title: "Co-living abroad — Abroader",
+  title: "Community Co-Living abroad — Abroader",
   description:
-    "Co-living for remote workers: stay connected to coworking and community in Europe, Africa, and South America. Compare destinations, monthly prices in EUR, and what is included.",
+    "Community co-living for remote workers: coworking, events, and like-minded people in Europe, Africa, and South America. Compare destinations, monthly prices in EUR, and what is included.",
 };
 
 export default function CoLivingLayout({

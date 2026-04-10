@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { FeaturedJobDto } from "@/lib/remote-jobs/teamtailor-featured";
 
 const glassCard =
@@ -9,11 +10,20 @@ const lightCard =
 export function FeaturedJobCard({
   job,
   variant = "default",
+  primaryCta,
 }: {
   job: FeaturedJobDto;
   variant?: "default" | "light";
+  /** When set, the card CTA links here instead of the Teamtailor apply URL (e.g. internal landing page). */
+  primaryCta?: { href: string; label: string };
 }) {
+  const ctaHref = primaryCta?.href ?? job.applyUrl;
+  const ctaLabel = primaryCta?.label ?? "Apply now";
   const cardClass = variant === "light" ? lightCard : glassCard;
+  const cardHoverClass =
+    variant === "default"
+      ? "transition-all hover:border-rj-secondary/25 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
+      : "";
   const imageOverlay =
     variant === "light"
       ? "pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/45 via-transparent to-transparent opacity-90"
@@ -38,40 +48,65 @@ export function FeaturedJobCard({
   const placeholderClass =
     variant === "light" ? "flex h-full w-full items-center justify-center text-4xl text-amber-300/80" : "flex h-full w-full items-center justify-center text-4xl text-rj-secondary/50";
 
-  return (
-    <article
-      className={`${cardClass} group relative flex flex-col overflow-hidden ${
-        variant === "default"
-          ? "transition-all hover:border-rj-secondary/25 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
-          : ""
-      }`}
-    >
-      <div className={imgBg}>
-        {job.pictureUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element -- Teamtailor careersite URLs
-          <img
-            src={job.pictureUrl}
-            alt=""
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
-          />
+  const mediaBlock = (
+    <div className={imgBg}>
+      {job.pictureUrl ? (
+        // eslint-disable-next-line @next/next/no-img-element -- Teamtailor careersite URLs
+        <img
+          src={job.pictureUrl}
+          alt=""
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
+        />
+      ) : (
+        <div className={placeholderClass} aria-hidden>
+          😊
+        </div>
+      )}
+      <div className={imageOverlay} aria-hidden />
+    </div>
+  );
+
+  const bodyBlock = (
+    <div className="flex flex-1 flex-col p-6">
+      <h3 className={titleClass}>{job.title}</h3>
+      <p className={mutedClass}>📍 {job.locationLabel}</p>
+      <span className={badgeClass}>{job.employmentTypeLabel}</span>
+      <div className="mt-auto">
+        {primaryCta ? (
+          <span className={linkClass}>
+            {ctaLabel}
+            <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
+          </span>
         ) : (
-          <div className={placeholderClass}>✦</div>
-        )}
-        <div className={imageOverlay} aria-hidden />
-      </div>
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className={titleClass}>{job.title}</h3>
-        <p className={mutedClass}>📍 {job.locationLabel}</p>
-        <span className={badgeClass}>{job.employmentTypeLabel}</span>
-        <div className="mt-auto">
-          <a href={job.applyUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-            Apply now
+          <a href={ctaHref} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            {ctaLabel}
             <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5">
               →
             </span>
           </a>
-        </div>
+        )}
       </div>
+    </div>
+  );
+
+  if (primaryCta) {
+    return (
+      <Link
+        href={ctaHref}
+        className={`${cardClass} group relative flex flex-col overflow-hidden no-underline ${cardHoverClass}`}
+      >
+        {mediaBlock}
+        {bodyBlock}
+      </Link>
+    );
+  }
+
+  return (
+    <article className={`${cardClass} group relative flex flex-col overflow-hidden ${cardHoverClass}`}>
+      {mediaBlock}
+      {bodyBlock}
     </article>
   );
 }

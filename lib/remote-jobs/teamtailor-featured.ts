@@ -3,6 +3,8 @@
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
 
+import { htmlToPlainText } from "@/lib/html-to-plain";
+
 import {
   LANGUAGE_JOB_DEPARTMENT_NAMES,
   LANGUAGE_JOB_TAB_ORDER,
@@ -41,6 +43,12 @@ export type FeaturedJobDto = {
 /** Teamtailor featured row plus `browseId` for internal job URLs (see `/api/remote-jobs/featured`). */
 export type FeaturedJobWithBrowseId = FeaturedJobDto & { browseId: string };
 
+/** Single job from Partner API `GET /jobs/:id` (e.g. language job landing pages). */
+export type FeaturedJobDetailDto = FeaturedJobDto & {
+  /** Plain text from Teamtailor job body/pitch when available. */
+  descriptionPlain?: string;
+};
+
 type JsonApiResource = {
   id: string;
   type: string;
@@ -56,6 +64,48 @@ type JsonApiDoc = {
   included?: JsonApiResource[];
   links?: { next?: string | null };
 };
+
+type JsonApiSingleDoc = {
+  data?: JsonApiResource | JsonApiResource[];
+  included?: JsonApiResource[];
+};
+
+/** Public job page on the Teamtailor careersite (used when API omits apply links on single-job GET). */
+export function teamtailorCareersiteJobUrl(jobId: string): string {
+  const base =
+    envString(["TEAMTAILOR", "CAREERSITE", "BASE"].join("_")) ??
+    "https://abroader-1746694588.teamtailor.com";
+  return `${base.replace(/\/$/, "")}/jobs/${jobId}`;
+}
+
+function normalizeJsonApiPrimaryData(
+  data: JsonApiResource | JsonApiResource[] | undefined
+): JsonApiResource | undefined {
+  if (data === undefined || data === null) return undefined;
+  if (Array.isArray(data)) return data[0];
+  return data;
+}
+
+function careersiteApplyUrlFromLinks(links: Record<string, unknown> | undefined): string | undefined {
+  if (!links) return undefined;
+  const preferKeys = [
+    "careersite-job-apply-url",
+    "careersite-job-url",
+    "careersite_job_apply_url",
+    "careersite_job_url",
+  ];
+  for (const k of preferKeys) {
+    const v = links[k];
+    if (typeof v === "string" && v.trim()) return v.trim();
+  }
+  for (const [k, v] of Object.entries(links)) {
+    if (typeof v !== "string" || !v.trim()) continue;
+    const kl = k.toLowerCase();
+    if (kl.includes("careersite") && (kl.includes("apply") || kl.includes("job-url") || kl.includes("job_url")))
+      return v.trim();
+  }
+  return undefined;
+}
 
 function pickString(obj: Record<string, unknown> | undefined, keys: string[]): string | undefined {
   if (!obj) return undefined;
@@ -120,12 +170,19 @@ export function isEnglishTeamtailorJob(attr: Record<string, unknown>): boolean {
   return code === "en" || code.startsWith("en-");
 }
 
-function mapFeaturedJob(item: JsonApiResource, locationById: Map<string, string>): FeaturedJobDto | null {
+function mapFeaturedJob(
+  item: JsonApiResource,
+  locationById: Map<string, string>,
+  options?: { applyUrlFallback?: string }
+): FeaturedJobDto | null {
   if (item.type !== "jobs") return null;
   const links = item.links ?? {};
   const attr = item.attributes ?? {};
   const title = pickString(attr, ["title"]) ?? "Untitled role";
-  const applyUrl = links["careersite-job-apply-url"] ?? links["careersite-job-url"] ?? "";
+  const applyUrl =
+    careersiteApplyUrlFromLinks(links as Record<string, unknown>) ??
+    pickString(attr, ["careersite-job-apply-url", "careersite-job-url", "apply-url"]) ??
+    (options?.applyUrlFallback?.trim() ?? "");
   if (!applyUrl) return null;
 
   const rs = typeof attr["remote-status"] === "string" ? attr["remote-status"] : undefined;
@@ -442,6 +499,27 @@ export async function fetchAllLanguageDepartmentJobs(): Promise<Record<LanguageJ
   return allLanguageDepartmentJobsCrossRequest();
 }
 
+/**
+ * Finds another published role in the same language department as `currentId` (e.g. another Danish job).
+ * Excludes `alsoExcludeId` when set (e.g. the international recruiter listing).
+ */
+export function pickPeerLanguageJob(
+  currentId: string,
+  allByTab: Record<LanguageJobTabId, TeamtailorFeaturedResult>,
+  alsoExcludeId?: string | null
+): { tab: LanguageJobTabId | null; peer: FeaturedJobDto | null } {
+  const exclude = new Set([currentId, alsoExcludeId].filter(Boolean) as string[]);
+  for (const tab of LANGUAGE_JOB_TAB_ORDER) {
+    const result = allByTab[tab];
+    if (!result.ok) continue;
+    const jobs = result.jobs;
+    if (!jobs.some((j) => j.id === currentId)) continue;
+    const peer = jobs.find((j) => !exclude.has(j.id)) ?? null;
+    return { tab, peer };
+  }
+  return { tab: null, peer: null };
+}
+
 /** @deprecated Prefer fetchAllLanguageDepartmentJobs — kept for any import sites. */
 export async function fetchDanishSpeakingDepartmentJobs(): Promise<TeamtailorFeaturedResult> {
   const all = await fetchAllLanguageDepartmentJobs();
@@ -510,4 +588,54 @@ const volunteerDepartmentJobsCrossRequest = unstable_cache(
 /** Published jobs for the Volunteering Teamtailor department (cached ~3 min). */
 export async function fetchVolunteerDepartmentJobs(): Promise<TeamtailorFeaturedResult> {
   return volunteerDepartmentJobsCrossRequest();
+}
+
+function descriptionPlainFromJobAttributes(attr: Record<string, unknown>): string | undefined {
+  const raw = pickString(attr, ["body", "pitch"]);
+  if (!raw) return undefined;
+  const plain = htmlToPlainText(raw).trim();
+  return plain || undefined;
+}
+
+async function fetchTeamtailorJobByIdUncached(id: string): Promise<FeaturedJobDetailDto | null> {
+  const trimmed = id.trim();
+  if (!trimmed || /[/\\?#]/.test(trimmed)) return null;
+  const token = teamtailorApiToken();
+  if (!token) return null;
+
+  const headers: HeadersInit = {
+    Authorization: `Token token=${token}`,
+    "X-Api-Version": FEATURED_TEAMTAILOR_API_VERSION,
+  };
+
+  const url = `${apiBase()}/jobs/${encodeURIComponent(trimmed)}?include=locations`;
+  const res = await fetch(url, { headers, cache: "no-store" });
+  if (!res.ok) return null;
+
+  const json = (await res.json()) as JsonApiSingleDoc;
+  const item = normalizeJsonApiPrimaryData(json.data);
+  if (!item || item.type !== "jobs") return null;
+
+  const attr = item.attributes ?? {};
+  const locationById = buildLocationMap(json.included);
+  const fallbackApply = teamtailorCareersiteJobUrl(String(item.id));
+  let base = mapFeaturedJob(item, locationById);
+  if (!base) {
+    base = mapFeaturedJob(item, locationById, { applyUrlFallback: fallbackApply });
+  }
+  if (!base) return null;
+
+  const descriptionPlain = descriptionPlainFromJobAttributes(attr);
+  return descriptionPlain ? { ...base, descriptionPlain } : { ...base };
+}
+
+const fetchTeamtailorJobByIdCached = unstable_cache(
+  async (jobId: string) => fetchTeamtailorJobByIdUncached(jobId),
+  ["teamtailor-job-detail-v2"],
+  { revalidate: 180 }
+);
+
+/** One published job by Teamtailor resource id (cached ~3 min). */
+export async function fetchTeamtailorJobById(id: string): Promise<FeaturedJobDetailDto | null> {
+  return fetchTeamtailorJobByIdCached(id);
 }

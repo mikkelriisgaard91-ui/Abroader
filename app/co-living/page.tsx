@@ -164,7 +164,7 @@ export default function CoLivingPage() {
             <p className="mb-8 max-w-xl text-pretty text-base leading-relaxed text-rj-muted sm:text-lg md:text-xl">{HERO.subtitle}</p>
             <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <a href="#co-living-destinations" className={recruiterPrimaryCtaClass}>
-                Browse Co-living options
+                Browse community stays
               </a>
             </div>
             <p className="mt-6 text-sm text-rj-muted md:text-base">Coworking · Community · Flexible stays</p>

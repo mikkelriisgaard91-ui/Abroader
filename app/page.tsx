@@ -136,7 +136,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Cards */}
+      {/* Vertical cards */}
       <section style={{ padding: "5rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <h2

@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import CookieBanner from "@/components/CookieBanner";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import NewsletterSection from "@/components/NewsletterSection";
+import BackToTopButton from "@/components/BackToTopButton";
 
 export const metadata: Metadata = {
   title: "Abroader — Your life abroad starts here",
@@ -41,7 +46,12 @@ export default function RootLayout({
         >
           {children}
         </div>
+        <NewsletterSection />
         <Footer />
+        <WhatsAppButton />
+        <BackToTopButton />
+        <CookieBanner />
+        <ExitIntentPopup />
       </body>
     </html>
   );

@@ -93,7 +93,12 @@ const RESET_FILTERS: RetreatFiltersState = {
   maxPriceEur: null,
 };
 
-export function RetreatsCatalogSection() {
+export type RetreatsCatalogSectionProps = {
+  /** When set (category landing), category filter defaults and URL sync to `?category=`. */
+  presetCategory?: RetreatCategory | null;
+};
+
+export function RetreatsCatalogSection({ presetCategory }: RetreatsCatalogSectionProps = {}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -101,10 +106,13 @@ export function RetreatsCatalogSection() {
 
   const regionSlugs = useMemo(() => getDistinctRegionSlugs(retreatCatalog), []);
 
-  const urlFilters = useMemo(
-    () => filtersFromParams(searchParams, regionSlugs),
-    [searchParams, regionSlugs],
-  );
+  const urlFilters = useMemo(() => {
+    const base = filtersFromParams(searchParams, regionSlugs);
+    if (presetCategory && base.category === "all" && !searchParams.get("category")) {
+      return { ...base, category: presetCategory };
+    }
+    return base;
+  }, [searchParams, regionSlugs, presetCategory]);
 
   /** Applied immediately on change so the grid does not wait for `router.replace`. */
   const [optimisticFilters, setOptimisticFilters] = useState<RetreatFiltersState | null>(null);
@@ -112,6 +120,17 @@ export function RetreatsCatalogSection() {
   useEffect(() => {
     setOptimisticFilters(null);
   }, [searchParams]);
+
+  useEffect(() => {
+    if (!presetCategory) return;
+    if (searchParams.get("category")) return;
+    const p = new URLSearchParams(searchParams.toString());
+    p.set("category", presetCategory);
+    setOptimisticFilters(filtersFromParams(p, regionSlugs));
+    startTransition(() => {
+      router.replace(`${pathname}?${p.toString()}`, { scroll: false });
+    });
+  }, [presetCategory, pathname, router, searchParams, regionSlugs, startTransition]);
 
   const filters = optimisticFilters ?? urlFilters;
 
@@ -147,11 +166,20 @@ export function RetreatsCatalogSection() {
   );
 
   const resetFilters = useCallback(() => {
-    setOptimisticFilters(RESET_FILTERS);
-    startTransition(() => {
-      router.replace(pathname, { scroll: false });
-    });
-  }, [router, pathname, startTransition]);
+    if (presetCategory) {
+      const p = new URLSearchParams();
+      p.set("category", presetCategory);
+      setOptimisticFilters(filtersFromParams(p, regionSlugs));
+      startTransition(() => {
+        router.replace(`${pathname}?${p.toString()}`, { scroll: false });
+      });
+    } else {
+      setOptimisticFilters(RESET_FILTERS);
+      startTransition(() => {
+        router.replace(pathname, { scroll: false });
+      });
+    }
+  }, [presetCategory, router, pathname, regionSlugs, startTransition]);
 
   return (
     <section id="browse-retreats" className={sectionBg}>
@@ -170,7 +198,15 @@ export function RetreatsCatalogSection() {
                   type="button"
                   role="radio"
                   aria-checked={active}
-                  onClick={() => setParams({ category: cat === "all" ? null : cat })}
+                  onClick={() => {
+                    if (presetCategory && cat === "all") {
+                      startTransition(() => {
+                        router.push("/retreats");
+                      });
+                      return;
+                    }
+                    setParams({ category: cat === "all" ? null : cat });
+                  }}
                   className={`min-h-[3.25rem] rounded-full px-7 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246374] sm:min-h-[3.5rem] sm:px-9 sm:py-3.5 sm:text-lg ${
                     active
                       ? "bg-[#fcba36] text-[#2a1f0a] shadow-[0_6px_20px_rgba(252,186,54,0.4)]"

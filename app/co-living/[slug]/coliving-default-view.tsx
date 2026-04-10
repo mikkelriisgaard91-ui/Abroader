@@ -29,8 +29,8 @@ export function ColivingDefaultView({ listing }: { listing: ColivingListingResol
           <nav className="mb-8 text-sm text-rj-muted" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link href="/co-living" className="font-medium text-rj-secondary transition hover:text-rj-fg">
-                  Co-living
+                <Link href="/remote-living" className="font-medium text-rj-secondary transition hover:text-rj-fg">
+                  Remote Living
                 </Link>
               </li>
               <li className="text-rj-muted/80" aria-hidden>

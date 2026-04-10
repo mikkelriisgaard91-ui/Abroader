@@ -2,6 +2,13 @@ import type { CountryGuide } from "./types";
 
 export type { CountryGuide } from "./types";
 export { getHeroPills, HERO_PILL_SRC } from "./hero-pills";
+import {
+  findCountryGuideForLocationHint as findCountryGuideForLocationHintImpl,
+  getPeerGuidesForComparison as getPeerGuidesForComparisonImpl,
+} from "./match-guide-from-location";
+
+export type { GuideCity } from "./match-guide-from-location";
+export { findMatchedCityInGuide } from "./match-guide-from-location";
 import { albania } from "./countries/albania";
 import { antiguaAndBarbuda } from "./countries/antigua-and-barbuda";
 import { argentina } from "./countries/argentina";
@@ -243,4 +250,14 @@ export function getRelatedGuides(slug: string, count = 3): CountryGuide[] {
     if (g.slug !== slug) out.push(g);
   }
   return out;
+}
+
+/** Resolve a job location string to a country guide (for language job landing pages). */
+export function findCountryGuideForLocationHint(locationLabel: string): CountryGuide | undefined {
+  return findCountryGuideForLocationHintImpl(locationLabel, allGuides);
+}
+
+/** Peer destinations for rough cost comparison (same COL band when possible). */
+export function getPeerGuidesForComparison(guide: CountryGuide, max = 2): CountryGuide[] {
+  return getPeerGuidesForComparisonImpl(guide, allGuides, max);
 }

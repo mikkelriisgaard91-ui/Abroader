@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const listing = getColivingBySlug(slug);
   if (!listing) {
-    return { title: "Co-living — Abroader" };
+    return { title: "Community Co-Living — Abroader" };
   }
   const url = `${SITE}/co-living/${listing.id}`;
   const description =
     listing.description.length > 155 ? `${listing.description.slice(0, 152)}…` : listing.description;
   return {
-    title: `${listing.title} — Co-living — Abroader`,
+    title: `${listing.title} — Community Co-Living — Abroader`,
     description,
     openGraph: {
       title: `${listing.title} — Abroader`,

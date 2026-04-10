@@ -8,13 +8,17 @@ import { getBrowseJobs } from "@/lib/remote-jobs/browse-data";
 export const dynamic = "force-dynamic";
 
 export async function GET(_request: NextRequest) {
-  const { jobs, error } = await getBrowseJobs();
+  const { jobs, error, sourceErrors } = await getBrowseJobs();
 
   if (jobs.length === 0) {
-    return NextResponse.json({
+    const body: Record<string, unknown> = {
       jobs: [],
       error: error ?? "Could not load listings from any source right now.",
-    });
+    };
+    if (process.env.NODE_ENV === "development" && sourceErrors) {
+      body.sourceErrors = sourceErrors;
+    }
+    return NextResponse.json(body);
   }
 
   /** List view only — omits long descriptions. Detail + AI matching use `/api/remote-jobs/browse-with-featured` (full DTOs). */
@@ -23,5 +27,9 @@ export async function GET(_request: NextRequest) {
     return rest;
   });
 
-  return NextResponse.json({ jobs: jobsForList, error: null as string | null });
+  const body: Record<string, unknown> = { jobs: jobsForList, error: null as string | null };
+  if (process.env.NODE_ENV === "development" && sourceErrors) {
+    body.sourceErrors = sourceErrors;
+  }
+  return NextResponse.json(body);
 }

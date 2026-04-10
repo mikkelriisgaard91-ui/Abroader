@@ -1,3 +1,5 @@
+import { remoteLivingCategoryHref, remoteLivingNavVerticals } from "@/lib/remote-living/category-landing";
+import { retreatCategoryHref, retreatCategoryNavVerticals } from "@/lib/retreats/category-landing";
 import { verticals } from "@/lib/verticals";
 import type { Vertical } from "@/lib/verticals";
 
@@ -31,8 +33,30 @@ export const navMainItems: readonly NavMainItem[] = [
     childHrefs: ["/remote-jobs", "/language-jobs", "/hospitality", "/work-for-accommodation"],
   },
   { kind: "link", href: "/volunteering", label: "Volunteering" },
-  { kind: "link", href: "/co-living", label: "Co-living" },
-  { kind: "link", href: "/retreats", label: "Retreats" },
+  {
+    kind: "group",
+    id: "remote-living",
+    label: "Remote Living",
+    hubHref: "/remote-living",
+    childHrefs: [
+      "/co-living",
+      remoteLivingCategoryHref("vanlife"),
+      remoteLivingCategoryHref("eco-sustainable"),
+      remoteLivingCategoryHref("learning-based"),
+    ],
+  },
+  {
+    kind: "group",
+    id: "retreats",
+    label: "Retreats",
+    hubHref: "/retreats",
+    childHrefs: [
+      retreatCategoryHref("surf"),
+      retreatCategoryHref("yoga"),
+      retreatCategoryHref("martial-arts"),
+      retreatCategoryHref("motorcycle-trips"),
+    ],
+  },
   {
     kind: "group",
     id: "inspiration",
@@ -49,6 +73,12 @@ function verticalForHref(href: string): Vertical {
 }
 
 export function groupChildren(group: NavGroupItem): Vertical[] {
+  if (group.id === "retreats") {
+    return [...retreatCategoryNavVerticals];
+  }
+  if (group.id === "remote-living") {
+    return [...remoteLivingNavVerticals];
+  }
   return group.childHrefs.map(verticalForHref);
 }
 

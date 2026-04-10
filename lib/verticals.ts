@@ -58,10 +58,10 @@ export const verticals = [
     emoji: "🗺️",
   },
   {
-    title: "Co-living",
+    title: "Remote Living",
     description:
-      "Places to live with coworking and community built in — for remote workers who want a ready-made base abroad.",
-    href: "/co-living",
+      "Community coliving, vanlife, eco stays, and learning-focused bases — find your style abroad.",
+    href: "/remote-living",
     accent: "#246374",
     light: "#e8f4f7",
     emoji: "🏘️",

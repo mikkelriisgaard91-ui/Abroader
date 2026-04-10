@@ -1,5 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { cache } from "react";
+import { htmlToPlainText } from "@/lib/html-to-plain";
 import { jobIdForBrowseEntry } from "@/lib/remote-jobs/browse-job-id";
 import { jobMatchesRole, type RoleFilter } from "@/lib/remote-jobs/job-filters";
 import { fetchTeamtailorFeaturedJobs } from "@/lib/remote-jobs/teamtailor-featured";
@@ -29,6 +30,26 @@ const REMOTE_OK_MAX_JOBS = 800;
 
 /** Browse payload: seniority matching uses at most 800 chars of description. */
 const BROWSE_DESCRIPTION_MAX_CHARS = 800;
+
+/** Public boards sometimes throttle anonymous requests; identify the app on outbound fetches. */
+const BROWSE_OUTBOUND_HEADERS: HeadersInit = {
+  Accept: "application/json",
+  "User-Agent": "Abroader/1.0 (+https://abroader.com)",
+};
+
+export type BrowseBoardSource = "Himalayas" | "Remotive" | "Remote OK" | "Jobicy";
+
+async function guardBoardLoad(
+  fn: () => Promise<Sortable[]>
+): Promise<{ sortables: Sortable[]; error?: string }> {
+  try {
+    const sortables = await fn();
+    return { sortables };
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    return { sortables: [], error: msg };
+  }
+}
 
 export type BrowseJobDto = {
   /** Stable id from source + application link (for detail URLs). */
@@ -88,44 +109,6 @@ function inferPrimaryBrowseRole(title: string): Exclude<RoleFilter, "all"> | "ot
 }
 
 export { jobIdForBrowseEntry };
-
-function htmlToPlainText(html: string): string {
-  let s = html
-    .replace(/<script[\s\S]*?<\/script>/gi, "")
-    .replace(/<style[\s\S]*?<\/style>/gi, "");
-
-  // Headings: isolate as their own lines (subhead detection in JobDescription).
-  s = s.replace(/<h[1-6][^>]*>/gi, "\n\n");
-  s = s.replace(/<\/h[1-6]>/gi, "\n\n");
-
-  // List items: prefix so downstream treats each row as a bullet.
-  s = s.replace(/<li[^>]*>/gi, "\n- ");
-  s = s.replace(/<\/li>/gi, "\n");
-
-  // Paragraphs and block breaks.
-  s = s.replace(/<\/p>/gi, "\n\n");
-  s = s.replace(/<p[^>]*>/gi, "\n");
-  s = s.replace(/<\/(div|section|article|blockquote)>/gi, "\n\n");
-  s = s.replace(/<br\s*\/?>/gi, "\n");
-  s = s.replace(/<\/tr>/gi, "\n");
-
-  s = s.replace(/<[^>]+>/g, "");
-
-  s = s
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/\n{3,}/g, "\n\n")
-    .replace(/[ \t]+/g, " ")
-    .replace(/ *\n */g, "\n")
-    .trim();
-
-  if (s.length > 60_000) return `${s.slice(0, 60_000)}…`;
-  return s;
-}
 
 function optionalPlainFromHtml(value: unknown): string | undefined {
   if (typeof value !== "string" || !value.trim()) return undefined;
@@ -266,7 +249,7 @@ async function loadHimalayas(): Promise<Sortable[]> {
     for (let attempt = 0; attempt < 5; attempt++) {
       res = await fetch(url, {
         cache: "no-store",
-        headers: { Accept: "application/json" },
+        headers: BROWSE_OUTBOUND_HEADERS,
       });
       if (res.status === 429) {
         await delay(400 * (attempt + 1));
@@ -310,7 +293,7 @@ async function findHimalayasJobByBrowseId(targetId: string): Promise<BrowseJobDt
     for (let attempt = 0; attempt < 5; attempt++) {
       res = await fetch(url, {
         cache: "no-store",
-        headers: { Accept: "application/json" },
+        headers: BROWSE_OUTBOUND_HEADERS,
       });
       if (res.status === 429) {
         await delay(400 * (attempt + 1));
@@ -343,7 +326,7 @@ async function findHimalayasJobByBrowseId(targetId: string): Promise<BrowseJobDt
 async function loadRemotive(): Promise<Sortable[]> {
   const res = await fetch("https://remotive.com/api/remote-jobs", {
     cache: "no-store",
-    headers: { Accept: "application/json" },
+    headers: BROWSE_OUTBOUND_HEADERS,
   });
   if (!res.ok) return [];
   const json: unknown = await res.json();
@@ -390,7 +373,7 @@ async function loadRemotive(): Promise<Sortable[]> {
 async function loadRemoteOk(): Promise<Sortable[]> {
   const res = await fetch("https://remoteok.com/api", {
     cache: "no-store",
-    headers: { Accept: "application/json" },
+    headers: BROWSE_OUTBOUND_HEADERS,
   });
   if (!res.ok) return [];
   const json: unknown = await res.json();
@@ -442,7 +425,7 @@ async function loadRemoteOk(): Promise<Sortable[]> {
 async function loadJobicy(): Promise<Sortable[]> {
   const res = await fetch(`https://jobicy.com/api/v2/remote-jobs?count=${JOBICY_COUNT}`, {
     cache: "no-store",
-    headers: { Accept: "application/json" },
+    headers: BROWSE_OUTBOUND_HEADERS,
   });
   if (!res.ok) return [];
   const json: unknown = await res.json();
@@ -492,6 +475,8 @@ async function loadJobicy(): Promise<Sortable[]> {
 export type BrowseJobsResult = {
   jobs: BrowseJobDto[];
   error: string | null;
+  /** Populated when at least one public board threw or failed; useful in development. */
+  sourceErrors?: Partial<Record<BrowseBoardSource, string>>;
 };
 
 /** Labels returned on each job — use as `?source=` on detail URLs for a faster lookup. */
@@ -583,27 +568,57 @@ function sortablesToBrowseDtos(sortables: Sortable[]): BrowseJobDto[] {
   }));
 }
 
-async function fetchBrowseJobsUncached(): Promise<BrowseJobsResult> {
-  const [h, r, ro, jc] = await Promise.all([loadHimalayas(), loadRemotive(), loadRemoteOk(), loadJobicy()]);
+function collectSourceErrors(
+  entries: [BrowseBoardSource, { sortables: Sortable[]; error?: string }][]
+): Partial<Record<BrowseBoardSource, string>> | undefined {
+  const out: Partial<Record<BrowseBoardSource, string>> = {};
+  for (const [name, { error }] of entries) {
+    if (error) out[name] = error;
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
 
-  const combined = [...h, ...r, ...ro, ...jc];
+async function fetchBrowseJobsUncached(): Promise<BrowseJobsResult> {
+  const [h, r, ro, jc] = await Promise.all([
+    guardBoardLoad(loadHimalayas),
+    guardBoardLoad(loadRemotive),
+    guardBoardLoad(loadRemoteOk),
+    guardBoardLoad(loadJobicy),
+  ]);
+
+  const sourceErrors = collectSourceErrors([
+    ["Himalayas", h],
+    ["Remotive", r],
+    ["Remote OK", ro],
+    ["Jobicy", jc],
+  ]);
+
+  const combined = [...h.sortables, ...r.sortables, ...ro.sortables, ...jc.sortables];
   combined.sort((a, b) => b.sortKey - a.sortKey);
 
   const deduped = dedupeSortables(combined);
   const mixed = roundRobinByPrimaryRole(deduped, TARGET_BROWSE_JOBS);
-  const jobs = sortablesToBrowseDtos(mixed);
+  let jobs = sortablesToBrowseDtos(mixed);
 
   if (jobs.length === 0) {
+    const tt = await guardBoardLoad(loadTeamtailorAsSortables);
+    if (tt.sortables.length > 0) {
+      const ttDeduped = dedupeSortables(tt.sortables);
+      const ttMixed = roundRobinByPrimaryRole(ttDeduped, TARGET_BROWSE_JOBS);
+      jobs = sortablesToBrowseDtos(ttMixed);
+      return { jobs, error: null, sourceErrors };
+    }
     return {
       jobs: [],
       error: "Could not load listings from any source right now.",
+      sourceErrors,
     };
   }
 
-  return { jobs, error: null };
+  return { jobs, error: null, sourceErrors };
 }
 
-const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-jobs-browse-v4"], {
+const getBrowseJobsCached = unstable_cache(fetchBrowseJobsUncached, ["remote-jobs-browse-v5"], {
   revalidate: 180,
 });
 

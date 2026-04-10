@@ -50,7 +50,14 @@ function renderPanel(
       <>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {result.jobs.map((job) => (
-            <FeaturedJobCard key={job.id} job={job} />
+            <FeaturedJobCard
+              key={job.id}
+              job={job}
+              primaryCta={{
+                href: `/language-jobs/job/${encodeURIComponent(job.id)}`,
+                label: "Apply",
+              }}
+            />
           ))}
         </div>
         <div className="mt-12 flex justify-center">

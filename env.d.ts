@@ -4,6 +4,8 @@ declare namespace NodeJS {
     TEAMTAILOR_API_TOKEN?: string;
     /** Optional. Default EU: `https://api.teamtailor.com/v1`. US West: `https://api.na.teamtailor.com/v1`. */
     TEAMTAILOR_API_BASE?: string;
+    /** Public careersite origin for job URLs when Partner API omits `links` on `GET /jobs/:id` (default: Abroader careersite). */
+    TEAMTAILOR_CAREERSITE_BASE?: string;
     /** Optional Teamtailor department id overrides (see `language-job-tabs.ts` for default names). */
     TEAMTAILOR_DANISH_DEPARTMENT_ID?: string;
     TEAMTAILOR_SWEDISH_DEPARTMENT_ID?: string;
@@ -18,5 +20,7 @@ declare namespace NodeJS {
     TEAMTAILOR_SEASONAL_DEPARTMENT_ID?: string;
     /** Optional override for `/volunteering` department (Partner API /departments). */
     TEAMTAILOR_VOLUNTEER_DEPARTMENT_ID?: string;
+    /** Optional. Teamtailor job id for the international recruiter role on the home page sidebar (Partner API `jobs` id). */
+    TEAMTAILOR_LANDING_INTERNATIONAL_RECRUITER_JOB_ID?: string;
   }
 }

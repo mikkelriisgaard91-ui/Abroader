@@ -23,10 +23,10 @@ export type RegionBlock = {
 };
 
 export const HERO = {
-  eyebrow: "Remote work, real community",
-  title: "Co-living abroad — live, work, and explore with others",
+  eyebrow: "Community Co-Living",
+  title: "Live, work, and explore with others abroad",
   subtitle:
-    "Dream of living and working abroad without landing in a new country alone? Co-living abroad is a popular setup for digital nomads, remote workers, and adventurous travellers who want community, flexibility, and an easy start in a new place.",
+    "Dream of living and working abroad without landing in a new country alone? Shared houses built around community are a popular setup for digital nomads, remote workers, and adventurous travellers who want connection, flexibility, and an easy start in a new place.",
 };
 
 export const INTRO_CLOSING = {
