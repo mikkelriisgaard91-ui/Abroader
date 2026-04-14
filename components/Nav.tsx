@@ -508,7 +508,7 @@ export default function Nav() {
               rel="noopener noreferrer"
               className="site-nav__cta site-nav__cta--contacted"
             >
-              Get contacted
+              Speak with a recruiter
             </a>
           </div>
         </div>

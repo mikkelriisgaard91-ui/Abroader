@@ -1,9 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-
-// TODO: Connect this to your email service (Mailchimp, ConvertKit, etc.)
-// Replace the handleSubmit function with your API call.
 const WHATSAPP_URL = "https://wa.me/4552689399";
 
 export default function ExitIntentPopup() {
@@ -51,8 +48,16 @@ export default function ExitIntentPopup() {
       return;
     }
     setError("");
-    // TODO: Send `email` to your email service here
-    console.log("Email captured:", email);
+    const res = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      setError(data.error ?? "Something went wrong. Please try again.");
+      return;
+    }
     setSubmitted(true);
     sessionStorage.setItem("exit-intent-dismissed", "true");
   };

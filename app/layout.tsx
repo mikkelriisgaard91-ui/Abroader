@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import AppShell from "@/components/AppShell";
 import CookieBanner from "@/components/CookieBanner";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
-import NewsletterSection from "@/components/NewsletterSection";
-import BackToTopButton from "@/components/BackToTopButton";
 
 export const metadata: Metadata = {
   title: "Abroader — Your life abroad starts here",
@@ -20,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
         suppressHydrationWarning
         style={{
@@ -35,23 +30,8 @@ export default function RootLayout({
           fontFamily: "Arial, Helvetica, sans-serif",
         }}
       >
-        <Nav />
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-          }}
-        >
-          {children}
-        </div>
-        <NewsletterSection />
-        <Footer />
-        <WhatsAppButton />
-        <BackToTopButton />
+        <AppShell>{children}</AppShell>
         <CookieBanner />
-        <ExitIntentPopup />
       </body>
     </html>
   );

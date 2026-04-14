@@ -1,4 +1,5 @@
 import HomeVerticalCard from "@/components/HomeVerticalCard";
+import { consultationNavVerticals } from "@/lib/consultation-nav";
 import { verticals } from "@/lib/verticals";
 
 const stats = [
@@ -160,6 +161,46 @@ export default function Page() {
           }}
         >
           {verticals.filter((v) => v.href !== "/guides").map((v) => (
+            <HomeVerticalCard key={v.href} v={v} />
+          ))}
+        </div>
+      </section>
+
+      {/* Expert help: career + travel */}
+      <section style={{ padding: "5rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <h2
+            style={{
+              fontSize: "clamp(1.6rem, 3vw, 2.25rem)",
+              fontWeight: 700,
+              color: "#0d1117",
+              letterSpacing: "-0.025em",
+              marginBottom: "0.6rem",
+            }}
+          >
+            Get help from experts to start your Abroader journey
+          </h2>
+          <p
+            style={{
+              color: "#666",
+              fontSize: "1rem",
+              maxWidth: "520px",
+              margin: "0 auto",
+              lineHeight: 1.65,
+            }}
+          >
+            Book a free consultation — our team helps with applications abroad and practical travel planning.
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(270px, 1fr))",
+            gap: "1rem",
+          }}
+        >
+          {consultationNavVerticals.map((v) => (
             <HomeVerticalCard key={v.href} v={v} />
           ))}
         </div>

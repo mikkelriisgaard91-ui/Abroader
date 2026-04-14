@@ -1,3 +1,4 @@
+import { consultationNavVerticals } from "@/lib/consultation-nav";
 import { remoteLivingCategoryHref, remoteLivingNavVerticals } from "@/lib/remote-living/category-landing";
 import { retreatCategoryHref, retreatCategoryNavVerticals } from "@/lib/retreats/category-landing";
 import { verticals } from "@/lib/verticals";
@@ -63,6 +64,12 @@ export const navMainItems: readonly NavMainItem[] = [
     label: "Inspiration",
     childHrefs: ["/guides"],
   },
+  {
+    kind: "group",
+    id: "book-consultation",
+    label: "Book a consultation",
+    childHrefs: ["/career-support", "/travel"],
+  },
   { kind: "link", href: "/about-us", label: "About us" },
 ] as const;
 
@@ -78,6 +85,9 @@ export function groupChildren(group: NavGroupItem): Vertical[] {
   }
   if (group.id === "remote-living") {
     return [...remoteLivingNavVerticals];
+  }
+  if (group.id === "book-consultation") {
+    return [...consultationNavVerticals];
   }
   return group.childHrefs.map(verticalForHref);
 }

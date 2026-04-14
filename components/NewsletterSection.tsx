@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 
-// TODO: Connect to your email service (Mailchimp, ConvertKit, Brevo, etc.)
-// Replace the handleSubmit body with your API call.
-
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -17,8 +14,16 @@ export default function NewsletterSection() {
       return;
     }
     setError("");
-    // TODO: Send `email` to your email service here
-    console.log("Newsletter signup:", email);
+    const res = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      setError(data.error ?? "Something went wrong. Please try again.");
+      return;
+    }
     setSubmitted(true);
   };
 
