@@ -22,5 +22,11 @@ declare namespace NodeJS {
     TEAMTAILOR_VOLUNTEER_DEPARTMENT_ID?: string;
     /** Optional. Teamtailor job id for the international recruiter role on the home page sidebar (Partner API `jobs` id). */
     TEAMTAILOR_LANDING_INTERNATIONAL_RECRUITER_JOB_ID?: string;
+    /** Mailchimp API key (server-only). Format: <key>-<server> e.g. abc123-us10 */
+    MAILCHIMP_API_KEY?: string;
+    /** Mailchimp audience/list ID to subscribe newsletter signups to. */
+    MAILCHIMP_AUDIENCE_ID?: string;
+    /** Mailchimp server prefix — the part after the dash in the API key (e.g. us10). */
+    MAILCHIMP_SERVER?: string;
   }
 }
