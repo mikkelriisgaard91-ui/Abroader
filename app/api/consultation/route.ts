@@ -7,9 +7,21 @@ const AVAILABILITY_LABELS: Record<string, string> = {
   weekends: "Weekends",
 };
 
+const DEFAULT_FROM = "Abroader <onboarding@resend.dev>";
+const DEFAULT_NOTIFY_TO = "mikkelriisgaard91@gmail.com";
+
 export async function POST(req: Request) {
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  if (!apiKey) {
+    console.error("Consultation API: RESEND_API_KEY is not set");
+    return Response.json(
+      { error: "Consultation email is not configured." },
+      { status: 503 },
+    );
+  }
+
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(apiKey);
     const body = await req.json();
     const { name, email, availability, subject } = body as {
       name: string;
@@ -26,11 +38,14 @@ export async function POST(req: Request) {
       .map((id) => AVAILABILITY_LABELS[id] ?? id)
       .join("\n  • ");
 
-    // Using onboarding@resend.dev + Gmail until abroader.io is verified at resend.com/domains.
-    // Once verified, change from → "Abroader <noreply@abroader.io>" and to → "mikkel@abroader.io"
+    const from = process.env.RESEND_FROM?.trim() || DEFAULT_FROM;
+    const to = process.env.CONSULTATION_NOTIFY_EMAIL?.trim() || DEFAULT_NOTIFY_TO;
+
+    // Using onboarding@resend.dev until abroader.io is verified at resend.com/domains.
+    // Then set RESEND_FROM e.g. Abroader <noreply@abroader.io> and CONSULTATION_NOTIFY_EMAIL to your inbox.
     const { data, error } = await resend.emails.send({
-      from: "Abroader <onboarding@resend.dev>",
-      to: "mikkelriisgaard91@gmail.com",
+      from,
+      to,
       replyTo: email,
       subject: subject ?? `New consultation request from ${name}`,
       text: [
@@ -53,7 +68,8 @@ export async function POST(req: Request) {
     console.log("Resend success, email id:", data?.id);
     return Response.json({ ok: true });
   } catch (err) {
-    console.error("Consultation API error:", err);
+    const detail = err instanceof Error ? err.message : String(err);
+    console.error("Consultation API error:", detail, err);
     return Response.json({ error: "Failed to send. Please try again." }, { status: 500 });
   }
 }

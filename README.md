@@ -51,3 +51,20 @@ If the Vercel **Root Directory** is `abroader`, you still use the same variable 
 The remote jobs page only lists roles that are **Fully remote** in Teamtailor (not hybrid or on-site). If your jobs use another remote setting, they will not appear.
 
 If the API returns errors or empty data when your token works locally, your account may use the **US West** API host. Add `TEAMTAILOR_API_BASE=https://api.na.teamtailor.com/v1` in Vercel (same as in [`.env.example`](./.env.example)).
+
+### Environment variables (consultation form / Resend)
+
+The career-support and travel-planning consultation modals POST to `/api/consultation`, which sends email via [Resend](https://resend.com). Without `RESEND_API_KEY` on Vercel, production returns **503** with “Consultation email is not configured.”
+
+1. In [Vercel](https://vercel.com), open your **Project** → **Settings** → **Environment Variables**.
+2. Add:
+   - **Name:** `RESEND_API_KEY` (matches [`.env.example`](./.env.example)).
+   - **Value:** your Resend API key (same as in local `.env.local`).
+   - **Environments:** **Production** (and **Preview** if previews should send mail).
+3. Save, then **Redeploy** so the server receives the variable.
+
+**Testing vs production**
+
+- With the default sender `onboarding@resend.dev`, Resend only allows sending to addresses allowed for your account (see [Resend testing](https://resend.com/docs/dashboard/emails/send-test-emails)). Set **`CONSULTATION_NOTIFY_EMAIL`** in Vercel to an inbox Resend accepts for that sender, or verify **abroader.io** at Resend and set **`RESEND_FROM`** (e.g. `Abroader <noreply@abroader.io>`) plus **`CONSULTATION_NOTIFY_EMAIL`** to your team inbox.
+
+If the form still fails after deploy, open **Vercel** → **Deployments** → select the deployment → **Functions** / **Logs**, filter for `POST /api/consultation`, and check lines starting with `Resend error:` or `Consultation API error:` (the latter logs a short message server-side without exposing it in the JSON response).
