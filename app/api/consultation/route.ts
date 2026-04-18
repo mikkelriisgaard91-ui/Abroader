@@ -1,5 +1,8 @@
 import { Resend } from "resend";
 
+/** Resend’s Node SDK expects a Node runtime (not Edge). */
+export const runtime = "nodejs";
+
 const AVAILABILITY_LABELS: Record<string, string> = {
   "weekday-morning": "Weekday mornings (9am–12pm)",
   "weekday-afternoon": "Weekday afternoons (12pm–5pm)",
@@ -8,7 +11,7 @@ const AVAILABILITY_LABELS: Record<string, string> = {
 };
 
 const DEFAULT_FROM = "Abroader <onboarding@resend.dev>";
-const DEFAULT_NOTIFY_TO = "mikkelriisgaard91@gmail.com";
+const DEFAULT_NOTIFY_TO = "mikkel@abroader.io";
 
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
