@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-
-const CONSULTATION_URL = "/consultation";
+import ConsultationModal from "@/components/ConsultationModal";
 
 // Brand palette
 // Sunflower Gold  #fcba36
@@ -342,8 +340,11 @@ const bodyStyle = { fontFamily: "var(--font-cs-body, Inter, sans-serif)" };
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function CareerSupportContent() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <main className="w-full bg-[#fafafa] antialiased" style={bodyStyle}>
+      <ConsultationModal open={showModal} onClose={() => setShowModal(false)} context="career" />
 
       {/* ── Hero ── */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: "520px" }}>
@@ -387,13 +388,13 @@ export default function CareerSupportContent() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href={CONSULTATION_URL}
+            <button
+              onClick={() => setShowModal(true)}
               className="rounded-lg bg-[#fcba36] px-7 py-3 text-base font-semibold text-[#2a1f0a] transition-colors hover:bg-[#f0aa20]"
               style={headingStyle}
             >
               Book a free consultation
-            </Link>
+            </button>
             <a
               href="#packages"
               onClick={scrollToPackages}
@@ -600,13 +601,13 @@ export default function CareerSupportContent() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={CONSULTATION_URL}
-                    className={`mt-6 block rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition-colors ${c.btn}`}
+                  <button
+                    onClick={() => setShowModal(true)}
+                    className={`mt-6 block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition-colors ${c.btn}`}
                     style={headingStyle}
                   >
                     {pkg.price ? "Get started" : "Book free call"}
-                  </Link>
+                  </button>
                 </div>
               );
             })}
@@ -680,13 +681,13 @@ export default function CareerSupportContent() {
           <p className="mt-3 text-[#8ed2e1]">
             No commitment, no hard sell — just a straight talk about what you're working toward and whether we can help.
           </p>
-          <Link
-            href={CONSULTATION_URL}
+          <button
+            onClick={() => setShowModal(true)}
             className="mt-8 inline-block rounded-lg bg-[#fcba36] px-8 py-3 text-base font-semibold text-[#2a1f0a] transition-colors hover:bg-[#f0aa20]"
             style={headingStyle}
           >
             Book free call
-          </Link>
+          </button>
         </div>
       </section>
 

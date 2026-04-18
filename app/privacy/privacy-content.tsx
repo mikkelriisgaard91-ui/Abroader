@@ -269,8 +269,8 @@ export default function PrivacyContent() {
               </p>
               <p className="privacy-contact-card__detail">
                 WhatsApp:{" "}
-                <a href="https://wa.me/4552689399" target="_blank" rel="noopener noreferrer" className="privacy-link">
-                  +45 52 68 93 99
+                <a href="https://wa.me/447344033843" target="_blank" rel="noopener noreferrer" className="privacy-link">
+                  +44 7344 033843
                 </a>
               </p>
               <p className="privacy-contact-card__detail">

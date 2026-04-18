@@ -6,6 +6,8 @@ import {
   fetchAllLanguageDepartmentJobs,
   fetchTeamtailorJobById,
   pickPeerLanguageJob,
+  LANGUAGE_JOB_TAB_ORDER,
+  type FeaturedJobDetailDto,
 } from "@/lib/remote-jobs/teamtailor-featured";
 import {
   LanguageJobCountryInsights,
@@ -41,11 +43,23 @@ export default async function LanguageJobDetailPage({ params }: PageProps) {
   const { id } = await params;
   const recruiterId = process.env.TEAMTAILOR_LANDING_INTERNATIONAL_RECRUITER_JOB_ID?.trim();
 
-  const [job, recruiterJob, allByTab] = await Promise.all([
+  const [rawJob, recruiterJob, allByTab] = await Promise.all([
     fetchTeamtailorJobById(id),
     recruiterId ? fetchTeamtailorJobById(recruiterId) : Promise.resolve(null),
     fetchAllLanguageDepartmentJobs(),
   ]);
+
+  let job: FeaturedJobDetailDto | null = rawJob;
+  if (!job) {
+    for (const tab of LANGUAGE_JOB_TAB_ORDER) {
+      const r = allByTab[tab];
+      if (r.ok) {
+        const found = r.jobs.find((j) => j.id === id);
+        if (found) { job = found; break; }
+      }
+    }
+  }
+
   if (!job) notFound();
 
   const { tab: peerTab, peer: peerJob } = pickPeerLanguageJob(id, allByTab, recruiterJob?.id);

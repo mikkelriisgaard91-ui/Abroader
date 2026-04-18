@@ -405,7 +405,9 @@ export async function fetchPublishedJobsForDepartment(departmentId: string): Pro
       const json = (await res.json()) as JsonApiDoc;
       const locationById = buildLocationMap(json.included);
       for (const item of json.data ?? []) {
-        const mapped = mapFeaturedJob(item, locationById);
+        const mapped = mapFeaturedJob(item, locationById, {
+          applyUrlFallback: teamtailorCareersiteJobUrl(String(item.id)),
+        });
         if (mapped) jobs.push(mapped);
       }
 
@@ -630,12 +632,20 @@ async function fetchTeamtailorJobByIdUncached(id: string): Promise<FeaturedJobDe
 }
 
 const fetchTeamtailorJobByIdCached = unstable_cache(
-  async (jobId: string) => fetchTeamtailorJobByIdUncached(jobId),
+  async (jobId: string) => {
+    const result = await fetchTeamtailorJobByIdUncached(jobId);
+    if (result === null) throw new Error("teamtailor-job-not-found");
+    return result;
+  },
   ["teamtailor-job-detail-v2"],
   { revalidate: 180 }
 );
 
-/** One published job by Teamtailor resource id (cached ~3 min). */
+/** One published job by Teamtailor resource id (cached ~3 min). Null results are never cached. */
 export async function fetchTeamtailorJobById(id: string): Promise<FeaturedJobDetailDto | null> {
-  return fetchTeamtailorJobByIdCached(id);
+  try {
+    return await fetchTeamtailorJobByIdCached(id);
+  } catch {
+    return null;
+  }
 }

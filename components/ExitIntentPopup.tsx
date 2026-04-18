@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-const WHATSAPP_URL = "https://wa.me/4552689399";
+const WHATSAPP_URL = "https://wa.me/447344033843";
 
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false);

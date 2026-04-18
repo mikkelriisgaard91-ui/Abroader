@@ -3253,6 +3253,345 @@ body {
   background: #1a4f5e;
 }
 
+/* ── Consultation modal ── */
+@keyframes consultSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.consult-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(2, 15, 20, 0.62);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.consult-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  max-width: 480px;
+  width: 100%;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  box-shadow: 0 24px 70px rgba(2, 15, 20, 0.28);
+  animation: consultSlideUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  margin: auto;
+}
+
+/* ── Header band ── */
+.consult-modal__header {
+  background: #246374;
+  padding: 1.25rem 1.5rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.consult-modal__header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.consult-modal__brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(142, 210, 225, 0.18);
+  color: #8ed2e1;
+  flex-shrink: 0;
+}
+
+.consult-modal__brand-name {
+  font-family: Poppins, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.consult-modal__close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.consult-modal__close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ── Body ── */
+.consult-modal__body {
+  padding: 1.75rem 1.75rem 2rem;
+}
+
+.consult-modal__heading {
+  margin: 0 0 0.3rem;
+  font-family: Poppins, Georgia, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a3a44;
+  line-height: 1.25;
+}
+
+.consult-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(36, 99, 116, 0.07);
+  border: 1px solid rgba(36, 99, 116, 0.14);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #246374;
+  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.consult-modal__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fcba36;
+  flex-shrink: 0;
+}
+
+.consult-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.consult-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.consult-modal__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a3a44;
+  margin: 0;
+}
+
+.consult-modal__input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(36, 99, 116, 0.18);
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  color: #1a3a44;
+  background: #f8fbfc;
+  outline: none;
+  transition: border-color 0.15s, background 0.15s;
+  box-sizing: border-box;
+}
+
+.consult-modal__input:focus {
+  border-color: #246374;
+  background: #fff;
+}
+
+/* ── Chip grid ── */
+.consult-modal__chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.consult-modal__chip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid rgba(36, 99, 116, 0.18);
+  border-radius: 0.9rem;
+  background: #f8fbfc;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  text-align: left;
+  font-family: inherit;
+}
+
+.consult-modal__chip:hover {
+  border-color: #246374;
+  background: rgba(36, 99, 116, 0.05);
+}
+
+.consult-modal__chip--selected {
+  border-color: #246374;
+  background: #246374;
+}
+
+.consult-modal__chip--selected:hover {
+  background: #1a4f5e;
+  border-color: #1a4f5e;
+}
+
+.consult-modal__chip-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1a3a44;
+}
+
+.consult-modal__chip--selected .consult-modal__chip-title {
+  color: #fff;
+}
+
+.consult-modal__chip-check {
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.consult-modal__chip--selected .consult-modal__chip-check {
+  display: flex;
+}
+
+.consult-modal__chip-sub {
+  font-size: 0.72rem;
+  color: #6a8f9a;
+}
+
+.consult-modal__chip--selected .consult-modal__chip-sub {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Error + submit ── */
+.consult-modal__error {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #c0392b;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.consult-modal__submit {
+  width: 100%;
+  padding: 0.9rem;
+  background: #246374;
+  color: #fff;
+  border: none;
+  border-radius: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s;
+  font-family: Poppins, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.consult-modal__submit:hover:not(:disabled) {
+  background: #1a4f5e;
+  transform: translateY(-1px);
+}
+
+.consult-modal__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Success state ── */
+.consult-modal__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.75rem 2.75rem;
+}
+
+.consult-modal__success-circle {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgba(36, 99, 116, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
+  border: 2px solid rgba(36, 99, 116, 0.14);
+}
+
+.consult-modal__success-heading {
+  font-family: Poppins, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a3a44;
+  margin: 0 0 0.6rem;
+}
+
+.consult-modal__success-sub {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #4a6b76;
+  max-width: 300px;
+  margin: 0 0 1.75rem;
+}
+
+.consult-modal__success-close {
+  padding: 0.7rem 2rem;
+  background: #246374;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+  transition: background 0.15s;
+}
+
+.consult-modal__success-close:hover {
+  background: #1a4f5e;
+}
+
 /* ── Newsletter section ── */
 .newsletter-section {
   background: #0d2d36;

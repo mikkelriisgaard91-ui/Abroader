@@ -60,7 +60,6 @@ export function VolunteeringJobsCatalog({
   const hasActiveFilters = locationFilter !== "all";
 
   const tokenMissing = !result.ok && result.error === TOKEN_MISSING;
-  const teamtailorError = !result.ok && !tokenMissing;
 
   return (
     <section
@@ -79,12 +78,6 @@ export function VolunteeringJobsCatalog({
           <p className="mb-8 rounded-xl border border-amber-200/80 bg-amber-50/80 px-4 py-3 text-sm text-slate-700">
             Configure <code className="rounded border border-slate-200 bg-white px-1.5 py-0.5 text-xs text-slate-800">TEAMTAILOR_API_TOKEN</code>{" "}
             to load additional listings from Teamtailor. Curated roles below are always shown.
-          </p>
-        ) : null}
-
-        {teamtailorError ? (
-          <p className="mb-8 text-sm text-slate-600" role="status">
-            {result.error}
           </p>
         ) : null}
 

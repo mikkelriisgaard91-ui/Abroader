@@ -104,7 +104,7 @@ export default function LanguageJobsFAQ({ recruiterPrimaryCtaClass }: { recruite
             Your new career is <em className="not-italic text-rj-primary">abroad.</em>
           </h2>
           <p className="mb-10 text-lg leading-relaxed text-rj-muted">
-            Thousands of companies hire English-speaking talent overseas. Here&apos;s everything you need to know about
+            Thousands of companies hire different native language speaking talent overseas. Here&apos;s everything you need to know about
             making the move — and how we help you land the job, for free.
           </p>
 

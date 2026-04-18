@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const WHATSAPP_URL = "https://wa.me/4552689399";
+const WHATSAPP_URL = "https://wa.me/447344033843";
 
 export default function WhatsAppButton() {
   const [bubbleVisible, setBubbleVisible] = useState(false);
