@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     const { data, error } = await resend.emails.send({
       from: "Abroader <onboarding@resend.dev>",
       to: "mikkelriisgaard91@gmail.com",
-      reply_to: email,
+      replyTo: email,
       subject: subject ?? `New consultation request from ${name}`,
       text: [
         `You have a new consultation request.`,
