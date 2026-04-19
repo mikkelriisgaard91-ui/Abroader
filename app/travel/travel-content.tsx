@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import ConsultationModal from "@/components/ConsultationModal";
+
+/** Teamtailor — travel planning consultation / book meeting. */
+const TRAVEL_PLANNING_CONSULTATION_URL =
+  "https://abroader-1746694588.teamtailor.com/jobs/7595442-travel-planning/debb694d-00dc-4967-aeef-018db46550f5";
 
 const headingStyle = { fontFamily: "var(--font-travel-heading, Poppins, sans-serif)" };
 const bodyStyle = { fontFamily: "var(--font-travel-body, Inter, sans-serif)" };
@@ -397,11 +400,8 @@ function scrollToPackages(e: React.MouseEvent<HTMLAnchorElement>) {
 }
 
 export default function TravelContent() {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <main className="w-full bg-[#fafafa] antialiased text-[#2d4a52]" style={bodyStyle}>
-      <ConsultationModal open={showModal} onClose={() => setShowModal(false)} context="travel" />
       {/* Hero */}
       <section className="relative w-full min-h-[520px] overflow-hidden md:min-h-[580px]">
         <Image
@@ -444,13 +444,15 @@ export default function TravelContent() {
             ))}
           </div>
           <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center">
-            <button
-              onClick={() => setShowModal(true)}
+            <a
+              href={TRAVEL_PLANNING_CONSULTATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-lg bg-[#fcba36] px-7 py-3 text-center text-base font-semibold text-[#2a1f0a] transition-colors hover:bg-[#f0aa20]"
               style={headingStyle}
             >
               Talk to a travel planner
-            </button>
+            </a>
             <a
               href="#packages"
               onClick={scrollToPackages}
@@ -714,13 +716,15 @@ export default function TravelContent() {
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={() => setShowModal(true)}
+                  <a
+                    href={TRAVEL_PLANNING_CONSULTATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`mt-6 block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition-colors ${c.btn}`}
                     style={headingStyle}
                   >
                     {pkg.price ? "Book now" : "Book free call"}
-                  </button>
+                  </a>
                 </div>
               );
             })}
@@ -804,13 +808,15 @@ export default function TravelContent() {
           <h2 className="text-2xl font-bold text-white md:text-3xl" style={headingStyle}>
             Got a trip in mind? Let us talk it through
           </h2>
-          <button
-            onClick={() => setShowModal(true)}
+          <a
+            href={TRAVEL_PLANNING_CONSULTATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-block rounded-lg bg-[#fcba36] px-8 py-3 text-base font-semibold text-[#2a1f0a] transition-colors hover:bg-[#f0aa20]"
             style={headingStyle}
           >
             Book free call
-          </button>
+          </a>
         </div>
       </section>
     </main>

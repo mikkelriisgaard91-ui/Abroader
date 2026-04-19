@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import ConsultationModal from "@/components/ConsultationModal";
+
+/** Teamtailor — career support consultation / book meeting. */
+const CAREER_SUPPORT_CONSULTATION_URL =
+  "https://abroader-1746694588.teamtailor.com/jobs/7595440-career-support/faa16629-7e11-495c-ae0d-1ac980fc7f61";
 
 // Brand palette
 // Sunflower Gold  #fcba36
@@ -340,12 +343,8 @@ const bodyStyle = { fontFamily: "var(--font-cs-body, Inter, sans-serif)" };
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function CareerSupportContent() {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <main className="w-full bg-[#fafafa] antialiased" style={bodyStyle}>
-      <ConsultationModal open={showModal} onClose={() => setShowModal(false)} context="career" />
-
       {/* ── Hero ── */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: "520px" }}>
         {/* Background image */}
@@ -388,13 +387,15 @@ export default function CareerSupportContent() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <button
-              onClick={() => setShowModal(true)}
+            <a
+              href={CAREER_SUPPORT_CONSULTATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-lg bg-[#fcba36] px-7 py-3 text-base font-semibold text-[#2a1f0a] transition-colors hover:bg-[#f0aa20]"
               style={headingStyle}
             >
               Book a free consultation
-            </button>
+            </a>
             <a
               href="#packages"
               onClick={scrollToPackages}
@@ -601,13 +602,15 @@ export default function CareerSupportContent() {
                       </li>
                     ))}
                   </ul>
-                  <button
-                    onClick={() => setShowModal(true)}
+                  <a
+                    href={CAREER_SUPPORT_CONSULTATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`mt-6 block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition-colors ${c.btn}`}
                     style={headingStyle}
                   >
                     {pkg.price ? "Get started" : "Book free call"}
-                  </button>
+                  </a>
                 </div>
               );
             })}
@@ -681,13 +684,15 @@ export default function CareerSupportContent() {
           <p className="mt-3 text-[#8ed2e1]">
             No commitment, no hard sell — just a straight talk about what you're working toward and whether we can help.
           </p>
-          <button
-            onClick={() => setShowModal(true)}
+          <a
+            href={CAREER_SUPPORT_CONSULTATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-block rounded-lg bg-[#fcba36] px-8 py-3 text-base font-semibold text-[#2a1f0a] transition-colors hover:bg-[#f0aa20]"
             style={headingStyle}
           >
             Book free call
-          </button>
+          </a>
         </div>
       </section>
 

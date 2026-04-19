@@ -32,5 +32,7 @@ declare namespace NodeJS {
     RESEND_API_KEY?: string;
     /** Optional. `From` header for consultation emails (default: onboarding@resend.dev until domain is verified). */
     RESEND_FROM?: string;
+    /** Optional. Inbox for consultation notifications (default: mikkel@abroader.io). Set to your Resend account email when using test sender before domain verify. */
+    CONSULTATION_NOTIFY_EMAIL?: string;
   }
 }

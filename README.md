@@ -65,8 +65,16 @@ If the form works locally (`.env.local` has `RESEND_API_KEY`) but the **live** s
    - **Environments:** **Production** (and **Preview** if previews should send mail).
 3. Save, then **Redeploy** so the server receives the variable.
 
-**Testing vs production**
+If you still see **“Consultation email is not configured”** after adding the key: the deployment you are hitting was built **without** that variable. Trigger a **new** deployment (Redeploy). If the Git repo has the Next app under **`abroader/`**, set Vercel **Root Directory** to `abroader` on **Settings → General** so env and build apply to the same app. **Note:** Vercel’s **Development** environment applies to `vercel dev` only, not to your public production URL — the live site needs **Production** (and **Preview** for preview URLs).
 
-- Consultation requests are emailed to **mikkel@abroader.io**. With the default sender `onboarding@resend.dev`, Resend only allows sending to addresses allowed for your account (see [Resend testing](https://resend.com/docs/dashboard/emails/send-test-emails)). To deliver reliably to `@abroader.io`, verify **abroader.io** at Resend and set **`RESEND_FROM`** (e.g. `Abroader <noreply@abroader.io>`). You can remove any old **`CONSULTATION_NOTIFY_EMAIL`** variable from Vercel; it is no longer read.
+**Production checklist (reliable delivery to the team inbox)**
 
-If the form still fails after deploy, open **Vercel** → **Deployments** → select the deployment → **Functions** / **Logs**, filter for `POST /api/consultation`, and check lines starting with `Resend error:` or `Consultation API error:` (the latter logs a short message server-side without exposing it in the JSON response).
+1. In [Resend → Domains](https://resend.com/domains), add **abroader.io** and complete the DNS records Resend shows until the domain is **Verified**.
+2. Set **`RESEND_FROM`** on Vercel (and in `.env.local`) to a verified address, e.g. `Abroader <noreply@abroader.io>`.
+3. Leave **`CONSULTATION_NOTIFY_EMAIL`** unset so notifications go to the default **mikkel@abroader.io**, or set it explicitly to that address (or another inbox on your verified domain).
+
+**Testing before the domain is verified**
+
+With the default sender **`onboarding@resend.dev`**, Resend usually only allows the **To** address that matches your Resend account email (see [Resend test emails](https://resend.com/docs/dashboard/emails/send-test-emails)). Until **abroader.io** is verified and **`RESEND_FROM`** uses it, set **`CONSULTATION_NOTIFY_EMAIL`** on Vercel to that same Resend login address so submissions succeed; forward or switch back to **mikkel@abroader.io** after production DNS is done.
+
+If the form still fails after deploy, open **Vercel** → **Deployments** → select the deployment → **Functions** / **Logs**, filter for `POST /api/consultation`, and check lines starting with `Resend error:` or `Consultation API error:` (the latter logs a short message server-side without exposing it in the JSON response). The JSON response may include a **`hint`** field the UI shows next to the error.
