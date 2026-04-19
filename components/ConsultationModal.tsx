@@ -37,6 +37,7 @@ export default function ConsultationModal({ open, onClose, context = "career" }:
   const [availability, setAvailability] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [errorHint, setErrorHint] = useState("");
   const [loading, setLoading] = useState(false);
   const firstFieldRef = useRef<HTMLInputElement>(null);
 
@@ -68,6 +69,7 @@ export default function ConsultationModal({ open, onClose, context = "career" }:
     if (!email || !email.includes("@")) { setError("Please enter a valid email address."); return; }
     if (availability.length === 0) { setError("Please pick at least one time slot."); return; }
     setError("");
+    setErrorHint("");
     setLoading(true);
     try {
       const res = await fetch("/api/consultation", {
@@ -78,6 +80,7 @@ export default function ConsultationModal({ open, onClose, context = "career" }:
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         setError(data.error ?? "Something went wrong. Please try again.");
+        setErrorHint(typeof data.hint === "string" ? data.hint : "");
         return;
       }
       setSubmitted(true);
@@ -96,6 +99,7 @@ export default function ConsultationModal({ open, onClose, context = "career" }:
       setEmail("");
       setAvailability([]);
       setError("");
+      setErrorHint("");
     }, 300);
   };
 
@@ -204,12 +208,17 @@ export default function ConsultationModal({ open, onClose, context = "career" }:
               </div>
 
               {error && (
-                <p className="consult-modal__error" role="alert">
-                  <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
-                    <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 5zm0 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                  </svg>
-                  {error}
-                </p>
+                <div className="flex flex-col gap-2" role="alert">
+                  <p className="consult-modal__error">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
+                      <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 5zm0 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                    </svg>
+                    {error}
+                  </p>
+                  {errorHint ? (
+                    <p className="text-xs leading-relaxed text-[#4a6b76]">{errorHint}</p>
+                  ) : null}
+                </div>
               )}
 
               <button type="submit" className="consult-modal__submit" disabled={loading}>

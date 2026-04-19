@@ -18,6 +18,7 @@ export default function ConsultationPage() {
   const [availability, setAvailability] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [errorHint, setErrorHint] = useState("");
   const [loading, setLoading] = useState(false);
 
   const toggleAvailability = (id: string) => {
@@ -32,6 +33,7 @@ export default function ConsultationPage() {
     if (!email || !email.includes("@")) { setError("Please enter a valid email address."); return; }
     if (availability.length === 0) { setError("Please select at least one availability slot."); return; }
     setError("");
+    setErrorHint("");
     setLoading(true);
     try {
       const res = await fetch("/api/consultation", {
@@ -42,6 +44,7 @@ export default function ConsultationPage() {
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         setError(data.error ?? "Something went wrong. Please try again.");
+        setErrorHint(typeof data.hint === "string" ? data.hint : "");
         return;
       }
       setSubmitted(true);
@@ -138,7 +141,12 @@ export default function ConsultationPage() {
                 </div>
 
                 {error && (
-                  <p className="text-sm text-red-600">{error}</p>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm text-red-600">{error}</p>
+                    {errorHint ? (
+                      <p className="text-sm leading-relaxed text-[#4a6b76]">{errorHint}</p>
+                    ) : null}
+                  </div>
                 )}
 
                 <button

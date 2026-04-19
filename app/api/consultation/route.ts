@@ -13,12 +13,30 @@ const AVAILABILITY_LABELS: Record<string, string> = {
 const DEFAULT_FROM = "Abroader <onboarding@resend.dev>";
 const DEFAULT_NOTIFY_TO = "mikkel@abroader.io";
 
+const MISSING_KEY_HINT =
+  "Set RESEND_API_KEY for this environment: add it to .env.local in the abroader folder for local dev (then restart the dev server), or under your host’s environment variables for production (e.g. Vercel Project → Settings → Environment Variables), then redeploy.";
+
+/** When Resend rejects the send (sandbox / domain rules), guide operators on env vars. */
+function resendRecipientHint(message: string): string | undefined {
+  const m = message.toLowerCase();
+  if (
+    m.includes("testing") ||
+    m.includes("only send") ||
+    m.includes("verified domain") ||
+    m.includes("not allowed to send") ||
+    (m.includes("invalid") && (m.includes("to") || m.includes("recipient")))
+  ) {
+    return "With Resend’s test sender (onboarding@resend.dev), you can only deliver to addresses Resend allows for your account. Verify abroader.io at resend.com/domains and set RESEND_FROM (e.g. Abroader <noreply@abroader.io>) so notifications can reach mikkel@abroader.io.";
+  }
+  return undefined;
+}
+
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
     console.error("Consultation API: RESEND_API_KEY is not set");
     return Response.json(
-      { error: "Consultation email is not configured." },
+      { error: "Consultation email is not configured.", hint: MISSING_KEY_HINT },
       { status: 503 },
     );
   }
@@ -42,10 +60,9 @@ export async function POST(req: Request) {
       .join("\n  • ");
 
     const from = process.env.RESEND_FROM?.trim() || DEFAULT_FROM;
-    const to = process.env.CONSULTATION_NOTIFY_EMAIL?.trim() || DEFAULT_NOTIFY_TO;
+    const to = DEFAULT_NOTIFY_TO;
 
-    // Using onboarding@resend.dev until abroader.io is verified at resend.com/domains.
-    // Then set RESEND_FROM e.g. Abroader <noreply@abroader.io> and CONSULTATION_NOTIFY_EMAIL to your inbox.
+    // Notifications always go to mikkel@abroader.io. Using onboarding@resend.dev until abroader.io is verified at resend.com/domains; then set RESEND_FROM e.g. Abroader <noreply@abroader.io>.
     const { data, error } = await resend.emails.send({
       from,
       to,
@@ -65,7 +82,12 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error("Resend error:", error);
-      return Response.json({ error: error.message ?? "Failed to send email." }, { status: 500 });
+      const msg = error.message ?? "Failed to send email.";
+      const hint = resendRecipientHint(msg);
+      return Response.json(
+        hint ? { error: msg, hint } : { error: msg },
+        { status: 500 },
+      );
     }
 
     console.log("Resend success, email id:", data?.id);

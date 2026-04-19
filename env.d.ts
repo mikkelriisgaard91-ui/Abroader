@@ -32,7 +32,5 @@ declare namespace NodeJS {
     RESEND_API_KEY?: string;
     /** Optional. `From` header for consultation emails (default: onboarding@resend.dev until domain is verified). */
     RESEND_FROM?: string;
-    /** Optional. Recipient for consultation request notifications. */
-    CONSULTATION_NOTIFY_EMAIL?: string;
   }
 }

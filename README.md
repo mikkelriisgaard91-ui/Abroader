@@ -56,6 +56,8 @@ If the API returns errors or empty data when your token works locally, your acco
 
 The career-support and travel-planning consultation modals POST to `/api/consultation`, which sends email via [Resend](https://resend.com). Without `RESEND_API_KEY` on Vercel, production returns **503** with “Consultation email is not configured.”
 
+If the form works locally (`.env.local` has `RESEND_API_KEY`) but the **live** site still shows that message, the deployment environment is missing the variable: add `RESEND_API_KEY` on Vercel (or your host) and redeploy.
+
 1. In [Vercel](https://vercel.com), open your **Project** → **Settings** → **Environment Variables**.
 2. Add:
    - **Name:** `RESEND_API_KEY` (matches [`.env.example`](./.env.example)).
@@ -65,6 +67,6 @@ The career-support and travel-planning consultation modals POST to `/api/consult
 
 **Testing vs production**
 
-- With the default sender `onboarding@resend.dev`, Resend only allows sending to addresses allowed for your account (see [Resend testing](https://resend.com/docs/dashboard/emails/send-test-emails)). Set **`CONSULTATION_NOTIFY_EMAIL`** in Vercel to an inbox Resend accepts for that sender, or verify **abroader.io** at Resend and set **`RESEND_FROM`** (e.g. `Abroader <noreply@abroader.io>`) plus **`CONSULTATION_NOTIFY_EMAIL`** to your team inbox.
+- Consultation requests are emailed to **mikkel@abroader.io**. With the default sender `onboarding@resend.dev`, Resend only allows sending to addresses allowed for your account (see [Resend testing](https://resend.com/docs/dashboard/emails/send-test-emails)). To deliver reliably to `@abroader.io`, verify **abroader.io** at Resend and set **`RESEND_FROM`** (e.g. `Abroader <noreply@abroader.io>`). You can remove any old **`CONSULTATION_NOTIFY_EMAIL`** variable from Vercel; it is no longer read.
 
 If the form still fails after deploy, open **Vercel** → **Deployments** → select the deployment → **Functions** / **Logs**, filter for `POST /api/consultation`, and check lines starting with `Resend error:` or `Consultation API error:` (the latter logs a short message server-side without exposing it in the JSON response).
