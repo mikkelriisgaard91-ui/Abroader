@@ -12,17 +12,6 @@ const secondaryCtaClass =
 const cardCtaClass =
   "inline-flex items-center gap-2 rounded-full border border-[#246374]/25 bg-[#f0f8fa] px-5 py-2.5 text-sm font-semibold text-[#246374] transition-[transform,background-color,box-shadow] duration-300 motion-safe:hover:-translate-y-0.5 motion-safe:hover:bg-[#246374] motion-safe:hover:text-white motion-safe:hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#246374]";
 
-function DatabaseIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <ellipse cx="12" cy="5" rx="9" ry="3" />
-      <path d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5" />
-      <path d="M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9" />
-      <path d="M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4" />
-    </svg>
-  );
-}
-
 function SearchIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -65,16 +54,8 @@ function ArrowRight() {
 
 const offerings = [
   {
-    icon: <DatabaseIcon />,
-    number: "01",
-    title: "Database access",
-    bestFor: "Move fast. Hire on your own terms.",
-    body: "Abroader maintains a continuously updated database of pre-vetted candidates who are actively open to relocating internationally. You get direct access to their profiles — background, skills, languages, and relocation preferences — and can reach out yourself. You only pay a placement fee when a hire is made. No retainer, no monthly subscription.",
-    cta: "Request database access",
-  },
-  {
     icon: <SearchIcon />,
-    number: "02",
+    number: "01",
     title: "Active search & direct recruitment",
     bestFor: "Hard-to-fill roles that need a targeted approach.",
     body: "You brief us on the role, and our team runs a dedicated search — headhunting, outreach, and qualification included. We handle the entire pipeline so you don't have to. Fully contingency-based: if we don't place someone, you don't pay. No risk, full effort.",
@@ -82,7 +63,7 @@ const offerings = [
   },
   {
     icon: <PeopleIcon />,
-    number: "03",
+    number: "02",
     title: "Embedded recruiter",
     bestFor: "Scaling fast or going through a hiring surge.",
     body: "One of our experienced recruiters joins your team — attending your standups, using your tools, operating as an internal hire would. You get dedicated recruitment capacity without the cost or commitment of a full-time hire. Engage for a month, a quarter, or longer.",
@@ -90,7 +71,7 @@ const offerings = [
   },
   {
     icon: <MegaphoneIcon />,
-    number: "04",
+    number: "03",
     title: "Advertising & visibility",
     bestFor: "Employer brands wanting a relocation-ready audience.",
     body: "Your brand gets placed directly in front of our audience of internationally mobile professionals: featured spots on the Abroader homepage, dedicated newsletter placements, and access to partner channels. Ideal for building awareness before you're actively hiring.",
@@ -102,7 +83,7 @@ const stats = [
   { value: "500+", label: "Active candidates" },
   { value: "40+", label: "Countries covered" },
   { value: "100%", label: "Contingency-based" },
-  { value: "4", label: "Ways to work with us" },
+  { value: "3", label: "Ways to work with us" },
 ] as const;
 
 export default function EmployersContent() {

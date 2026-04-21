@@ -34,5 +34,7 @@ declare namespace NodeJS {
     RESEND_FROM?: string;
     /** Optional. Inbox for consultation notifications (default: mikkel@abroader.io). Set to your Resend account email when using test sender before domain verify. */
     CONSULTATION_NOTIFY_EMAIL?: string;
+    /** Optional. Inbox for employers contact form notifications (default: mikkel@abroader.io). */
+    EMPLOYERS_NOTIFY_EMAIL?: string;
   }
 }
