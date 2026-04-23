@@ -4,7 +4,12 @@ import { addOrUpdateSubscriber } from "@/lib/mailchimp";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+  }
   const { email, interests } = body as { email?: string; interests?: string[] };
 
   if (!email || !email.includes("@")) {

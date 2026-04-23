@@ -60,16 +60,44 @@ function getMemberHash(email: string): string {
   return crypto.createHash("md5").update(email.toLowerCase()).digest("hex");
 }
 
-function getMailchimpConfig() {
-  const apiKey = process.env.MAILCHIMP_API_KEY;
-  const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
-  const server = process.env.MAILCHIMP_SERVER;
+/** Datacenter prefix is the segment after the last dash in every Mailchimp API key (e.g. …-us21). */
+function datacenterFromApiKey(apiKey: string): string | undefined {
+  const i = apiKey.lastIndexOf("-");
+  if (i <= 0 || i >= apiKey.length - 1) return undefined;
+  return apiKey.slice(i + 1);
+}
 
-  if (!apiKey || !audienceId || !server) {
-    throw new Error("Mailchimp env vars not configured (MAILCHIMP_API_KEY, MAILCHIMP_AUDIENCE_ID, MAILCHIMP_SERVER).");
+function getMailchimpConfig() {
+  const apiKey = process.env.MAILCHIMP_API_KEY?.trim();
+  const audienceId = process.env.MAILCHIMP_AUDIENCE_ID?.trim();
+  const envServer = process.env.MAILCHIMP_SERVER?.trim();
+  const keyServer = apiKey ? datacenterFromApiKey(apiKey) : undefined;
+
+  if (!apiKey || !audienceId) {
+    throw new Error("Mailchimp env vars not configured (MAILCHIMP_API_KEY, MAILCHIMP_AUDIENCE_ID).");
+  }
+
+  const server = keyServer ?? envServer;
+  if (!server) {
+    throw new Error(
+      "MAILCHIMP_SERVER is not set and the API key has no datacenter suffix (expected …-us21). Set MAILCHIMP_SERVER or use a valid Mailchimp API key."
+    );
+  }
+
+  if (envServer && keyServer && envServer !== keyServer) {
+    console.warn(
+      `[mailchimp] MAILCHIMP_SERVER="${envServer}" does not match API key suffix "${keyServer}". Using "${keyServer}" for requests.`
+    );
   }
 
   return { apiKey, audienceId, server };
+}
+
+/** New members only: `subscribed` (single opt-in) vs `pending` (double opt-in confirmation email). */
+function getStatusIfNew(): "subscribed" | "pending" | "transactional" {
+  const raw = process.env.MAILCHIMP_STATUS_IF_NEW?.trim().toLowerCase();
+  if (raw === "pending" || raw === "transactional") return raw;
+  return "subscribed";
 }
 
 function getAuthHeaders(apiKey: string): Record<string, string> {
@@ -100,12 +128,15 @@ export async function addOrUpdateSubscriber(
   const hash = getMemberHash(email);
   const headers = getAuthHeaders(apiKey);
 
-  const res = await fetch(`${baseUrl(server, audienceId)}/members/${hash}`, {
+  const memberUrl = new URL(`${baseUrl(server, audienceId)}/members/${hash}`);
+  memberUrl.searchParams.set("skip_merge_validation", "true");
+
+  const res = await fetch(memberUrl.toString(), {
     method: "PUT",
     headers,
     body: JSON.stringify({
       email_address: email,
-      status_if_new: "subscribed",
+      status_if_new: getStatusIfNew(),
     }),
   });
 
@@ -116,7 +147,12 @@ export async function addOrUpdateSubscriber(
   }
 
   if (tags && tags.length > 0) {
-    await updateTags(email, tags);
+    try {
+      await updateTags(email, tags);
+    } catch (tagErr) {
+      // Member is already on the list; do not fail the signup UX if tags alone fail.
+      console.error("[mailchimp] subscriber saved but interest tags failed:", tagErr);
+    }
   }
 }
 

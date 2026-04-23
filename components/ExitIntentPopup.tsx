@@ -97,6 +97,7 @@ export default function ExitIntentPopup() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const hasShown = useRef(false);
   const readyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isReady = useRef(false);
@@ -137,23 +138,36 @@ export default function ExitIntentPopup() {
       return;
     }
     setError("");
+    setLoading(true);
 
     const interests = ctx.tag ? [ctx.tag] : [];
 
-    const res = await fetch("/api/newsletter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, interests }),
-    });
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, interests }),
+      });
 
-    if (!res.ok) {
-      const data = await res.json();
-      setError(data.error ?? "Something went wrong. Please try again.");
-      return;
+      if (!res.ok) {
+        let message = "Something went wrong. Please try again.";
+        try {
+          const data = (await res.json()) as { error?: string };
+          if (data.error) message = data.error;
+        } catch {
+          /* non-JSON error body */
+        }
+        setError(message);
+        return;
+      }
+
+      setSubmitted(true);
+      sessionStorage.setItem("exit-intent-dismissed", "true");
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-
-    setSubmitted(true);
-    sessionStorage.setItem("exit-intent-dismissed", "true");
   };
 
   if (!visible) return null;
@@ -190,8 +204,8 @@ export default function ExitIntentPopup() {
                 required
               />
               {error && <p className="exit-popup__error">{error}</p>}
-              <button type="submit" className="exit-popup__submit">
-                {ctx.cta}
+              <button type="submit" className="exit-popup__submit" disabled={loading}>
+                {loading ? "Sending…" : ctx.cta}
               </button>
             </form>
             <div className="exit-popup__divider">

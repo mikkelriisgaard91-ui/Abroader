@@ -16,6 +16,7 @@ export default function NewsletterSection() {
   const [interests, setInterests] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const allValues = INTEREST_OPTIONS.map((o) => o.value);
   const allSelected = allValues.every((v) => interests.includes(v));
@@ -37,17 +38,30 @@ export default function NewsletterSection() {
       return;
     }
     setError("");
-    const res = await fetch("/api/newsletter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, interests }),
-    });
-    if (!res.ok) {
-      const data = await res.json();
-      setError(data.error ?? "Something went wrong. Please try again.");
-      return;
+    setLoading(true);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, interests }),
+      });
+      if (!res.ok) {
+        let message = "Something went wrong. Please try again.";
+        try {
+          const data = (await res.json()) as { error?: string };
+          if (data.error) message = data.error;
+        } catch {
+          /* non-JSON error body */
+        }
+        setError(message);
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-    setSubmitted(true);
   };
 
   return (
@@ -113,8 +127,8 @@ export default function NewsletterSection() {
                     aria-label="Email address"
                     required
                   />
-                  <button type="submit" className="newsletter-section__btn">
-                    Subscribe
+                  <button type="submit" className="newsletter-section__btn" disabled={loading}>
+                    {loading ? "Subscribing…" : "Subscribe"}
                   </button>
                 </div>
                 {error && <p className="newsletter-section__error">{error}</p>}

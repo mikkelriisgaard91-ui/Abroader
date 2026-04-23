@@ -26,8 +26,10 @@ declare namespace NodeJS {
     MAILCHIMP_API_KEY?: string;
     /** Mailchimp audience/list ID to subscribe newsletter signups to. */
     MAILCHIMP_AUDIENCE_ID?: string;
-    /** Mailchimp server prefix — the part after the dash in the API key (e.g. us10). */
+    /** Mailchimp datacenter (e.g. us21). Optional if MAILCHIMP_API_KEY ends with -{server}. */
     MAILCHIMP_SERVER?: string;
+    /** New Mailchimp members: `subscribed` (default), `pending` (double opt-in), or `transactional`. */
+    MAILCHIMP_STATUS_IF_NEW?: string;
     /** Resend API key for `/api/consultation` (server-only). */
     RESEND_API_KEY?: string;
     /** Optional. `From` header for consultation emails (default: onboarding@resend.dev until domain is verified). */
