@@ -9,8 +9,10 @@ export const metadata: Metadata = {
     title: "Country Guides — Europe, Asia, Americas, Caribbean & Oceania — Abroader",
     description:
       "Remote work guides for Europe, Asia, North America, the Caribbean, South America, and Oceania: visas, cost of living, best cities, taxes and community tips for digital nomads and expats.",
+    url: "/guides",
     type: "website",
   },
+  alternates: { canonical: "/guides" },
 };
 
 export default function GuidesIndexPage() {

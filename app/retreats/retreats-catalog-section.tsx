@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState, useTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
@@ -315,7 +316,10 @@ export function RetreatsCatalogSection({ presetCategory }: RetreatsCatalogSectio
                 key={p.id}
                 className="flex h-full flex-col overflow-hidden rounded-3xl border border-[rgba(36,99,116,0.1)] bg-white shadow-[0_16px_48px_-22px_rgba(36,99,116,0.12)]"
               >
-                <div className="relative aspect-[16/10] w-full shrink-0 bg-[#e8f4f7]">
+                <Link
+                  href={`/retreats/listing/${p.id}`}
+                  className="relative aspect-[16/10] w-full shrink-0 bg-[#e8f4f7] outline-none ring-[#246374] transition-opacity hover:opacity-[0.96] focus-visible:ring-2 focus-visible:ring-offset-2"
+                >
                   <Image
                     src={p.coverImage}
                     alt={p.coverImageAlt}
@@ -323,7 +327,7 @@ export function RetreatsCatalogSection({ presetCategory }: RetreatsCatalogSectio
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
-                </div>
+                </Link>
                 <div className="flex flex-1 flex-col p-8">
                   {p.badge ? (
                     <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#246374]">{p.badge}</p>
@@ -344,18 +348,12 @@ export function RetreatsCatalogSection({ presetCategory }: RetreatsCatalogSectio
                       {p.priceNote}
                     </p>
                   ) : null}
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
+                  <Link
+                    href={`/retreats/listing/${p.id}`}
                     className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-[rgba(36,99,116,0.2)] bg-[#e8f4f7]/80 px-6 py-3.5 text-center text-sm font-semibold text-[#246374] transition-colors hover:border-[rgba(36,99,116,0.35)] hover:bg-[#e8f4f7]"
                   >
-                    {p.partner === "bookyogaretreats"
-                      ? "View on BookYogaRetreats"
-                      : p.partner === "tripaneer"
-                        ? "View on Tripaneer"
-                        : "View on BookSurfCamps"}
-                  </a>
+                    View retreat
+                  </Link>
                 </div>
               </article>
             ))}

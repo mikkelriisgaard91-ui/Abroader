@@ -1,4 +1,3 @@
-import { consultationNavVerticals } from "@/lib/consultation-nav";
 import { remoteLivingCategoryHref, remoteLivingNavVerticals } from "@/lib/remote-living/category-landing";
 import { retreatCategoryHref, retreatCategoryNavVerticals } from "@/lib/retreats/category-landing";
 import { verticals } from "@/lib/verticals";
@@ -15,6 +14,8 @@ export type NavGroupItem = {
   /** Hub landing page (e.g. /work); optional for groups without a hub */
   hubHref?: string;
   childHrefs: readonly string[];
+  /** Accent colour for the dropdown panel tint */
+  panelAccent?: string;
 };
 
 export type NavLinkItem = {
@@ -25,19 +26,39 @@ export type NavLinkItem = {
 
 export type NavMainItem = NavGroupItem | NavLinkItem;
 
+const discoverNavVerticals: Vertical[] = [
+  {
+    title: "Country Guides",
+    description:
+      "Visas, cost of living, and best cities for remote workers across Europe and Oceania — in-depth guides for your next base.",
+    href: "/guides",
+    accent: "#fcba36",
+    light: "#fff8ec",
+    emoji: "🗺️",
+  },
+  {
+    title: "Opportunities",
+    description: "Handpicked roles, programmes, and experiences curated by the Abroader team.",
+    href: "/opportunities",
+    accent: "#246374",
+    light: "#e8f4f7",
+    emoji: "✨",
+  },
+];
+
 export const navMainItems: readonly NavMainItem[] = [
   {
     kind: "group",
     id: "work",
-    label: "Find work",
+    label: "Work Abroad",
     hubHref: "/work",
-    childHrefs: ["/remote-jobs", "/language-jobs", "/hospitality", "/work-for-accommodation"],
+    childHrefs: ["/remote-jobs", "/language-jobs", "/hospitality", "/work-for-accommodation", "/volunteering"],
+    panelAccent: "#246374",
   },
-  { kind: "link", href: "/volunteering", label: "Volunteering" },
   {
     kind: "group",
     id: "remote-living",
-    label: "Remote Living",
+    label: "Living Abroad",
     hubHref: "/remote-living",
     childHrefs: [
       "/co-living",
@@ -45,6 +66,7 @@ export const navMainItems: readonly NavMainItem[] = [
       remoteLivingCategoryHref("eco-sustainable"),
       remoteLivingCategoryHref("learning-based"),
     ],
+    panelAccent: "#2d6a4f",
   },
   {
     kind: "group",
@@ -57,20 +79,15 @@ export const navMainItems: readonly NavMainItem[] = [
       retreatCategoryHref("martial-arts"),
       retreatCategoryHref("motorcycle-trips"),
     ],
+    panelAccent: "#8b4513",
   },
   {
     kind: "group",
-    id: "inspiration",
-    label: "Inspiration",
-    childHrefs: ["/guides"],
+    id: "discover",
+    label: "Discover",
+    childHrefs: ["/guides", "/opportunities"],
+    panelAccent: "#1a4a7a",
   },
-  {
-    kind: "group",
-    id: "book-consultation",
-    label: "Book a consultation",
-    childHrefs: ["/career-support", "/travel"],
-  },
-  { kind: "link", href: "/about-us", label: "About us" },
 ] as const;
 
 function verticalForHref(href: string): Vertical {
@@ -80,15 +97,9 @@ function verticalForHref(href: string): Vertical {
 }
 
 export function groupChildren(group: NavGroupItem): Vertical[] {
-  if (group.id === "retreats") {
-    return [...retreatCategoryNavVerticals];
-  }
-  if (group.id === "remote-living") {
-    return [...remoteLivingNavVerticals];
-  }
-  if (group.id === "book-consultation") {
-    return [...consultationNavVerticals];
-  }
+  if (group.id === "retreats") return [...retreatCategoryNavVerticals];
+  if (group.id === "remote-living") return [...remoteLivingNavVerticals];
+  if (group.id === "discover") return discoverNavVerticals;
   return group.childHrefs.map(verticalForHref);
 }
 

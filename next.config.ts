@@ -1,4 +1,10 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Pin Turbopack to this app. A lockfile in the parent folder (../) would
+// otherwise be picked as the workspace root and can break dev (wrong paths).
+const appDir = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -37,9 +43,26 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "harmonysurflodge.com",
+        pathname: "/wp-content/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.crocrosurfmaroc.com",
+        pathname: "/wp-content/**",
+      },
+      {
+        protocol: "https",
+        hostname: "static.wixstatic.com",
+        pathname: "/media/**",
+      },
     ],
   },
-  turbopack: {},
+  turbopack: {
+    root: appDir,
+  },
   webpack: (config, { dev }) => {
     if (dev) {
       const extraIgnored = [

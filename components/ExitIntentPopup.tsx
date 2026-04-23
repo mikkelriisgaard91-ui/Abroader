@@ -1,9 +1,98 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+
 const WHATSAPP_URL = "https://wa.me/447344033843";
 
+interface PageContext {
+  tag: string | null;
+  emoji: string;
+  headline: string;
+  sub: string;
+  cta: string;
+}
+
+function getPageContext(pathname: string | null): PageContext {
+  if (!pathname) return defaultContext();
+
+  if (pathname === "/hospitality" || pathname.startsWith("/hospitality/") ||
+      pathname === "/work" || pathname === "/work-for-accommodation") {
+    return {
+      tag: "seasonal_work",
+      emoji: "🏔️",
+      headline: "Your season abroad is one email away",
+      sub: "We'll send you the best seasonal roles the moment they drop. No noise, just good jobs.",
+      cta: "Send me seasonal roles",
+    };
+  }
+
+  if (pathname === "/language-jobs" || pathname.startsWith("/language-jobs/")) {
+    return {
+      tag: "language_jobs",
+      emoji: "🌍",
+      headline: "Jobs that pay you to speak your language",
+      sub: "New language job openings straight to your inbox. Be first in line.",
+      cta: "Get language job alerts",
+    };
+  }
+
+  if (pathname === "/retreats" || pathname.startsWith("/retreats/")) {
+    return {
+      tag: "retreats",
+      emoji: "🧘",
+      headline: "Find your next retreat placement",
+      sub: "New retreat roles and openings, delivered straight to your inbox.",
+      cta: "Show me retreat placements",
+    };
+  }
+
+  if (pathname === "/remote-jobs" || pathname.startsWith("/remote-jobs/")) {
+    return {
+      tag: "remote_jobs",
+      emoji: "💻",
+      headline: "Remote work worth applying for",
+      sub: "Curated remote picks delivered weekly. No job boards, no noise.",
+      cta: "Get remote job picks",
+    };
+  }
+
+  if (pathname === "/travel" ||
+      pathname === "/remote-living" || pathname.startsWith("/remote-living/")) {
+    return {
+      tag: "travel_inspiration",
+      emoji: "✈️",
+      headline: "Travel smarter, work better",
+      sub: "The best live-and-work opportunities, delivered weekly to your inbox.",
+      cta: "Keep me inspired",
+    };
+  }
+
+  if (pathname === "/co-living" || pathname.startsWith("/co-living/")) {
+    return {
+      tag: "travel_inspiration",
+      emoji: "🏡",
+      headline: "Live abroad, work remotely",
+      sub: "Co-living spaces and remote opportunities, curated weekly.",
+      cta: "Show me opportunities",
+    };
+  }
+
+  return defaultContext();
+}
+
+function defaultContext(): PageContext {
+  return {
+    tag: null,
+    emoji: "✈️",
+    headline: "Before you go…",
+    sub: "Get the best international jobs and opportunities delivered to your inbox. No spam, ever.",
+    cta: "Keep me in the loop",
+  };
+}
+
 export default function ExitIntentPopup() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -12,11 +101,11 @@ export default function ExitIntentPopup() {
   const readyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isReady = useRef(false);
 
+  const ctx = getPageContext(pathname);
+
   useEffect(() => {
-    // Don't show if already dismissed this session
     if (sessionStorage.getItem("exit-intent-dismissed")) return;
 
-    // Only trigger after 5s on page so it's not immediately annoying
     readyTimer.current = setTimeout(() => {
       isReady.current = true;
     }, 5000);
@@ -24,7 +113,7 @@ export default function ExitIntentPopup() {
     const handleMouseLeave = (e: MouseEvent) => {
       if (!isReady.current) return;
       if (hasShown.current) return;
-      if (e.clientY > 20) return; // Only trigger when moving toward browser chrome
+      if (e.clientY > 20) return;
       hasShown.current = true;
       setVisible(true);
     };
@@ -48,16 +137,21 @@ export default function ExitIntentPopup() {
       return;
     }
     setError("");
+
+    const interests = ctx.tag ? [ctx.tag] : [];
+
     const res = await fetch("/api/newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, interests }),
     });
+
     if (!res.ok) {
       const data = await res.json();
       setError(data.error ?? "Something went wrong. Please try again.");
       return;
     }
+
     setSubmitted(true);
     sessionStorage.setItem("exit-intent-dismissed", "true");
   };
@@ -65,7 +159,7 @@ export default function ExitIntentPopup() {
   if (!visible) return null;
 
   return (
-    <div className="exit-overlay" role="dialog" aria-modal="true" aria-label="Before you go">
+    <div className="exit-overlay" role="dialog" aria-modal="true" aria-label={ctx.headline}>
       <div className="exit-popup">
         <button className="exit-popup__close" aria-label="Close" onClick={dismiss}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" width="16" height="16" aria-hidden>
@@ -82,11 +176,9 @@ export default function ExitIntentPopup() {
           </div>
         ) : (
           <>
-            <span className="exit-popup__emoji">✈️</span>
-            <h2 className="exit-popup__heading">Before you go…</h2>
-            <p className="exit-popup__sub">
-              Get the best international jobs and opportunities delivered to your inbox. No spam, ever.
-            </p>
+            <span className="exit-popup__emoji">{ctx.emoji}</span>
+            <h2 className="exit-popup__heading">{ctx.headline}</h2>
+            <p className="exit-popup__sub">{ctx.sub}</p>
             <form onSubmit={handleSubmit} className="exit-popup__form" noValidate>
               <input
                 type="email"
@@ -99,7 +191,7 @@ export default function ExitIntentPopup() {
               />
               {error && <p className="exit-popup__error">{error}</p>}
               <button type="submit" className="exit-popup__submit">
-                Keep me in the loop
+                {ctx.cta}
               </button>
             </form>
             <div className="exit-popup__divider">

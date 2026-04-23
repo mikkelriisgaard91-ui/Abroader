@@ -12,6 +12,7 @@ import {
   type SetStateAction,
 } from "react";
 import { EMPLOYERS_NAV, GET_CONTACTED_URL } from "@/lib/employers";
+import { consultationNavVerticals } from "@/lib/consultation-nav";
 import {
   groupChildren,
   isGroupActive,
@@ -39,13 +40,9 @@ function MenuIcon({ open }: { open: boolean }) {
   return (
     <svg className="site-nav__icon" viewBox="0 0 24 24" aria-hidden fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
       {open ? (
-        <>
-          <path d="M6 6l12 12M18 6L6 18" />
-        </>
+        <path d="M6 6l12 12M18 6L6 18" />
       ) : (
-        <>
-          <path d="M4 7h16M4 12h16M4 17h16" />
-        </>
+        <path d="M4 7h16M4 12h16M4 17h16" />
       )}
     </svg>
   );
@@ -182,8 +179,11 @@ function NavDesktopDropdown({
                   className={`site-nav__dropdown-link${childActive ? " site-nav__dropdown-link--active" : ""}`}
                   onClick={() => setOpenDropdownId(null)}
                 >
-                  <span className="site-nav__dropdown-link-title">{v.title}</span>
-                  <span className="site-nav__dropdown-link-desc">{v.description}</span>
+                  <span className="site-nav__dropdown-link-emoji" aria-hidden>{v.emoji}</span>
+                  <span className="site-nav__dropdown-link-body">
+                    <span className="site-nav__dropdown-link-title">{v.title}</span>
+                    <span className="site-nav__dropdown-link-desc">{v.description}</span>
+                  </span>
                 </Link>
               </li>
             );
@@ -320,6 +320,15 @@ function NavMobileAccordion({
           </div>
         );
       })}
+
+      {/* About — demoted from main nav, pinned at bottom of mobile list */}
+      <Link
+        href="/about-us"
+        className={`site-nav__link site-nav__link--about-mobile${pathname === "/about-us" ? " site-nav__link--active" : ""}`}
+        aria-current={pathname === "/about-us" ? "page" : undefined}
+      >
+        About us
+      </Link>
     </nav>
   );
 }
@@ -341,13 +350,25 @@ export default function Nav() {
   const isMobileNavLayout = useIsMobileNavLayout();
   const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
   const [openAccordionId, setOpenAccordionId] = useState<string | null>(null);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
+  const helpRef = useRef<HTMLDivElement>(null);
   const wasMenuOpenRef = useRef(false);
+
+  // Scroll-aware nav transparency
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     startTransition(() => {
       setMenuOpen(false);
       setOpenDropdownId(null);
+      setHelpOpen(false);
     });
   }, [pathname]);
 
@@ -395,6 +416,23 @@ export default function Nav() {
       document.removeEventListener("mousedown", onDoc);
     };
   }, [openDropdownId]);
+
+  // Close Get Help popup on outside click or Escape
+  useEffect(() => {
+    if (!helpOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setHelpOpen(false);
+    };
+    const onDoc = (e: MouseEvent) => {
+      if (helpRef.current && !helpRef.current.contains(e.target as Node)) setHelpOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onDoc);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onDoc);
+    };
+  }, [helpOpen]);
 
   useEffect(() => {
     if (!menuOpen || !isMobileNavLayout) {
@@ -453,8 +491,14 @@ export default function Nav() {
     };
   }, [menuOpen, isMobileNavLayout]);
 
+  const navClasses = [
+    "site-nav",
+    menuOpen ? "site-nav--open" : "",
+    !scrolled ? "site-nav--at-top" : "",
+  ].filter(Boolean).join(" ");
+
   return (
-    <header className={`site-nav${menuOpen ? " site-nav--open" : ""}`}>
+    <header className={navClasses}>
       <div className="site-nav__inner">
         <Link href="/" className="site-nav__brand" aria-label="Abroader home">
           <img src="/logo-abroader.png" alt="" className="site-nav__logo" />
@@ -495,6 +539,45 @@ export default function Nav() {
           </div>
 
           <div className="site-nav__actions">
+            {/* About — desktop only, subtle utility link */}
+            <Link
+              href="/about-us"
+              className={`site-nav__about-link${pathname === "/about-us" ? " site-nav__about-link--active" : ""}`}
+              aria-current={pathname === "/about-us" ? "page" : undefined}
+            >
+              About
+            </Link>
+
+            {/* Get Help CTA with mini dropdown */}
+            <div className="site-nav__help-wrap" ref={helpRef}>
+              <button
+                type="button"
+                className={`site-nav__cta site-nav__cta--help${helpOpen ? " site-nav__cta--help-open" : ""}`}
+                aria-expanded={helpOpen}
+                aria-haspopup="true"
+                onClick={() => setHelpOpen((o) => !o)}
+              >
+                Get Help
+                <ChevronIcon open={helpOpen} />
+              </button>
+              <div className="site-nav__help-panel" hidden={!helpOpen}>
+                {consultationNavVerticals.map((v) => (
+                  <Link
+                    key={v.href}
+                    href={v.href}
+                    className={`site-nav__help-link${isPathActive(pathname, v.href) ? " site-nav__help-link--active" : ""}`}
+                    onClick={() => setHelpOpen(false)}
+                  >
+                    <span className="site-nav__help-link-emoji" aria-hidden>{v.emoji}</span>
+                    <span className="site-nav__help-link-body">
+                      <span className="site-nav__help-link-title">{v.title}</span>
+                      <span className="site-nav__help-link-desc">{v.description}</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <Link
               href={EMPLOYERS_NAV.href}
               className={`site-nav__cta site-nav__cta--employers${pathname === EMPLOYERS_NAV.href || pathname.startsWith(`${EMPLOYERS_NAV.href}/`) ? " site-nav__cta--employers-active" : ""}`}

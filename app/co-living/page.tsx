@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   EXPLAINERS,
   HERO,
@@ -9,6 +10,20 @@ import {
   type ColivingListing,
   type RegionBlock,
 } from "./content";
+
+export const metadata: Metadata = {
+  title: "Community Co-Living Abroad — Abroader",
+  description:
+    "Curated co-living spaces for remote workers and digital nomads. Europe, Africa, and South America — find your community abroad.",
+  openGraph: {
+    title: "Community Co-Living Abroad — Abroader",
+    description:
+      "Curated co-living spaces for remote workers and digital nomads. Europe, Africa, and South America — find your community abroad.",
+    url: "/co-living",
+    type: "website",
+  },
+  alternates: { canonical: "/co-living" },
+};
 
 const recruiterPrimaryCtaClass =
   "inline-flex items-center justify-center rounded-full bg-rj-primary px-8 py-4 text-base font-bold text-rj-on-primary shadow-[0_8px_28px_rgba(253,187,55,0.22)] transition-all hover:brightness-105 active:scale-[0.98] sm:px-10 sm:text-lg";

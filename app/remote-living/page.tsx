@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { REMOTE_LIVING_HUB_CARDS } from "@/lib/remote-living/category-landing";
 
-const SITE = "https://abroader.vercel.app";
+const SITE = "https://www.abroader.io";
 
 const primaryCtaClass =
   "inline-flex items-center justify-center rounded-full bg-[#fcba36] px-8 py-4 text-base font-semibold text-[#2a1f0a] shadow-[0_8px_28px_rgba(252,186,54,0.28)] transition-all hover:brightness-[0.97] active:scale-[0.98] sm:px-10 sm:text-lg";

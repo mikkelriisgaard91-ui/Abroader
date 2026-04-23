@@ -22,7 +22,8 @@ const HIMALAYAS_PAGE_DELAY_MS = 65;
 const JOBICY_COUNT = 70;
 
 /** Target listings after dedupe + role mix (large list without oversized payloads). */
-const TARGET_BROWSE_JOBS = 220;
+export const REMOTE_BROWSE_LISTING_CAP = 220;
+const TARGET_BROWSE_JOBS = REMOTE_BROWSE_LISTING_CAP;
 
 /** Safety caps so a single source cannot dominate memory/response size. */
 const REMOTIVE_MAX_JOBS = 4000;

@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Find work abroad — Abroader",
   description:
     "Browse remote, language, seasonal, and work-for-accommodation opportunities abroad — all in one place.",
+  openGraph: {
+    title: "Find work abroad — Abroader",
+    description:
+      "Browse remote, language, seasonal, and work-for-accommodation opportunities abroad — all in one place.",
+    url: "/work",
+    type: "website",
+  },
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkHubPage() {

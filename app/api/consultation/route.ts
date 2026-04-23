@@ -110,6 +110,36 @@ export async function POST(req: Request) {
     }
 
     console.log("Resend success, email id:", data?.id);
+
+    // Send confirmation email to the user (best-effort — don't fail the request if this bounces)
+    try {
+      await resend.emails.send({
+        from,
+        to: email,
+        subject: "We've received your consultation request — Abroader",
+        text: [
+          `Hi ${name},`,
+          ``,
+          `Thanks for reaching out — we've received your consultation request and will be in touch shortly to confirm a time.`,
+          ``,
+          `Your availability:`,
+          `  • ${availabilityText}`,
+          ``,
+          `In the meantime, feel free to explore:`,
+          `  • Remote jobs abroad — https://www.abroader.io/remote-jobs`,
+          `  • Country guides — https://www.abroader.io/guides`,
+          `  • Living abroad — https://www.abroader.io/remote-living`,
+          ``,
+          `Talk soon,`,
+          `The Abroader team`,
+          `https://www.abroader.io`,
+        ].join("\n"),
+      });
+    } catch (confirmErr) {
+      // Log but don't surface — team notification already succeeded
+      console.warn("Confirmation email failed (non-fatal):", confirmErr);
+    }
+
     return Response.json({ ok: true });
   } catch (err) {
     const detail = err instanceof Error ? err.message : String(err);

@@ -1,0 +1,42 @@
+# robots.txt — https://www.abroader.io
+
+# Search engines
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+# AI crawlers — allowed so Abroader appears in LLM-powered search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap
+Sitemap: https://www.abroader.io/sitemap.xml

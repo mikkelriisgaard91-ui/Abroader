@@ -1,8 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { RECRUITER_CONTACT_URL } from "../language-jobs/content";
 import { RetreatsCatalogSection, RetreatsCatalogSectionFallback } from "./retreats-catalog-section";
+
+export const metadata: Metadata = {
+  title: "Retreats Abroad — Surf, Yoga, Martial Arts & More — Abroader",
+  description:
+    "Find surf, yoga, martial arts, and motorcycle retreats abroad. Structured programmes with clear inclusions in stunning locations worldwide.",
+  openGraph: {
+    title: "Retreats Abroad — Surf, Yoga, Martial Arts & More — Abroader",
+    description:
+      "Find surf, yoga, martial arts, and motorcycle retreats abroad. Structured programmes with clear inclusions in stunning locations worldwide.",
+    url: "/retreats",
+    type: "website",
+  },
+  alternates: { canonical: "/retreats" },
+};
 
 /** Brand: --gold #fcba36, on-gold per rj-on-primary */
 const primaryCtaClass =

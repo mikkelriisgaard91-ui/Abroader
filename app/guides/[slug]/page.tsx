@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { allGuides, getGuideBySlug, getRelatedGuides } from "@/lib/guides";
 import NocturnalCountryGuideView from "./nocturnal-country-guide-view";
 
-const SITE = "https://abroader.vercel.app";
+const SITE = "https://www.abroader.io";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
