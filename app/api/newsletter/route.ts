@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { addOrUpdateSubscriber } from "@/lib/mailchimp";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {

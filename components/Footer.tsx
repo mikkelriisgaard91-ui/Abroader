@@ -68,10 +68,12 @@ const CONVERSION_LINKS: FooterLink[] = [
 function EmailSignup() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.includes("@")) return;
+    setErrorMessage("");
     setStatus("loading");
     try {
       const res = await fetch("/api/newsletter", {
@@ -79,8 +81,21 @@ function EmailSignup() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) {
+        setStatus("success");
+        return;
+      }
+      let message = "Something went wrong. Try again.";
+      try {
+        const data = (await res.json()) as { error?: string };
+        if (data.error) message = data.error;
+      } catch {
+        /* ignore */
+      }
+      setErrorMessage(message);
+      setStatus("error");
     } catch {
+      setErrorMessage("Something went wrong. Try again.");
       setStatus("error");
     }
   }
@@ -112,7 +127,7 @@ function EmailSignup() {
         {status === "loading" ? "…" : "Subscribe"}
       </button>
       {status === "error" && (
-        <p className="site-footer__email-error">Something went wrong. Try again.</p>
+        <p className="site-footer__email-error">{errorMessage || "Something went wrong. Try again."}</p>
       )}
     </form>
   );
