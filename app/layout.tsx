@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
 import CookieBanner from "@/components/CookieBanner";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Abroader — Your life abroad starts here",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <AppShell>{children}</AppShell>
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
