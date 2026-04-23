@@ -32,6 +32,9 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    // Vercel returns 402 for /_next/image when optimization quota/billing blocks it;
+    // serve remote URLs directly so Unsplash (and other allowlisted hosts) still load.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
