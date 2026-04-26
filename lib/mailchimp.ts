@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import crypto from "node:crypto";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -57,7 +57,21 @@ export function mapActionToTag(action: string): AllowedTag | null {
 // ---------------------------------------------------------------------------
 
 function getMemberHash(email: string): string {
-  return crypto.createHash("md5").update(email.toLowerCase()).digest("hex");
+  return crypto.createHash("md5").update(email.trim().toLowerCase()).digest("hex");
+}
+
+/** Trim, strip BOM, strip surrounding quotes (common when pasting into Vercel). */
+function normalizeMailchimpEnvString(value: string | undefined): string | undefined {
+  if (value == null) return undefined;
+  let s = value.trim();
+  if (s.charCodeAt(0) === 0xfeff) s = s.slice(1).trim();
+  if (
+    (s.startsWith('"') && s.endsWith('"')) ||
+    (s.startsWith("'") && s.endsWith("'"))
+  ) {
+    s = s.slice(1, -1).trim();
+  }
+  return s || undefined;
 }
 
 /** Datacenter prefix is the segment after the last dash in every Mailchimp API key (e.g. …-us21). */
@@ -68,9 +82,9 @@ function datacenterFromApiKey(apiKey: string): string | undefined {
 }
 
 function getMailchimpConfig() {
-  const apiKey = process.env.MAILCHIMP_API_KEY?.trim();
-  const audienceId = process.env.MAILCHIMP_AUDIENCE_ID?.trim();
-  const envServer = process.env.MAILCHIMP_SERVER?.trim();
+  const apiKey = normalizeMailchimpEnvString(process.env.MAILCHIMP_API_KEY);
+  const audienceId = normalizeMailchimpEnvString(process.env.MAILCHIMP_AUDIENCE_ID);
+  const envServer = normalizeMailchimpEnvString(process.env.MAILCHIMP_SERVER);
   const keyServer = apiKey ? datacenterFromApiKey(apiKey) : undefined;
 
   if (!apiKey || !audienceId) {
@@ -95,9 +109,34 @@ function getMailchimpConfig() {
 
 /** New members only: `subscribed` (single opt-in) vs `pending` (double opt-in confirmation email). */
 function getStatusIfNew(): "subscribed" | "pending" | "transactional" {
-  const raw = process.env.MAILCHIMP_STATUS_IF_NEW?.trim().toLowerCase();
+  const raw = normalizeMailchimpEnvString(process.env.MAILCHIMP_STATUS_IF_NEW)?.toLowerCase();
   if (raw === "pending" || raw === "transactional") return raw;
   return "subscribed";
+}
+
+function formatMailchimpErrorBody(body: unknown): string {
+  if (!body || typeof body !== "object") return "";
+  const o = body as Record<string, unknown>;
+  const title = typeof o.title === "string" ? o.title : "";
+  const detail = typeof o.detail === "string" ? o.detail : "";
+  return [title, detail].filter(Boolean).join(" — ");
+}
+
+/** PUT body: include `status` when single opt-in so resubscribes after unsubscribe succeed. */
+function buildMemberUpsertPayload(email: string): Record<string, string> {
+  const trimmed = email.trim();
+  const ifNew = getStatusIfNew();
+  const payload: Record<string, string> = {
+    email_address: trimmed,
+    status_if_new: ifNew,
+  };
+  if (ifNew === "subscribed") {
+    payload.status = "subscribed";
+  }
+  if (ifNew === "transactional") {
+    payload.status = "transactional";
+  }
+  return payload;
 }
 
 function getAuthHeaders(apiKey: string): Record<string, string> {
@@ -109,6 +148,23 @@ function getAuthHeaders(apiKey: string): Record<string, string> {
 
 function baseUrl(server: string, audienceId: string) {
   return `https://${server}.api.mailchimp.com/3.0/lists/${audienceId}`;
+}
+
+// ---------------------------------------------------------------------------
+// Errors
+// ---------------------------------------------------------------------------
+
+/** Thrown when Mailchimp Marketing API returns a non-2xx response. */
+export class MailchimpHttpError extends Error {
+  readonly statusCode: number;
+  readonly mailchimpBody: unknown;
+
+  constructor(message: string, statusCode: number, mailchimpBody: unknown) {
+    super(message);
+    this.name = "MailchimpHttpError";
+    this.statusCode = statusCode;
+    this.mailchimpBody = mailchimpBody;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -134,16 +190,17 @@ export async function addOrUpdateSubscriber(
   const res = await fetch(memberUrl.toString(), {
     method: "PUT",
     headers,
-    body: JSON.stringify({
-      email_address: email,
-      status_if_new: getStatusIfNew(),
-    }),
+    body: JSON.stringify(buildMemberUpsertPayload(email)),
   });
 
   if (!res.ok) {
     const body = await res.json().catch(() => ({}));
+    const hint = formatMailchimpErrorBody(body);
     console.error("[mailchimp] addOrUpdateSubscriber failed:", body);
-    throw new Error(`Mailchimp member upsert failed: ${res.status}`);
+    const msg = hint
+      ? `Mailchimp member upsert failed: ${res.status} (${hint})`
+      : `Mailchimp member upsert failed: ${res.status}`;
+    throw new MailchimpHttpError(msg, res.status, body);
   }
 
   if (tags && tags.length > 0) {
@@ -181,8 +238,12 @@ export async function updateTags(email: string, tags: string[]): Promise<void> {
 
   if (!res.ok) {
     const body = await res.json().catch(() => ({}));
+    const hint = formatMailchimpErrorBody(body);
     console.error("[mailchimp] updateTags failed:", body);
-    throw new Error(`Mailchimp tag update failed: ${res.status}`);
+    const msg = hint
+      ? `Mailchimp tag update failed: ${res.status} (${hint})`
+      : `Mailchimp tag update failed: ${res.status}`;
+    throw new MailchimpHttpError(msg, res.status, body);
   }
 }
 

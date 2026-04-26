@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "fetch-city-images": "node scripts/fetch-city-hero-images.mjs"
+    "fetch-city-images": "node scripts/fetch-city-hero-images.mjs",
+    "verify-mailchimp": "node scripts/verify-mailchimp.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

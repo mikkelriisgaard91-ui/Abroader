@@ -4,7 +4,10 @@ import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FeaturedJobCard } from "@/components/FeaturedJobCard";
 import { VolunteerOpportunityCard } from "@/components/VolunteerOpportunityCard";
-import type { TeamtailorFeaturedResult } from "@/lib/remote-jobs/teamtailor-featured";
+import {
+  type TeamtailorFeaturedResult,
+  TEAMTAILOR_API_TOKEN_ERROR,
+} from "@/lib/remote-jobs/teamtailor-featured";
 import type { LocationRegionFilter } from "@/lib/remote-jobs/job-filters";
 import { featuredJobMatchesLocationRegion } from "@/lib/volunteering/volunteer-filters";
 import { STATIC_VOLUNTEER_LISTINGS, staticListingToFilterProbe } from "@/lib/volunteering/static-volunteer-listings";
@@ -12,8 +15,6 @@ import { parseVolunteerLocationParam } from "@/lib/volunteering/volunteer-url-pa
 
 const filterSelectLight =
   "w-full rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-400/40";
-
-const TOKEN_MISSING = "TEAMTAILOR_API_TOKEN is not configured.";
 
 export function VolunteeringJobsCatalog({
   result,
@@ -59,7 +60,7 @@ export function VolunteeringJobsCatalog({
 
   const hasActiveFilters = locationFilter !== "all";
 
-  const tokenMissing = !result.ok && result.error === TOKEN_MISSING;
+  const tokenMissing = !result.ok && result.error === TEAMTAILOR_API_TOKEN_ERROR;
 
   return (
     <section
@@ -76,7 +77,7 @@ export function VolunteeringJobsCatalog({
 
         {tokenMissing ? (
           <p className="mb-8 rounded-xl border border-amber-200/80 bg-amber-50/80 px-4 py-3 text-sm text-slate-700">
-            Configure <code className="rounded border border-slate-200 bg-white px-1.5 py-0.5 text-xs text-slate-800">TEAMTAILOR_API_TOKEN</code>{" "}
+            Configure <code className="rounded border border-slate-200 bg-white px-1.5 py-0.5 text-xs text-slate-800">Teamtailor_API</code>{" "}
             to load additional listings from Teamtailor. Curated roles below are always shown.
           </p>
         ) : null}

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { fetchSeasonalDepartmentJobs } from "@/lib/remote-jobs/teamtailor-featured";
+import {
+  fetchSeasonalDepartmentJobs,
+  TEAMTAILOR_API_TOKEN_ERROR,
+} from "@/lib/remote-jobs/teamtailor-featured";
 import {
   HERO_QUICK_BENEFITS,
   PROCESS_STEPS,
@@ -51,7 +54,7 @@ export default async function SeasonalJobsPage() {
   const testimonialLoop = [...SUCCESS_STORIES_SCROLL, ...SUCCESS_STORIES_SCROLL];
   const seasonalResult = await fetchSeasonalDepartmentJobs();
   const hideSeasonalJobsSection =
-    !seasonalResult.ok && seasonalResult.error === "TEAMTAILOR_API_TOKEN is not configured.";
+    !seasonalResult.ok && seasonalResult.error === TEAMTAILOR_API_TOKEN_ERROR;
 
   return (
     <main className="lj-page overflow-x-hidden bg-rj-bg pb-12 font-rj-body text-rj-fg selection:bg-rj-primary selection:text-rj-on-primary">

@@ -51,7 +51,7 @@ type FeaturedApiResponse = {
   error?: string | null;
 };
 
-/** Always read `TEAMTAILOR_API_TOKEN` at request time and avoid caching a stale empty list. */
+/** Force dynamic render so Teamtailor token (`Teamtailor_API` or `TEAMTAILOR_API_TOKEN`) is read at request time. */
 export const dynamic = "force-dynamic";
 
 type RemoteJobListing = BrowseJobDto;

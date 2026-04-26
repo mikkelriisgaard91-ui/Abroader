@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { parseLanguageJobsUiTabParam } from "@/lib/remote-jobs/language-job-tabs";
-import { fetchAllLanguageDepartmentJobs } from "@/lib/remote-jobs/teamtailor-featured";
+import {
+  fetchAllLanguageDepartmentJobs,
+  TEAMTAILOR_API_TOKEN_ERROR,
+} from "@/lib/remote-jobs/teamtailor-featured";
 import {
   HERO_QUICK_BENEFITS,
   PROCESS_STEPS,
@@ -60,7 +63,7 @@ export default async function LanguageJobsPage({
   const languageJobResults = await fetchAllLanguageDepartmentJobs();
   const hideLanguageJobsSection =
     !languageJobResults.danish.ok &&
-    languageJobResults.danish.error === "TEAMTAILOR_API_TOKEN is not configured.";
+    languageJobResults.danish.error === TEAMTAILOR_API_TOKEN_ERROR;
 
   return (
     <main className="lj-page overflow-x-hidden bg-rj-bg pb-12 font-rj-body text-rj-fg selection:bg-rj-primary selection:text-rj-on-primary">

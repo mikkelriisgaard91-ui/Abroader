@@ -11,8 +11,9 @@ function envString(key: string): string | undefined {
 }
 
 function teamtailorApiToken(): string | undefined {
-  const key = ["TEAMTAILOR", "API", "TOKEN"].join("_");
-  return envString(key);
+  return (
+    envString("Teamtailor_API") ?? envString(["TEAMTAILOR", "API", "TOKEN"].join("_"))
+  );
 }
 
 /** EU (default). US West accounts: set `TEAMTAILOR_API_BASE=https://api.na.teamtailor.com/v1` in env. */
@@ -149,7 +150,7 @@ export async function fetchAllRemoteJobs(): Promise<RemoteJobsResult> {
     return {
       ok: false,
       error:
-        "TEAMTAILOR_API_TOKEN is not configured. In Vercel: Project → Settings → Environment Variables — add TEAMTAILOR_API_TOKEN for Production, save, then Redeploy (required for the value to apply).",
+        "Teamtailor API token is not configured. In Vercel: Project → Settings → Environment Variables — add Teamtailor_API (or TEAMTAILOR_API_TOKEN) for Production, save, then Redeploy (required for the value to apply).",
     };
   }
 

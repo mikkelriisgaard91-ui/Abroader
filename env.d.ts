@@ -1,6 +1,8 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    /** Teamtailor Partner API token (server-only). */
+    /** Teamtailor Partner API token (server-only). Prefer this name on Vercel, or set `TEAMTAILOR_API_TOKEN`. */
+    Teamtailor_API?: string;
+    /** Teamtailor Partner API token (server-only). Same as `Teamtailor_API` if both are set, `Teamtailor_API` wins. */
     TEAMTAILOR_API_TOKEN?: string;
     /** Optional. Default EU: `https://api.teamtailor.com/v1`. US West: `https://api.na.teamtailor.com/v1`. */
     TEAMTAILOR_API_BASE?: string;

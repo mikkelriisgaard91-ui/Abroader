@@ -15,13 +15,18 @@ import { VOLUNTEER_JOB_DEPARTMENT_NAMES } from "@/lib/volunteering/volunteer-job
 
 export const FEATURED_TEAMTAILOR_API_VERSION = "20210218";
 
+/** User-facing and structural error when no Teamtailor token is set (Vercel: `Teamtailor_API` or `TEAMTAILOR_API_TOKEN`). */
+export const TEAMTAILOR_API_TOKEN_ERROR = "Teamtailor API token is not configured.";
+
 function envString(key: string): string | undefined {
   const v = process.env[key];
   return typeof v === "string" && v.trim() !== "" ? v.trim() : undefined;
 }
 
 function teamtailorApiToken(): string | undefined {
-  return envString(["TEAMTAILOR", "API", "TOKEN"].join("_"));
+  return (
+    envString("Teamtailor_API") ?? envString(["TEAMTAILOR", "API", "TOKEN"].join("_"))
+  );
 }
 
 function apiBase(): string {
@@ -235,7 +240,7 @@ async function fetchTeamtailorFeaturedJobsUncached(
   if (!token) {
     return {
       ok: false,
-      error: "TEAMTAILOR_API_TOKEN is not configured.",
+      error: TEAMTAILOR_API_TOKEN_ERROR,
       jobs: [],
     };
   }
@@ -367,7 +372,7 @@ export async function fetchPublishedJobsForDepartment(departmentId: string): Pro
   if (!token) {
     return {
       ok: false,
-      error: "TEAMTAILOR_API_TOKEN is not configured.",
+      error: TEAMTAILOR_API_TOKEN_ERROR,
       jobs: [],
     };
   }
@@ -450,7 +455,7 @@ async function fetchPublishedJobsForDepartmentTab(tab: LanguageJobTabId): Promis
   const override = departmentIdOverrideForTab(tab);
   const token = teamtailorApiToken();
   if (!token) {
-    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured.", jobs: [] };
+    return { ok: false, error: TEAMTAILOR_API_TOKEN_ERROR, jobs: [] };
   }
 
   const departmentId = override ?? (await findDepartmentIdByNames(names));
@@ -471,7 +476,7 @@ async function fetchAllLanguageDepartmentJobsUncached(): Promise<Record<Language
   if (!token) {
     const empty: TeamtailorFeaturedResult = {
       ok: false,
-      error: "TEAMTAILOR_API_TOKEN is not configured.",
+      error: TEAMTAILOR_API_TOKEN_ERROR,
       jobs: [],
     };
     return Object.fromEntries(LANGUAGE_JOB_TAB_ORDER.map((id) => [id, empty])) as Record<
@@ -535,7 +540,7 @@ async function fetchSeasonalDepartmentJobsUncached(): Promise<TeamtailorFeatured
   }
   const token = teamtailorApiToken();
   if (!token) {
-    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured.", jobs: [] };
+    return { ok: false, error: TEAMTAILOR_API_TOKEN_ERROR, jobs: [] };
   }
   const departmentId = await findDepartmentIdByNames(SEASONAL_JOB_DEPARTMENT_NAMES);
   if (!departmentId) {
@@ -567,7 +572,7 @@ async function fetchVolunteerDepartmentJobsUncached(): Promise<TeamtailorFeature
   }
   const token = teamtailorApiToken();
   if (!token) {
-    return { ok: false, error: "TEAMTAILOR_API_TOKEN is not configured.", jobs: [] };
+    return { ok: false, error: TEAMTAILOR_API_TOKEN_ERROR, jobs: [] };
   }
   const departmentId = await findDepartmentIdByNames(VOLUNTEER_JOB_DEPARTMENT_NAMES);
   if (!departmentId) {
