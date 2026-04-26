@@ -1,8 +1,8 @@
 /**
  * Curated retreat listings. Affiliates: BookSurfCamps aid=11528; Tripaneer aid=11528;
  * BookYogaRetreats ref in each listing URL.
- * Cover images: local /public/retreats/{listing-id}.jpg (sourced from Unsplash & Pexels;
- * partner listing pages may be protected for automated image extraction).
+ * Cover images: https://images.unsplash.com/... and a few partner/CDN URLs (see next.config
+ * remotePatterns). Partner listing pages may be protected for automated image extraction.
  */
 export const BOOKSURFCAMPS_AID = "11528";
 export const TRIPANEER_AID = "11528";
@@ -116,7 +116,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day surf & yoga with personalized beginner coaching",
     organizer: "Paddle Out Morocco",
     location: "Tamraght",
-    coverImage: "/retreats/paddle-out-morocco-8.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Coastal bay with clear water",
     href: `https://www.booksurfcamps.com/paddle-out-morocco/8-day-surf-and-yoga-personalized-surf-coaching-for-beginner-surfers-in-tamraght?${aid}`,
     bullets: [
@@ -223,7 +224,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3-day fluidity eco surf camp",
     organizer: "Golden Waves Surf and Yoga Lodge",
     location: "Porto beach area, Portugal",
-    coverImage: "/retreats/golden-waves-porto.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Yoga and wellness outdoors",
     href: `https://www.booksurfcamps.com/golden-waves-surf-and-yoga-lodge-portugal/3-days-fluidity-eco-surf-camp-at-porto-beach-paradise-portugal?${aid}`,
     bullets: ["Short eco surf camp · surf & yoga lodge", "Porto beach paradise", "Details on BookSurfCamps"],
@@ -254,7 +256,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day surf, kitesurf, wing foil & yoga retreat",
     organizer: "Kite Buen Hombre",
     location: "Cabarete area",
-    coverImage: "/retreats/kite-buen-hombre-cabarete.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Windsurfing on blue water",
     href: `https://www.booksurfcamps.com/kite-buen-hombre/7-day-surf-kitesurf-wing-foil-camp-and-yoga-retreat-in-cabarete?${aid}`,
     bullets: ["Surf · kitesurf · wing foil · yoga", "Caribbean wind-sports hub", "Full program on BookSurfCamps"],
@@ -525,7 +528,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day unwind & rewild women's wellness retreat",
     organizer: "Retreats and More",
     location: "Sedona, Arizona",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Red rock desert landscape near Sedona at golden hour",
     href: "https://www.bookyogaretreats.com/retreats-and-more/4-day-unwind-and-rewild-women-s-wellness-retreat-in-sedona-usa?ref=627324",
     partner: "bookyogaretreats",
@@ -545,7 +549,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day refreshing yoga retreat",
     organizer: "La Crisalida Retreats",
     location: "Alicante, Costa Blanca, Valencia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Mediterranean coast and calm sea near Alicante",
     href: "https://www.bookyogaretreats.com/la-crisalida-retreats/4-day-refreshing-yoga-retreat-in-alicante-costa-blanca-valencia?ref=627337",
     partner: "bookyogaretreats",
@@ -565,7 +570,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day wellness & rejuvenation (yoga, Ayurveda, meditation)",
     organizer: "Preksha Yoga Ashram",
     location: "Goa",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Tropical greenery and quiet space for yoga and meditation",
     href: "https://www.bookyogaretreats.com/preksha-yoga-ashram/7-day-wellness-and-rejuvenation-retreat-with-yoga-ayurvedic-massages-and-meditation-in-goa?ref=627343",
     partner: "bookyogaretreats",
@@ -585,7 +591,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3-day Balinese Watukaru yoga awakening",
     organizer: "BaliReal Retreats",
     location: "Bali",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Lush tropical landscape in Bali",
     href: "https://www.bookyogaretreats.com/balireal-retreats/3-day-balinese-watukaru-yoga-awakening-hindu-culture-wellness-nature-retreat-in-bali?ref=627357",
     partner: "bookyogaretreats",
@@ -605,7 +612,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: '7-day "How are you, really?" yoga retreat',
     organizer: "Yoga Barn Kampot",
     location: "Kampot",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Riverside greenery in Kampot",
     href: "https://www.bookyogaretreats.com/yoga-barn-kampot/7-day-how-are-you-really-yoga-retreat-in-beautiful-kampot?ref=627366",
     partner: "bookyogaretreats",
@@ -625,7 +633,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6-day nature, waterfalls & yoga holiday",
     organizer: "Margaretha van den Broek",
     location: "Vallemaggia, Ticino",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Alpine valley with forest and water in Ticino",
     href: "https://www.bookyogaretreats.com/margaretha-van-den-broek/6-day-nature-waterfalls-and-yoga-holiday-in-vallemaggia-ticino?ref=627378",
     partner: "bookyogaretreats",
@@ -645,7 +654,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day hiking & yoga holiday",
     organizer: "Ecotura",
     location: "Peneda-Gerês National Park",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Green hills and trails in northern Portugal",
     href: "https://www.bookyogaretreats.com/ecotura/8-day-hiking-and-yoga-holiday-in-peneda-geres-national-park?ref=6273",
     partner: "bookyogaretreats",
@@ -665,7 +675,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day beach, coastal hikes & yoga holiday",
     organizer: "Sun Salute Retreats",
     location: "Torre de la Horadada",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Mediterranean beach and calm sea in Spain",
     href: "https://www.bookyogaretreats.com/sun-salute-retreats/5-day-beach-coastal-hikes-and-yoga-holiday-in-torre-de-la-horadada-spain?ref=6273",
     partner: "bookyogaretreats",
@@ -685,7 +696,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day vegan wellness retreat (yoga, meditation & more)",
     organizer: "Wonderland Healing Center",
     location: "Ko Pha Ngan, Surat Thani",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Tropical island greenery and calm light in Thailand",
     href: "https://www.bookyogaretreats.com/wonderland-healing-center/5-days-vegan-wellness-retreat-with-yoga-meditation-and-more-in-ko-pha-ngan-surat-thani?ref=6273",
     partner: "bookyogaretreats",
@@ -705,7 +717,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day yoga holiday with panoramic sunrise yoga",
     organizer: "Hilltop Wellness Resort",
     location: "Phuket",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Hills and morning sky over Phuket",
     href: "https://www.bookyogaretreats.com/hilltop-wellness-resort/4-day-yoga-holiday-with-panoramic-sunrise-yoga-in-phuket?ref=6273",
     partner: "bookyogaretreats",
@@ -725,7 +738,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day Muay Thai, yoga, meditation & fitness (all-inclusive)",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Training and movement in a tropical setting",
     href: "https://www.bookyogaretreats.com/muay-thai-battle-conquer-gym/8-day-muay-thai-yoga-meditation-fitness-combination-all-inclusive-thailand?ref=6273",
     partner: "bookyogaretreats",
@@ -745,7 +759,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day rejuvenating yoga retreat",
     organizer: "Ananda Yoga Detox Center",
     location: "Koh Phangan",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Quiet tropical setting for yoga and rest",
     href: "https://www.bookyogaretreats.com/ananda-yoga-detox-center/4-day-rejuvenating-yoga-retreat-in-koh-phangan-1?ref=6273",
     partner: "bookyogaretreats",
@@ -765,7 +780,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day yoga holiday",
     organizer: "CCS Hideaway",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Tropical resort pool and palms in Thailand",
     href: "https://www.bookyogaretreats.com/ccs-hideaway/4-days-yoga-holiday-in-thailand?ref=6273",
     partner: "bookyogaretreats",
@@ -785,7 +801,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day yoga holiday in Karon",
     organizer: "CCS Hideaway",
     location: "Karon, Phuket",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Beach and coastline in Phuket",
     href: "https://www.bookyogaretreats.com/ccs-hideaway/7-day-yoga-holiday-in-karon-phuket?ref=6273",
     partner: "bookyogaretreats",
@@ -805,7 +822,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12-day meditation & yoga retreat",
     organizer: "Wonderland Healing Center",
     location: "Ko Pha Ngan, Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Island nature and space for long-form retreat",
     href: "https://www.bookyogaretreats.com/wonderland-healing-center/12-days-meditation-and-yoga-retreat-in-ko-pha-ngan-thailand?ref=6273",
     partner: "bookyogaretreats",
@@ -825,7 +843,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day island yoga holiday",
     organizer: "Paula Eveans Island Garden Huts Yoga",
     location: "Nusa Lembongan",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Tropical island coast and calm water in Indonesia",
     href: "https://www.bookyogaretreats.com/paula-eveans-island-garden-huts-yoga/4-day-island-yoga-holiday-in-nusa-lembongan-indonesia?ref=6273",
     partner: "bookyogaretreats",
@@ -845,7 +864,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6-day wellness retreat (yoga, detox, spa, meditation & Hindu blessing)",
     organizer: "Bali Green Retreat",
     location: "Bali",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Lush tropical greenery in Bali",
     href: "https://www.bookyogaretreats.com/bali-green-retreat/6-day-wellness-retreat-with-yoga-detox-spa-meditation-and-hindu-blessing-in-bali-indonesia?ref=6273",
     partner: "bookyogaretreats",
@@ -865,7 +885,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day eco-luxury culture, yoga & meditation retreat",
     organizer: "De Moksha Boutique Resort & Restaurant",
     location: "Bali",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Resort and nature in Bali",
     href: "https://www.bookyogaretreats.com/de-moksha-boutique-resort-restaurant/5-day-eco-luxury-culture-yoga-and-meditation-retreat-in-bali?ref=6273",
     partner: "bookyogaretreats",
@@ -885,7 +906,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day yoga, culture, touring, spa & sound healing",
     organizer: "Balitrees Retreats",
     location: "Bali",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Rice fields and tropical landscape in Bali",
     href: "https://www.bookyogaretreats.com/balitrees-retreats/4-days-yoga-culture-touring-spa-sound-healing-purification-shamanic-blessing-in-bali?ref=6273",
     partner: "bookyogaretreats",
@@ -905,7 +927,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3-day meditation & yoga retreat",
     organizer: "Baligrass Retreats",
     location: "Bali",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Quiet space for meditation in Bali",
     href: "https://www.bookyogaretreats.com/baligrass-retreats/3-days-meditation-and-yoga-retreats-in-bali-indonesia?ref=6273",
     partner: "bookyogaretreats",
@@ -925,7 +948,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day yoga & Ayurveda retreat",
     organizer: "Antharyamin Resorts",
     location: "Kerala",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Backwaters and palms in Kerala",
     href: "https://www.bookyogaretreats.com/antharyamin-resorts/8-day-yoga-and-ayurveda-retreat-in-kerala?ref=6273",
     partner: "bookyogaretreats",
@@ -945,7 +969,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21-day Veda5 Panchakarma & authentic Ayurveda retreat",
     organizer: "Veda5 Ayurveda & Yoga Retreat",
     location: "Rishikesh",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Himalayan foothills and river near Rishikesh",
     href: "https://www.bookyogaretreats.com/veda5-ayurveda-yoga-retreat/21-day-veda5-authentic-ayurveda-panchakarma-treatments-and-retreat-in-rishikesh?ref=6273",
     partner: "bookyogaretreats",
@@ -965,7 +990,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14-day yoga & Ayurveda retreat",
     organizer: "Antharyamin Resorts",
     location: "Kerala",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Calm tropical landscape in Kerala",
     href: "https://www.bookyogaretreats.com/antharyamin-resorts/14-day-yoga-and-ayurveda-retreat-in-kerala?ref=6273",
     partner: "bookyogaretreats",
@@ -985,7 +1011,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "20-day yoga & Ayurveda retreat",
     organizer: "Antharyamin Resorts",
     location: "Kerala",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Peaceful resort setting in Kerala",
     href: "https://www.bookyogaretreats.com/antharyamin-resorts/20-day-yoga-and-ayurveda-retreat-in-kerala-india?ref=6273",
     partner: "bookyogaretreats",
@@ -1005,7 +1032,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day yoga & meditation retreat",
     organizer: "Om Yoga Ashram",
     location: "Dharamsala, Himachal Pradesh",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Mountain air and forest near Dharamsala",
     href: "https://www.bookyogaretreats.com/om-yoga-ashram/8-day-yoga-meditation-retreat-in-dharamsala-himachal-pradesh-india?ref=6273",
     partner: "bookyogaretreats",
@@ -1025,7 +1053,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day Bikram yoga & wellness retreat (coast)",
     organizer: "Happiness Safari",
     location: "Portugal's coast",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Atlantic coastline in Portugal",
     href: "https://www.bookyogaretreats.com/happiness-safari/7-day-bikram-yoga-and-wellness-retreat-on-portugal-s-coast?ref=6273",
     partner: "bookyogaretreats",
@@ -1045,7 +1074,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day rejuvenating yoga retreat",
     organizer: "Moka Surfhouse & Yoga Retreat",
     location: "Ericeira (Lisbon area)",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Surf town cliffs and ocean at Ericeira",
     href: "https://www.bookyogaretreats.com/moka-surfhouse-yoga-retreat/4-day-rejuvenating-yoga-retreat-in-ericeira-lisbon?ref=6273",
     partner: "bookyogaretreats",
@@ -1065,7 +1095,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day budget yoga retreat",
     organizer: "Star Pine Lodge",
     location: "Portugal",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Forest and quiet lodge setting in Portugal",
     href: "https://www.bookyogaretreats.com/star-pine-lodge/5-days-budget-yoga-retreat-in-portugal-1?ref=6273",
     partner: "bookyogaretreats",
@@ -1085,7 +1116,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day ayahuasca, equine therapy & yoga holiday",
     organizer: "Bron voor Rust & Geluk",
     location: "Aljezur, Faro (Algarve)",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Rolling hills and coast in the Algarve",
     href: "https://www.bookyogaretreats.com/bron-voor-rust-geluk/7-day-ayahuasca-equine-therapy-and-yoga-holiday-in-aljezur-faro?ref=6273",
     partner: "bookyogaretreats",
@@ -1105,7 +1137,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day all-inclusive yoga & equestrian vacation (ocean-facing riad, hammam)",
     organizer: "Agadir Ranch",
     location: "Near Agadir",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Atlantic coast and Moroccan landscape near Agadir",
     href: "https://www.bookyogaretreats.com/agadir-ranch/8-day-all-inclusive-yoga-and-equestrian-vacation-in-an-ocean-facing-riad-with-hammam-near-agadir?ref=6273",
     partner: "bookyogaretreats",
@@ -1125,7 +1158,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6-day immersive yoga & culture holiday",
     organizer: "Nella Retreats",
     location: "Marrakech",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Marrakech medina colours and architecture",
     href: "https://www.bookyogaretreats.com/nella-retreats/6-day-immersive-yoga-and-culture-holiday-in-marrakech?ref=6273",
     partner: "bookyogaretreats",
@@ -1145,7 +1179,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8-day body, mind awareness & yoga retreat (Atlas Mountains)",
     organizer: "Salama Ayurveda",
     location: "Atlas Mountains",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "High Atlas valleys and mountain light in Morocco",
     href: "https://www.bookyogaretreats.com/salama-ayurveda/8-days-body-mind-awareness-and-yoga-retreat-in-the-atlas-mountains-morocco?ref=6273",
     partner: "bookyogaretreats",
@@ -1165,7 +1200,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day yoga & culture retreat",
     organizer: "Nella Retreats",
     location: "Marrakech",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Courtyard and tiles in Marrakech",
     href: "https://www.bookyogaretreats.com/nella-retreats/5-day-yoga-and-culture-retreat-in-the-heart-of-marrakech?ref=6273",
     partner: "bookyogaretreats",
@@ -1185,7 +1221,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6-day yoga & wellness holiday",
     organizer: "Riad Dar Zitoun",
     location: "Marrakech",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Traditional riad courtyard in Morocco",
     href: "https://www.bookyogaretreats.com/riad-dar-zitoun/6-day-yoga-and-wellness-holiday-in-marrakech-morocco?ref=6273",
     partner: "bookyogaretreats",
@@ -1205,7 +1242,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6-day luxury yoga retreat with island excursions",
     organizer: "Bliss Yoga Retreats Tenerife",
     location: "Tenerife",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Volcanic coast and ocean on Tenerife",
     href: "https://www.bookyogaretreats.com/bliss-yoga-retreats-tenerife/6-day-luxury-yoga-retreat-with-free-island-excursions-and-on-the-sunny-island-of-tenerife-spain?ref=6273",
     partner: "bookyogaretreats",
@@ -1225,7 +1263,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day yoga sculpt retreat",
     organizer: "Sun Salute Retreats",
     location: "Torre de la Horadada, Valencian Community",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Mediterranean light on the Costa Blanca",
     href: "https://www.bookyogaretreats.com/sun-salute-retreats/5-day-yoga-sculpt-retreat-in-sunny-torre-de-la-horadada-valencian-community?ref=6273",
     partner: "bookyogaretreats",
@@ -1245,7 +1284,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1-week yoga bed & breakfast holiday",
     organizer: "Sun Salute Retreats",
     location: "Alicante",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Coastal city and sea near Alicante",
     href: "https://www.bookyogaretreats.com/sun-salute-retreats/1-week-yoga-bed-and-breakfast-holiday-in-alicante-spain?ref=6273",
     partner: "bookyogaretreats",
@@ -1265,7 +1305,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5-day sun & beach yoga holiday",
     organizer: "Sun Salute Retreats",
     location: "Alicante",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Beach and Mediterranean in Alicante province",
     href: "https://www.bookyogaretreats.com/sun-salute-retreats/5-day-sun-and-beach-yoga-holiday-in-alicante-spain?ref=6273",
     partner: "bookyogaretreats",
@@ -1285,7 +1326,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day rainforest yoga holiday",
     organizer: "Essence Arenal Wellness Center",
     location: "El Castillo, Alajuela",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Rainforest canopy and mist near Arenal",
     href: "https://www.bookyogaretreats.com/essence-arenal-wellness-center/7-day-rainforest-yoga-holiday-in-el-castillo-alajuela-province?ref=6273",
     partner: "bookyogaretreats",
@@ -1305,7 +1347,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6-day tailored luxury yoga & mindfulness retreat",
     organizer: "Ashtanga Yoga Mama",
     location: "Playa Azul, Guanacaste",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Pacific coast jungle and beach in Guanacaste",
     href: "https://www.bookyogaretreats.com/ashtanga-yoga-mama/6-day-tailored-luxury-yoga-and-mindfulness-retreat-in-playa-azul-guanacaste?ref=6273",
     partner: "bookyogaretreats",
@@ -1325,7 +1368,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4-day rainforest yoga retreat",
     organizer: "Essence Arenal Wellness Center",
     location: "El Castillo",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Tropical forest near Arenal volcano",
     href: "https://www.bookyogaretreats.com/essence-arenal-wellness-center/4-day-rainforest-yoga-retreat-in-el-castillo?ref=6273",
     partner: "bookyogaretreats",
@@ -1345,7 +1389,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: '7-day "Love Yourself" retreat (Arenal rainforest)',
     organizer: "Essence Arenal Wellness Center",
     location: "Arenal rainforest",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Lush rainforest and wellness space in Costa Rica",
     href: "https://www.bookyogaretreats.com/essence-arenal-wellness-center/7-days-love-yourself-retreat-in-the-arenal-rainforest-costa-rica?ref=6273",
     partner: "bookyogaretreats",
@@ -1365,7 +1410,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day detox & yoga holiday",
     organizer: "Essence Arenal Wellness Center",
     location: "Arenal, Alajuela",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Volcano and jungle near Arenal",
     href: "https://www.bookyogaretreats.com/essence-arenal-wellness-center/7-day-detox-and-yoga-holiday-in-arenal-alajuela-costa-rica?ref=6273",
     partner: "bookyogaretreats",
@@ -1385,7 +1431,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1-week intensive Krav Maga training (all levels)",
     organizer: "Steve Coster Fitness",
     location: "Adeje, Tenerife",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training in a focused camp setting",
     href: `https://www.tripaneer.com/steve-coster-fitness/1-week-intensive-krav-maga-training-holiday-for-all-levels-in-adeje-tenerife?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1405,7 +1452,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2-week intensive Krav Maga & self-defense course",
     organizer: "Steve Coster Fitness",
     location: "Adeje, Tenerife",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Self-defense and Krav Maga training session",
     href: `https://www.tripaneer.com/steve-coster-fitness/2-week-intensive-krav-maga-and-self-defense-course-holiday-in-adeje-tenerife?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1425,7 +1473,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3-week most complete Krav Maga course (all levels)",
     organizer: "Steve Coster Fitness",
     location: "Adeje, Tenerife",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Extended martial arts training camp",
     href: `https://www.tripaneer.com/steve-coster-fitness/3-week-most-complete-krav-maga-course-holiday-for-all-levels-in-adeje-tenerife?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1445,7 +1494,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day adventure package — Muay Thai & boxing camp",
     organizer: "La Palma Joa",
     location: "La Palma, Canary Islands",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Muay Thai and boxing training outdoors",
     href: `https://www.tripaneer.com/la-palma-joa/7-day-basic-package-muay-thai-and-boxing-camp-in-canary-island-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1465,7 +1515,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day elite package — Muay Thai & boxing camp",
     organizer: "La Palma Joa",
     location: "La Palma, Canary Islands",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Intensive striking camp on an island setting",
     href: `https://www.tripaneer.com/la-palma-joa/7-day-power-package-muay-thai-and-boxing-camp-in-canary-island-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1485,7 +1536,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10-day elite package — Muay Thai & boxing camp",
     organizer: "La Palma Joa",
     location: "La Palma, Canary Islands",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Boxing and Muay Thai camp training",
     href: `https://www.tripaneer.com/la-palma-joa/10-day-power-package-muay-thai-and-boxing-camp-in-canary-island-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1505,7 +1557,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7-day Power Woman & weight loss Muay Thai program",
     organizer: "La Palma Joa",
     location: "La Palma, Canary Islands",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Women-focused Muay Thai and fitness program",
     href: `https://www.tripaneer.com/la-palma-joa/7-day-muay-thai-holiday-power-woman-and-weight-loss-program-on-la-palma-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1525,7 +1578,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14-day professional Muay Thai camp",
     organizer: "La Palma Joa",
     location: "La Palma, Canary Islands",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Professional Muay Thai training camp",
     href: `https://www.tripaneer.com/la-palma-joa/14-day-professional-muay-thai-camp-in-la-palma-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1546,7 +1600,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day all inclusive muay thai yoga wellness and adventure retreat in phetchabun thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/7-day-all-inclusive-muay-thai-yoga-wellness-and-adventure-retreat-in-phetchabun-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1566,7 +1621,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day thailand cultural deep dive muay thai yoga meditation tours temples healthy eating",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/5-day-thailand-cultural-deep-dive-muay-thai-yoga-meditation-tours-temples-healthy-eating?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1586,7 +1642,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day transform your body and mind in the heart of thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/14-day-transform-your-body-and-mind-in-the-heart-of-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1606,7 +1663,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 days weight loss muay thai boxing crossfit phitsanoluk thailand 1",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/10-days-weight-loss-muay-thai-boxing-crossfit-phitsanoluk-thailand-1?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1626,7 +1684,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 week transform your body and mind retreat in the heart of thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/3-week-transform-your-body-and-mind-retreat-in-the-heart-of-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1646,7 +1705,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 day ultimate thai wellness adventure muay thai yoga fitness and more in thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/10-day-ultimate-thai-wellness-adventure-muay-thai-yoga-fitness-and-more-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1666,7 +1726,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day all inclusive muay thai program with packed schedule and epic trainers in phetchabun thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/7-day-all-inclusive-muay-thai-program-with-packed-schedule-and-epic-trainers-in-phetchabun-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1686,7 +1747,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 weeks muay thai and western boxing camp with yoga tours and more in phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/3-weeks-muay-thai-and-western-boxing-camp-with-yoga-tours-and-more-in-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1706,7 +1768,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 week detox meditations and martial arts training in marrakech",
     organizer: "Koom Retreat And Training Center",
     location: "Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Koom Retreat And Training Center",
     href: `https://www.tripaneer.com/koom-retreat-and-training-center/2-week-detox-meditations-and-martial-arts-training-in-marrakech?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1726,7 +1789,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month wellness package and muay thai camp in phitsanulok",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/1-month-wellness-package-and-muay-thai-camp-in-phitsanulok?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1746,7 +1810,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day vip weight loss yoga muay thai crossfit meditation experience phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/14-day-vip-weight-loss-yoga-muay-thai-crossfit-meditation-experience-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1766,7 +1831,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day budget fierce fitness muay thai boot camp all inclusive in thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/14-day-budget-fierce-fitness-muay-thai-boot-camp-all-inclusive-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1786,7 +1852,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 days recharge refocus and rediscover your health in thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/30-days-recharge-refocus-and-rediscover-your-health-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1806,7 +1873,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "60 day escape the ordinary reconnect with tradition at the muay thai and yoga retreat in thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/60-day-escape-the-ordinary-reconnect-with-tradition-at-the-muay-thai-and-yoga-retreat-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1826,7 +1894,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 day mini break train hard and recharge muay thai camp in phitsanulok",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/3-day-mini-break-train-hard-and-recharge-muay-thai-camp-in-phitsanulok?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1846,7 +1915,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days vip muay thai yoga crossfit meditation tours in the ancient city of phitsanulok",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/7-days-vip-muay-thai-yoga-crossfit-meditation-tours-in-the-ancient-city-of-phitsanulok?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1866,7 +1936,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 months fitness muay thai weight loss detox western boxing and fitness camp in thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/2-months-fitness-muay-thai-weight-loss-detox-western-boxing-and-fitness-camp-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1886,7 +1957,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 days western boxing crossfit and muay thai camp in the ancient city of phitsanoluk thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/14-days-western-boxing-crossfit-and-muay-thai-camp-in-the-ancient-city-of-phitsanoluk-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1906,7 +1978,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 day all inclusive muay thai yoga fitness retreat thailand with training tours healthy meals",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/12-day-all-inclusive-muay-thai-yoga-fitness-retreat-thailand-with-training-tours-healthy-meals?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1926,7 +1999,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month boxing and muay thai camp in phitsanoluk thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/1-month-boxing-and-muay-thai-camp-in-phitsanoluk-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1946,7 +2020,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months of martial arts training initiations and meditation in marrakech",
     organizer: "Koom Retreat And Training Center",
     location: "Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Koom Retreat And Training Center",
     href: `https://www.tripaneer.com/koom-retreat-and-training-center/3-months-of-martial-arts-training-initiations-and-meditation-in-marrakech?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1966,7 +2041,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day fighter package intensive muay thai western boxing and crossfit training in phitsanulok",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/14-day-fighter-package-intensive-muay-thai-western-boxing-and-crossfit-training-in-phitsanulok?${tripaneerAid}`,
     partner: "tripaneer",
@@ -1986,7 +2062,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day muay thai training and fitness experience in phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/8-day-muay-thai-training-and-fitness-experience-in-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2006,7 +2083,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month kung fu holiday in china at tianmeng academy",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/1-month-kung-fu-holiday-in-china-at-tianmeng-academy?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2026,7 +2104,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day premier vip package muay thai mastery and wellness bliss luxury retreat in phitsanulok",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/7-day-premier-vip-package-muay-thai-mastery-and-wellness-bliss-luxury-retreat-in-phitsanulok?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2046,7 +2125,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days traditional muay thai training in the ancient city of phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/7-days-traditional-muay-thai-training-in-the-ancient-city-of-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2066,7 +2146,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 day traditional muay thai fierce fitness boot camp resort in thailand s heart",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/30-day-traditional-muay-thai-fierce-fitness-boot-camp-resort-in-thailand-s-heart?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2086,7 +2167,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week meditation moroccan culture and xing yi training for beginners in marrakech morocco",
     organizer: "Koom Retreat And Training Center",
     location: "Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Koom Retreat And Training Center",
     href: `https://www.tripaneer.com/koom-retreat-and-training-center/1-week-meditation-moroccan-culture-and-xing-yi-training-for-beginners-in-marrakech-morocco?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2106,7 +2188,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week affordable muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-week-affordable-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2126,7 +2209,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 weeks authentic kung fu culture experience with warrior monks",
     organizer: "Kungfu Xinglin",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kungfu Xinglin",
     href: `https://www.tripaneer.com/kungfu-xinglin/4-weeks-authentic-kung-fu-culture-experience-with-warrior-monks?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2146,7 +2230,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 month deepen your knowledge of muay thai experience phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/3-month-deepen-your-knowledge-of-muay-thai-experience-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2166,7 +2251,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 days fight camp and kun khmer kickboxing training in siem reap cambodia",
     organizer: "Mrlygym And Boxing",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Mrlygym And Boxing",
     href: `https://www.tripaneer.com/mrlygym-and-boxing/9-days-fight-camp-and-kun-khmer-kickboxing-training-in-siem-reap-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2186,7 +2272,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 day of martial arts detox self defense meditation cultural exchanges in marrakech",
     organizer: "Koom Retreat And Training Center",
     location: "Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Koom Retreat And Training Center",
     href: `https://www.tripaneer.com/koom-retreat-and-training-center/30-day-of-martial-arts-detox-self-defense-meditation-cultural-exchanges-in-marrakech?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2206,7 +2293,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month tai chi and kung fu training in longhu mountain scenic area jiangxi province",
     organizer: "Taiji",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Taiji",
     href: `https://www.tripaneer.com/taiji/1-month-tai-chi-and-kung-fu-training-in-longhu-mountain-scenic-area-jiangxi-province?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2226,7 +2314,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Transform your life in 3 months the ultimate muay thai yoga retreat experience in thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/transform-your-life-in-3-months-the-ultimate-muay-thai-yoga-retreat-experience-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2246,7 +2335,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months popular western boxing and muay thai training in phetchabun thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/6-months-popular-western-boxing-and-muay-thai-training-in-phetchabun-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2266,7 +2356,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month muay thai training camp in thailand 1",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-month-muay-thai-training-camp-in-thailand-1?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2286,7 +2377,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 weeks shaolin kung fu wing chun qigong tai chi training and cultural activities",
     organizer: "Kungfu Xinglin",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kungfu Xinglin",
     href: `https://www.tripaneer.com/kungfu-xinglin/12-weeks-shaolin-kung-fu-wing-chun-qigong-tai-chi-training-and-cultural-activities?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2306,7 +2398,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day battle conquer retreat train explore transform muay thai fitness in phetchabun thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/5-day-battle-conquer-retreat-train-explore-transform-muay-thai-fitness-in-phetchabun-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2326,7 +2419,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "90 day serious about training transform yourself muay thai and fitness program thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/90-day-serious-about-training-transform-yourself-muay-thai-and-fitness-program-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2346,7 +2440,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day muay thai training with yoga in phuket",
     organizer: "Sumalee Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sumalee Boxing Gym",
     href: `https://www.tripaneer.com/sumalee-boxing-gym/8-day-muay-thai-training-with-yoga-in-phuket?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2366,7 +2461,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 days fight camp and kun khmer kickboxing training in siem reap cambodia",
     organizer: "Mrlygym And Boxing",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Mrlygym And Boxing",
     href: `https://www.tripaneer.com/mrlygym-and-boxing/16-days-fight-camp-and-kun-khmer-kickboxing-training-in-siem-reap-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2386,7 +2482,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 weeks muay thai camp in pattaya thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/2-weeks-muay-thai-camp-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2406,7 +2503,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day premier vip package muay thai mastery and wellness bliss luxury retreat in phitsanulok",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/14-day-premier-vip-package-muay-thai-mastery-and-wellness-bliss-luxury-retreat-in-phitsanulok?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2426,7 +2524,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year special deal western boxing muay thai and much more in phetchabun thailand",
     organizer: "Muay Thai Battle Conquer Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Muay Thai Battle Conquer Gym",
     href: `https://www.tripaneer.com/muay-thai-battle-conquer-gym/1-year-special-deal-western-boxing-muay-thai-and-much-more-in-phetchabun-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2446,7 +2545,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month all inclusive muay thai fighters camp in sa kaeo",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-month-all-inclusive-muay-thai-fighters-camp-in-sa-kaeo?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2466,7 +2566,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 weeks authentic kung fu training with warrior monks at er zu temple china",
     organizer: "Kungfu Xinglin",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kungfu Xinglin",
     href: `https://www.tripaneer.com/kungfu-xinglin/2-weeks-authentic-kung-fu-training-with-warrior-monks-at-er-zu-temple-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2486,7 +2587,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months kung fu training in china in weihai china",
     organizer: "Shengjing Shan Traditional Kungfu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Shengjing Shan Traditional Kungfu Academy",
     href: `https://www.tripaneer.com/shengjing-shan-traditional-kungfu-academy/3-months-kung-fu-training-in-china-in-weihai-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2506,7 +2608,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 weeks affordable muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/3-weeks-affordable-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2526,7 +2629,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 days kung fu training in china for foreigners",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/14-days-kung-fu-training-in-china-for-foreigners?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2546,7 +2650,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day vip experience muay thai training in ao nang krabi",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/5-day-vip-experience-muay-thai-training-in-ao-nang-krabi?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2566,7 +2671,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 weeks muay thai experience in pattaya thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/3-weeks-muay-thai-experience-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2586,7 +2692,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "60 day muay thai and boxing immersion in phitsanulok thailand fitness and culture",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/60-day-muay-thai-and-boxing-immersion-in-phitsanulok-thailand-fitness-and-culture?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2606,7 +2713,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month study muay thai at thailand muay thai school",
     organizer: "Santai Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Santai Gym",
     href: `https://www.tripaneer.com/santai-gym/1-month-study-muay-thai-at-thailand-muay-thai-school?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2626,7 +2734,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months study shaolin kungfu sanda in shandong china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/3-months-study-shaolin-kungfu-sanda-in-shandong-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2646,7 +2755,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 weeks muay thai training in chiang mai thailand",
     organizer: "Santai Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Santai Gym",
     href: `https://www.tripaneer.com/santai-gym/2-weeks-muay-thai-training-in-chiang-mai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2666,7 +2776,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 day muay thai training with yoga holiday in phuket",
     organizer: "Sumalee Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sumalee Boxing Gym",
     href: `https://www.tripaneer.com/sumalee-boxing-gym/15-day-muay-thai-training-with-yoga-holiday-in-phuket?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2686,7 +2797,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day shaolin kung fu warrior training in anqing anhui",
     organizer: "Kungfu Xinglin",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kungfu Xinglin",
     href: `https://www.tripaneer.com/kungfu-xinglin/7-day-shaolin-kung-fu-warrior-training-in-anqing-anhui?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2706,7 +2818,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 days vip muay thai training in krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/21-days-vip-muay-thai-training-in-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2726,7 +2839,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 month tai chi and kung fu training in longhu mountain scenic spot jiangxi province",
     organizer: "Taiji",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Taiji",
     href: `https://www.tripaneer.com/taiji/3-month-tai-chi-and-kung-fu-training-in-longhu-mountain-scenic-spot-jiangxi-province?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2746,7 +2860,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year learn shaolin kung fu in china at tianmeng",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/1-year-learn-shaolin-kung-fu-in-china-at-tianmeng?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2766,7 +2881,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 days cooking class yoga and muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/5-days-cooking-class-yoga-and-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2786,7 +2902,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "31 day fight camp and kun khmer kickboxing training in siem reap",
     organizer: "Mrlygym And Boxing",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Mrlygym And Boxing",
     href: `https://www.tripaneer.com/mrlygym-and-boxing/31-day-fight-camp-and-kun-khmer-kickboxing-training-in-siem-reap?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2806,7 +2923,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week intensive muay thai training in thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-week-intensive-muay-thai-training-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2826,7 +2944,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day all inclusive martial arts training culture and atlas mountains trekking marrakech morocco",
     organizer: "Koom Retreat And Training Center",
     location: "Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Koom Retreat And Training Center",
     href: `https://www.tripaneer.com/koom-retreat-and-training-center/7-day-all-inclusive-martial-arts-training-culture-and-atlas-mountains-trekking-marrakech-morocco?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2846,7 +2965,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 weeks kung fu retreat in pai",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/4-weeks-kung-fu-retreat-in-pai?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2866,7 +2986,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 weeks intense training at muay thai gym in thailand",
     organizer: "Santai Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Santai Gym",
     href: `https://www.tripaneer.com/santai-gym/3-weeks-intense-training-at-muay-thai-gym-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2886,7 +3007,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 weeks authentic kung fu training and cultivation",
     organizer: "Kungfu Xinglin",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kungfu Xinglin",
     href: `https://www.tripaneer.com/kungfu-xinglin/8-weeks-authentic-kung-fu-training-and-cultivation?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2906,7 +3028,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month basic mantis training in china",
     organizer: "Shengjing Shan Traditional Kungfu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Shengjing Shan Traditional Kungfu Academy",
     href: `https://www.tripaneer.com/shengjing-shan-traditional-kungfu-academy/1-month-basic-mantis-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2926,7 +3049,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month kung fu training at maling town jiangsu china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/1-month-kung-fu-training-at-maling-town-jiangsu-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2946,7 +3070,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 days muay thai training with vip lessons in krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/14-days-muay-thai-training-with-vip-lessons-in-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2966,7 +3091,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 months china kung fu training wingchun bagua styles",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/4-months-china-kung-fu-training-wingchun-bagua-styles?${tripaneerAid}`,
     partner: "tripaneer",
@@ -2986,7 +3112,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week all levels muay thai and 10th planet jiu jitsu training camp in koh tao thailand",
     organizer: "Monsoon Gym Fight Club",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Monsoon Gym Fight Club",
     href: `https://www.tripaneer.com/monsoon-gym-fight-club/1-week-all-levels-muay-thai-and-10th-planet-jiu-jitsu-training-camp-in-koh-tao-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3006,7 +3133,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 weeks affordable muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/2-weeks-affordable-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3026,7 +3154,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 months martial arts weapons training in china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/8-months-martial-arts-weapons-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3046,7 +3175,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day vip muay thai and western boxing with the champion training in phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/14-day-vip-muay-thai-and-western-boxing-with-the-champion-training-in-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3066,7 +3196,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 days vip muay thai training in krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/30-days-vip-muay-thai-training-in-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3086,7 +3217,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 days chinese martial arts and learn kung fu in china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/21-days-chinese-martial-arts-and-learn-kung-fu-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3106,7 +3238,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months muay thai camp get yourself fight ready in phitsanulok thailand",
     organizer: "JP Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - JP Boxing Gym",
     href: `https://www.tripaneer.com/jp-boxing-gym/3-months-muay-thai-camp-get-yourself-fight-ready-in-phitsanulok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3126,7 +3259,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 days qigong meditation and internal kung fu training in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/8-days-qigong-meditation-and-internal-kung-fu-training-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3146,7 +3280,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "24 weeks shaolin kungfu training and buddhism cultivation with monks in sikong mountain anhui",
     organizer: "Kungfu Xinglin",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kungfu Xinglin",
     href: `https://www.tripaneer.com/kungfu-xinglin/24-weeks-shaolin-kungfu-training-and-buddhism-cultivation-with-monks-in-sikong-mountain-anhui?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3166,7 +3301,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days vip muay thai training in krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/7-days-vip-muay-thai-training-in-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3186,7 +3322,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 months taichi kung fu training in china at tianmeng",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/2-months-taichi-kung-fu-training-in-china-at-tianmeng?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3206,7 +3343,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 day mma fighting fitness and fun camp in la paz",
     organizer: "Combat 360x MMA And Muay Thai Camp",
     location: "La Paz, Baja California Sur",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Combat 360x MMA And Muay Thai Camp",
     href: `https://www.tripaneer.com/combat-360x-mma-and-muay-thai-camp/30-day-mma-fighting-fitness-and-fun-camp-in-la-paz?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3226,7 +3364,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months qi gong kung fu vacations in shandong china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/6-months-qi-gong-kung-fu-vacations-in-shandong-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3246,7 +3385,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day boxing muay thai fitness grappling and conditioning camp in la paz baja california sur",
     organizer: "Combat 360x MMA And Muay Thai Camp",
     location: "La Paz, Baja California Sur",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Combat 360x MMA And Muay Thai Camp",
     href: `https://www.tripaneer.com/combat-360x-mma-and-muay-thai-camp/7-day-boxing-muay-thai-fitness-grappling-and-conditioning-camp-in-la-paz-baja-california-sur?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3266,7 +3406,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month mma and jiu jitsu training camp in la paz baja california sur mexico",
     organizer: "612 Training Center",
     location: "La Paz, Baja California Sur",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - 612 Training Center",
     href: `https://www.tripaneer.com/612-training-center/1-month-mma-and-jiu-jitsu-training-camp-in-la-paz-baja-california-sur-mexico?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3286,7 +3427,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 months kung fu training in china with shaolin masters",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/5-months-kung-fu-training-in-china-with-shaolin-masters?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3306,7 +3448,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month muay thai fitness and 10th planet jiu jitsu camp for all levels in koh tao thailand",
     organizer: "Monsoon Gym Fight Club",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Monsoon Gym Fight Club",
     href: `https://www.tripaneer.com/monsoon-gym-fight-club/1-month-muay-thai-fitness-and-10th-planet-jiu-jitsu-camp-for-all-levels-in-koh-tao-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3326,7 +3469,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 months acrobatics sanda and shaolin kung fu training in tengzhou china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/10-months-acrobatics-sanda-and-shaolin-kung-fu-training-in-tengzhou-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3346,7 +3490,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 days authentic kung fu training in mae hong son thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/8-days-authentic-kung-fu-training-in-mae-hong-son-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3366,7 +3511,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 month shaolin and meihua quan with meihua poles training in the china mountains",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/9-month-shaolin-and-meihua-quan-with-meihua-poles-training-in-the-china-mountains?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3386,7 +3532,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 days qigong meditation and internal kung fu in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/4-days-qigong-meditation-and-internal-kung-fu-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3406,7 +3553,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 days qigong meditation and internal kung fu training in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/15-days-qigong-meditation-and-internal-kung-fu-training-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3426,7 +3574,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 months mei hua poles shaolin kung fu training china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/7-months-mei-hua-poles-shaolin-kung-fu-training-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3446,7 +3595,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 months sanda kungfu fitness training in china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/11-months-sanda-kungfu-fitness-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3466,7 +3616,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 months study chinese martial arts culture in china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/10-months-study-chinese-martial-arts-culture-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3486,7 +3637,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 day all level tai chi qi gong and kung fu camp in corinth peloponnese",
     organizer: "Shaolin Tai Ji Qi Gong Camp In Greece",
     location: "Greece",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Shaolin Tai Ji Qi Gong Camp In Greece",
     href: `https://www.tripaneer.com/shaolin-tai-ji-qi-gong-camp-in-greece/6-day-all-level-tai-chi-qi-gong-and-kung-fu-camp-in-corinth-peloponnese?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3506,7 +3658,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "29 days muay thai and yoga retreat in thailand",
     organizer: "Sumalee Boxing Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sumalee Boxing Gym",
     href: `https://www.tripaneer.com/sumalee-boxing-gym/29-days-muay-thai-and-yoga-retreat-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3526,7 +3679,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 days florianopolis island bjj camp in brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/8-days-florianopolis-island-bjj-camp-in-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3546,7 +3700,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 weeks qigong meditation and internal kung fu training in pai mae hong son",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/4-weeks-qigong-meditation-and-internal-kung-fu-training-in-pai-mae-hong-son?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3566,7 +3721,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 months tai chi wing chun and kung fu training in xinyi china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/4-months-tai-chi-wing-chun-and-kung-fu-training-in-xinyi-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3586,7 +3742,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months shaolin kung fu tai chi meditation training at malingshan mountain jiangsu china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/6-months-shaolin-kung-fu-tai-chi-meditation-training-at-malingshan-mountain-jiangsu-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3606,7 +3763,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days krav maga mma and muay thai camp in thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/7-days-krav-maga-mma-and-muay-thai-camp-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3626,7 +3784,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 day shaolin warrior kung fu retreat in pai",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/15-day-shaolin-warrior-kung-fu-retreat-in-pai?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3646,7 +3805,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "85 days shaolin warrior kung fu training in pai mae hong son",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/85-days-shaolin-warrior-kung-fu-training-in-pai-mae-hong-son?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3666,7 +3826,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 months all levels shaolin kung fu training in xinyi china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/5-months-all-levels-shaolin-kung-fu-training-in-xinyi-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3686,7 +3847,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months learn qi gong kung fu in maling china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/3-months-learn-qi-gong-kung-fu-in-maling-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3706,7 +3868,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 week muay thai fitness and 10th planet jiu jitsu camp for all levels in koh tao thailand",
     organizer: "Monsoon Gym Fight Club",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Monsoon Gym Fight Club",
     href: `https://www.tripaneer.com/monsoon-gym-fight-club/2-week-muay-thai-fitness-and-10th-planet-jiu-jitsu-camp-for-all-levels-in-koh-tao-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3726,7 +3889,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year chinese kung fu training in jiangsu china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/1-year-chinese-kung-fu-training-in-jiangsu-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3746,7 +3910,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "305 day culture and martial arts training in shandong china",
     organizer: "Shengjing Shan Traditional Kungfu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Shengjing Shan Traditional Kungfu Academy",
     href: `https://www.tripaneer.com/shengjing-shan-traditional-kungfu-academy/305-day-culture-and-martial-arts-training-in-shandong-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3766,7 +3931,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months vip muay thai training in krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/3-months-vip-muay-thai-training-in-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3786,7 +3952,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 day brazilian jiu jitsu training in florianopolis santa catarina",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/16-day-brazilian-jiu-jitsu-training-in-florianopolis-santa-catarina?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3806,7 +3973,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months passionate muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/3-months-passionate-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3826,7 +3994,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day boxing escape train relax and explore zanzibar tanzania s island paradise",
     organizer: "The Bali Resort Zanzibar",
     location: "Zanzibar / Tanzania",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - The Bali Resort Zanzibar",
     href: `https://www.tripaneer.com/the-bali-resort-zanzibar/7-day-boxing-escape-train-relax-and-explore-zanzibar-tanzania-s-island-paradise?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3846,7 +4015,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days learn kung fu in china for non chinese speakers",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/7-days-learn-kung-fu-in-china-for-non-chinese-speakers?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3866,7 +4036,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day qi gong and traditional shaolin kung fu retreat for all levels in arillas corfu",
     organizer: "Croc Kung Fu Nam Yang Greece",
     location: "Greece",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Croc Kung Fu Nam Yang Greece",
     href: `https://www.tripaneer.com/croc-kung-fu-nam-yang-greece/8-day-qi-gong-and-traditional-shaolin-kung-fu-retreat-for-all-levels-in-arillas-corfu?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3886,7 +4057,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 month mma and jiu jitsu training camp in la paz baja california sur mexico",
     organizer: "612 Training Center",
     location: "La Paz, Baja California Sur",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - 612 Training Center",
     href: `https://www.tripaneer.com/612-training-center/3-month-mma-and-jiu-jitsu-training-camp-in-la-paz-baja-california-sur-mexico?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3906,7 +4078,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 days muay thai beginners training in bangkok thailand",
     organizer: "Petchyindee Kingdom",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Petchyindee Kingdom",
     href: `https://www.tripaneer.com/petchyindee-kingdom/3-days-muay-thai-beginners-training-in-bangkok-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3926,7 +4099,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 days qigong meditation and internal kung fu in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/5-days-qigong-meditation-and-internal-kung-fu-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3946,7 +4120,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 months all levels shaolin kung fu training in shandong sheng china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/11-months-all-levels-shaolin-kung-fu-training-in-shandong-sheng-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3966,7 +4141,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day brazilian jiu jitsu camp in florianopolis santa catarina for beginners",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/8-day-brazilian-jiu-jitsu-camp-in-florianopolis-santa-catarina-for-beginners?${tripaneerAid}`,
     partner: "tripaneer",
@@ -3986,7 +4162,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 months authentic shaolin kung fu training in china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/11-months-authentic-shaolin-kung-fu-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4006,7 +4183,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 months kung fu training in china on maling mountain",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/8-months-kung-fu-training-in-china-on-maling-mountain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4026,7 +4204,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 months learn kung fu in china for all levels",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/7-months-learn-kung-fu-in-china-for-all-levels?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4046,7 +4225,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 months wing chun tai chi and kung fu training china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/10-months-wing-chun-tai-chi-and-kung-fu-training-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4066,7 +4246,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 months learn kung fu in china with shaolin masters",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/9-months-learn-kung-fu-in-china-with-shaolin-masters?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4086,7 +4267,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month hard style yu kung fu summer training camp in shandong china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/1-month-hard-style-yu-kung-fu-summer-training-camp-in-shandong-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4106,7 +4288,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 day beginner s brazilian jiu jitsu training in florianopolis santa catarina",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/16-day-beginner-s-brazilian-jiu-jitsu-training-in-florianopolis-santa-catarina?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4126,7 +4309,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "31 day bjj training for beginners in magical island of florianopolis brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/31-day-bjj-training-for-beginners-in-magical-island-of-florianopolis-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4146,7 +4330,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year affordable muay thai training and accommodation in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-year-affordable-muay-thai-training-and-accommodation-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4166,7 +4351,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days qi gong kung fu and tai chi course training in tianmeng shandong",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/7-days-qi-gong-kung-fu-and-tai-chi-course-training-in-tianmeng-shandong?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4186,7 +4372,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 weeks genuine muay thai training in pai thailand",
     organizer: "Sitjemam Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sitjemam Muay Thai",
     href: `https://www.tripaneer.com/sitjemam-muay-thai/2-weeks-genuine-muay-thai-training-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4206,7 +4393,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month affordable muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-month-affordable-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4226,7 +4414,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months adrenalized muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/6-months-adrenalized-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4246,7 +4435,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 months tai chi wing chun kung fu training in china",
     organizer: "Maling Shaolin Kungfu Academy China",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Maling Shaolin Kungfu Academy China",
     href: `https://www.tripaneer.com/maling-shaolin-kungfu-academy-china/2-months-tai-chi-wing-chun-kung-fu-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4266,7 +4456,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "31 day brazilian jiu jitsu training in florianopolis santa catarina",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/31-day-brazilian-jiu-jitsu-training-in-florianopolis-santa-catarina?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4286,7 +4477,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day shaolin kung fu course in pai",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/5-day-shaolin-kung-fu-course-in-pai?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4306,7 +4498,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months innovative muay thai training in chiang mai thailand",
     organizer: "Santai Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Santai Gym",
     href: `https://www.tripaneer.com/santai-gym/6-months-innovative-muay-thai-training-in-chiang-mai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4326,7 +4519,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month muay thai training in thailand 1",
     organizer: "Sitjemam Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sitjemam Muay Thai",
     href: `https://www.tripaneer.com/sitjemam-muay-thai/1-month-muay-thai-training-in-thailand-1?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4346,7 +4540,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months vip muay thai training krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/6-months-vip-muay-thai-training-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4366,7 +4561,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day muay boran training in mae hong son",
     organizer: "Sitjemam Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sitjemam Muay Thai",
     href: `https://www.tripaneer.com/sitjemam-muay-thai/8-day-muay-boran-training-in-mae-hong-son?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4386,7 +4582,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 hours non residential private kun khmer experience in phnom penh cambodia",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/2-hours-non-residential-private-kun-khmer-experience-in-phnom-penh-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4406,7 +4603,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months affordable muay thai training and accommodation in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/6-months-affordable-muay-thai-training-and-accommodation-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4426,7 +4624,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day non residential kun khmer experience in phnom penh cambodia",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/7-day-non-residential-kun-khmer-experience-in-phnom-penh-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4446,7 +4645,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months affordable muay thai training and accommodation in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/3-months-affordable-muay-thai-training-and-accommodation-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4466,7 +4666,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day martial arts and yoga bootcamp near angkor wat cambodia",
     organizer: "Ground Zero Martial Arts Yoga",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Ground Zero Martial Arts Yoga",
     href: `https://www.tripaneer.com/ground-zero-martial-arts-yoga/7-day-martial-arts-and-yoga-bootcamp-near-angkor-wat-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4486,7 +4687,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day awaken your potential yoga and martial arts in siem reap cambodia",
     organizer: "Ground Zero Martial Arts Yoga",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Ground Zero Martial Arts Yoga",
     href: `https://www.tripaneer.com/ground-zero-martial-arts-yoga/14-day-awaken-your-potential-yoga-and-martial-arts-in-siem-reap-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4506,7 +4708,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 day kung fu training w gm marilyn cooper in orinda california",
     organizer: "Pushing For Peace",
     location: "Orinda, California",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Pushing For Peace",
     href: `https://www.tripaneer.com/pushing-for-peace/6-day-kung-fu-training-w-gm-marilyn-cooper-in-orinda-california?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4526,7 +4729,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year muay thai training with vip lessons in krabi thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-year-muay-thai-training-with-vip-lessons-in-krabi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4546,7 +4750,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week muay thai training for beginners in thailand",
     organizer: "Petchyindee Kingdom",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Petchyindee Kingdom",
     href: `https://www.tripaneer.com/petchyindee-kingdom/1-week-muay-thai-training-for-beginners-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4566,7 +4771,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day muay thai and yoga retreat in the jungle of paksong thailand",
     organizer: "Eco Logic Yoga Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Eco Logic Yoga Retreat",
     href: `https://www.tripaneer.com/eco-logic-yoga-retreat/8-day-muay-thai-and-yoga-retreat-in-the-jungle-of-paksong-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4586,7 +4792,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 day muay thai yoga wellness and cooking retreat in ao nang krabi",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/6-day-muay-thai-yoga-wellness-and-cooking-retreat-in-ao-nang-krabi?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4606,7 +4813,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day kali jeet kune do and silat training camp in canggu bali",
     organizer: "Martial Arts And Conditioning",
     location: "Bali, Indonesia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Martial Arts And Conditioning",
     href: `https://www.tripaneer.com/martial-arts-and-conditioning/5-day-kali-jeet-kune-do-and-silat-training-camp-in-canggu-bali?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4626,7 +4834,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "31 day brazilian jiu jitsu training on the magical island of florianopolis brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/31-day-brazilian-jiu-jitsu-training-on-the-magical-island-of-florianopolis-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4646,7 +4855,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year experience muay thai training in ao nang thailand",
     organizer: "Honour Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Honour Muay Thai",
     href: `https://www.tripaneer.com/honour-muay-thai/1-year-experience-muay-thai-training-in-ao-nang-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4666,7 +4876,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 days martial arts training with wellness and adventure in krong siem reap",
     organizer: "Angkor Grace Wellness Resort",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Angkor Grace Wellness Resort",
     href: `https://www.tripaneer.com/angkor-grace-wellness-resort/4-days-martial-arts-training-with-wellness-and-adventure-in-krong-siem-reap?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4686,7 +4897,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day private kun khmer warrior retreat experience in phnom penh cambodia train hard rest easy",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/14-day-private-kun-khmer-warrior-retreat-experience-in-phnom-penh-cambodia-train-hard-rest-easy?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4706,7 +4918,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 week non residential kun khmer experience in phnom penh cambodia",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/4-week-non-residential-kun-khmer-experience-in-phnom-penh-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4726,7 +4939,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 day residential kun khmer experience in phnom penh cambodia",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/28-day-residential-kun-khmer-experience-in-phnom-penh-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4746,7 +4960,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day non residential kun khmer experience in phnom penh cambodia",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/14-day-non-residential-kun-khmer-experience-in-phnom-penh-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4766,7 +4981,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 months advance training at chiang mai muay thai gym",
     organizer: "Santai Gym",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Santai Gym",
     href: `https://www.tripaneer.com/santai-gym/2-months-advance-training-at-chiang-mai-muay-thai-gym?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4786,7 +5002,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 day bjj training for beginners in magical island of florianopolis brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/16-day-bjj-training-for-beginners-in-magical-island-of-florianopolis-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4806,7 +5023,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day gi and nogi bjj training in florianopolis brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/8-day-gi-and-nogi-bjj-training-in-florianopolis-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4826,7 +5044,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 day brazilian jiu jitsu training in the magical island of florianopolis brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/16-day-brazilian-jiu-jitsu-training-in-the-magical-island-of-florianopolis-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4846,7 +5065,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "31 day beginner brazilian jiu jitsu training in florianopolis santa catarina",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/31-day-beginner-brazilian-jiu-jitsu-training-in-florianopolis-santa-catarina?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4866,7 +5086,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 day oss brazilian jiu jitsu camp in zakynthos",
     organizer: "Z Zantefitness Retreats Organization",
     location: "Greece",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Z Zantefitness Retreats Organization",
     href: `https://www.tripaneer.com/z-zantefitness-retreats-organization/6-day-oss-brazilian-jiu-jitsu-camp-in-zakynthos?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4886,7 +5107,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day bjj training for beginners in magical island of florianopolis brazil",
     organizer: "Brazilian Jiu Jitsu Camps",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Camps",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-camps/8-day-bjj-training-for-beginners-in-magical-island-of-florianopolis-brazil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4906,7 +5128,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 days muay thai or boxing school in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/14-days-muay-thai-or-boxing-school-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4926,7 +5149,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week non residential muay thai training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/1-week-non-residential-muay-thai-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4946,7 +5170,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 year the shaolin warrior kung fu training thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/1-year-the-shaolin-warrior-kung-fu-training-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4966,7 +5191,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day train heal rise kun khmer training retreat in phnom penh cambodia",
     organizer: "Kfg Travels",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kfg Travels",
     href: `https://www.tripaneer.com/kfg-travels/7-day-train-heal-rise-kun-khmer-training-retreat-in-phnom-penh-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -4986,7 +5212,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day fitness and boxing camp in issyk kul region",
     organizer: "Iron Curtain Sports Ltd",
     location: "Issyk-Kul region",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Iron Curtain Sports Ltd",
     href: `https://www.tripaneer.com/iron-curtain-sports-ltd/7-day-fitness-and-boxing-camp-in-issyk-kul-region?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5006,7 +5233,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 years foreign students martial arts training in china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/4-years-foreign-students-martial-arts-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5026,7 +5254,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 day health and wellness yoga and martial arts retreat in krong siem reap",
     organizer: "Ground Zero Martial Arts Yoga",
     location: "Cambodia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Ground Zero Martial Arts Yoga",
     href: `https://www.tripaneer.com/ground-zero-martial-arts-yoga/28-day-health-and-wellness-yoga-and-martial-arts-retreat-in-krong-siem-reap?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5046,7 +5275,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 days muay thai training in thailand 1",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/28-days-muay-thai-training-in-thailand-1?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5066,7 +5296,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day taoism bi gu and qi gong course in tianmeng mountains china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/7-day-taoism-bi-gu-and-qi-gong-course-in-tianmeng-mountains-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5086,7 +5317,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 years shaolin kungfu academy training in china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/5-years-shaolin-kungfu-academy-training-in-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5106,7 +5338,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Non residential mixed martial arts training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/non-residential-mixed-martial-arts-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5126,7 +5359,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day kickboxing confidence women s muay thai self defense camp in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/14-day-kickboxing-confidence-women-s-muay-thai-self-defense-camp-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5146,7 +5380,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 day full muay thai training immersion in pattaya",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/28-day-full-muay-thai-training-immersion-in-pattaya?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5166,7 +5401,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 days authentic muay thai camp in thailand",
     organizer: "Sitjemam Muay Thai",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Sitjemam Muay Thai",
     href: `https://www.tripaneer.com/sitjemam-muay-thai/7-days-authentic-muay-thai-camp-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5186,7 +5422,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week non residential mma training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/1-week-non-residential-mma-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5206,7 +5443,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week non residential brazilian jiu jitsu training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/1-week-non-residential-brazilian-jiu-jitsu-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5226,7 +5464,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 days qi gong and martial arts for wellness in shandong",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/14-days-qi-gong-and-martial-arts-for-wellness-in-shandong?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5246,7 +5485,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 month the shaolin warrior kung fu training in pai mae hong soon",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/7-month-the-shaolin-warrior-kung-fu-training-in-pai-mae-hong-soon?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5266,7 +5506,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Half day morning shaolin kung fu and qigong training in mae hong son thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/half-day-morning-shaolin-kung-fu-and-qigong-training-in-mae-hong-son-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5286,7 +5527,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day krav maga training camp in ma ale adumim in israel",
     organizer: "Israeli Krav International",
     location: "Israel",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Israeli Krav International",
     href: `https://www.tripaneer.com/israeli-krav-international/5-day-krav-maga-training-camp-in-ma-ale-adumim-in-israel?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5306,7 +5548,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month muay thai training for pro fighters in thailand",
     organizer: "Petchyindee Kingdom",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Petchyindee Kingdom",
     href: `https://www.tripaneer.com/petchyindee-kingdom/1-month-muay-thai-training-for-pro-fighters-in-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5326,7 +5569,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 hours non residential afternoon shaolin kung fu training with dinner in mae hong son thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/3-hours-non-residential-afternoon-shaolin-kung-fu-training-with-dinner-in-mae-hong-son-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5346,7 +5590,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 days conditioning and filipino martial arts in badung bali",
     organizer: "Martial Arts And Conditioning",
     location: "Bali, Indonesia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Martial Arts And Conditioning",
     href: `https://www.tripaneer.com/martial-arts-and-conditioning/6-days-conditioning-and-filipino-martial-arts-in-badung-bali?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5366,7 +5611,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 hour non residential self defence training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/1-hour-non-residential-self-defence-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5386,7 +5632,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Full day non residential qigong and shaolin kung fu introductory training in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/full-day-non-residential-qigong-and-shaolin-kung-fu-introductory-training-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5406,7 +5653,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 day qi gong meditation and tcm for spiritual wellness in linyi china",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/21-day-qi-gong-meditation-and-tcm-for-spiritual-wellness-in-linyi-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5426,7 +5674,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 jours en camp d entrainement de mma a sao paulo au bresil",
     organizer: "MMA Camp Brazil",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - MMA Camp Brazil",
     href: `https://www.tripaneer.com/mma-camp-brazil/30-jours-en-camp-d-entrainement-de-mma-a-sao-paulo-au-bresil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5446,7 +5695,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 years learn kung fu in china at tianmeng institute",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/2-years-learn-kung-fu-in-china-at-tianmeng-institute?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5466,7 +5716,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Full day non residential shaolin kung fu and qigong introductory training in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/full-day-non-residential-shaolin-kung-fu-and-qigong-introductory-training-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5486,7 +5737,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Non residential qigong internal kung fu and meditation introductory training in pai thailand",
     organizer: "Nam Yang Kung Fu Retreat",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Nam Yang Kung Fu Retreat",
     href: `https://www.tripaneer.com/nam-yang-kung-fu-retreat/non-residential-qigong-internal-kung-fu-and-meditation-introductory-training-in-pai-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5506,7 +5758,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 years authentic kung fu school in china at tianmeng",
     organizer: "Tianmeng Shaolin Kung Fu Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Tianmeng Shaolin Kung Fu Academy",
     href: `https://www.tripaneer.com/tianmeng-shaolin-kung-fu-academy/3-years-authentic-kung-fu-school-in-china-at-tianmeng?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5526,7 +5779,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 days fitness wellness and yoga retreat in phang nga thailand",
     organizer: "Combat 360x MMA And Muay Thai Camp",
     location: "La Paz, Baja California Sur",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Combat 360x MMA And Muay Thai Camp",
     href: `https://www.tripaneer.com/combat-360x-mma-and-muay-thai-camp/30-days-fitness-wellness-and-yoga-retreat-in-phang-nga-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5546,7 +5800,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 day non residential muay thai experience in bali indonesia",
     organizer: "Lions MMA Bali",
     location: "Bali, Indonesia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Lions MMA Bali",
     href: `https://www.tripaneer.com/lions-mma-bali/1-day-non-residential-muay-thai-experience-in-bali-indonesia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5566,7 +5821,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 day kung fu training with grand master marilyn cooper in orinda california",
     organizer: "Pushing For Peace",
     location: "Orinda, California",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Pushing For Peace",
     href: `https://www.tripaneer.com/pushing-for-peace/3-day-kung-fu-training-with-grand-master-marilyn-cooper-in-orinda-california?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5586,7 +5842,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Non residential western boxing training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/non-residential-western-boxing-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5606,7 +5863,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week non residential western boxing training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/1-week-non-residential-western-boxing-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5626,7 +5884,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Non residential muay thai training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/non-residential-muay-thai-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5646,7 +5905,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 day intensive kalarippayat training in a traditional earthen floored kalari in grottaglie italy",
     organizer: "Kalarilab",
     location: "Italy",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kalarilab",
     href: `https://www.tripaneer.com/kalarilab/11-day-intensive-kalarippayat-training-in-a-traditional-earthen-floored-kalari-in-grottaglie-italy?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5666,7 +5926,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "29 day kalari immersion course in grottaglie puglia italy",
     organizer: "Kalarilab",
     location: "Italy",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kalarilab",
     href: `https://www.tripaneer.com/kalarilab/29-day-kalari-immersion-course-in-grottaglie-puglia-italy?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5686,7 +5947,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Brazilian jiu jitsu retreat in the mountains of rio all inclusive experience",
     organizer: "Brazilian Jiu Jitsu Mountain Retreat Rio",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Brazilian Jiu Jitsu Mountain Retreat Rio",
     href: `https://www.tripaneer.com/brazilian-jiu-jitsu-mountain-retreat-rio/brazilian-jiu-jitsu-retreat-in-the-mountains-of-rio-all-inclusive-experience?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5706,7 +5968,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 day traditional wing chun training in bali indonesia",
     organizer: "Martial Arts And Conditioning",
     location: "Bali, Indonesia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Martial Arts And Conditioning",
     href: `https://www.tripaneer.com/martial-arts-and-conditioning/3-day-traditional-wing-chun-training-in-bali-indonesia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5726,7 +5989,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 day boxing training camp in lugano switzerland",
     organizer: "Mexican Boxing Studio",
     location: "Lugano, Switzerland",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Mexican Boxing Studio",
     href: `https://www.tripaneer.com/mexican-boxing-studio/28-day-boxing-training-camp-in-lugano-switzerland?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5746,7 +6010,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Non residential brazilian jiu jitsu training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/non-residential-brazilian-jiu-jitsu-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5766,7 +6031,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day brazilian jiu jitsu training retreat in cyprus",
     organizer: "Soha Retreats Ltd",
     location: "Cyprus",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Soha Retreats Ltd",
     href: `https://www.tripaneer.com/soha-retreats-ltd-/5-day-brazilian-jiu-jitsu-training-retreat-in-cyprus?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5786,7 +6052,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day rip roll brazilian jiu jitsu bjj and surf holiday for all levels in anza morocco",
     organizer: "Rip Roll Camp",
     location: "Anza, Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Rip Roll Camp",
     href: `https://www.tripaneer.com/rip-roll-camp/5-day-rip-roll-brazilian-jiu-jitsu-bjj-and-surf-holiday-for-all-levels-in-anza-morocco?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5806,7 +6073,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day mma and jiu jitsu training camp in la paz baja california sur mexico",
     organizer: "612 Training Center",
     location: "La Paz, Baja California Sur",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - 612 Training Center",
     href: `https://www.tripaneer.com/612-training-center/8-day-mma-and-jiu-jitsu-training-camp-in-la-paz-baja-california-sur-mexico?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5826,7 +6094,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 day ultimate krav maga and kickboxing tour and training in maaleh adumim judea and samaria area",
     organizer: "Israeli Krav International",
     location: "Israel",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Israeli Krav International",
     href: `https://www.tripaneer.com/israeli-krav-international/13-day-ultimate-krav-maga-and-kickboxing-tour-and-training-in-maaleh-adumim-judea-and-samaria-area?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5846,7 +6115,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day fun fitness and self defense training on the beautiful east coast of england uk",
     organizer: "No Limits Martial Arts And Fitness",
     location: "England",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - No Limits Martial Arts And Fitness",
     href: `https://www.tripaneer.com/no-limits-martial-arts-and-fitness/8-day-fun-fitness-and-self-defense-training-on-the-beautiful-east-coast-of-england-uk?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5866,7 +6136,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 month authentic shaolin kung fu training in zhengzhou china for all levels",
     organizer: "Shaolin Yongzhi Kung Fu School",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Shaolin Yongzhi Kung Fu School",
     href: `https://www.tripaneer.com/shaolin-yongzhi-kung-fu-school/3-month-authentic-shaolin-kung-fu-training-in-zhengzhou-china-for-all-levels?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5886,7 +6157,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 week 3 classes non residential kombat krav self defense training in pattaya thailand",
     organizer: "Kombat Group Thailand",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Kombat Group Thailand",
     href: `https://www.tripaneer.com/kombat-group-thailand/1-week-3-classes-non-residential-kombat-krav-self-defense-training-in-pattaya-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5906,7 +6178,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month full time shaolin kung fu training with authentic masters in henan china",
     organizer: "Shaolin Yongzhi Kung Fu School",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Shaolin Yongzhi Kung Fu School",
     href: `https://www.tripaneer.com/shaolin-yongzhi-kung-fu-school/1-month-full-time-shaolin-kung-fu-training-with-authentic-masters-in-henan-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5926,7 +6199,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 jours en camp d entrainement de jiu jitsu bresilien a sao paulo au bresil",
     organizer: "MMA Camp Brazil",
     location: "Brazil",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - MMA Camp Brazil",
     href: `https://www.tripaneer.com/mma-camp-brazil/30-jours-en-camp-d-entrainement-de-jiu-jitsu-bresilien-a-sao-paulo-au-bresil?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5946,7 +6220,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 day muay thai camp in khok kloi thailand",
     organizer: "Aleenta Resorts Spas",
     location: "Thailand",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Aleenta Resorts Spas",
     href: `https://www.tripaneer.com/aleenta-resorts-spas/8-day-muay-thai-camp-in-khok-kloi-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5966,7 +6241,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 day grappling in the jungle bjj camp with bruno malfacine in ubita costa rica",
     organizer: "Grapplers Escape Llc",
     location: "Costa Rica",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Grapplers Escape Llc",
     href: `https://www.tripaneer.com/grapplers-escape-llc/6-day-grappling-in-the-jungle-bjj-camp-with-bruno-malfacine-in-ubita-costa-rica?${tripaneerAid}`,
     partner: "tripaneer",
@@ -5986,7 +6262,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 day qi gong and kung fu internal training retreat in bali indonesia",
     organizer: "Taofitcoaching",
     location: "Bali, Indonesia",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Taofitcoaching",
     href: `https://www.tripaneer.com/taofitcoaching/7-day-qi-gong-and-kung-fu-internal-training-retreat-in-bali-indonesia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6006,7 +6283,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day brazilian jiu jitsu and surf camp in anza morocco",
     organizer: "Matnwave",
     location: "Anza, Morocco",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Matnwave",
     href: `https://www.tripaneer.com/matnwave/5-day-brazilian-jiu-jitsu-and-surf-camp-in-anza-morocco?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6026,7 +6304,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 day boxing training camp in lugano switzerland",
     organizer: "Mexican Boxing Studio",
     location: "Lugano, Switzerland",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Mexican Boxing Studio",
     href: `https://www.tripaneer.com/mexican-boxing-studio/14-day-boxing-training-camp-in-lugano-switzerland?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6046,7 +6325,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 days chinese language and chen tai chi training in yangshuo china",
     organizer: "Omeida Chinese Academy",
     location: "China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Omeida Chinese Academy",
     href: `https://www.tripaneer.com/omeida-chinese-academy/28-days-chinese-language-and-chen-tai-chi-training-in-yangshuo-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6066,7 +6346,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 day non residential embodied martial arts philosophy retreat in heidelberg germany",
     organizer: "Pranado Ggmbh",
     location: "Germany",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Pranado Ggmbh",
     href: `https://www.tripaneer.com/pranado-ggmbh/5-day-non-residential-embodied-martial-arts-philosophy-retreat-in-heidelberg-germany?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6086,7 +6367,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 months shaolin wushu kung fu training in shandong province china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/2-months-shaolin-wushu-kung-fu-training-in-shandong-province-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6106,7 +6388,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 days traditional kung fu training in shandong province china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/14-days-traditional-kung-fu-training-in-shandong-province-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6126,7 +6409,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "1 month shaolin wushu kung fu training in tengzhou china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/1-month-shaolin-wushu-kung-fu-training-in-tengzhou-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6146,7 +6430,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 months shaolin wushu kung fu school in tengzhou city china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/3-months-shaolin-wushu-kung-fu-school-in-tengzhou-city-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6166,7 +6451,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 months shaolin wushu kung fu training in shandong province china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/5-months-shaolin-wushu-kung-fu-training-in-shandong-province-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6186,7 +6472,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "30 day discounted rate martial arts training camp in tengzhou shandong",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/30-day-discounted-rate-martial-arts-training-camp-in-tengzhou-shandong?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6206,7 +6493,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 months affordable shaolin kung fu training in tengzhou china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/6-months-affordable-shaolin-kung-fu-training-in-tengzhou-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6226,7 +6514,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 months shaolin wushu kung fu training in zaozhuang china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/9-months-shaolin-wushu-kung-fu-training-in-zaozhuang-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6246,7 +6535,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 months qigong and shaolin kung fu training in shandong province china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/8-months-qigong-and-shaolin-kung-fu-training-in-shandong-province-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6266,7 +6556,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 months sanda and shaolin kung fu training in tengzhou city china",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/7-months-sanda-and-shaolin-kung-fu-training-in-tengzhou-city-china?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6286,7 +6577,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "Discover your inner strength 2 month kung fu training scholarship",
     organizer: "Yu Kung Fu Martial Arts Academy",
     location: "Shandong, China",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Martial arts training - Yu Kung Fu Martial Arts Academy",
     href: `https://www.tripaneer.com/yu-kung-fu-martial-arts-academy/discover-your-inner-strength-2-month-kung-fu-training-scholarship?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6306,7 +6598,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11-day Western Balkans & Adriatic guided motorcycle tour",
     organizer: "Bultrips Ltd",
     location: "Western Balkans & Adriatic coast",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Motorcycle touring along coastal and mountain roads",
     href: `https://www.tripaneer.com/bultrips-ltd/11-day-western-balkans-and-adriatic-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6326,7 +6619,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Mustang The Forbidden Kingdom Motorcycle Tour In Nepal",
     organizer: "Thrill Nepal",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Thrill Nepal",
     href: `https://www.tripaneer.com/thrill-nepal/8-days-mustang-the-forbidden-kingdom-motorcycle-tour-in-nepal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6346,7 +6640,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Days Adventurous Bungee Rafting And Motorcycle Tour In Bagmati Nepal",
     organizer: "Thrill Nepal",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Thrill Nepal",
     href: `https://www.tripaneer.com/thrill-nepal/6-days-adventurous-bungee-rafting-and-motorcycle-tour-in-bagmati-nepal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6366,7 +6661,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Off Road Motorcycle Tour Along The Caribbean Coast Of Colombia",
     organizer: "Adrenaline Addicts",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adrenaline Addicts",
     href: `https://www.tripaneer.com/adrenaline-addicts/4-day-guided-off-road-motorcycle-tour-along-the-caribbean-coast-of-colombia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6386,7 +6682,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Cross Country Motorcycle Tour In Spain And Morocco",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-cross-country-motorcycle-tour-in-spain-and-morocco?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6406,7 +6703,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Days Coast To Cabo Motorcycle Tour In Colombia",
     organizer: "Adrenaline Addicts",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adrenaline Addicts",
     href: `https://www.tripaneer.com/adrenaline-addicts/4-days-coast-to-cabo-motorcycle-tour-in-colombia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6426,7 +6724,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Hue Adventures Loop Motorcycle Tour In Vietnam",
     organizer: "Vietnam Motorbike Tours By King Nguyen",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Motorbike Tours By King Nguyen",
     href: `https://www.tripaneer.com/vietnam-motorbike-tours-by-king-nguyen/3-days-hue-adventures-loop-motorcycle-tour-in-vietnam?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6446,7 +6745,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Motorcycle Tour In Nepal Journey To The Top Of The World Everest View Ride",
     organizer: "Thrill Nepal",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Thrill Nepal",
     href: `https://www.tripaneer.com/thrill-nepal/7-day-motorcycle-tour-in-nepal-journey-to-the-top-of-the-world-everest-view-ride-?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6466,7 +6766,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Get Leh D In Ladakh Guided Motorcycle Tour In North India S Himalayas",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/8-days-get-leh-d-in-ladakh-guided-motorcycle-tour-in-north-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6486,7 +6787,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Enduro Intensive Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/5-day-guided-enduro-intensive-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6506,7 +6808,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Manali To Leh Guided Motorcycle Tour In India S Himalayas",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-manali-to-leh-guided-motorcycle-tour-in-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6526,7 +6829,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Days Central Highlands Adventure Motorcycle Tour In Vietnam",
     organizer: "Vietnam Motorbike Tours By King Nguyen",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Motorbike Tours By King Nguyen",
     href: `https://www.tripaneer.com/vietnam-motorbike-tours-by-king-nguyen/4-days-central-highlands-adventure-motorcycle-tour-in-vietnam?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6546,7 +6850,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Kashmir To Kanyakumari Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/12-days-kashmir-to-kanyakumari-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6566,7 +6871,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days India S Golden Triangle Rajasthan Guided Motorcycle Tour",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/15-days-india-s-golden-triangle-rajasthan-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6586,7 +6892,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Northeast India Guided Motorcycle Tour From Assam To Meghalaya",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-northeast-india-guided-motorcycle-tour-from-assam-to-meghalaya?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6606,7 +6913,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Spiti Valley Guided Motorcycle Tour In India S Himalayas",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/7-days-spiti-valley-guided-motorcycle-tour-in-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6626,7 +6934,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Rajasthan Royal Ride Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/15-days-rajasthan-royal-ride-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6646,7 +6955,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Manali To Leh Guided Motorcycle Tour In India S Himalayas",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/12-days-manali-to-leh-guided-motorcycle-tour-in-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6666,7 +6976,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Himachal Pradesh Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/7-days-himachal-pradesh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6686,7 +6997,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Chitwan National Park And Pokhara Motorcycle Tour In Nepal",
     organizer: "Thrill Nepal",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Thrill Nepal",
     href: `https://www.tripaneer.com/thrill-nepal/5-days-chitwan-national-park-and-pokhara-motorcycle-tour-in-nepal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6706,7 +7018,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Kathmandu To Tibet Motorcycle Tour",
     organizer: "Thrill Nepal",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Thrill Nepal",
     href: `https://www.tripaneer.com/thrill-nepal/12-days-kathmandu-to-tibet-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6726,7 +7039,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/3-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6746,7 +7060,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days North Central Vietnam Loop Motorcycle Tour",
     organizer: "Vietnam Motorbike Tours By King Nguyen",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Motorbike Tours By King Nguyen",
     href: `https://www.tripaneer.com/vietnam-motorbike-tours-by-king-nguyen/5-days-north-central-vietnam-loop-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6766,7 +7081,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Hcmc To Hanoi Motorcycle Tour In Vietnam",
     organizer: "Vietnam Motorbike Tours By King Nguyen",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Motorbike Tours By King Nguyen",
     href: `https://www.tripaneer.com/vietnam-motorbike-tours-by-king-nguyen/8-days-hcmc-to-hanoi-motorcycle-tour-in-vietnam?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6786,7 +7102,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Days South To Central Vietnam Coastal Motorcycle Tour",
     organizer: "Vietnam Motorbike Tours By King Nguyen",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Motorbike Tours By King Nguyen",
     href: `https://www.tripaneer.com/vietnam-motorbike-tours-by-king-nguyen/6-days-south-to-central-vietnam-coastal-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6806,7 +7123,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Days Mekong Delta Motorcycle Adventure Tour In Vietnam",
     organizer: "Vietnam Motorbike Tours By King Nguyen",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Motorbike Tours By King Nguyen",
     href: `https://www.tripaneer.com/vietnam-motorbike-tours-by-king-nguyen/4-days-mekong-delta-motorcycle-adventure-tour-in-vietnam?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6826,7 +7144,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days The Golden Triangle Rajasthan And Rann Of Kutch Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/14-days-the-golden-triangle-rajasthan-and-rann-of-kutch-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6846,7 +7165,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Bangalore To Kerala Guided Motorcycle Tour In South India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/9-days-bangalore-to-kerala-guided-motorcycle-tour-in-south-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6866,7 +7186,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Days The Grand South India Guided Motorcycle Tour",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/16-days-the-grand-south-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6886,7 +7207,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Rajasthan Desert Tour Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-rajasthan-desert-tour-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6906,7 +7228,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Kashmir Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/12-days-kashmir-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6926,7 +7249,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Goa To Kerala Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/14-days-goa-to-kerala-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6946,7 +7270,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Rajasthan Maharajas Trail Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-rajasthan-maharajas-trail-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6966,7 +7291,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Delhi To Manali Guided Motorcycle Tour In India S Himalayas",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/8-days-delhi-to-manali-guided-motorcycle-tour-in-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -6986,7 +7312,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Days The Epic India Tour Guided Motorcycle Trip",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/17-days-the-epic-india-tour-guided-motorcycle-trip?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7006,7 +7333,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Manali To Srinagar Guided Motorcycle Tour In India S Himalayas",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/11-days-manali-to-srinagar-guided-motorcycle-tour-in-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7026,7 +7354,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Rajasthan Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/9-days-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7046,7 +7375,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Mountains And Valleys Guided Motorcycle Tour In Himachal Pradesh India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/8-days-mountains-and-valleys-guided-motorcycle-tour-in-himachal-pradesh-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7066,7 +7396,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Wild East Guided Motorcycle Tour In Northeast India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-the-wild-east-guided-motorcycle-tour-in-northeast-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7086,7 +7417,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Kerala To Karnataka Guided Motorcycle Tour In South India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/12-days-kerala-to-karnataka-guided-motorcycle-tour-in-south-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7106,7 +7438,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Days Bangalore To Goa Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/6-days-bangalore-to-goa-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7126,7 +7459,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Mysore To Mumbai Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/15-days-mysore-to-mumbai-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7146,7 +7480,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Goa To Kerala Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/8-days-goa-to-kerala-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7166,7 +7501,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Delhi To Jaisalmer Guided Motorcycle Tour In Rajasthan India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-delhi-to-jaisalmer-guided-motorcycle-tour-in-rajasthan-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7186,7 +7522,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Goa To Hyderabad Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/12-days-goa-to-hyderabad-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7206,7 +7543,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Bengaluru To Delhi Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/14-days-bengaluru-to-delhi-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7226,7 +7564,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days South India Coast Guided Motorcycle Tour",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/9-days-south-india-coast-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7246,7 +7585,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Maharashtra And Goa Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/7-days-maharashtra-and-goa-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7266,7 +7606,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Kerala To Rajasthan Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/11-days-kerala-to-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7286,7 +7627,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Central India Guided Motorcycle Tour",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/10-days-central-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7306,7 +7648,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Andhra Pradesh And Telangana Guided Motorcycle Tour In India",
     organizer: "Karma Yatri",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Karma Yatri",
     href: `https://www.tripaneer.com/karma-yatri/8-days-andhra-pradesh-and-telangana-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7326,7 +7669,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Silk Road Motorcycle Tour In Uzbekistan",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-silk-road-motorcycle-tour-in-uzbekistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7346,7 +7690,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Georgia And Azerbaijan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-georgia-and-azerbaijan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7366,7 +7711,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Greece And The Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-greece-and-the-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7386,7 +7732,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Highlights Of Georgia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-highlights-of-georgia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7406,7 +7753,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Highlights Of Portugal Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/7-days-highlights-of-portugal-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7426,7 +7774,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Highlights Of Morocco Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-highlights-of-morocco-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7446,7 +7795,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Eastern Turkey Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-eastern-turkey-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7466,7 +7816,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7486,7 +7837,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Black Sea Coast Motorcycle Tour In Bulgaria And Romania",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-black-sea-coast-motorcycle-tour-in-bulgaria-and-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7506,7 +7858,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days The Best Of The Caucasus Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-the-best-of-the-caucasus-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7526,7 +7879,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Istanbul To Athens Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-istanbul-to-athens-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7546,7 +7900,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Highlights Of The Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-highlights-of-the-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7566,7 +7921,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Days Caucasus Plus Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/16-days-caucasus-plus-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7586,7 +7942,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Western Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-western-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7606,7 +7963,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Epic Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-epic-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7626,7 +7984,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Central Europe Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-central-europe-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7646,7 +8005,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Days Eastern Europe Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/13-days-eastern-europe-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7666,7 +8026,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Days Ancient Lands Motorcycle Tour In Turkey And Greece",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/17-days-ancient-lands-motorcycle-tour-in-turkey-and-greece?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7686,7 +8047,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Best Of The Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-best-of-the-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7706,7 +8068,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Highlights Of Georgia And Armenia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/7-days-highlights-of-georgia-and-armenia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7726,7 +8089,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days The Western Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-the-western-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7746,7 +8110,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Central Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-central-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7766,7 +8131,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Balkans And Greece Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-balkans-and-greece-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7786,7 +8152,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Days All Of The Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/13-days-all-of-the-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7806,7 +8173,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days The Northern Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-the-northern-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7826,7 +8194,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Central Turkey Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-central-turkey-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7846,7 +8215,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Southern Turkey Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-southern-turkey-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7866,7 +8236,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Hidden Gems Of Georgia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/7-days-hidden-gems-of-georgia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7886,7 +8257,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Northern Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-northern-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7906,7 +8278,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Georgia High Altitude Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-georgia-high-altitude-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7926,7 +8299,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days The Southern Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-the-southern-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7946,7 +8320,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Days Caucasus And Iran Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/13-days-caucasus-and-iran-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7966,7 +8341,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Georgia Deep Dive Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-georgia-deep-dive-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -7986,7 +8362,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Turkey And Caucasus Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-turkey-and-caucasus-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8006,7 +8383,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days The Grand Caucasus Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-the-grand-caucasus-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8026,7 +8404,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days The Eastern Balkans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-the-eastern-balkans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8046,7 +8425,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Highlights Of Turkey Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-highlights-of-turkey-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8066,7 +8446,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Best Of The Caucasus Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-best-of-the-caucasus-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8086,7 +8467,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Great Stans Motorcycle Tour In Central Asia",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-the-great-stans-motorcycle-tour-in-central-asia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8106,7 +8488,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Days The Stans Motorcycle Tour In Central Asia",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/17-days-the-stans-motorcycle-tour-in-central-asia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8126,7 +8509,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days The Silk Road Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-the-silk-road-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8146,7 +8530,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Mountains Of The Caucasus Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-mountains-of-the-caucasus-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8166,7 +8551,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Best Of Turkey Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-best-of-turkey-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8186,7 +8572,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Western Turkey Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-western-turkey-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8206,7 +8593,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Morocco Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-morocco-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8226,7 +8614,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Highlights Of Ukraine Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/7-days-highlights-of-ukraine-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8246,7 +8635,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Kirghizstan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-kirghizstan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8266,7 +8656,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Days The Stans Plus Iran Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/16-days-the-stans-plus-iran-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8286,7 +8677,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Iran Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-iran-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8306,7 +8698,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Highlights Of Moldova Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/7-days-highlights-of-moldova-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8326,7 +8719,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Highlights Of Armenia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-highlights-of-armenia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8346,7 +8740,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Kazakhstan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-kazakhstan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8366,7 +8761,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Best Of Mongolia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-best-of-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8386,7 +8782,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Best Of Kyrgyzstan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-best-of-kyrgyzstan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8406,7 +8803,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Tajikistan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-tajikistan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8426,7 +8824,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "22 Days Beijing To Kathmandu Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/22-days-beijing-to-kathmandu-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8446,7 +8845,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Best Of Uzbekistan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-best-of-uzbekistan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8466,7 +8866,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Best Of The Stans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-best-of-the-stans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8486,7 +8887,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days The Great Stans Plus Iran Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-the-great-stans-plus-iran-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8506,7 +8908,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days The Stan Sampler Motorcycle Tour In Central Asia",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-the-stan-sampler-motorcycle-tour-in-central-asia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8526,7 +8929,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "22 Days The Ultimate Stans Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/22-days-the-ultimate-stans-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8546,7 +8950,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Highlights Of Iran Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-highlights-of-iran-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8566,7 +8971,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days China Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-china-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8586,7 +8992,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Days Kathmandu To Beijing Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/21-days-kathmandu-to-beijing-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8606,7 +9013,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "19 Days Mongolia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/19-days-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8626,7 +9034,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Russia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-russia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8646,7 +9055,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Mongolia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8666,7 +9076,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "20 Days Russia And Mongolia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/20-days-russia-and-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8686,7 +9097,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Highlights Of Russia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/7-days-highlights-of-russia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8706,7 +9118,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Nepal Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-nepal-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8726,7 +9139,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Tibet Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-tibet-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8746,7 +9160,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days India Motorcycle Tour Golden Triangle",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-india-motorcycle-tour-golden-triangle?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8766,7 +9181,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Best Of Nepal Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-best-of-nepal-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8786,7 +9202,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Rajasthan Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-rajasthan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8806,7 +9223,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "20 Days Best Of India Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/20-days-best-of-india-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8826,7 +9244,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days The Himalayas Motorcycle Tour In Nepal",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-the-himalayas-motorcycle-tour-in-nepal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8846,7 +9265,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Vietnam Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-vietnam-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8866,7 +9286,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Indochina Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-indochina-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8886,7 +9307,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Laos Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-laos-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8906,7 +9328,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Cambodia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-cambodia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8926,7 +9349,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Best Of Thailand Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-best-of-thailand-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8946,7 +9370,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Mekong Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-the-mekong-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8966,7 +9391,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days South Vietnam Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-south-vietnam-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -8986,7 +9412,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Myanmar Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-myanmar-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9006,7 +9433,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Indonesia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-indonesia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9026,7 +9454,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days The Philippines Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-the-philippines-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9046,7 +9475,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days New Zealand Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-new-zealand-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9066,7 +9496,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "20 Days Australia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/20-days-australia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9086,7 +9517,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days South Africa Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-south-africa-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9106,7 +9538,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Kenya And Tanzania Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-kenya-and-tanzania-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9126,7 +9559,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Morocco And Western Sahara Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-morocco-and-western-sahara-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9146,7 +9580,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Namibia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-namibia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9166,7 +9601,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Ethiopia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-ethiopia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9186,7 +9622,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "20 Days South America Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/20-days-south-america-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9206,7 +9643,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Colombia And Ecuador Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-colombia-and-ecuador-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9226,7 +9664,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Peru Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-peru-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9246,7 +9685,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Patagonia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-patagonia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9266,7 +9706,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Cuba Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-cuba-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9286,7 +9727,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Brazil Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-brazil-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9306,7 +9748,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Costa Rica Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-costa-rica-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9326,7 +9769,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Usa West Coast Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-usa-west-coast-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9346,7 +9790,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Canada Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-canada-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9366,7 +9811,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Alaska Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-alaska-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9386,7 +9832,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Mexico Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-mexico-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9406,7 +9853,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Scandinavia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-scandinavia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9426,7 +9874,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Iceland Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-iceland-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9446,7 +9895,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days British Isles Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/15-days-british-isles-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9466,7 +9916,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Scotland Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/12-days-scotland-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9486,7 +9937,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Ireland Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/9-days-ireland-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9506,7 +9958,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Alpine Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-alpine-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9526,7 +9979,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days French Pyrenees Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/8-days-french-pyrenees-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9546,7 +10000,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days Iberian Peninsula Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/14-days-iberian-peninsula-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9566,7 +10021,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Andalucia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-andalucia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9586,7 +10042,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Corsica And Sardinia Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-corsica-and-sardinia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9606,7 +10063,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Best Of Italy Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/11-days-best-of-italy-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9626,7 +10084,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Dolomites Motorcycle Tour",
     organizer: "Motorentour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motorentour",
     href: `https://www.tripaneer.com/motorentour/10-days-the-dolomites-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9646,7 +10105,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Off Road Enduro Training And Motorcycle Tour In Covasna Romania",
     organizer: "Romania Enduro Escape Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Romania Enduro Escape Tours",
     href: `https://www.tripaneer.com/romania-enduro-escape-tours/5-days-off-road-enduro-training-and-motorcycle-tour-in-covasna-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9666,7 +10126,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Ladakh Abode In Heaven Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/9-day-ladakh-abode-in-heaven-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9686,7 +10147,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day The Great Tian Shan Mountains Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/12-day-the-great-tian-shan-mountains-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9706,7 +10168,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Northern Explorer An Epic Guided Motorcycle Tour Across Laos",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/9-day-northern-explorer-an-epic-guided-motorcycle-tour-across-laos?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9726,7 +10189,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Sach Pass Guided Motorcycle Tour In India With Valleys And Remote Villages",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/8-day-sach-pass-guided-motorcycle-tour-in-india-with-valleys-and-remote-villages?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9746,7 +10210,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Highlights Of Bulgaria Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/4-day-highlights-of-bulgaria-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9766,7 +10231,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day The Kingdom Ride An Epic Guided Motorcycle Tour From India To Bhutan",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-the-kingdom-ride-an-epic-guided-motorcycle-tour-from-india-to-bhutan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9786,7 +10252,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Hour Guided Enduro Motorcycle Tour In Carregado Portugal For Intermediate To Advanced Riders",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/6-hour-guided-enduro-motorcycle-tour-in-carregado-portugal-for-intermediate-to-advanced-riders?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9806,7 +10273,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Spiti Valley Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/11-day-spiti-valley-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9826,7 +10294,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day The Kirghiz Steppe Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/8-day-the-kirghiz-steppe-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9846,7 +10315,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Bulgaria And North Macedonia Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/6-day-bulgaria-and-north-macedonia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9866,7 +10336,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Manali To Leh Guided Motorcycle Tour In India S Himalayas",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/10-day-manali-to-leh-guided-motorcycle-tour-in-india-s-himalayas?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9886,7 +10357,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Enduro Motorcycle Tour In Alentejo And Algarve Portugal For Intermediate To Advanced Riders",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/5-day-guided-enduro-motorcycle-tour-in-alentejo-and-algarve-portugal-for-intermediate-to-advanced-riders?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9906,7 +10378,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Rajasthan Heritage Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/10-day-rajasthan-heritage-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9926,7 +10399,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day North India Discovery Guided Motorcycle Tour",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-north-india-discovery-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9946,7 +10420,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day The Silk Road Guided Motorcycle Tour Through Kyrgyzstan And Uzbekistan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/14-day-the-silk-road-guided-motorcycle-tour-through-kyrgyzstan-and-uzbekistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9966,7 +10441,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Best Of The Balkans Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/7-day-best-of-the-balkans-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -9986,7 +10462,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day South India Explorer Guided Motorcycle Tour",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/8-day-south-india-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10006,7 +10483,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Kashmir To Kanyakumari Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/14-day-kashmir-to-kanyakumari-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10026,7 +10504,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day The Golden Road Guided Motorcycle Tour In Uzbekistan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/10-day-the-golden-road-guided-motorcycle-tour-in-uzbekistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10046,7 +10525,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Balkans Grand Tour Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/8-day-balkans-grand-tour-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10066,7 +10546,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Rajasthan Royal Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/12-day-rajasthan-royal-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10086,7 +10567,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Kashmir Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/12-day-kashmir-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10106,7 +10588,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day The Roof Of The World Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/8-day-the-roof-of-the-world-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10126,7 +10609,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Transylvania And Balkans Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/10-day-transylvania-and-balkans-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10146,7 +10630,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Grand India Circuit Guided Motorcycle Tour",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/15-day-grand-india-circuit-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10166,7 +10651,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day The Grand India Guided Motorcycle Tour",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/15-day-the-grand-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10186,7 +10672,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day Pamir Highway Guided Motorcycle Tour In Tajikistan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/16-day-pamir-highway-guided-motorcycle-tour-in-tajikistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10206,7 +10693,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Best Of The Balkans And Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/12-day-best-of-the-balkans-and-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10226,7 +10714,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Kerala Backwaters And Hills Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/7-day-kerala-backwaters-and-hills-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10246,7 +10735,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Uttarakhand Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/8-day-uttarakhand-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10266,7 +10756,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Day The Stans Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/21-day-the-stans-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10286,7 +10777,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Balkan Peninsula And Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/14-day-balkan-peninsula-and-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10306,7 +10798,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Goa And Konkan Coast Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/9-day-goa-and-konkan-coast-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10326,7 +10819,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Himachal Pradesh Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/9-day-himachal-pradesh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10346,7 +10840,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Enduro Motorcycle Tour In Sibiu Area Romania",
     organizer: "Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     href: `https://www.tripaneer.com/trail-trips-sibiu-romania-enduro-tours-and-offroad-training/5-days-enduro-motorcycle-tour-in-sibiu-area-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10366,7 +10861,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "35 Days Self Guided North And South Island Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/35-days-self-guided-north-and-south-island-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10386,7 +10882,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Kazbegi Alps Kakheti Wine Region Guided Motorcycle Tour In Georgia",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/5-day-kazbegi-alps-kakheti-wine-region-guided-motorcycle-tour-in-georgia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10406,7 +10903,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Enduro Motorcycle Tour Through Thailand",
     organizer: "Viaduro Gbr",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Viaduro Gbr",
     href: `https://www.tripaneer.com/viaduro-gbr/8-day-enduro-motorcycle-tour-through-thailand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10426,7 +10924,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Off Road Adv Big Trail Guided Motorcycle Tour In Algarve Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/6-day-off-road-adv-big-trail-guided-motorcycle-tour-in-algarve-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10446,7 +10945,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Enduro Motorcycle Tour In Bajina Basta Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/7-days-enduro-motorcycle-tour-in-bajina-basta-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10466,7 +10966,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Days The Buddhist Circuit Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/13-days-the-buddhist-circuit-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10486,7 +10987,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Guided Self Rider Tour From Saigon Explore Cat Tien National Park Bao Loc Dalat",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/3-day-guided-self-rider-tour-from-saigon-explore-cat-tien-national-park-bao-loc-dalat?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10506,7 +11008,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Self Rider Tour From Hoi An Hue Dmz Phong Nha",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/4-day-guided-self-rider-tour-from-hoi-an-hue-dmz-phong-nha?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10526,7 +11029,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Guided Self Rider Tour From Hue To Hoi An Sea Cloud Pass Marble Mountains",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/3-day-guided-self-rider-tour-from-hue-to-hoi-an-sea-cloud-pass-marble-mountains?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10546,7 +11050,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Guided Self Rider Tour From Saigon To Hoi An",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/7-day-guided-self-rider-tour-from-saigon-to-hoi-an?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10566,7 +11071,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Self Rider Motorcycle Tour From Hanoi To Sapa And Back",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/4-day-guided-self-rider-motorcycle-tour-from-hanoi-to-sapa-and-back?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10586,7 +11092,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Self Rider Motorcycle Tour From Saigon To Mui Ne Da Lat",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/5-day-guided-self-rider-motorcycle-tour-from-saigon-to-mui-ne-da-lat?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10606,7 +11113,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Guided Self Rider Motorcycle Tour From Hanoi Ha Giang Loop",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/6-day-guided-self-rider-motorcycle-tour-from-hanoi-ha-giang-loop?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10626,7 +11134,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Guided Self Rider Motorcycle Tour From Hanoi Bac Ha Sapa Dien Bien Phu",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/7-day-guided-self-rider-motorcycle-tour-from-hanoi-bac-ha-sapa-dien-bien-phu?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10646,7 +11155,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Self Rider Motorcycle Tour From Saigon To Hanoi",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/10-day-guided-self-rider-motorcycle-tour-from-saigon-to-hanoi?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10666,7 +11176,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Self Rider Motorcycle Tour From Hanoi To Saigon",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/10-day-guided-self-rider-motorcycle-tour-from-hanoi-to-saigon?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10686,7 +11197,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Self Rider Motorcycle Tour From Hanoi Ha Giang Loop",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/4-day-guided-self-rider-motorcycle-tour-from-hanoi-ha-giang-loop?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10706,7 +11218,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Self Rider Motorcycle Tour From Hanoi Ninh Binh Halong Bay And Cat Ba Island",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/5-day-guided-self-rider-motorcycle-tour-from-hanoi-ninh-binh-halong-bay-and-cat-ba-island?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10726,7 +11239,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Guided Self Rider Motorcycle Tour From Hanoi Ba Be Lake And Back",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/3-day-guided-self-rider-motorcycle-tour-from-hanoi-ba-be-lake-and-back?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10746,7 +11260,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Self Rider Motorcycle Tour From Hanoi Mai Chau Pu Luong Ninh Binh",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/5-day-guided-self-rider-motorcycle-tour-from-hanoi-mai-chau-pu-luong-ninh-binh?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10766,7 +11281,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Guided Self Rider Motorcycle Tour From Hanoi To Hoi An Via Hue",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/8-day-guided-self-rider-motorcycle-tour-from-hanoi-to-hoi-an-via-hue?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10786,7 +11302,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Guided Self Rider Motorcycle Tour From Hoi An To Saigon",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/6-day-guided-self-rider-motorcycle-tour-from-hoi-an-to-saigon?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10806,7 +11323,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Self Rider Motorcycle Tour From Saigon Mekong Delta Phu Quoc Island",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/4-day-guided-self-rider-motorcycle-tour-from-saigon-mekong-delta-phu-quoc-island?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10826,7 +11344,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Guided Self Rider Motorcycle Tour From Hoi An To Hanoi",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/7-day-guided-self-rider-motorcycle-tour-from-hoi-an-to-hanoi?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10846,7 +11365,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Guided Self Rider Motorcycle Tour From Saigon To Sapa",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/12-day-guided-self-rider-motorcycle-tour-from-saigon-to-sapa?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10866,7 +11386,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Guided Self Rider Motorcycle Tour From Saigon To Ha Giang",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/13-day-guided-self-rider-motorcycle-tour-from-saigon-to-ha-giang?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10886,7 +11407,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Guided Self Rider Motorcycle Tour From Saigon To Hanoi And Back",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/15-day-guided-self-rider-motorcycle-tour-from-saigon-to-hanoi-and-back?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10906,7 +11428,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Self Rider Motorcycle Tour From Saigon Explore The Mekong Delta",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/5-day-guided-self-rider-motorcycle-tour-from-saigon-explore-the-mekong-delta?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10926,7 +11449,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Self Rider Motorcycle Tour From Saigon To Mui Ne And Back",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/4-day-guided-self-rider-motorcycle-tour-from-saigon-to-mui-ne-and-back?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10946,7 +11470,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Self Rider Motorcycle Tour From Hue To Hanoi Via Hoi An And Saigon",
     organizer: "Vietnam Two Wheels",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Vietnam Two Wheels",
     href: `https://www.tripaneer.com/vietnam-two-wheels/10-day-guided-self-rider-motorcycle-tour-from-hue-to-hanoi-via-hoi-an-and-saigon?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10966,7 +11491,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Rajasthan Desert Storm Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/10-days-rajasthan-desert-storm-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -10986,7 +11512,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days The Himalayan Odyssey Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/9-days-the-himalayan-odyssey-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11006,7 +11533,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days South India Coastal And Cultural Guided Motorcycle Tour",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/12-days-south-india-coastal-and-cultural-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11026,7 +11554,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Royal Rajasthan Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/10-days-the-royal-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11046,7 +11575,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days The Golden Triangle With Varanasi Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/8-days-the-golden-triangle-with-varanasi-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11066,7 +11596,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days The Himalayan High Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/11-days-the-himalayan-high-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11086,7 +11617,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Days The Grand India Guided Motorcycle Tour",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/14-days-the-grand-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11106,7 +11638,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Kerala Backwaters And Highlands Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/9-days-kerala-backwaters-and-highlands-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11126,7 +11659,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days India S Northeast Frontier Guided Motorcycle Tour",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/12-days-india-s-northeast-frontier-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11146,7 +11680,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days The Spiti Valley Adventure Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/7-days-the-spiti-valley-adventure-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11166,7 +11701,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Silk Route Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/10-days-the-silk-route-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11186,7 +11722,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Goa To Kerala Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/11-days-goa-to-kerala-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11206,7 +11743,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Himalayan Heartland Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/10-days-the-himalayan-heartland-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11226,7 +11764,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days The Pan India Adventure Guided Motorcycle Tour",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/15-days-the-pan-india-adventure-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11246,7 +11785,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Rajasthan And Gujarat Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/12-days-rajasthan-and-gujarat-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11266,7 +11806,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days The Vindhya And Satpura Ranges Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/8-days-the-vindhya-and-satpura-ranges-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11286,7 +11827,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days The Deccan Odyssey Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/11-days-the-deccan-odyssey-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11306,7 +11848,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Eastern Ghats Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/10-days-the-eastern-ghats-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11326,7 +11869,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days The North East India Guided Motorcycle Tour",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/12-days-the-north-east-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11346,7 +11890,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days The Coastal Karnataka Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/8-days-the-coastal-karnataka-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11366,7 +11911,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days The Konkan Coast Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/10-days-the-konkan-coast-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11386,7 +11932,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days The Western Ghats Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/9-days-the-western-ghats-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11406,7 +11953,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days The Himalayan Foothills Guided Motorcycle Tour In India",
     organizer: "Freedom Riderss",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Freedom Riderss",
     href: `https://www.tripaneer.com/freedom-riderss/11-days-the-himalayan-foothills-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11426,7 +11974,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day The Pamir Adventure Guided Motorcycle Tour In Tajikistan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/10-day-the-pamir-adventure-guided-motorcycle-tour-in-tajikistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11446,7 +11995,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Southern Bulgaria Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/5-day-southern-bulgaria-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11466,7 +12016,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Off Road Adv Big Trail Guided Motorcycle Tour In South Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/8-day-off-road-adv-big-trail-guided-motorcycle-tour-in-south-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11486,7 +12037,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Enduro Motorcycle Tour In Bajina Basta Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/5-days-enduro-motorcycle-tour-in-bajina-basta-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11506,7 +12058,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Himalayan Odyssey Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/11-day-himalayan-odyssey-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11526,7 +12079,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Manali Sarchu Leh Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/7-day-manali-sarchu-leh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11546,7 +12100,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day The Great Silk Road Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/18-day-the-great-silk-road-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11566,7 +12121,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Balkans And Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/9-day-balkans-and-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11586,7 +12142,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Off Road Adv Guided Motorcycle Tour In Algarve Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/4-day-off-road-adv-guided-motorcycle-tour-in-algarve-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11606,7 +12163,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Enduro Motorcycle Tour In Bajina Basta Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/3-days-enduro-motorcycle-tour-in-bajina-basta-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11626,7 +12184,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Central India Heritage Guided Motorcycle Tour",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/8-day-central-india-heritage-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11646,7 +12205,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Manali Leh Srinagar Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/13-day-manali-leh-srinagar-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11666,7 +12226,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day The Kochkor Valley Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/7-day-the-kochkor-valley-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11686,7 +12247,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Balkans And Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/11-day-balkans-and-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11706,7 +12268,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Off Road Adv Big Trail Guided Motorcycle Tour In Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/10-day-off-road-adv-big-trail-guided-motorcycle-tour-in-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11726,7 +12289,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Enduro Motorcycle Tour In Prokletije Albania",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/7-days-enduro-motorcycle-tour-in-prokletije-albania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11746,7 +12310,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day North East India Explorer Guided Motorcycle Tour",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/9-day-north-east-india-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11766,7 +12331,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Rajasthan Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/8-day-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11786,7 +12352,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day The Fergana Valley Guided Motorcycle Tour In Uzbekistan And Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/9-day-the-fergana-valley-guided-motorcycle-tour-in-uzbekistan-and-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11806,7 +12373,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Northern Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/6-day-northern-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11826,7 +12394,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Off Road Adv Guided Motorcycle Tour In Algarve Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/3-day-off-road-adv-guided-motorcycle-tour-in-algarve-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11846,7 +12415,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Enduro Motorcycle Tour In Prokletije Albania",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/5-days-enduro-motorcycle-tour-in-prokletije-albania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11866,7 +12436,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Tamil Nadu And Kerala Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/13-day-tamil-nadu-and-kerala-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11886,7 +12457,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Golden Triangle To Rajasthan Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/12-day-golden-triangle-to-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11906,7 +12478,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day The Walnut Groves Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/5-day-the-walnut-groves-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11926,7 +12499,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Transylvania And Black Sea Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/7-day-transylvania-and-black-sea-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11946,7 +12520,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Rajasthan And Gujarat Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/14-day-rajasthan-and-gujarat-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11966,7 +12541,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Ladakh To Kashmir Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/14-day-ladakh-to-kashmir-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -11986,7 +12562,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day The Alpine Meadows Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/6-day-the-alpine-meadows-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12006,7 +12583,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Western Balkans Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/8-day-western-balkans-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12026,7 +12604,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Madhya Pradesh Wildlife Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-madhya-pradesh-wildlife-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12046,7 +12625,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day The Grand Himalayan Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/16-day-the-grand-himalayan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12066,7 +12646,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day The Mountain Lakes Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/11-day-the-mountain-lakes-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12086,7 +12667,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/10-day-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12106,7 +12688,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Gujarat And Goa Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/12-day-gujarat-and-goa-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12126,7 +12709,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Uttarakhand Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/7-day-uttarakhand-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12146,7 +12730,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day The Eagle Hunter Guided Motorcycle Tour In Mongolia",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/14-day-the-eagle-hunter-guided-motorcycle-tour-in-mongolia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12166,7 +12751,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Greece And Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/12-day-greece-and-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12186,7 +12772,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Andaman Islands Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/8-day-andaman-islands-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12206,7 +12793,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Golden Triangle Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/10-day-golden-triangle-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12226,7 +12814,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day The Gobi Desert Guided Motorcycle Tour In Mongolia",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/18-day-the-gobi-desert-guided-motorcycle-tour-in-mongolia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12246,7 +12835,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Albania And North Macedonia Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/9-day-albania-and-north-macedonia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12266,7 +12856,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Ladakh Explorer Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-ladakh-explorer-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12286,7 +12877,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Rishikesh To Valley Of Flowers Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/6-day-rishikesh-to-valley-of-flowers-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12306,7 +12898,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "25 Day The Trans Mongolia Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/25-day-the-trans-mongolia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12326,7 +12919,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/11-day-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12346,7 +12940,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Himachal Pradesh And Spiti Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/9-day-himachal-pradesh-and-spiti-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12366,7 +12961,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Sikkim And Darjeeling Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/9-day-sikkim-and-darjeeling-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12386,7 +12982,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day The Khangai Mountains Guided Motorcycle Tour In Mongolia",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/14-day-the-khangai-mountains-guided-motorcycle-tour-in-mongolia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12406,7 +13003,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Balkans Mediterranean Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/13-day-balkans-mediterranean-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12426,7 +13024,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Uttarakhand Kumaon Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/12-day-uttarakhand-kumaon-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12446,7 +13045,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Northeast India Guided Motorcycle Tour",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/11-day-northeast-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12466,7 +13066,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day The Nomads Land Guided Motorcycle Tour In Mongolia",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/10-day-the-nomads-land-guided-motorcycle-tour-in-mongolia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12486,7 +13087,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Western Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/6-day-western-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12506,7 +13108,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Rajasthan Desert Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/11-day-rajasthan-desert-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12526,7 +13129,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Sikkim Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/8-day-sikkim-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12546,7 +13150,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day The Forgotten Valley Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/7-day-the-forgotten-valley-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12566,7 +13171,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Bulgaria And North Macedonia Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/7-day-bulgaria-and-north-macedonia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12586,7 +13192,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Kashmir And Ladakh Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/14-day-kashmir-and-ladakh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12606,7 +13213,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Kumaon Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/7-day-kumaon-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12626,7 +13234,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day The Lake District Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/8-day-the-lake-district-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12646,7 +13255,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Albania Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/8-day-albania-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12666,7 +13276,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Maharashtra Heritage Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/9-day-maharashtra-heritage-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12686,7 +13297,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Rajasthan And Gujarat Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/14-day-rajasthan-and-gujarat-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12706,7 +13318,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day The Wild West Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/6-day-the-wild-west-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12726,7 +13339,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Albania North Macedonia And Kosovo Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/9-day-albania-north-macedonia-and-kosovo-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12746,7 +13360,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day Eastern European Explorer Carpathian And Tatra Mountains Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/16-day-eastern-european-explorer-carpathian-and-tatra-mountains-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12766,7 +13381,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Guided Motorcycle Tour In Central Honshu Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/13-day-guided-motorcycle-tour-in-central-honshu-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12786,7 +13402,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Custom Feel Croatia Guided Motorcycle Tour",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/13-day-custom-feel-croatia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12806,7 +13423,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Discovery Motorcycle Trip Through Mongolia In The Gobi Region",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/10-day-guided-discovery-motorcycle-trip-through-mongolia-in-the-gobi-region?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12826,7 +13444,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Guided Adventurous Colombo Loop Motorcycle Tour In Sri Lanka",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/9-day-guided-adventurous-colombo-loop-motorcycle-tour-in-sri-lanka?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12846,7 +13465,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Day Adventure In Tanzania Kenya Kilimanjaro Guided Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/21-day-adventure-in-tanzania-kenya-kilimanjaro-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12866,7 +13486,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Easy Mongolia South Guided Enduro Motorcycle Tour With Off Roads And River Crossing",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/7-day-easy-mongolia-south-guided-enduro-motorcycle-tour-with-off-roads-and-river-crossing?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12886,7 +13507,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "19 Day Discover Madagascar Baobab Guided Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/19-day-discover-madagascar-baobab-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12906,7 +13528,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Classic Mongolia Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/14-day-guided-classic-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12926,7 +13549,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided North To South Motorcycle Tour In Vietnam",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/14-day-guided-north-to-south-motorcycle-tour-in-vietnam?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12946,7 +13570,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Day Guided Trans Mongolia Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/21-day-guided-trans-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12966,7 +13591,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day Guided Ethiopia Historic Route Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/18-day-guided-ethiopia-historic-route-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -12986,7 +13612,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Guided Mongolia West To East Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/12-day-guided-mongolia-west-to-east-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13006,7 +13633,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Guided South India Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/12-day-guided-south-india-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13026,7 +13654,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Guided Mongolia Adventure Motorcycle Tour Around The Lake Hovsgol",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/8-day-guided-mongolia-adventure-motorcycle-tour-around-the-lake-hovsgol?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13046,7 +13675,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Rajasthan Motorcycle Tour In India",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/10-day-guided-rajasthan-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13066,7 +13696,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Guided Mongolia Adventure Motorcycle Tour Around The Lake Hovsgol",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/7-day-guided-mongolia-adventure-motorcycle-tour-around-the-lake-hovsgol?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13086,7 +13717,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Rajasthan And Gujarat Motorcycle Tour In India",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/14-day-guided-rajasthan-and-gujarat-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13106,7 +13738,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Easy Mongolia North Guided Enduro Motorcycle Tour With Off Roads And River Crossing",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/7-day-easy-mongolia-north-guided-enduro-motorcycle-tour-with-off-roads-and-river-crossing?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13126,7 +13759,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day Guided North India Himalayan Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/16-day-guided-north-india-himalayan-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13146,7 +13780,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Mongolia South And East Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/10-day-guided-mongolia-south-and-east-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13166,7 +13801,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day Guided Uganda Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/18-day-guided-uganda-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13186,7 +13822,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Mongolia North And West Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/10-day-guided-mongolia-north-and-west-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13206,7 +13843,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "19 Day Guided Namibia Botswana Zimbabwe Zambia Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/19-day-guided-namibia-botswana-zimbabwe-zambia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13226,7 +13864,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Mongolia West And North Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/14-day-guided-mongolia-west-and-north-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13246,7 +13885,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Day Guided South Africa Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/21-day-guided-south-africa-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13266,7 +13906,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Mongolia South And East Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/14-day-guided-mongolia-south-and-east-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13286,7 +13927,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Kenya Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/14-day-guided-kenya-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13306,7 +13948,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Lake Hovsgol And Central Mongolia Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/14-day-guided-lake-hovsgol-and-central-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13326,7 +13969,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Day Guided Marocco Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/17-day-guided-marocco-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13346,7 +13990,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Day Guided All Mongolia Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/17-day-guided-all-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13366,7 +14011,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Peru Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/14-day-guided-peru-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13386,7 +14032,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Winter Mongolia Motorcycle Tour",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/5-day-guided-winter-mongolia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13406,7 +14053,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Guided Colombia Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/15-day-guided-colombia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13426,7 +14074,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Easy Mongolia Guided Enduro Motorcycle Tour For Beginners",
     organizer: "Probike Mongolia Llc",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Probike Mongolia Llc",
     href: `https://www.tripaneer.com/probike-mongolia-llc/5-day-easy-mongolia-guided-enduro-motorcycle-tour-for-beginners?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13446,7 +14095,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Brazil Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/14-day-guided-brazil-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13466,7 +14116,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Day Guided Argentina And Chile Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/17-day-guided-argentina-and-chile-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13486,7 +14137,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Day Guided Patagonia Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/21-day-guided-patagonia-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13506,7 +14158,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Guided Cuba Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/12-day-guided-cuba-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13526,7 +14179,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Guided Costa Rica Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/11-day-guided-costa-rica-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13546,7 +14200,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Guided Mexico Motorcycle Tour",
     organizer: "Motor Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Motor Trails",
     href: `https://www.tripaneer.com/motor-trails/15-day-guided-mexico-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13566,7 +14221,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Adriatic Jewels Guided Motorcycle Tour In Croatia And Bosnia",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/8-day-adriatic-jewels-guided-motorcycle-tour-in-croatia-and-bosnia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13586,7 +14242,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Balkan Explorer Guided Motorcycle Tour",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/11-day-balkan-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13606,7 +14263,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Adriatic And Beyond Guided Motorcycle Tour In Croatia And The Balkans",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/10-day-adriatic-and-beyond-guided-motorcycle-tour-in-croatia-and-the-balkans?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13626,7 +14284,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Dalmatian Coast Guided Motorcycle Tour In Croatia",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/7-day-dalmatian-coast-guided-motorcycle-tour-in-croatia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13646,7 +14305,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Croatia And Slovenia Guided Motorcycle Tour",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/9-day-croatia-and-slovenia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13666,7 +14326,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Grand Adriatic Guided Motorcycle Tour In Croatia And The Balkans",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/12-day-grand-adriatic-guided-motorcycle-tour-in-croatia-and-the-balkans?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13686,7 +14347,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Istria And Kvarner Guided Motorcycle Tour In Croatia",
     organizer: "Moto Tours Croatia",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Moto Tours Croatia",
     href: `https://www.tripaneer.com/moto-tours-croatia/6-day-istria-and-kvarner-guided-motorcycle-tour-in-croatia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13706,7 +14368,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Guided Motorcycle Tour In Hokkaido Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/8-day-guided-motorcycle-tour-in-hokkaido-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13726,7 +14389,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Guided Motorcycle Tour In Kyushu Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/11-day-guided-motorcycle-tour-in-kyushu-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13746,7 +14410,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Motorcycle Tour In Shikoku Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/10-day-guided-motorcycle-tour-in-shikoku-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13766,7 +14431,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Motorcycle Tour In Western Honshu Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/14-day-guided-motorcycle-tour-in-western-honshu-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13786,7 +14452,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day Guided Motorcycle Tour In Central Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/16-day-guided-motorcycle-tour-in-central-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13806,7 +14473,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "21 Day Guided Motorcycle Tour In Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/21-day-guided-motorcycle-tour-in-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13826,7 +14494,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "28 Day Guided Grand Tour Of Japan By Motorcycle",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/28-day-guided-grand-tour-of-japan-by-motorcycle?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13846,7 +14515,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Alps Adventure Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/8-day-alps-adventure-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13866,7 +14536,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Balkan Discovery Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/10-day-balkan-discovery-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13886,7 +14557,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Mediterranean Magic Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/12-day-mediterranean-magic-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13906,7 +14578,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Iberian Odyssey Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/14-day-iberian-odyssey-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13926,7 +14599,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Pyrenees And Basque Country Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/10-day-pyrenees-and-basque-country-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13946,7 +14620,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Celtic Coasts Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/12-day-celtic-coasts-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13966,7 +14641,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Nordic Explorer Guided Motorcycle Tour In Europe",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/14-day-nordic-explorer-guided-motorcycle-tour-in-europe?${tripaneerAid}`,
     partner: "tripaneer",
@@ -13986,7 +14662,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day Grand European Tour Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/18-day-grand-european-tour-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14006,7 +14683,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "22 Days Self Guided South Island Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/22-days-self-guided-south-island-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14026,7 +14704,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Days Self Guided North Island Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/15-days-self-guided-north-island-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14046,7 +14725,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Self Guided Southern Lakes Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/8-days-self-guided-southern-lakes-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14066,7 +14746,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Self Guided West Coast And Glaciers Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/10-days-self-guided-west-coast-and-glaciers-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14086,7 +14767,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Days Self Guided Central Otago And Fiordland Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/12-days-self-guided-central-otago-and-fiordland-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14106,7 +14788,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Military Highway Javakheti Kakheti Guided Motorcycle Tour In Georgia",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/7-day-military-highway-javakheti-kakheti-guided-motorcycle-tour-in-georgia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14126,7 +14809,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Georgia And Armenia Guided Motorcycle Tour",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/10-day-georgia-and-armenia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14146,7 +14830,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Georgia Off Road Guided Motorcycle Tour",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/8-day-georgia-off-road-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14166,7 +14851,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Georgia Armenia And Azerbaijan Guided Motorcycle Tour",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/12-day-georgia-armenia-and-azerbaijan-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14186,7 +14872,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Caucasus Full Tour Guided Motorcycle Tour",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/14-day-caucasus-full-tour-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14206,7 +14893,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Mtb Guided Enduro Motorcycle Tour In Georgia",
     organizer: "Caucasus Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Caucasus Enduro Tours",
     href: `https://www.tripaneer.com/caucasus-enduro-tours/6-day-mtb-guided-enduro-motorcycle-tour-in-georgia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14226,7 +14914,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Cross Country Enduro Motorcycle Tour In Transylvania Romania",
     organizer: "Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     href: `https://www.tripaneer.com/trail-trips-sibiu-romania-enduro-tours-and-offroad-training/7-days-cross-country-enduro-motorcycle-tour-in-transylvania-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14246,7 +14935,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Enduro And Trail Tour In Balkan Mountains Bulgaria",
     organizer: "Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     href: `https://www.tripaneer.com/trail-trips-sibiu-romania-enduro-tours-and-offroad-training/7-days-enduro-and-trail-tour-in-balkan-mountains-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14266,7 +14956,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Transylvania To Adriatic Enduro Motorcycle Tour",
     organizer: "Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     href: `https://www.tripaneer.com/trail-trips-sibiu-romania-enduro-tours-and-offroad-training/10-days-transylvania-to-adriatic-enduro-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14286,7 +14977,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Enduro Motorcycle Tour In Sibiu Area Romania",
     organizer: "Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     href: `https://www.tripaneer.com/trail-trips-sibiu-romania-enduro-tours-and-offroad-training/3-days-enduro-motorcycle-tour-in-sibiu-area-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14306,7 +14998,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Days Enduro And Trail Tour In Transylvania And Moldavia Romania",
     organizer: "Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Trail Trips Sibiu Romania Enduro Tours And Offroad Training",
     href: `https://www.tripaneer.com/trail-trips-sibiu-romania-enduro-tours-and-offroad-training/8-days-enduro-and-trail-tour-in-transylvania-and-moldavia-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14326,7 +15019,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Enduro Motorcycle Tour Through Vietnam",
     organizer: "Viaduro Gbr",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Viaduro Gbr",
     href: `https://www.tripaneer.com/viaduro-gbr/6-day-enduro-motorcycle-tour-through-vietnam?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14346,7 +15040,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Enduro Motorcycle Tour Across Laos",
     organizer: "Viaduro Gbr",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Viaduro Gbr",
     href: `https://www.tripaneer.com/viaduro-gbr/8-day-enduro-motorcycle-tour-across-laos?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14366,7 +15061,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Enduro Motorcycle Tour Across Cambodia",
     organizer: "Viaduro Gbr",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Viaduro Gbr",
     href: `https://www.tripaneer.com/viaduro-gbr/10-day-enduro-motorcycle-tour-across-cambodia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14386,7 +15082,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Enduro Motorcycle Tour Through Myanmar",
     organizer: "Viaduro Gbr",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Viaduro Gbr",
     href: `https://www.tripaneer.com/viaduro-gbr/8-day-enduro-motorcycle-tour-through-myanmar?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14406,7 +15103,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Enduro Motorcycle Tour Across Indochina",
     organizer: "Viaduro Gbr",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Viaduro Gbr",
     href: `https://www.tripaneer.com/viaduro-gbr/12-day-enduro-motorcycle-tour-across-indochina?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14426,7 +15124,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Bolaven Plateau And Si Phan Don Guided Motorcycle Tour In Laos",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/7-day-bolaven-plateau-and-si-phan-don-guided-motorcycle-tour-in-laos?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14446,7 +15145,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Southern Laos Adventure Guided Motorcycle Tour",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/11-day-southern-laos-adventure-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14466,7 +15166,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Complete Laos Guided Motorcycle Tour",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/14-day-complete-laos-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14486,7 +15187,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Luang Prabang And Nong Khiaw Guided Motorcycle Tour In Laos",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/6-day-luang-prabang-and-nong-khiaw-guided-motorcycle-tour-in-laos?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14506,7 +15208,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Luang Prabang To Vientiane Guided Motorcycle Tour In Laos",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/8-day-luang-prabang-to-vientiane-guided-motorcycle-tour-in-laos?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14526,7 +15229,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Northern Laos Guided Motorcycle Tour",
     organizer: "Royal Ride Laos",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Royal Ride Laos",
     href: `https://www.tripaneer.com/royal-ride-laos/12-day-northern-laos-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14546,7 +15250,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Guided Enduro Motorcycle Tour In Carregado Portugal For Beginners",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/3-day-guided-enduro-motorcycle-tour-in-carregado-portugal-for-beginners?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14566,7 +15271,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Enduro Motorcycle Tour In Carregado Portugal For Beginners",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/4-day-guided-enduro-motorcycle-tour-in-carregado-portugal-for-beginners?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14586,7 +15292,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Guided Enduro Motorcycle Tour In Carregado Portugal For Beginners",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/5-day-guided-enduro-motorcycle-tour-in-carregado-portugal-for-beginners?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14606,7 +15313,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Day Guided Enduro Motorcycle Tour In Carregado Portugal For Intermediate To Advanced Riders",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/3-day-guided-enduro-motorcycle-tour-in-carregado-portugal-for-intermediate-to-advanced-riders?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14626,7 +15334,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Enduro Motorcycle Tour In Carregado Portugal For Intermediate To Advanced Riders",
     organizer: "Bianchi Prata Offroad Center",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bianchi Prata Offroad Center",
     href: `https://www.tripaneer.com/bianchi-prata-offroad-center/4-day-guided-enduro-motorcycle-tour-in-carregado-portugal-for-intermediate-to-advanced-riders?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14646,7 +15355,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Off Road Enduro Training And Motorcycle Tour In Covasna Romania",
     organizer: "Romania Enduro Escape Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Romania Enduro Escape Tours",
     href: `https://www.tripaneer.com/romania-enduro-escape-tours/3-days-off-road-enduro-training-and-motorcycle-tour-in-covasna-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14666,7 +15376,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Off Road Enduro Training And Motorcycle Tour In Covasna Romania",
     organizer: "Romania Enduro Escape Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Romania Enduro Escape Tours",
     href: `https://www.tripaneer.com/romania-enduro-escape-tours/7-days-off-road-enduro-training-and-motorcycle-tour-in-covasna-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14686,7 +15397,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Off Road Enduro Training And Motorcycle Tour In Covasna Romania",
     organizer: "Romania Enduro Escape Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Romania Enduro Escape Tours",
     href: `https://www.tripaneer.com/romania-enduro-escape-tours/10-days-off-road-enduro-training-and-motorcycle-tour-in-covasna-romania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14706,7 +15418,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Enduro Motorcycle Tour In Prokletije Albania",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/3-days-enduro-motorcycle-tour-in-prokletije-albania?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14726,7 +15439,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Days Enduro Motorcycle Tour In Albania North Macedonia And Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/10-days-enduro-motorcycle-tour-in-albania-north-macedonia-and-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14746,7 +15460,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Enduro Motorcycle Tour In Vlasina Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/7-days-enduro-motorcycle-tour-in-vlasina-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14766,7 +15481,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Enduro Motorcycle Tour In Vlasina Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/5-days-enduro-motorcycle-tour-in-vlasina-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14786,7 +15502,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Enduro Motorcycle Tour In Vlasina Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/3-days-enduro-motorcycle-tour-in-vlasina-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14806,7 +15523,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Enduro Motorcycle Tour In Stara Planina Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/7-days-enduro-motorcycle-tour-in-stara-planina-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14826,7 +15544,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Enduro Motorcycle Tour In Stara Planina Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/5-days-enduro-motorcycle-tour-in-stara-planina-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14846,7 +15565,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "3 Days Enduro Motorcycle Tour In Stara Planina Serbia",
     organizer: "Enduro Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Tours",
     href: `https://www.tripaneer.com/enduro-tours/3-days-enduro-motorcycle-tour-in-stara-planina-serbia?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14866,7 +15586,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Off Road Adv Guided Motorcycle Tour In Alentejo Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/5-day-off-road-adv-guided-motorcycle-tour-in-alentejo-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14886,7 +15607,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Off Road Adv Guided Motorcycle Tour In South Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/7-day-off-road-adv-guided-motorcycle-tour-in-south-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14906,7 +15628,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Off Road Adv Guided Motorcycle Tour In South Portugal And Spain",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/9-day-off-road-adv-guided-motorcycle-tour-in-south-portugal-and-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14926,7 +15649,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Off Road Adv Guided Motorcycle Tour In Portugal",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/12-day-off-road-adv-guided-motorcycle-tour-in-portugal?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14946,7 +15670,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Off Road Adv Guided Motorcycle Tour In Portugal And Spain",
     organizer: "Algarve Adv Trails",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Algarve Adv Trails",
     href: `https://www.tripaneer.com/algarve-adv-trails/15-day-off-road-adv-guided-motorcycle-tour-in-portugal-and-spain?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14966,7 +15691,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Days Self Guided Marlborough Sounds And Abel Tasman Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/6-days-self-guided-marlborough-sounds-and-abel-tasman-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -14986,7 +15712,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Days Self Guided Northland And Auckland Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/7-days-self-guided-northland-and-auckland-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15006,7 +15733,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Days Self Guided Volcanic Plateau And East Cape Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/9-days-self-guided-volcanic-plateau-and-east-cape-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15026,7 +15754,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Days Self Guided Tasman And Canterbury Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/11-days-self-guided-tasman-and-canterbury-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15046,7 +15775,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Days Self Guided Queen Charlotte Track And Nelson Motorcycle Tour In New Zealand",
     organizer: "Pohutukawa Motorcycle Touring",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Pohutukawa Motorcycle Touring",
     href: `https://www.tripaneer.com/pohutukawa-motorcycle-touring/5-days-self-guided-queen-charlotte-track-and-nelson-motorcycle-tour-in-new-zealand?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15066,7 +15796,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Guided Motorcycle Tour In Tohoku Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/9-day-guided-motorcycle-tour-in-tohoku-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15086,7 +15817,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Guided Motorcycle Tour In Kanto And Chubu Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/12-day-guided-motorcycle-tour-in-kanto-and-chubu-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15106,7 +15838,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Guided Motorcycle Tour In Western Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/15-day-guided-motorcycle-tour-in-western-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15126,7 +15859,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day Guided Motorcycle Tour In Northern Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/18-day-guided-motorcycle-tour-in-northern-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15146,7 +15880,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Guided Motorcycle Tour In Okinawa And Southern Islands Japan",
     organizer: "Gobeyond",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Gobeyond",
     href: `https://www.tripaneer.com/gobeyond/11-day-guided-motorcycle-tour-in-okinawa-and-southern-islands-japan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15166,7 +15901,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/4-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15186,7 +15922,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/7-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15206,7 +15943,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/10-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15226,7 +15964,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "2 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/2-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15246,7 +15985,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/14-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15266,7 +16006,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/6-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15286,7 +16027,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/8-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15306,7 +16048,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/12-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15326,7 +16069,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/9-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15346,7 +16090,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Guided Enduro Motorbike Tour In Banya Blagoevgrad Bulgaria",
     organizer: "Enduro Max Bulgaria",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Enduro Max Bulgaria",
     href: `https://www.tripaneer.com/enduro-max-bulgaria/11-day-guided-enduro-motorbike-tour-in-banya-blagoevgrad-bulgaria?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15366,7 +16111,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Hidden Gems Of The Balkans Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/9-day-hidden-gems-of-the-balkans-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15386,7 +16132,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Adriatic Odyssey Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/11-day-adriatic-odyssey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15406,7 +16153,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Caucasus Explorer Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/13-day-caucasus-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15426,7 +16174,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Silk Road Adventure Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/15-day-silk-road-adventure-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15446,7 +16195,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Anatolia Explorer Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/12-day-anatolia-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15466,7 +16216,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Morocco Adventure Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/14-day-morocco-adventure-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15486,7 +16237,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Scottish Highlands Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/10-day-scottish-highlands-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15506,7 +16258,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "17 Day Trans Africa Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/17-day-trans-africa-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15526,7 +16279,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "20 Day India Grand Tour Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/20-day-india-grand-tour-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15546,7 +16300,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Vietnam Explorer Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/13-day-vietnam-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15566,7 +16321,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day Japan Discovery Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/15-day-japan-discovery-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15586,7 +16342,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "22 Day Australia Adventure Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/22-day-australia-adventure-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15606,7 +16363,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "18 Day Patagonia Explorer Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/18-day-patagonia-explorer-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15626,7 +16384,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Canadian Rockies Guided Motorcycle Tour",
     organizer: "Adventure Roads Limited",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Adventure Roads Limited",
     href: `https://www.tripaneer.com/adventure-roads-limited/12-day-canadian-rockies-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15646,7 +16405,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day The Adventure Of Central Asia Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/16-day-the-adventure-of-central-asia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15666,7 +16426,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "16 Day Balkans And Turkey Epic Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/16-day-balkans-and-turkey-epic-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15686,7 +16447,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Kerala And Tamil Nadu Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/12-day-kerala-and-tamil-nadu-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15706,7 +16468,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Northeast India Guided Motorcycle Tour",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/9-day-northeast-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15726,7 +16489,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day The Best Of Kyrgyzstan Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/12-day-the-best-of-kyrgyzstan-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15746,7 +16510,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Greece And Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/13-day-greece-and-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15766,7 +16531,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Bihar And Jharkhand Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-bihar-and-jharkhand-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15786,7 +16552,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day India Himalayan Circuit Guided Motorcycle Tour",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/14-day-india-himalayan-circuit-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15806,7 +16573,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day The Great Steppe Guided Motorcycle Tour In Kazakhstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/14-day-the-great-steppe-guided-motorcycle-tour-in-kazakhstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15826,7 +16594,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Northern Greece And Albania Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/7-day-northern-greece-and-albania-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15846,7 +16615,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Chhattisgarh And Odisha Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/9-day-chhattisgarh-and-odisha-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15866,7 +16636,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Rajasthan And Gujarat Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/12-day-rajasthan-and-gujarat-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15886,7 +16657,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Hidden Kyrgyzstan Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/9-day-hidden-kyrgyzstan-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15906,7 +16678,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Central Bulgaria And Northern Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/6-day-central-bulgaria-and-northern-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15926,7 +16699,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Odisha Tribal Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-odisha-tribal-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15946,7 +16720,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Goa To Kanyakumari Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/9-day-goa-to-kanyakumari-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15966,7 +16741,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "4 Day Western Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/4-day-western-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -15986,7 +16762,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day The Alpine Lakes Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/7-day-the-alpine-lakes-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16006,7 +16783,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Kolkata And West Bengal Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/8-day-kolkata-and-west-bengal-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16026,7 +16804,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day South India Guided Motorcycle Tour",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/10-day-south-india-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16046,7 +16825,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Hidden Valleys Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/10-day-hidden-valleys-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16066,7 +16846,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "5 Day Northern Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/5-day-northern-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16086,7 +16867,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Rajasthan And Mumbai Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/12-day-rajasthan-and-mumbai-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16106,7 +16888,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Goa To Kerala Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/8-day-goa-to-kerala-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16126,7 +16909,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Trans Kyrgyzstan Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/13-day-trans-kyrgyzstan-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16146,7 +16930,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Greece Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/8-day-greece-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16166,7 +16951,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Uttarakhand Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/11-day-uttarakhand-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16186,7 +16972,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Corbett And Nainital Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/9-day-corbett-and-nainital-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16206,7 +16993,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "15 Day The Wakhan Corridor Guided Motorcycle Tour In Tajikistan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/15-day-the-wakhan-corridor-guided-motorcycle-tour-in-tajikistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16226,7 +17014,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "9 Day Eastern Turkey And Georgia Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/9-day-eastern-turkey-and-georgia-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16246,7 +17035,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Goa And Karnataka Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-goa-and-karnataka-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16266,7 +17056,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Delhi To Mcleod Ganj Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/7-day-delhi-to-mcleod-ganj-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16286,7 +17077,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day The Unknown Steppe Guided Motorcycle Tour In Kazakhstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/8-day-the-unknown-steppe-guided-motorcycle-tour-in-kazakhstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16306,7 +17098,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day Aegean Coast Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/7-day-aegean-coast-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16326,7 +17119,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Gujarat Explorer Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/11-day-gujarat-explorer-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16346,7 +17140,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Golden Triangle To Varanasi Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/12-day-golden-triangle-to-varanasi-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16366,7 +17161,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day The Hidden Valleys Guided Motorcycle Tour In Uzbekistan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/11-day-the-hidden-valleys-guided-motorcycle-tour-in-uzbekistan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16386,7 +17182,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Adriatic Coast Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/10-day-adriatic-coast-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16406,7 +17203,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Kashmir And Himachal Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/13-day-kashmir-and-himachal-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16426,7 +17224,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Golden Triangle To Rajasthan Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1544551763-57af15389c95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/11-day-golden-triangle-to-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16446,7 +17245,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day The Steppe Explorer Guided Motorcycle Tour In Kazakhstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1495567729529-eb671076e9f8?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/6-day-the-steppe-explorer-guided-motorcycle-tour-in-kazakhstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16466,7 +17266,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Western Balkans Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/12-day-western-balkans-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16486,7 +17287,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Andhra Pradesh Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1518611012118-696072aa-c78a?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/11-day-andhra-pradesh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16506,7 +17308,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day Complete Rajasthan Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/14-day-complete-rajasthan-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16526,7 +17329,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day The Stans Express Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/12-day-the-stans-express-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16546,7 +17350,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Northeast India Tribes Guided Motorcycle Tour",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1536697248797-292a8ac79e95?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/10-day-northeast-india-tribes-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16566,7 +17371,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Delhi To Leh Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/8-day-delhi-to-leh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16586,7 +17392,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "7 Day The River Valleys Guided Motorcycle Tour In Kyrgyzstan",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/7-day-the-river-valleys-guided-motorcycle-tour-in-kyrgyzstan?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16606,7 +17413,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "6 Day Eastern Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/6-day-eastern-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16626,7 +17434,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "13 Day Golden Triangle And Varanasi Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1526484988358-03dd6fc9f23d?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/13-day-golden-triangle-and-varanasi-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16646,7 +17455,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "11 Day Kerala Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1519046903927-41ddb181e49b?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/11-day-kerala-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16666,7 +17476,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "14 Day The Trans Caspian Guided Motorcycle Tour",
     organizer: "Silk Off Road Tours",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1455264745730-baec00521a82?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Silk Off Road Tours",
     href: `https://www.tripaneer.com/silk-off-road-tours/14-day-the-trans-caspian-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16686,7 +17497,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "8 Day Southern Turkey Guided Motorcycle Tour",
     organizer: "Bultrips Ltd",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Bultrips Ltd",
     href: `https://www.tripaneer.com/bultrips-ltd/8-day-southern-turkey-guided-motorcycle-tour?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16706,7 +17518,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "12 Day Himachal Pradesh Guided Motorcycle Tour In India",
     organizer: "The Dream Riders Group",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by The Dream Riders Group",
     href: `https://www.tripaneer.com/the-dream-riders-group/12-day-himachal-pradesh-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",
@@ -16726,7 +17539,8 @@ export const retreatCatalog: RetreatListing[] = [
     title: "10 Day Nagaland Guided Motorcycle Tour In India",
     organizer: "Brahmand Tour",
     location: "See Tripaneer listing",
-    coverImage: "/retreats/bookyoga-placeholder.jpg",
+    coverImage:
+      "https://images.unsplash.com/photo-1439405326854-014607f694d7?auto=format&fit=crop&w=1800&q=85",
     coverImageAlt: "Guided motorcycle tour by Brahmand Tour",
     href: `https://www.tripaneer.com/brahmand-tour/10-day-nagaland-guided-motorcycle-tour-in-india?${tripaneerAid}`,
     partner: "tripaneer",

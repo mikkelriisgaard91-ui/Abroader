@@ -3,15 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-/** Teamtailor — career support consultation / book meeting. */
 const CAREER_SUPPORT_CONSULTATION_URL =
   "https://abroader-1746694588.teamtailor.com/jobs/7595440-career-support/faa16629-7e11-495c-ae0d-1ac980fc7f61";
-
-// Brand palette
-// Sunflower Gold  #fcba36
-// Dark Teal       #246374
-// Frosted Blue    #8ed2e1
-// Bright Snow     #fafafa
 
 // ─── Icon ────────────────────────────────────────────────────────────────────
 
@@ -125,6 +118,8 @@ const packages: {
   price: string | null;
   color: PkgColor;
   popular: boolean;
+  tagline: string;
+  saveBadge?: string;
   features: string[];
 }[] = [
   {
@@ -132,62 +127,64 @@ const packages: {
     price: null,
     color: "teal",
     popular: false,
+    tagline: "Not sure where to start? Talk it through first.",
     features: [
-      "30-minute video call",
-      "Overview of your situation",
-      "Honest next-step advice",
-      "No commitment required",
+      "30-minute 1:1 video call with an advisor",
+      "Honest read on your situation and what's realistic",
+      "Clear next steps — no pressure, no commitment",
     ],
   },
   {
-    name: "Job search focus",
-    price: "£99",
-    color: "teal",
-    popular: false,
-    features: [
-      "Job board and source research for your profile and targets",
-      "Curated shortlist of roles and employers",
-      "Per-company approach strategy (channels, timing, messaging)",
-      "Role overview notes: fit, requirements, and next actions",
-      "Shared application status tracker",
-    ],
-  },
-  {
-    name: "Essentials",
+    name: "CV optimisation",
     price: "£79",
     color: "purple",
     popular: false,
+    tagline: "Get your CV working for international hiring managers.",
     features: [
-      "CV review and written feedback",
-      "One follow-up session",
-      "Job search checklist",
-      "Email Q&A for 2 weeks",
+      "Full CV review with detailed written feedback",
+      "Concrete rewrites for structure, wording, and length",
+      "One follow-up session to review your revised version",
+      "2 weeks email Q&A with your CV advisor",
     ],
   },
   {
-    name: "Complete",
-    price: "£179",
-    color: "amber",
-    popular: true,
-    features: [
-      "Everything in Essentials",
-      "2× interview coaching sessions",
-      "LinkedIn profile review",
-      "Network strategy session",
-      "Email Q&A for 6 weeks",
-    ],
-  },
-  {
-    name: "Intensive",
-    price: "£349",
+    name: "Interview support",
+    price: "£79",
     color: "coral",
     popular: false,
+    tagline: "Walk into your next interview ready for the tough questions.",
     features: [
-      "Everything in Complete",
-      "Unlimited sessions for 8 weeks",
-      "Warm introductions",
-      "Application review (up to 10)",
-      "WhatsApp support",
+      "2 mock interview sessions over video call",
+      "Written feedback after each session",
+      "Cross-border prep: explaining your move, salary, and video presence",
+      "Answer frameworks for questions common in international hiring",
+    ],
+  },
+  {
+    name: "Job search",
+    price: "£99",
+    color: "teal",
+    popular: false,
+    tagline: "Find the right roles — without trawling job boards yourself.",
+    features: [
+      "Research across job boards for your profile and targets",
+      "Curated shortlist of roles and employers worth your time",
+      "Per-employer strategy: channels, timing, and messaging",
+      "Shared application tracker so nothing slips",
+    ],
+  },
+  {
+    name: "Full programme",
+    price: "£199",
+    color: "amber",
+    popular: true,
+    tagline: "CV, interviews, and job search — handled together.",
+    saveBadge: "Save £58",
+    features: [
+      "Everything in CV optimisation, Interview support, and Job search",
+      "LinkedIn profile review and optimisation",
+      "Network strategy session with your lead advisor",
+      "6 weeks email Q&A",
     ],
   },
 ];
@@ -215,7 +212,7 @@ const team: {
     name: "Laura V.",
     journey: "Spain → Germany → Canada",
     specialism: "CV writing and positioning for international markets across Europe and North America.",
-    tag: "CV",
+    tag: "CV optimisation",
     tagColor: "purple",
   },
   {
@@ -223,7 +220,7 @@ const team: {
     name: "David A.",
     journey: "Nigeria → UK → UAE",
     specialism: "Interview coaching and confidence-building for cross-border hiring, including video and async formats.",
-    tag: "Interviews",
+    tag: "Interview support",
     tagColor: "amber",
   },
 ];
@@ -239,23 +236,19 @@ const faqs = [
   },
   {
     q: "Will I work with one advisor or a team?",
-    a: "You'll have one lead advisor throughout — someone who knows your situation and keeps the thread. For specialist areas like CV writing or network building, your lead may bring in a colleague with specific expertise.",
+    a: "You'll have one lead advisor throughout — someone who knows your situation and keeps the thread. For specialist areas like CV writing or interview coaching, your lead may bring in a colleague with specific expertise.",
   },
   {
     q: "What if I don't get any interviews?",
-    a: "If you've completed the Complete or Intensive package and haven't had a single interview, we'll give you an additional month of support at no charge. We'd rather fix the problem than leave you stuck.",
+    a: "If you've completed the Full programme and haven't had a single interview, we'll give you an additional month of support at no charge. We'd rather fix the problem than leave you stuck.",
   },
   {
     q: "Do I need to have decided to move before booking?",
     a: "No. Some clients come to us still weighing up whether a move makes sense. The free consultation is a good place to think it through — we won't push you toward a decision, and there's no obligation to continue.",
   },
   {
-    q: "Can I get help with job search only, without CV or interview coaching?",
-    a: "Yes. The Job search focus package is for exactly that: board research, a curated shortlist, a practical approach strategy for each employer, role overviews, and a shared application tracker. CV and interview coaching are in Essentials and Complete if you want to add them later.",
-  },
-  {
     q: "Is support via video call or async?",
-    a: "Both. Live sessions happen over video call (Zoom or Google Meet). Between sessions you can reach your advisor by email or, on Intensive plans, WhatsApp. We don't do phone-only calls — video gives us much more to work with.",
+    a: "Both. Live sessions happen over video call (Zoom or Google Meet). Between sessions you can reach your advisor by email or, on the Full programme, for 6 weeks. We don't do phone-only calls — video gives us much more to work with.",
   },
 ];
 
@@ -347,7 +340,6 @@ export default function CareerSupportContent() {
     <main className="w-full bg-[#fafafa] antialiased" style={bodyStyle}>
       {/* ── Hero ── */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: "520px" }}>
-        {/* Background image */}
         <Image
           src="/images/guide-cities/germany/berlin.jpg"
           alt="Berlin city skyline at night — representing your career move abroad"
@@ -356,12 +348,9 @@ export default function CareerSupportContent() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Dark teal overlay — brand colour #246374 */}
         <div className="absolute inset-0 bg-[#0d2e37]/80" aria-hidden />
-        {/* Subtle frosted blue vignette at top */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#8ed2e1]/10 via-transparent to-[#0d2e37]/40" aria-hidden />
 
-        {/* Content */}
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-5 pb-20 pt-20 text-center md:pb-28 md:pt-28">
           <h1
             className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-[3.25rem]"
@@ -370,10 +359,9 @@ export default function CareerSupportContent() {
             Your first move abroad starts with the right job
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-[#8ed2e1]/90">
-            One-to-one support from advisors who have done it themselves — covering job search, CV, interview prep, and network building so you can move with confidence.
+            One-to-one support from advisors who have done it themselves — covering job search, CV optimisation, and interview prep so you can move with confidence.
           </p>
 
-          {/* Trust pills */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {trustPills.map((pill) => (
               <span
@@ -385,7 +373,6 @@ export default function CareerSupportContent() {
             ))}
           </div>
 
-          {/* CTAs */}
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href={CAREER_SUPPORT_CONSULTATION_URL}
@@ -430,7 +417,7 @@ export default function CareerSupportContent() {
             ))}
           </div>
           <p className="mt-7 text-sm text-[#246374]/50">
-            This service isn't the right fit for senior executives or people who haven't yet decided whether they want to move.
+            This service isn&apos;t the right fit for senior executives or people who haven&apos;t yet decided whether they want to move.
           </p>
         </div>
       </section>
@@ -475,35 +462,6 @@ export default function CareerSupportContent() {
               </div>
             ))}
           </div>
-
-          <div className="mt-12 rounded-xl border border-[#8ed2e1]/40 bg-[#8ed2e1]/10 p-6 md:p-8">
-            <h3
-              className="text-lg font-semibold text-[#1a3339]"
-              style={headingStyle}
-            >
-              Job search support only
-            </h3>
-            <p className="mt-2 leading-relaxed text-[#2d4a52]/75">
-              If your CV and interview approach are already in good shape but you need help finding the right roles abroad, we can focus purely on discovery and execution: we scan the boards, narrow the field, and give you a practical plan for each employer — plus a shared tracker so nothing slips through the cracks.
-            </p>
-            <ul className="mt-4 space-y-2">
-              {[
-                "Research across relevant job boards and other sources for your profile and destinations",
-                "A curated shortlist of roles and companies worth your time",
-                "A clear strategy for approaching each employer — channels, timing, and messaging",
-                "A concise overview of each role: fit, requirements, and notes you can act on",
-                "A shared application status tracker so you always know where each opportunity stands",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-[#2d4a52]/75">
-                  <span
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#246374]"
-                    aria-hidden
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -519,7 +477,7 @@ export default function CareerSupportContent() {
                 key={t.name}
                 className="flex flex-col justify-between rounded-xl border border-[#246374]/12 bg-[#fafafa] p-6"
               >
-                <p className="leading-relaxed text-[#2d4a52]/80">"{t.quote}"</p>
+                <p className="leading-relaxed text-[#2d4a52]/80">&ldquo;{t.quote}&rdquo;</p>
                 <div className="mt-5 flex items-center gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#246374] text-xs font-semibold text-white">
                     {t.initials}
@@ -533,7 +491,6 @@ export default function CareerSupportContent() {
             ))}
           </div>
 
-          {/* Stats strip */}
           <div className="mt-10 grid grid-cols-1 gap-6 rounded-xl bg-[#246374] p-8 sm:grid-cols-3">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
@@ -556,8 +513,53 @@ export default function CareerSupportContent() {
           <h2 className="text-2xl font-bold text-[#1a3339] md:text-3xl" style={headingStyle}>
             Packages
           </h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {packages.map((pkg) => {
+          <p className="mt-2 text-[#2d4a52]/65">
+            Pick the area you need help with, or take all three together and save.
+          </p>
+
+          {/* Free consultation — shown above the paid grid */}
+          <div className="mt-8">
+            {(() => {
+              const free = packages[0];
+              const c = pkgColorMap[free.color];
+              return (
+                <div className="flex flex-col gap-4 rounded-xl border border-[#246374]/12 bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3">
+                      <h3 className="font-semibold text-[#1a3339]" style={headingStyle}>
+                        {free.name}
+                      </h3>
+                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${c.badge}`}>
+                        Free
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm text-[#2d4a52]/65 italic">{free.tagline}</p>
+                    <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
+                      {free.features.map((f) => (
+                        <li key={f} className="flex items-center gap-2 text-sm text-[#2d4a52]/75">
+                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${c.dot}`} aria-hidden />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <a
+                    href={CAREER_SUPPORT_CONSULTATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`shrink-0 rounded-lg px-6 py-2.5 text-center text-sm font-semibold transition-colors ${c.btn}`}
+                    style={headingStyle}
+                  >
+                    Book free call
+                  </a>
+                </div>
+              );
+            })()}
+          </div>
+
+          {/* Paid packages grid */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {packages.slice(1).map((pkg) => {
               const c = pkgColorMap[pkg.color];
               return (
                 <div
@@ -577,19 +579,22 @@ export default function CareerSupportContent() {
                     </span>
                   )}
                   <div>
-                    <h3
-                      className="font-semibold text-[#1a3339]"
-                      style={headingStyle}
-                    >
+                    <h3 className="font-semibold text-[#1a3339]" style={headingStyle}>
                       {pkg.name}
                     </h3>
-                    {pkg.price ? (
-                      <p className={`mt-1 text-2xl font-bold ${c.label}`} style={headingStyle}>
+                    <div className="mt-1 flex items-baseline gap-2">
+                      <p className={`text-2xl font-bold ${c.label}`} style={headingStyle}>
                         {pkg.price}
                       </p>
-                    ) : (
-                      <p className={`mt-1 text-base font-medium ${c.label}`}>Free</p>
-                    )}
+                      {pkg.saveBadge && (
+                        <span className="text-xs font-medium text-emerald-600">
+                          {pkg.saveBadge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-2 text-xs leading-relaxed text-[#2d4a52]/60 italic">
+                      {pkg.tagline}
+                    </p>
                   </div>
                   <ul className="mt-5 flex-1 space-y-2.5">
                     {pkg.features.map((f) => (
@@ -609,7 +614,7 @@ export default function CareerSupportContent() {
                     className={`mt-6 block w-full rounded-lg px-4 py-2.5 text-center text-sm font-semibold transition-colors ${c.btn}`}
                     style={headingStyle}
                   >
-                    {pkg.price ? "Get started" : "Book free call"}
+                    Get started
                   </a>
                 </div>
               );
@@ -682,7 +687,7 @@ export default function CareerSupportContent() {
             Start with a free conversation
           </h2>
           <p className="mt-3 text-[#8ed2e1]">
-            No commitment, no hard sell — just a straight talk about what you're working toward and whether we can help.
+            No commitment, no hard sell — just a straight talk about what you&apos;re working toward and whether we can help.
           </p>
           <a
             href={CAREER_SUPPORT_CONSULTATION_URL}
