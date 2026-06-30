@@ -1,5 +1,5 @@
 import { UnderConstruction } from "../under-construction";
 
-export default function CatchAllPage() {
+export default function GatePage() {
   return <UnderConstruction />;
 }

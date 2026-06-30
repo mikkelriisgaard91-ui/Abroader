@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function UnderConstruction() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
@@ -14,7 +16,14 @@ export function UnderConstruction() {
 
         <p className="text-base leading-relaxed text-ab-muted sm:text-lg">
           We&apos;re rebuilding abroader.io. Something new is on the way — check
-          back soon.
+          back{" "}
+          <Link
+            href="/home"
+            className="font-medium text-ab-accent underline-offset-4 transition-colors hover:text-ab-fg hover:underline"
+          >
+            soon
+          </Link>
+          .
         </p>
       </div>
     </main>

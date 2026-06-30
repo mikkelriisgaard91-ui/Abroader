@@ -1,9 +1,15 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    /** Teamtailor Partner API token (server-only). Prefer this name on Vercel, or set `TEAMTAILOR_API_TOKEN`. */
+    /** Teamtailor API key (server-only). Also accepts TEAMTAILOR_API_TOKEN or Teamtailor_API. */
+    TEAMTAILOR_API_KEY?: string;
     Teamtailor_API?: string;
-    /** Teamtailor Partner API token (server-only). Same as `Teamtailor_API` if both are set, `Teamtailor_API` wins. */
     TEAMTAILOR_API_TOKEN?: string;
+    /** How often SSR re-fetches Teamtailor jobs (seconds, default 60). */
+    TEAMTAILOR_REVALIDATE_SECONDS?: string;
+    /** Client poll interval for /api/jobs (ms, default 60000). */
+    NEXT_PUBLIC_JOBS_POLL_INTERVAL_MS?: string;
+    /** Max Teamtailor API pages to fetch when building the job index (default 10). */
+    MAX_TEAMTAILOR_PAGES?: string;
     /** Optional. Default EU: `https://api.teamtailor.com/v1`. US West: `https://api.na.teamtailor.com/v1`. */
     TEAMTAILOR_API_BASE?: string;
     /** Public careersite origin for job URLs when Partner API omits `links` on `GET /jobs/:id` (default: Abroader careersite). */
