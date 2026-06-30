@@ -9,16 +9,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "fetch-city-images": "node scripts/fetch-city-hero-images.mjs",
-    "verify-mailchimp": "node scripts/verify-mailchimp.mjs"
+    "lint": "eslint"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "next": "16.2.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "resend": "^6.12.0"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
