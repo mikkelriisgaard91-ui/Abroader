@@ -69,7 +69,6 @@ export default function HomeNav() {
 
   const isLinkActive = (href: string) => {
     if (href.startsWith("/#")) return false;
-    if (href === "/home") return pathname === "/home";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 

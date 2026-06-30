@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BECOME_AN_ABROADER_PATH } from "@/config/homeNav";
 
 export function UnderConstruction() {
   return (
@@ -18,7 +19,7 @@ export function UnderConstruction() {
           We&apos;re rebuilding abroader.io. Something new is on the way — check
           back{" "}
           <Link
-            href="/home"
+            href={BECOME_AN_ABROADER_PATH}
             className="font-medium text-ab-accent underline-offset-4 transition-colors hover:text-ab-fg hover:underline"
           >
             soon
