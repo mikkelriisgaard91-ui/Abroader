@@ -37,5 +37,5 @@ export default function PreviewLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className={`${plusJakarta.variable} ${dancingScript.variable}`}>{children}</div>;
+  return <div className={`preview-root ${plusJakarta.variable} ${dancingScript.variable}`}>{children}</div>;
 }

@@ -43,8 +43,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  @apply bg-base text-ink font-sans antialiased;
+.preview-root {
+  @apply bg-base text-ink font-sans antialiased min-h-dvh;
 }
 
 .font-tagline {
