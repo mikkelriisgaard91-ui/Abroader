@@ -91,7 +91,7 @@ export default function HomeNav() {
                 key={link.href}
                 href={link.href}
                 label={link.label}
-                external={"external" in link ? link.external : false}
+                external={Boolean("external" in link && link.external)}
                 isActive={isLinkActive(link.href)}
                 className="text-sm font-medium text-ink-muted hover:text-ink transition-colors duration-200"
               />
@@ -126,7 +126,7 @@ export default function HomeNav() {
               key={link.href}
               href={link.href}
               label={link.label}
-              external={"external" in link ? link.external : false}
+              external={Boolean("external" in link && link.external)}
               isActive={isLinkActive(link.href)}
               className="text-3xl font-bold text-ink"
               onNavigate={closeMenu}
