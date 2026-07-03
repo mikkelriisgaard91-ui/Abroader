@@ -6,8 +6,9 @@ import { useLocale } from "@/lib/i18n/LocaleProvider";
 
 const VALUE_ICONS = [ShieldCheck, Workflow, HandCoins];
 
-export default function ForEmployers() {
+export default function ForEmployers({ ctaUrl = "#contact" }: { ctaUrl?: string }) {
   const { t } = useLocale();
+  const isExternal = ctaUrl.startsWith("http");
   const valueProps = t.forEmployers.valueProps.map((prop, i) => ({
     ...prop,
     icon: VALUE_ICONS[i],
@@ -74,7 +75,11 @@ export default function ForEmployers() {
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.3 }}
         >
-          <a href="#contact" className="btn-primary text-base px-8 py-4">
+          <a
+            href={ctaUrl}
+            className="btn-primary text-base px-8 py-4"
+            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
             {t.forEmployers.cta}
             <ArrowRight size={16} strokeWidth={1.5} />
           </a>

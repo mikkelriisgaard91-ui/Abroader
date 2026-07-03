@@ -33,6 +33,10 @@ export type RecruiterConfig = {
   linkedIn: string;
   calendlyUrl: string;
   whatsappUrl: string;
+  /** Optional override for the For Employers "Let's talk" CTA. Defaults to #contact. */
+  employerCtaUrl?: string;
+  /** Optional override for the nav "Get in touch" CTA. Defaults to #contact. */
+  getInTouchUrl?: string;
 };
 
 export type ResolvedRecruiter = {

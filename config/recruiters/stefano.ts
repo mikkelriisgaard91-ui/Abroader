@@ -2,13 +2,12 @@ import type { RecruiterConfig } from "./types";
 
 const stefano: RecruiterConfig = {
   slug: "stefano",
-  /** Set from Teamtailor → Settings → Users when Stefano's account is ready. */
-  teamtailorUserId: "",
-  name: "Stefano",
+  teamtailorUserId: "4277079",
+  name: "Stefano Gjini",
   firstName: "Stefano",
   title: {
-    en: "International Recruiter",
-    da: "International Rekrutterer",
+    en: "Head of Recruitment",
+    da: "Rekrutteringschef",
   },
   location: {
     en: "Southern Europe",
@@ -19,34 +18,50 @@ const stefano: RecruiterConfig = {
     da: ["Engelsk", "Italiensk", "Spansk"],
   },
   roleExperience: {
-    en: ["Customer Success", "Sales", "Operations", "Hospitality", "Seasonal roles"],
-    da: ["Customer Success", "Salg", "Drift", "Hotel & restaurationsbranchen", "Sæsonjobs"],
+    en: [
+      "Talent Acquisition",
+      "Full-cycle Recruitment",
+      "Sourcing",
+      "HR Operations",
+      "Employer Branding",
+    ],
+    da: [
+      "Talent Acquisition",
+      "Fuldt rekrutteringsforløb",
+      "Sourcing",
+      "HR-drift",
+      "Employer Branding",
+    ],
   },
   travelGuidance: {
     en: ["Italy", "Spain", "Portugal", "France", "Switzerland"],
     da: ["Italien", "Spanien", "Portugal", "Frankrig", "Schweiz"],
   },
   photoUrl:
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+    "https://images.teamtailor-cdn.com/images/s3/teamtailor-production/employee_picture-v3/image_uploads/c09a8e24-fca4-421d-a39f-e12746037d2e/original.jpeg",
   shortBio: {
-    en: "Helping candidates find customer-facing and seasonal roles across Southern Europe — with hands-on support from first call to first day abroad.",
-    da: "Hjælper kandidater med at finde kundevendte og sæsonjobs i Sydeuropa — med praktisk støtte fra første samtale til første dag i udlandet.",
+    en: "Talent Acquisition Specialist connecting clients with the right international talent through a strategic, people-focused approach.",
+    da: "Talent Acquisition Specialist, der forbinder virksomheder med det rette internationale talent gennem en strategisk, menneske-fokuseret tilgang.",
   },
   longBio: {
-    en: `I help people find international roles that fit how they actually want to live and work abroad — not just what looks good on paper. My focus is on customer service, sales, and seasonal opportunities across Italy, Spain, and the wider Mediterranean, where motivated candidates can get started quickly and build momentum.
+    en: `I'm a Talent Acquisition Specialist with a strong background in full-cycle recruitment, sourcing, and HR operations across international markets. I specialize in partnering with clients to understand their hiring needs and connecting them with the right talent through a strategic, data-driven, and people-focused approach.
 
-Before joining Abroader, I worked across hospitality and operations in international environments, so I understand the practical side of relocating: paperwork, housing, and what the first weeks in a new country really feel like. I take time to understand each candidate before making introductions, and I work with employers who hire internationally and invest in their teams.
+Throughout my career, I've managed end-to-end recruitment processes across different industries. I have extensive experience sourcing passive and active candidates using LinkedIn Recruiter, job boards, social media, and other sourcing platforms while building long-term talent pipelines.
 
-If you're exploring a move to Southern Europe and want a straight conversation about what's possible, get in touch. No pressure — just clarity on your options.`,
-    da: `Jeg hjælper mennesker med at finde internationale roller, der passer til, hvordan de reelt vil leve og arbejde i udlandet — ikke bare det, der ser godt ud på papiret. Mit fokus er kundeservice, salg og sæsonmuligheder i Italien, Spanien og det bredere middelhavsområde, hvor motiverede kandidater kan komme hurtigt i gang og opbygge momentum.
+I believe successful recruitment is about more than filling positions — it's about creating meaningful connections between people and opportunities. I focus on delivering an outstanding candidate experience while helping clients make informed hiring decisions that support their long-term business goals.
 
-Før jeg joinede Abroader, arbejdede jeg inden for hospitality og drift i internationale miljøer, så jeg kender den praktiske side af at flytte: papirarbejde, bolig og hvordan de første uger i et nyt land faktisk føles. Jeg bruger tid på at forstå hver kandidat, før jeg laver introduktioner, og jeg arbejder med arbejdsgivere, der ansætter internationalt og investerer i deres teams.
+I'm passionate about talent acquisition, employer branding, and continuously improving recruitment strategies to attract high-performing professionals in today's competitive market.`,
+    da: `Jeg er Talent Acquisition Specialist med solid erfaring i fuldt rekrutteringsforløb, sourcing og HR-drift på tværs af internationale markeder. Jeg specialiserer mig i at samarbejde med kunder om at forstå deres rekrutteringsbehov og forbinde dem med det rette talent gennem en strategisk, datadrevet og menneske-fokuseret tilgang.
 
-Hvis du overvejer et skift til Sydeuropa og vil have en ærlig samtale om, hvad der er muligt, så skriv. Intet pres — bare klarhed over dine muligheder.`,
+Gennem min karriere har jeg styret end-to-end rekrutteringsprocesser på tværs af forskellige brancher. Jeg har omfattende erfaring med at source passive og aktive kandidater via LinkedIn Recruiter, jobportaler, sociale medier og andre sourcing-platforme, mens jeg opbygger langsigtede talentpipelines.
+
+Jeg tror på, at succesfuld rekruttering handler om mere end at besætte stillinger — det handler om at skabe meningsfulde forbindelser mellem mennesker og muligheder. Jeg fokuserer på at levere en fremragende kandidatoplevelse, mens jeg hjælper kunder med at træffe informerede ansættelsesbeslutninger, der understøtter deres langsigtede forretningsmål.
+
+Jeg brænder for talent acquisition, employer branding og løbende forbedring af rekrutteringsstrategier for at tiltrække højtydende fagfolk på dagens konkurrenceprægede marked.`,
   },
   pullQuote: {
-    en: "Southern Europe specialist — customer service, sales, and seasonal roles abroad.",
-    da: "Sydeuropa-specialist — kundeservice, salg og sæsonjobs i udlandet.",
+    en: "Head of Recruitment — building long-term talent pipelines across international markets.",
+    da: "Rekrutteringschef — opbygger langsigtede talentpipelines på tværs af internationale markeder.",
   },
   stats: {
     placements: 0,
@@ -54,9 +69,13 @@ Hvis du overvejer et skift til Sydeuropa og vil have en ærlig samtale om, hvad 
     yearsExperience: 5,
   },
   email: "stefano@abroader.io",
-  linkedIn: "",
+  linkedIn: "https://www.linkedin.com/in/stefano-gjini/",
   calendlyUrl: "",
-  whatsappUrl: "",
+  whatsappUrl: "https://wa.me/355675949334",
+  employerCtaUrl:
+    "https://abroader-1746694588.teamtailor.com/jobs/8016017-find-the-right-international-talent-for-your-business",
+  getInTouchUrl:
+    "https://abroader-1746694588.teamtailor.com/jobs/8016511-speak-with-a-recruiter-about-your-next-job-abroad/ff2c9ff8-a43d-4e76-812b-7106e73ac9af",
 };
 
 export default stefano;

@@ -336,3 +336,132 @@ export async function fetchAllJobs(options?: { fresh?: boolean }): Promise<Teamt
   }
   return { ok: true, jobs: allJobsFromIndex(result.index, recruiterIds) };
 }
+
+export type TeamtailorUserProfile = {
+  id: string;
+  name: string;
+  firstName: string;
+  title: string;
+  email: string;
+  photoUrl: string;
+  linkedIn: string;
+  whatsappUrl: string;
+  descriptionHtml: string;
+};
+
+function parseTeamtailorUser(resource: JsonApiResource): TeamtailorUserProfile {
+  const attrs = resource.attributes ?? {};
+  const name = String(attrs.name ?? "").trim();
+  const phone = String(attrs.phone ?? "").trim();
+  const picture = attrs.picture as { standard?: string } | undefined;
+
+  return {
+    id: resource.id,
+    name,
+    firstName: name.split(/\s+/)[0] || name,
+    title: String(attrs.title ?? "").trim(),
+    email: String(attrs.email ?? "").trim(),
+    photoUrl: String(picture?.standard ?? "").trim(),
+    linkedIn: String(attrs["linkedin-profile"] ?? "").trim(),
+    whatsappUrl: phone ? `https://wa.me/${phone.replace(/\D/g, "")}` : "",
+    descriptionHtml: String(attrs.description ?? "").trim(),
+  };
+}
+
+async function fetchTeamtailorUserResource(
+  userId: string,
+  token: string,
+  cacheOptions: FetchCacheOptions
+): Promise<JsonApiResource | null> {
+  const direct = await fetch(`${API_BASE}/users/${userId}`, {
+    headers: authHeaders(token),
+    ...cacheOptions,
+  });
+
+  if (direct.ok) {
+    const json = (await direct.json()) as { data?: JsonApiResource };
+    if (json.data?.type === "users") return json.data;
+  }
+
+  return findTeamtailorUserInPublishedJobs(token, cacheOptions, (user) => user.id === userId);
+}
+
+async function findTeamtailorUserInPublishedJobs(
+  token: string,
+  cacheOptions: FetchCacheOptions,
+  match: (user: JsonApiResource) => boolean
+): Promise<JsonApiResource | null> {
+  let nextUrl: string | null =
+    `${API_BASE}/jobs?filter[status]=published&include=user&page[size]=30`;
+  let pageCount = 0;
+
+  while (nextUrl && pageCount < MAX_TEAMTAILOR_PAGES) {
+    pageCount += 1;
+    const res = await fetch(nextUrl, { headers: authHeaders(token), ...cacheOptions });
+    if (!res.ok) break;
+
+    const json = (await res.json()) as JsonApiList;
+    const found = (json.included ?? []).find((u) => u.type === "users" && match(u));
+    if (found) return found;
+
+    nextUrl = json.links?.next ?? null;
+  }
+
+  return null;
+}
+
+async function resolveTeamtailorUserId(
+  userId: string,
+  email: string | undefined,
+  token: string,
+  cacheOptions: FetchCacheOptions
+): Promise<string> {
+  if (userId) return userId;
+  if (!email) return "";
+
+  const normalizedEmail = email.trim().toLowerCase();
+  const user = await findTeamtailorUserInPublishedJobs(
+    token,
+    cacheOptions,
+    (resource) => String(resource.attributes?.email ?? "").trim().toLowerCase() === normalizedEmail
+  );
+
+  return user?.id ?? "";
+}
+
+async function loadTeamtailorUser(
+  userId: string,
+  email?: string
+): Promise<TeamtailorUserProfile | null> {
+  const token = getApiToken();
+  if (!token) return null;
+
+  const cacheOptions: FetchCacheOptions = {
+    next: { revalidate: TEAMTAILOR_REVALIDATE_SECONDS },
+  };
+
+  try {
+    const resolvedId = await resolveTeamtailorUserId(userId, email, token, cacheOptions);
+    if (!resolvedId) return null;
+
+    const resource = await fetchTeamtailorUserResource(resolvedId, token, cacheOptions);
+    return resource ? parseTeamtailorUser(resource) : null;
+  } catch {
+    return null;
+  }
+}
+
+const getCachedTeamtailorUser = unstable_cache(
+  async (userId: string, email: string): Promise<TeamtailorUserProfile | null> =>
+    loadTeamtailorUser(userId, email || undefined),
+  ["teamtailor-user-profile"],
+  { revalidate: TEAMTAILOR_REVALIDATE_SECONDS }
+);
+
+/** Teamtailor user profile — falls back to job includes when direct user fetch is blocked. */
+export const fetchTeamtailorUser = cache(
+  async (userId: string, email?: string): Promise<TeamtailorUserProfile | null> => {
+    if (!userId && !email) return null;
+    return getCachedTeamtailorUser(userId, email ?? "");
+  }
+);

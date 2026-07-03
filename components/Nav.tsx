@@ -5,8 +5,9 @@ import BrandLogo from "@/components/BrandLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLocale } from "@/lib/i18n/LocaleProvider";
 
-export default function Nav() {
+export default function Nav({ getInTouchUrl = "#contact" }: { getInTouchUrl?: string }) {
   const { t } = useLocale();
+  const isExternalGetInTouch = getInTouchUrl.startsWith("http");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -51,7 +52,11 @@ export default function Nav() {
               </a>
             ))}
             <LanguageSwitcher />
-            <a href="#contact" className="btn-primary text-sm px-5 py-2.5">
+            <a
+              href={getInTouchUrl}
+              className="btn-primary text-sm px-5 py-2.5"
+              {...(isExternalGetInTouch ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            >
               {t.nav.getInTouch}
             </a>
           </div>
@@ -93,9 +98,10 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={getInTouchUrl}
             className="btn-primary mt-4 text-xl px-10 py-4 min-h-[56px]"
             onClick={() => setMenuOpen(false)}
+            {...(isExternalGetInTouch ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             {t.nav.getInTouch}
           </a>

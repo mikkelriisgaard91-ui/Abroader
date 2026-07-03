@@ -26,12 +26,12 @@ function RecruiterPageContent({
 
   return (
     <main className="bg-base">
-      <Nav />
+      <Nav getInTouchUrl={recruiter.getInTouchUrl ?? "#contact"} />
       <Hero recruiter={resolved} />
       <Jobs jobs={jobs} recruiterSlug={recruiter.slug} />
       <HowItWorks />
       <About recruiter={resolved} />
-      <ForEmployers />
+      <ForEmployers ctaUrl={recruiter.employerCtaUrl ?? "#contact"} />
       <Contact recruiter={resolved} />
       <Footer recruiter={resolved} />
       <WhatsAppFloat recruiter={resolved} />
