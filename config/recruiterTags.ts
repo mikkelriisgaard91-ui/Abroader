@@ -11,12 +11,20 @@ export const ROLE_EXPERIENCE_TAGS = [
   "Operations",
   "Finance",
   "Customer Success",
+  "Customer service",
+  "Hospitality",
+  "Construction",
+  "IT",
+  "Recruitment",
+  "Volunteering",
   "Engineering",
 ] as const;
 
 export const LANGUAGE_TAGS = [
   "Danish",
   "English",
+  "Albanian",
+  "Polish",
   "German",
   "French",
   "Spanish",

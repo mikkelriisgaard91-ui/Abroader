@@ -30,11 +30,6 @@ export const commissionChannels = [
     title: "Client relationship management",
     description: "Ongoing commission on each placement where you manage the client relationship.",
   },
-  {
-    rate: "7.5%",
-    title: "Recruiter override",
-    description: "Ongoing commission from placements made by another Abroader you introduce to the Platform.",
-  },
 ] as const;
 
 export const illustrativeEarningsExamples = [

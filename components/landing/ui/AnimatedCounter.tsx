@@ -64,6 +64,7 @@ export function AnimatedRange({
       {"–"}
       {prefix}
       <AnimatedCounter value={max} />
+      {suffix}
     </span>
   );
 }

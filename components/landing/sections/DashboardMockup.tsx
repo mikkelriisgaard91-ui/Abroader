@@ -6,8 +6,8 @@ import {
   Building2,
   BookOpen,
   Coins,
-  Gift,
   Globe,
+  Heart,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { aboutRoleContent } from "@/config/abroaderLanding";
@@ -18,7 +18,7 @@ const iconMap: Record<string, LucideIcon> = {
   briefcase: Briefcase,
   building: Building2,
   bookOpen: BookOpen,
-  gift: Gift,
+  heart: Heart,
   coins: Coins,
 };
 
@@ -35,7 +35,6 @@ export default function DashboardMockup() {
           </div>
           <div>
             <p className="text-sm font-bold text-ink">{aboutRoleContent.toolkitHeading}</p>
-            <p className="text-xs text-ink-subtle">Combine channels, build your role</p>
           </div>
         </div>
 

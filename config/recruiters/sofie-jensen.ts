@@ -14,12 +14,12 @@ const sofieJensen: RecruiterConfig = {
     da: "Spanien",
   },
   languages: {
-    en: ["Danish", "English", "Spanish"],
-    da: ["Dansk", "Engelsk", "Spansk"],
+    en: ["Polish", "English", "Spanish", "Danish"],
+    da: ["Polsk", "Engelsk", "Spansk", "Dansk"],
   },
   roleExperience: {
-    en: ["Entry-level roles", "Customer Success", "Sales", "Operations"],
-    da: ["Entry-level roller", "Customer Success", "Salg", "Drift"],
+    en: ["Construction", "Call centre – sales & customer service", "Remote jobs"],
+    da: ["Håndværkere/byggeri", "Callcenter – salg & kundeservice", "Remote jobs"],
   },
   travelGuidance: {
     en: ["Spain", "Portugal", "France", "UK"],
@@ -28,24 +28,24 @@ const sofieJensen: RecruiterConfig = {
   photoUrl:
     "https://images.teamtailor-cdn.com/images/s3/teamtailor-production/employee_picture-v3/image_uploads/8267e76c-970f-433e-8a7a-d8b903d2455c/original.jpg",
   shortBio: {
-    en: "Helping candidates find the right international role — based in Spain, working across Southern Europe.",
-    da: "Hjælper kandidater med at finde den rette internationale stilling — med base i Spanien og fokus på Sydeuropa.",
+    en: "Bridging companies and the right employees — specialising in skilled trades, remote roles, and call centres across Denmark and Spain.",
+    da: "Bygger bro mellem virksomheder og de rette medarbejdere — med speciale i håndværkerbranchen, remote roller og callcentre i Danmark og Spanien.",
   },
   longBio: {
-    en: `Based in Spain, I help candidates find roles abroad that match their goals — not just their CV. I know what it's like to build a life in a new country, and I use that experience to give honest, practical guidance from the first conversation through to your first day on the job.
+    en: `I bridge the gap between companies and the right employees — based in Spain, recruiting for companies across Denmark and Spain.
 
-My focus is on entry-level and customer-facing roles where motivated people can get started quickly and grow from there. I work with companies that hire internationally and invest in their teams, and I take time to understand every candidate before making an introduction.
+My primary specialty is the skilled trades/construction industry, and I also recruit for remote positions as well as roles in customer service, sales, and international call centres. I work from a simple philosophy: quality drives the best results, so for me recruitment is about presenting the right candidates — not the most.
 
-If you're exploring a move to Southern Europe and want clarity on what's possible — visas, locations, and what day-to-day life actually looks like — let's talk. No pressure, just a straight conversation about your options.`,
-    da: `Med base i Spanien hjælper jeg kandidater med at finde roller i udlandet, der matcher deres mål — ikke bare deres CV. Jeg ved, hvordan det er at opbygge et liv i et nyt land, og jeg bruger den erfaring til at give ærlig, praktisk vejledning fra den første samtale til din første dag på jobbet.
+As your recruitment partner, I follow the process closely from the first conversation through to the hire being in place, with a focus on personal contact, high availability, and trust. Looking for your next employee — or your next job? I'd love to hear from you.`,
+    da: `Jeg bygger bro mellem virksomheder og de rette medarbejdere – med base i Spanien og fokus på virksomheder i Danmark og Spanien.
 
-Mit fokus er på entry-level og kundevendte roller, hvor motiverede mennesker kan komme hurtigt i gang og vokse derfra. Jeg arbejder med virksomheder, der ansætter internationalt og investerer i deres teams, og jeg bruger tid på at forstå hver kandidat, før jeg laver en introduktion.
+Mit primære speciale er håndværkerbranchen, men jeg rekrutterer også til remote stillinger samt roller inden for kundeservice, salg og internationale callcentre. Jeg arbejder ud fra en enkel filosofi: kvalitet skaber de bedste resultater, så for mig handler rekruttering om at præsentere de rigtige kandidater – ikke flest mulige.
 
-Hvis du overvejer et skift til Sydeuropa og vil have klarhed over, hvad der er muligt — visa, destinationer og hvordan hverdagen faktisk ser ud — lad os tale sammen. Intet pres, bare en ærlig samtale om dine muligheder.`,
+Som din rekrutteringspartner følger jeg processen tæt fra første dialog til ansættelsen er på plads, med vægt på personlig kontakt, høj tilgængelighed og tillid. Leder du efter din næste medarbejder – eller dit næste job? Så hører jeg gerne fra dig.`,
   },
   pullQuote: {
-    en: "Based in Spain — helping candidates find roles that fit their life abroad.",
-    da: "Med base i Spanien — hjælper kandidater med at finde roller, der passer til livet i udlandet.",
+    en: "Quality over quantity — the right matches between companies and candidates.",
+    da: "Kvalitet frem for kvantitet — de rigtige matches mellem virksomheder og kandidater.",
   },
   stats: {
     placements: 15,
@@ -53,7 +53,8 @@ Hvis du overvejer et skift til Sydeuropa og vil have klarhed over, hvad der er m
     yearsExperience: 4,
   },
   email: "sofie@abroader.io",
-  linkedIn: "https://www.linkedin.com/in/sofie-jensen-22065227",
+  linkedIn: "",
+  hideLinkedIn: true,
   calendlyUrl: "",
   whatsappUrl: "https://wa.me/34603168934",
 };

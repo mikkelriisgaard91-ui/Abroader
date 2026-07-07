@@ -19,14 +19,14 @@ export default function CommissionSection() {
           id="commission-heading"
         />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-5">
+        <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {commissionContent.cards.map((card, i) => (
             <motion.div
               key={card.rate}
               {...fadeUpWithDelay(i * 0.08)}
               className={`relative rounded-3xl p-6 lg:p-7 transition-all duration-300 ${
                 card.highlighted
-                  ? "bg-ink text-base glow-ring scale-[1.02] lg:scale-105 z-10 lg:-my-2"
+                  ? "bg-ink text-base glow-ring z-10"
                   : "glass-panel hover:shadow-card-hover"
               }`}
             >
@@ -55,12 +55,12 @@ export default function CommissionSection() {
           ))}
         </div>
 
-        <motion.div {...fadeUpWithDelay(0.4)} className="mt-12 flex justify-center">
-          <div className="text-center glass-panel inline-flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-6 py-4">
-            <span className="font-bold text-ink">{commissionContent.stackNote}</span>
-            <span className="text-ink-muted text-sm">
+        <motion.div {...fadeUpWithDelay(0.4)} className="mt-12 mx-auto max-w-2xl text-center">
+          <div className="glass-panel px-6 py-5">
+            <p className="font-bold text-ink mb-2">{commissionContent.stackNote}</p>
+            <p className="text-ink-muted text-sm leading-relaxed">
               {commissionContent.stackDescription}
-            </span>
+            </p>
           </div>
         </motion.div>
       </div>

@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/home",
-        destination: "/become-an-abroader",
+        destination: "/",
         permanent: true,
       },
       {
@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.teamtailor-cdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "ui-avatars.com",
       },
     ],
   },

@@ -9,7 +9,7 @@ export const landingCtas = {
 } as const;
 
 export const landingFooter = {
-  tagline: "Shape your own recruitment role — inside Abroader.",
+  tagline: "Become a recruiter. Build your own practice as an Abroader.",
   links: [
     { label: "About Abroader", href: "#about" },
     { label: "Contact", href: landingCtas.contact },
@@ -18,28 +18,29 @@ export const landingFooter = {
     { label: "LinkedIn", href: "https://linkedin.com/company/abroader", external: true },
   ],
   secondaryLinks: [
-    { label: "Choose your recruiter", href: "/choose-your-recruiter" },
+    { label: "Hire with Abroader", href: "/" },
+    { label: "Our recruiters", href: "/choose-your-recruiter" },
   ],
   website: { label: "abroader.io", href: "https://abroader.io" },
 } as const;
 
 export const heroContent = {
-  headline: "Become an Abroader",
+  headline: "Become a recruiter",
   subheadline:
-    "There isn't a single way to be an Abroader. Shape the role you want by combining different commission opportunities — and build a recruitment business around your skills, interests, and lifestyle.",
-  primaryCta: "Become an Abroader",
+    "Join Abroader as an independent recruiter — work remotely, help people find jobs anywhere, and shape how you earn by combining commission channels. That's what it means to become an Abroader.",
+  primaryCta: "Become a recruiter",
   secondaryCta: "How it works",
 } as const;
 
 export const whyBecomeContent = {
-  headline: "Build a role around you",
+  headline: "Why become a recruiter?",
   subtext:
-    "Being an Abroader isn't one fixed job description. Members combine commission opportunities in different ways — matching how they want to work, earn, and grow.",
+    "Recruiting on Abroader means freedom, impact, and multiple ways to earn — without a rigid job description or a cap on how many clients and placements you build.",
   cards: [
     {
-      title: "Shape your own role",
+      title: "Flexible commission channels",
       description:
-        "Combine commission channels to build a recruitment practice that fits you — not a predefined role.",
+        "Combine placements, sourcing, referrals, and more — focus on what suits your skills and interests.",
       icon: "briefcase" as const,
     },
     {
@@ -51,33 +52,22 @@ export const whyBecomeContent = {
     {
       title: "Change people's lives",
       description:
-        "Help people start exciting new careers abroad — whether you place, source, or manage the relationship.",
+        "Help people start exciting new careers — local, remote, or abroad — whether you place, source, or manage the relationship.",
       icon: "heart" as const,
     },
     {
       title: "Multiple ways to earn",
       description:
-        "Stack commissions across placements, referrals, sourcing, and more. No single path — and no income ceiling.",
+        "Stack commissions across placements, referrals, sourcing, and more. No quotas — every client and placement you add grows your income.",
       icon: "trendingUp" as const,
     },
   ],
 } as const;
 
 export const aboutRoleContent = {
-  headline: "Your role, built your way",
+  headline: "What is an Abroader?",
   subtext:
-    "Abroader gives you the infrastructure to operate independently. How you earn — and which commission channels you combine — is entirely up to you.",
-  intro:
-    "Abroader is an international recruitment platform for independent recruiters who want flexibility, not a one-size-fits-all role.",
-  subintro: "From day one you receive:",
-  benefits: [
-    "Your own recruiter landing page",
-    "Live vacancies from day one",
-    "Existing client portfolio",
-    "Personal workspace and recruitment playbooks",
-    "Support from the Abroader team",
-    "€200 startup activity budget",
-  ],
+    "An independent recruiter who works remotely and helps people find jobs anywhere. Abroader gives you the clients, vacancies, workspace, and support to run your own practice from day one.",
   toolkitItems: [
     {
       title: "Your landing page",
@@ -86,7 +76,7 @@ export const aboutRoleContent = {
     },
     {
       title: "Live vacancies",
-      description: "Real international roles ready to fill.",
+      description: "Real roles ready to fill — local, remote, or international.",
       icon: "briefcase" as const,
     },
     {
@@ -100,9 +90,9 @@ export const aboutRoleContent = {
       icon: "bookOpen" as const,
     },
     {
-      title: "€200 startup budget",
-      description: "Launch campaigns on your terms.",
-      icon: "gift" as const,
+      title: "Abroader support",
+      description: "Guidance from the team whenever you need it.",
+      icon: "heart" as const,
     },
     {
       title: "Commission tracker",
@@ -110,18 +100,18 @@ export const aboutRoleContent = {
       icon: "coins" as const,
     },
   ],
-  toolkitHeading: "Everything included from day one",
+  toolkitHeading: "What's included",
 } as const;
 
 export const startupBudgetContent = {
   headline: "Launch on your terms",
   subtext:
-    "However you choose to earn — sourcing, placing, referring clients, or all of the above — you decide how to grow.",
+    "When Abroader provides financial support for ads or licences, the aim is to help you fill your clients' demand — whether you start funded, organic, or a mix of both.",
   cards: [
     {
-      title: "Use the grant",
+      title: "Abroader financial support",
       description:
-        "Abroader provides a €200 activity budget. If you don't make a placement, you owe nothing. If you do, it's simply deducted from your first commission.",
+        "Abroader can fund ads or recruitment licences to help you get started. The expectation is that you fill your clients' demand — if you don't make a placement, you owe nothing; if you do, the support is deducted from your first commission.",
       icon: "gift" as const,
     },
     {
@@ -133,7 +123,7 @@ export const startupBudgetContent = {
     {
       title: "Scale faster",
       description:
-        "Add your own advertising budget to run larger campaigns and grow faster.",
+        "Add your own budget for ads and licences to run larger campaigns and fill client demand faster.",
       icon: "rocket" as const,
     },
   ],
@@ -171,36 +161,74 @@ export const commissionContent = {
       description: "Manage the relationship and earn on every placement.",
       highlighted: false,
     },
-    {
-      rate: "7.5%",
-      title: "Recruit another recruiter",
-      description: "Receive ongoing commission from their placements.",
-      highlighted: false,
-    },
   ],
+} as const;
+
+export const COMMISSION_RATE_RANGE = { min: 0.1, max: 0.7 } as const;
+
+type PlacementFee = {
+  min: number;
+  max: number | null;
+  prefix: string;
+  suffix?: string;
+};
+
+type CommissionRange = {
+  min: number;
+  max: number;
+  prefix: string;
+};
+
+function deriveCommissionFromPlacementFee(placementFee: PlacementFee): CommissionRange {
+  return {
+    min: Math.round(placementFee.min * COMMISSION_RATE_RANGE.min),
+    max:
+      placementFee.max === null
+        ? Math.round(placementFee.min * COMMISSION_RATE_RANGE.max)
+        : Math.round(placementFee.max * COMMISSION_RATE_RANGE.max),
+    prefix: placementFee.prefix,
+  };
+}
+
+const entryPlacementFee = { min: 300, max: 4000, prefix: "€" } as const;
+const midPlacementFee = { min: 4000, max: 10000, prefix: "€" } as const;
+const seniorPlacementFee = {
+  min: 15000,
+  max: 25000,
+  prefix: "€",
+  suffix: "+",
 } as const;
 
 export const earningPotentialContent = {
   headline: "Your earning potential",
   subtext:
-    "What you earn depends on which commission channels you pursue — and how you combine them over time.",
+    "Each placement pays a fee-based commission — stack channels to earn up to 70% on any single deal. What scales without limit is how many deals you close, how many clients you serve, and the recurring referral income they generate.",
+  bridgeText:
+    "These figures are per placement. Your annual income is a function of volume and compounding — the chart below shows how earnings grow from Year 1 to Year 3 as your client roster expands.",
   disclaimer:
     "Fees are negotiated individually with each client and vary by assignment.",
   tiers: [
     {
       title: "Entry Level",
-      placementFee: { min: 300, max: 4000, prefix: "€" },
-      commission: { min: 105, max: 1400, prefix: "€" },
+      placementFee: entryPlacementFee,
+      commission: deriveCommissionFromPlacementFee(entryPlacementFee),
+      commissionDisplay: "upTo" as const,
+      highlighted: false,
     },
     {
       title: "Mid & Senior",
-      placementFee: { min: 4000, max: 10000, prefix: "€" },
-      commission: { min: 1400, max: 3500, prefix: "€" },
+      placementFee: midPlacementFee,
+      commission: deriveCommissionFromPlacementFee(midPlacementFee),
+      commissionDisplay: "upTo" as const,
+      highlighted: false,
     },
     {
       title: "Senior & Specialist",
-      placementFee: { min: 10000, max: null, prefix: "€", suffix: "+" },
-      commission: { min: 3500, max: null, prefix: "€", suffix: "+" },
+      placementFee: seniorPlacementFee,
+      commission: { min: 15000, max: 20000, prefix: "€" },
+      commissionDisplay: "upTo" as const,
+      highlighted: true,
+      tagline: "Executive & specialist roles",
     },
   ],
 } as const;
@@ -208,7 +236,7 @@ export const earningPotentialContent = {
 export const candidateSourcesContent = {
   headline: "Find talent your way",
   subtext:
-    "Choose the sourcing channels that fit your strengths — whether that's your network, social media, or paid advertising.",
+    "Choose the sourcing channels that fit your strengths — whether that's your network, social media, paid advertising, or the Abroader candidate database.",
   cards: [
     {
       title: "Personal Network",
@@ -222,13 +250,18 @@ export const candidateSourcesContent = {
     },
     {
       title: "Paid Advertising",
-      description: "Scale using your €200 activity budget or your own campaigns.",
+      description: "Scale with Abroader financial support for ads and licences, or fund your own campaigns.",
       icon: "megaphone" as const,
     },
     {
       title: "LinkedIn Recruiter",
       description: "Headhunt experienced professionals.",
       icon: "linkedin" as const,
+    },
+    {
+      title: "Abroader Candidate Database",
+      description: "Access pre-qualified candidates ready for new opportunities.",
+      icon: "database" as const,
     },
   ],
 } as const;
@@ -247,31 +280,36 @@ export const howItWorksContent = {
 } as const;
 
 export const longTermIncomeContent = {
-  headline: "Build an asset that grows",
+  headline: "Earn once. Keep earning.",
   subtext:
-    "As you combine commission channels over time, recurring income compounds — building long-term value, not just one-off payouts.",
+    "This is where per-deal commission becomes uncapped total income — client referrals and recurring commissions keep paying long after the first placement.",
   paragraphs: [
-    "Every client you introduce can continue generating recurring referral commissions for as long as you remain an active Abroader.",
-    "You're not simply earning one-off commissions from a single channel.",
-    "You're building a flexible recruitment business with long-term value — shaped entirely around you.",
+    "Every client you bring to Abroader can generate ongoing referral commission on every hire they make — for as long as you remain an active Abroader.",
+    "Stack placements across unlimited clients, add recurring referral commission on every future hire, and your practice grows year on year — not deal by deal.",
+    "Year on year, the relationships you build become the foundation of your practice.",
   ],
+  chartTitle: "Your practice compounds",
+  chartSeries: {
+    clients: { label: "Clients served", color: "#7ec8d4" },
+    placements: { label: "Candidates placed", color: "#fdbb37" },
+  },
   chartMetrics: [
-    { label: "Year 1", value: "£12k", amount: 12000 },
-    { label: "Year 2", value: "£25k", amount: 25000 },
-    { label: "Year 3", value: "£40k+", amount: 40000 },
+    { label: "Year 1", clients: 3, placements: 6, earnings: "< €10k" },
+    { label: "Year 2", clients: 6, placements: 16, earnings: "€20k" },
+    { label: "Year 3", clients: 10, placements: 30, earnings: "€30k+" },
   ],
 } as const;
 
 export const finalCtaContent = {
-  headline: "Ready to become an Abroader?",
+  headline: "Ready to become a recruiter?",
   supporting:
-    "There isn't a single way to be an Abroader. Book a call to explore how you could combine commission opportunities into a role built around your skills, interests, and aspirations.",
-  primaryCta: "Become an Abroader",
+    "Book a call to explore joining as a recruiter and building your practice as an Abroader.",
+  primaryCta: "Become a recruiter",
   secondaryCta: "Book a Call",
 } as const;
 
 export const landingMetadata = {
-  title: "Abroader — Become an Independent Recruiter",
+  title: "Abroader — Become a Recruiter",
   description:
-    "Shape your own role as an Abroader. Combine multiple commission channels — placements, sourcing, referrals, and more — on a flexible platform with clients, tools, and support included.",
+    "Join Abroader as an independent recruiter. Work remotely, help people find jobs anywhere, and build your practice as an Abroader — with clients, tools, and support included.",
 } as const;

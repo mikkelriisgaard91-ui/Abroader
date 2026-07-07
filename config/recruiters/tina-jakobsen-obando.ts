@@ -14,12 +14,12 @@ const tinaJakobsenObando: RecruiterConfig = {
     da: "Jakarta, Indonesien",
   },
   languages: {
-    en: ["English", "Danish", "Spanish"],
-    da: ["Engelsk", "Dansk", "Spansk"],
+    en: ["Danish", "English"],
+    da: ["Dansk", "Engelsk"],
   },
   roleExperience: {
-    en: ["Customer Success", "Sales", "Operations", "Entry-level roles"],
-    da: ["Customer Success", "Salg", "Drift", "Entry-level roller"],
+    en: ["Volunteering", "Customer service", "Hospitality"],
+    da: ["Frivilligt arbejde", "Kundeservice", "Hospitality"],
   },
   travelGuidance: {
     en: ["Spain", "Portugal", "France", "UK", "Southeast Asia"],

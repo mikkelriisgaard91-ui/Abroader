@@ -14,12 +14,12 @@ const marieSorensen: RecruiterConfig = {
     da: "Spanien",
   },
   languages: {
-    en: ["Spanish", "English", "Danish"],
-    da: ["Spansk", "Engelsk", "Dansk"],
+    en: ["Danish", "English"],
+    da: ["Dansk", "Engelsk"],
   },
   roleExperience: {
-    en: ["Senior roles", "Sales", "Customer Success", "Finance", "Operations"],
-    da: ["Seniorroller", "Salg", "Customer Success", "Finans", "Drift"],
+    en: ["Customer service", "Hospitality"],
+    da: ["Kundeservice", "Hospitality"],
   },
   travelGuidance: {
     en: ["Spain", "Portugal", "France", "UK"],

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Megaphone, Share2, UserSearch, Users } from "lucide-react";
+import { Database, Megaphone, Share2, UserSearch, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import GlassCard from "@/components/landing/ui/GlassCard";
 import SectionHeader from "@/components/landing/ui/SectionHeader";
@@ -13,6 +13,7 @@ const iconMap: Record<string, LucideIcon> = {
   share2: Share2,
   megaphone: Megaphone,
   linkedin: UserSearch,
+  database: Database,
 };
 
 export default function CandidateSourcesSection() {

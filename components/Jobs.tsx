@@ -95,7 +95,7 @@ export default function Jobs({
   }, [jobs, activeCategory, activeLocation]);
 
   return (
-    <section id="jobs" className="py-24 bg-base">
+    <section id="jobs" className="pt-10 pb-24 lg:pt-12 bg-base scroll-mt-[72px]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

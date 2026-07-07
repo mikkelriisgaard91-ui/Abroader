@@ -5,6 +5,7 @@ import { motion, type Transition } from "framer-motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { chooseRecruiterContent } from "@/config/companyLanding";
 import type { RecruiterConfig } from "@/config/recruiters";
 import { getRecruiterForLocale } from "@/config/recruiters";
 import {
@@ -84,12 +85,15 @@ function RecruiterCard({
   index: number;
 }) {
   const resolved = getRecruiterForLocale(recruiter, "en");
+  const specialisms = resolved.roleExperience.join(" · ");
+  const regions = resolved.travelGuidance.join(" · ");
 
   return (
     <motion.div {...fadeUp(0.12 + index * 0.06)}>
       <Link
         href={`/${recruiter.slug}`}
         prefetch
+        aria-label={`${chooseRecruiterContent.cardCta}: ${resolved.name}`}
         className="group flex items-start gap-5 sm:gap-6 p-5 sm:p-6 rounded-2xl border border-border/70 bg-white/70 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:border-border-strong hover:shadow-card"
       >
         <div className="relative w-[72px] h-[88px] sm:w-20 sm:h-24 shrink-0 rounded-xl overflow-hidden bg-about-bg ring-1 ring-border/50">
@@ -113,9 +117,12 @@ function RecruiterCard({
             <MapPin className="w-3 h-3 shrink-0" aria-hidden="true" />
             {resolved.location}
           </p>
-          <p className="text-sm text-ink-muted leading-relaxed line-clamp-2">
-            {resolved.shortBio}
-          </p>
+          {specialisms && (
+            <p className="text-sm text-ink-muted leading-relaxed mb-1">{specialisms}</p>
+          )}
+          {regions && (
+            <p className="text-xs text-ink-subtle leading-relaxed line-clamp-2">{regions}</p>
+          )}
         </div>
 
         <span
@@ -132,12 +139,12 @@ function RecruiterCard({
 function EmptyFilterState({ onClear }: { onClear: () => void }) {
   return (
     <div className="col-span-full flex flex-col items-center justify-center py-16 text-center rounded-2xl border border-dashed border-border bg-white/50">
-      <p className="font-semibold text-ink mb-2">No recruiters match your filters</p>
+      <p className="font-semibold text-ink mb-2">{chooseRecruiterContent.emptyState.title}</p>
       <p className="text-sm text-ink-muted mb-5 max-w-sm">
-        Try removing a filter or choosing a different role or language.
+        {chooseRecruiterContent.emptyState.hint}
       </p>
       <button type="button" onClick={onClear} className="btn-ghost text-sm px-5 py-2.5">
-        Clear all filters
+        {chooseRecruiterContent.emptyState.clearCta}
       </button>
     </div>
   );
@@ -165,22 +172,21 @@ export default function ChooseYourRecruiter({ recruiters }: { recruiters: Recrui
             {...fadeUp(0)}
             className="text-[11px] font-semibold uppercase tracking-[0.14em] mb-4 text-accent"
           >
-            Abroader — International Recruitment
+            {chooseRecruiterContent.eyebrow}
           </motion.p>
 
           <motion.h1
             {...fadeUp(0.08)}
             className="text-4xl sm:text-5xl font-bold leading-[1.08] mb-5 text-ink tracking-tight max-w-2xl"
           >
-            Choose your recruiter.
+            {chooseRecruiterContent.headline}
           </motion.h1>
 
           <motion.p
             {...fadeUp(0.14)}
             className="text-base sm:text-lg leading-relaxed text-ink-muted max-w-xl"
           >
-            Every Abroader recruiter runs their own practice — with their own network,
-            specialisms, and regions. Pick who fits your goals and browse their open roles.
+            {chooseRecruiterContent.subheadline}
           </motion.p>
         </div>
       </div>
@@ -188,13 +194,13 @@ export default function ChooseYourRecruiter({ recruiters }: { recruiters: Recrui
       <div className="relative z-10 max-w-5xl mx-auto px-6 pb-24">
         <motion.div {...fadeUp(0.2)} className="mb-8 space-y-3">
           <FilterRow
-            label="Role"
+            label={chooseRecruiterContent.filters.specialism}
             value={filters.role}
             options={filterOptions.roles}
             onChange={(role) => setFilters((prev) => ({ ...prev, role }))}
           />
           <FilterRow
-            label="Language"
+            label={chooseRecruiterContent.filters.language}
             value={filters.language}
             options={filterOptions.languages}
             onChange={(language) => setFilters((prev) => ({ ...prev, language }))}

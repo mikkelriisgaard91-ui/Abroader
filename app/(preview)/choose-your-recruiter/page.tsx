@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import { recruiterList } from "@/config/recruiters";
+import { chooseRecruiterContent } from "@/config/companyLanding";
 import HomeNav from "@/components/HomeNav";
 import LandingFooter from "@/components/landing/LandingFooter";
 import ChooseYourRecruiter from "@/components/ChooseYourRecruiter";
 
 export const metadata: Metadata = {
-  title: "Abroader — Choose Your Recruiter",
-  description:
-    "Find your next opportunity abroad with Abroader. Choose a recruiter who matches your goals and browse their open international roles.",
+  title: chooseRecruiterContent.metadata.title,
+  description: chooseRecruiterContent.metadata.description,
   openGraph: {
-    title: "Abroader — Choose Your Recruiter",
-    description:
-      "Every Abroader recruiter runs their own practice. Pick who fits your goals and browse their open roles.",
+    title: chooseRecruiterContent.metadata.title,
+    description: chooseRecruiterContent.metadata.description,
     siteName: "Abroader",
   },
 };

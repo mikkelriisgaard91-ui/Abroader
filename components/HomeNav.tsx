@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
-import { homeNavLinks } from "@/config/homeNav";
+import { homeNavCta, homeNavLinks } from "@/config/homeNav";
 
 function NavItem({
   href,
@@ -69,6 +69,7 @@ export default function HomeNav() {
 
   const isLinkActive = (href: string) => {
     if (href.startsWith("/#")) return false;
+    if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
@@ -85,7 +86,7 @@ export default function HomeNav() {
         <div className="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between gap-4">
           <BrandLogo showTagline />
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {homeNavLinks.map((link) => (
               <NavItem
                 key={link.href}
@@ -96,6 +97,13 @@ export default function HomeNav() {
                 className="text-sm font-medium text-ink-muted hover:text-ink transition-colors duration-200"
               />
             ))}
+            <Link
+              href={homeNavCta.href}
+              className="btn-primary text-sm px-5 py-2.5"
+              aria-current={isLinkActive(homeNavCta.href) ? "page" : undefined}
+            >
+              {homeNavCta.label}
+            </Link>
           </div>
 
           <button
@@ -132,6 +140,14 @@ export default function HomeNav() {
               onNavigate={closeMenu}
             />
           ))}
+          <Link
+            href={homeNavCta.href}
+            className="btn-primary mt-4 text-xl px-10 py-4 min-h-[56px]"
+            onClick={closeMenu}
+            aria-current={isLinkActive(homeNavCta.href) ? "page" : undefined}
+          >
+            {homeNavCta.label}
+          </Link>
         </div>
       )}
     </>

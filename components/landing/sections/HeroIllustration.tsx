@@ -2,10 +2,10 @@
 
 import { motion, useMotionValue, useTransform, useReducedMotion } from "framer-motion";
 import {
+  Briefcase,
   Globe,
   Laptop,
   MapPin,
-  Plane,
   TrendingUp,
   Wifi,
 } from "lucide-react";
@@ -163,19 +163,19 @@ export default function HeroIllustration() {
       <FloatingElement delay={0.6} duration={7} className="absolute top-[6%] right-[0%] z-20">
         <ThemeCard
           icon={TrendingUp}
-          title="Financial freedom"
-          subtitle="No income ceiling"
-          detail="€3,500+ per placement"
+          title="High commissions"
+          subtitle="Up to 70% of full placement fee"
+          detail="€3,500+ typical per deal · recurring referrals"
           accent
         />
       </FloatingElement>
 
       <FloatingElement delay={1.1} className="absolute bottom-[18%] left-[0%] z-20">
         <ThemeCard
-          icon={Plane}
-          title="Travel & freedom"
-          subtitle="Help people move abroad"
-          detail="Change lives worldwide"
+          icon={Briefcase}
+          title="Career impact"
+          subtitle="Help people land their dream job"
+          detail="Change lives, one placement at a time"
         />
       </FloatingElement>
 

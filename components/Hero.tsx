@@ -34,11 +34,11 @@ export default function Hero({ recruiter }: { recruiter: ResolvedRecruiter }) {
   const extraRoleCount = recruiter.roleExperience.length - heroRoleTags.length;
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-[72px] bg-base">
+    <section className="relative overflow-hidden pt-[72px] pb-10 lg:pb-12 bg-base">
       <GrainOverlay />
       <div className="hero-blob" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-4 lg:pt-14 lg:pb-6 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
             <motion.p

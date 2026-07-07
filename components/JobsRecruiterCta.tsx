@@ -1,23 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CHOOSE_RECRUITER_PATH } from "@/config/companyLanding";
 import { recruiterList } from "@/config/recruiters";
 
 export default function JobsRecruiterCta() {
   return (
     <section
-      id="get-in-touch-with-recruiter"
+      id="meet-our-recruiters"
       className="py-16 border-t border-border/40 bg-base scroll-mt-[72px]"
     >
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] mb-3 text-accent">
-          Your next step
+          For companies
         </p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-3">
-          Get in touch with a recruiter
+          Find the right recruiter for your hiring needs
         </h2>
         <p className="text-base text-ink-muted max-w-xl mb-8">
-          Not sure which role fits? Choose a recruiter who matches your goals, region, and
-          language — they&apos;ll guide you through the process.
+          Browse vetted Abroader recruiters by specialism, language, and region — each runs their
+          own practice with their own network.
         </p>
 
         <div className="flex items-center gap-3 mb-8">
@@ -38,8 +39,8 @@ export default function JobsRecruiterCta() {
           ))}
         </div>
 
-        <Link href="/choose-your-recruiter" className="btn-primary text-sm px-6 py-3">
-          Choose your recruiter
+        <Link href={CHOOSE_RECRUITER_PATH} className="btn-primary text-sm px-6 py-3">
+          Meet our recruiters
         </Link>
       </div>
     </section>

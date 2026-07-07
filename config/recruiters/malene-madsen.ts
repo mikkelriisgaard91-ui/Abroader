@@ -14,12 +14,12 @@ const maleneMadsen: RecruiterConfig = {
     da: "København, Danmark",
   },
   languages: {
-    en: ["Danish", "English", "German"],
-    da: ["Dansk", "Engelsk", "Tysk"],
+    en: ["Danish", "English"],
+    da: ["Dansk", "Engelsk"],
   },
   roleExperience: {
-    en: ["Entry-level roles", "Marketing", "Sales", "Tech & Digital", "Operations"],
-    da: ["Entry-level roller", "Marketing", "Salg", "Tech & Digital", "Drift"],
+    en: ["Marketing", "Sales"],
+    da: ["Marketing", "Salg"],
   },
   travelGuidance: {
     en: ["Denmark", "Germany", "Netherlands", "Nordics", "DACH region"],

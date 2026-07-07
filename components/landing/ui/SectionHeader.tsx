@@ -17,7 +17,7 @@ export default function SectionHeader({
   return (
     <motion.header
       {...fadeUp}
-      className={`mb-14 lg:mb-16 max-w-3xl ${
+      className={`mb-10 sm:mb-14 lg:mb-16 max-w-3xl ${
         align === "center" ? "mx-auto text-center" : "text-left"
       }`}
     >

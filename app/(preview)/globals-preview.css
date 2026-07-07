@@ -149,11 +149,19 @@ html {
 }
 
 .landing-section {
-  @apply py-24 lg:py-32 scroll-mt-[72px];
+  @apply py-16 sm:py-24 lg:py-32 scroll-mt-[72px];
+}
+
+.landing-section.bg-about-bg + .landing-section.bg-about-bg {
+  @apply pt-12 lg:pt-16;
+}
+
+.landing-section.bg-about-bg:has(+ .landing-section.bg-about-bg) {
+  @apply pb-12 lg:pb-16;
 }
 
 .hero-headline {
-  @apply text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-ink leading-[1.05];
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-ink leading-[1.1] sm:leading-[1.05];
 }
 
 .btn-ripple {

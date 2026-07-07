@@ -14,24 +14,12 @@ const stefano: RecruiterConfig = {
     da: "Sydeuropa",
   },
   languages: {
-    en: ["English", "Italian", "Spanish"],
-    da: ["Engelsk", "Italiensk", "Spansk"],
+    en: ["Albanian", "English"],
+    da: ["Albansk", "Engelsk"],
   },
   roleExperience: {
-    en: [
-      "Talent Acquisition",
-      "Full-cycle Recruitment",
-      "Sourcing",
-      "HR Operations",
-      "Employer Branding",
-    ],
-    da: [
-      "Talent Acquisition",
-      "Fuldt rekrutteringsforløb",
-      "Sourcing",
-      "HR-drift",
-      "Employer Branding",
-    ],
+    en: ["IT", "Recruitment", "Sales"],
+    da: ["IT", "Rekruttering", "Salg"],
   },
   travelGuidance: {
     en: ["Italy", "Spain", "Portugal", "France", "Switzerland"],

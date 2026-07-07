@@ -37,6 +37,8 @@ export type RecruiterConfig = {
   employerCtaUrl?: string;
   /** Optional override for the nav "Get in touch" CTA. Defaults to #contact. */
   getInTouchUrl?: string;
+  /** When true, never show a LinkedIn link/button, even if Teamtailor has one on file. */
+  hideLinkedIn?: boolean;
 };
 
 export type ResolvedRecruiter = {
@@ -80,7 +82,7 @@ export function getRecruiterForLocale(
     pullQuote: getLocalized(recruiter.pullQuote, locale),
     stats: recruiter.stats,
     email: recruiter.email,
-    linkedIn: recruiter.linkedIn,
+    linkedIn: recruiter.hideLinkedIn ? "" : recruiter.linkedIn,
     calendlyUrl: recruiter.calendlyUrl,
     whatsappUrl: recruiter.whatsappUrl,
   };

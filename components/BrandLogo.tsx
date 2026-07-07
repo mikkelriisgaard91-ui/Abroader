@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BECOME_AN_ABROADER_PATH } from "@/config/homeNav";
+import { HIRE_WITH_ABROADER_PATH } from "@/config/homeNav";
 
 type BrandLogoProps = {
   variant?: "default" | "light";
@@ -19,7 +19,7 @@ export default function BrandLogo({
 
   return (
     <Link
-      href={BECOME_AN_ABROADER_PATH}
+      href={HIRE_WITH_ABROADER_PATH}
       className={`flex shrink-0 items-center gap-2.5 ${className}`}
     >
       <Image
@@ -53,7 +53,7 @@ export default function BrandLogo({
                 isLight ? "text-accent" : "text-teal-deep"
               }`}
             >
-              Go Dare
+              Recruiting, without borders
             </span>
           )}
         </span>

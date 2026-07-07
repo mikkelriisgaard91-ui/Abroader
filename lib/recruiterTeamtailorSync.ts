@@ -53,7 +53,7 @@ function mergeProfile(config: RecruiterConfig, profile: TeamtailorUserProfile): 
       da: config.pullQuote.da,
     },
     email: profile.email || config.email,
-    linkedIn: profile.linkedIn || config.linkedIn,
+    linkedIn: config.hideLinkedIn ? "" : profile.linkedIn || config.linkedIn,
     whatsappUrl: config.whatsappUrl || profile.whatsappUrl,
   };
 }
