@@ -48,7 +48,7 @@ Som din rekrutteringspartner følger jeg processen tæt fra første dialog til a
     da: "Kvalitet frem for kvantitet — de rigtige matches mellem virksomheder og kandidater.",
   },
   stats: {
-    placements: 15,
+    placements: "100+",
     countries: 5,
     yearsExperience: 4,
   },

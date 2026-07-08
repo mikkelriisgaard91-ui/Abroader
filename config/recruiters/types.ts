@@ -25,7 +25,7 @@ export type RecruiterConfig = {
   longBio: LocalizedString;
   pullQuote: LocalizedString;
   stats: {
-    placements: number;
+    placements: number | string;
     countries: number;
     yearsExperience: number;
   };
