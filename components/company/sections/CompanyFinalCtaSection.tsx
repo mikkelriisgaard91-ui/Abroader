@@ -8,7 +8,15 @@ import PremiumButton from "@/components/landing/ui/PremiumButton";
 import { companyCtas, companyFinalCtaContent } from "@/config/companyLanding";
 import { fadeUpWithDelay } from "@/lib/motion/presets";
 
-export default function CompanyFinalCtaSection() {
+export default function CompanyFinalCtaSection({
+  headline = companyFinalCtaContent.headline,
+  supporting = companyFinalCtaContent.supporting,
+  primaryCta = companyFinalCtaContent.primaryCta,
+}: {
+  headline?: string;
+  supporting?: string;
+  primaryCta?: string;
+} = {}) {
   return (
     <section
       id="contact"
@@ -25,13 +33,13 @@ export default function CompanyFinalCtaSection() {
           id="company-cta-heading"
           className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-base mb-5 sm:mb-6 leading-tight"
         >
-          {companyFinalCtaContent.headline}
+          {headline}
         </motion.h2>
         <motion.p
           {...fadeUpWithDelay(0.1)}
           className="text-base sm:text-lg text-base/65 leading-relaxed mb-8 sm:mb-12 max-w-2xl mx-auto"
         >
-          {companyFinalCtaContent.supporting}
+          {supporting}
         </motion.p>
         <motion.div
           {...fadeUpWithDelay(0.2)}
@@ -43,7 +51,7 @@ export default function CompanyFinalCtaSection() {
             className="text-base px-10 py-4"
           >
             <Calendar className="w-4 h-4" aria-hidden="true" />
-            {companyFinalCtaContent.primaryCta}
+            {primaryCta}
           </PremiumButton>
         </motion.div>
       </div>

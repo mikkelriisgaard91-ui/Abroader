@@ -8,8 +8,49 @@ import {
   MapPin,
   TrendingUp,
   Wifi,
+  type LucideIcon,
 } from "lucide-react";
 import FloatingElement from "@/components/landing/ui/FloatingElement";
+
+const themeCards = [
+  {
+    icon: Laptop,
+    title: "Remote living",
+    subtitle: "Work from anywhere",
+    detail: "Beach · city · mountains",
+    delay: 0,
+    duration: 6,
+    position: "absolute top-[4%] left-[2%] z-20",
+  },
+  {
+    icon: TrendingUp,
+    title: "High commissions",
+    subtitle: "Up to 70% of full placement fee",
+    detail: "€3,500+ typical per deal · recurring referrals",
+    accent: true,
+    delay: 0.6,
+    duration: 7,
+    position: "absolute top-[6%] right-[0%] z-20",
+  },
+  {
+    icon: Briefcase,
+    title: "Career impact",
+    subtitle: "Help people land their dream job",
+    detail: "Change lives, one placement at a time",
+    delay: 1.1,
+    duration: 6,
+    position: "absolute bottom-[18%] left-[0%] z-20",
+  },
+  {
+    icon: Globe,
+    title: "Your business",
+    subtitle: "Your schedule, your rules",
+    detail: "Build on your terms",
+    delay: 1.6,
+    duration: 8,
+    position: "absolute bottom-[8%] right-[2%] z-20",
+  },
+] as const;
 
 function GlobeRoutes() {
   return (
@@ -92,18 +133,20 @@ function ThemeCard({
   subtitle,
   detail,
   accent = false,
+  className = "",
 }: {
-  icon: typeof Globe;
+  icon: LucideIcon;
   title: string;
   subtitle: string;
   detail?: string;
   accent?: boolean;
+  className?: string;
 }) {
   return (
     <div
       className={`glass-panel-strong p-4 shadow-glass min-w-[148px] max-w-[180px] ${
         accent ? "glow-ring" : ""
-      }`}
+      } ${className}`}
     >
       <div
         className={`w-9 h-9 rounded-xl flex items-center justify-center mb-3 ${
@@ -151,51 +194,59 @@ export default function HeroIllustration() {
         <GlobeRoutes />
       </div>
 
-      <FloatingElement delay={0} className="absolute top-[4%] left-[2%] z-20">
-        <ThemeCard
-          icon={Laptop}
-          title="Remote living"
-          subtitle="Work from anywhere"
-          detail="Beach · city · mountains"
-        />
-      </FloatingElement>
+      <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-3 p-3 z-20 lg:hidden">
+        {themeCards.map((card) => (
+          <FloatingElement
+            key={card.title}
+            delay={card.delay}
+            duration={card.duration}
+            className="h-full"
+          >
+            <ThemeCard
+              icon={card.icon}
+              title={card.title}
+              subtitle={card.subtitle}
+              detail={card.detail}
+              accent={"accent" in card ? card.accent : false}
+              className="w-full min-w-0 max-w-none h-full"
+            />
+          </FloatingElement>
+        ))}
+      </div>
 
-      <FloatingElement delay={0.6} duration={7} className="absolute top-[6%] right-[0%] z-20">
-        <ThemeCard
-          icon={TrendingUp}
-          title="High commissions"
-          subtitle="Up to 70% of full placement fee"
-          detail="€3,500+ typical per deal · recurring referrals"
-          accent
-        />
-      </FloatingElement>
+      {themeCards.map((card) => (
+        <FloatingElement
+          key={card.title}
+          delay={card.delay}
+          duration={card.duration}
+          className={`hidden lg:block ${card.position}`}
+        >
+          <ThemeCard
+            icon={card.icon}
+            title={card.title}
+            subtitle={card.subtitle}
+            detail={card.detail}
+            accent={"accent" in card ? card.accent : false}
+          />
+        </FloatingElement>
+      ))}
 
-      <FloatingElement delay={1.1} className="absolute bottom-[18%] left-[0%] z-20">
-        <ThemeCard
-          icon={Briefcase}
-          title="Career impact"
-          subtitle="Help people land their dream job"
-          detail="Change lives, one placement at a time"
-        />
-      </FloatingElement>
-
-      <FloatingElement delay={1.6} duration={8} className="absolute bottom-[8%] right-[2%] z-20">
-        <ThemeCard
-          icon={Globe}
-          title="Your business"
-          subtitle="Your schedule, your rules"
-          detail="Build on your terms"
-        />
-      </FloatingElement>
-
-      <FloatingElement delay={0.3} duration={5.5} className="absolute top-[42%] left-[8%] z-10">
+      <FloatingElement
+        delay={0.3}
+        duration={5.5}
+        className="hidden lg:block absolute top-[42%] left-[8%] z-10"
+      >
         <div className="glass-panel px-3 py-2 flex items-center gap-2 shadow-glass">
           <Wifi className="w-3.5 h-3.5 text-accent" />
           <span className="text-[11px] font-semibold text-ink">Remote · Online</span>
         </div>
       </FloatingElement>
 
-      <FloatingElement delay={0.9} duration={6.5} className="absolute top-[38%] right-[10%] z-10">
+      <FloatingElement
+        delay={0.9}
+        duration={6.5}
+        className="hidden lg:block absolute top-[38%] right-[10%] z-10"
+      >
         <div className="glass-panel px-3 py-2 flex items-center gap-2 shadow-glass">
           <MapPin className="w-3.5 h-3.5 text-accent" />
           <span className="text-[11px] font-semibold text-ink">Lisbon → Dubai</span>

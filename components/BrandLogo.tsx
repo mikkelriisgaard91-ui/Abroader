@@ -53,7 +53,7 @@ export default function BrandLogo({
                 isLight ? "text-accent" : "text-teal-deep"
               }`}
             >
-              Recruiting, without borders
+              Connecting Talent Across Borders
             </span>
           )}
         </span>

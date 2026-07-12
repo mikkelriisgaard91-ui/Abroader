@@ -9,7 +9,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
-import { getTranslations, LOCALE_COOKIE, type Locale, type Translations } from "@/config/i18n";
+import { getTranslations, LOCALE_COOKIE, LOCALES, type Locale, type Translations } from "@/config/i18n";
 
 const STORAGE_KEY = "abroader-locale";
 const LOCALE_EVENT = "abroader-locale-change";
@@ -22,17 +22,28 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
+function isLocale(value: string | undefined | null): value is Locale {
+  return LOCALES.includes(value as Locale);
+}
+
+function detectBrowserLocale(): Locale {
+  const lang = navigator.language.toLowerCase();
+  if (lang.startsWith("da")) return "da";
+  if (lang.startsWith("pl")) return "pl";
+  return "en";
+}
+
 function detectInitialLocale(): Locale {
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "en" || stored === "da") return stored;
+  if (isLocale(stored)) return stored;
 
   const cookieMatch = document.cookie
     .split("; ")
     .find((row) => row.startsWith(`${LOCALE_COOKIE}=`));
   const cookieValue = cookieMatch?.split("=")[1];
-  if (cookieValue === "en" || cookieValue === "da") return cookieValue;
+  if (isLocale(cookieValue)) return cookieValue;
 
-  return navigator.language.toLowerCase().startsWith("da") ? "da" : "en";
+  return detectBrowserLocale();
 }
 
 function persistLocale(locale: Locale) {

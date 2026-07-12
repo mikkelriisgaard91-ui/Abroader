@@ -8,12 +8,16 @@ export default function SectionHeader({
   subtext,
   align = "center",
   id,
+  level = "h2",
 }: {
   headline: string;
   subtext?: string;
   align?: "center" | "left";
   id?: string;
+  level?: "h1" | "h2";
 }) {
+  const Heading = level;
+
   return (
     <motion.header
       {...fadeUp}
@@ -21,9 +25,9 @@ export default function SectionHeader({
         align === "center" ? "mx-auto text-center" : "text-left"
       }`}
     >
-      <h2 id={id} className="section-heading mb-4">
+      <Heading id={id} className="section-heading mb-4">
         {headline}
-      </h2>
+      </Heading>
       {subtext && <p className="section-subtext">{subtext}</p>}
     </motion.header>
   );

@@ -6,6 +6,7 @@ const BASE_URL = "https://www.abroader.io";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/hire-with-abroader`, priority: 1 },
+    { url: `${BASE_URL}/our-process`, priority: 0.6 },
     { url: `${BASE_URL}/choose-your-recruiter`, priority: 0.9 },
     { url: `${BASE_URL}/become-an-abroader`, priority: 0.8 },
     { url: `${BASE_URL}/privacy`, priority: 0.3 },

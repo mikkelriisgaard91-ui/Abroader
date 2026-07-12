@@ -101,6 +101,187 @@ export const trustQualityContent = {
   ],
 } as const;
 
+export type ProcessPhaseIcon =
+  | "clipboardList"
+  | "search"
+  | "phoneCall"
+  | "listChecks"
+  | "users"
+  | "handshake"
+  | "fileSignature"
+  | "shieldCheck";
+
+export type ProcessPhase = {
+  number: string;
+  icon: ProcessPhaseIcon;
+  name: string;
+  summary: string;
+  whatHappens: string[];
+  /** Short note on what's typically tailored for this phase. */
+  customise?: string;
+  /** Shown on phases where candidates can be screened out (3–5). */
+  offRamp?: string;
+  /** Shown on Phase 8 to link through to the real guarantee terms. */
+  note?: { prefix: string; linkLabel: string; linkHref: string };
+};
+
+const processPhases: ProcessPhase[] = [
+  {
+    number: "01",
+    icon: "clipboardList",
+    name: "Role understanding & briefing",
+    summary: "We build a full picture of the role and the business before sourcing begins.",
+    whatHappens: [
+      "Company overview, team structure, and reporting line",
+      "Must-have vs. nice-to-have criteria",
+      "Compensation and market-rate benchmarking",
+      "Agreed timeline and success criteria",
+    ],
+    customise: "Briefing depth scales with role seniority.",
+  },
+  {
+    number: "02",
+    icon: "search",
+    name: "Sourcing strategy",
+    summary: "We draw on multiple channels at once to build a strong, relevant pool of candidates.",
+    whatHappens: [
+      "Internal candidate database",
+      "Job board advertising",
+      "LinkedIn Recruiter and direct outreach",
+      "External and specialist databases, referrals",
+    ],
+    customise: "Channel mix weighted by role type.",
+  },
+  {
+    number: "03",
+    icon: "phoneCall",
+    name: "Screening & assessment",
+    summary: "Candidates are screened for role fit and compatibility before they're put forward.",
+    whatHappens: [
+      "Introductory call: role overview, expectations, motivation",
+      "Compatibility assessment against agreed criteria",
+      "Optional technical interview or skills test",
+    ],
+    offRamp: "Candidates who aren't a fit receive feedback and join our talent pool for future roles.",
+  },
+  {
+    number: "04",
+    icon: "listChecks",
+    name: "Shortlist presented to you",
+    summary: "You receive a clear, comparable shortlist — not just a stack of CVs.",
+    whatHappens: [
+      "Full CV",
+      "Salary expectations",
+      "Availability to start",
+      "Recruiter notes on experience and motivation",
+    ],
+    offRamp: "Candidates you don't take forward are given feedback and remain in our talent pool.",
+  },
+  {
+    number: "05",
+    icon: "users",
+    name: "Hiring manager interviews",
+    summary: "We coordinate scheduling and keep everyone informed through each round.",
+    whatHappens: [
+      "Interview logistics and calendar coordination",
+      "Structured feedback collected after each round",
+      "Regular status updates to you throughout",
+    ],
+    offRamp: "As at earlier stages, unsuccessful candidates receive feedback and stay in our talent pool.",
+  },
+  {
+    number: "06",
+    icon: "handshake",
+    name: "Offer management",
+    summary: "We manage the offer conversation to reduce the risk of late drop-out.",
+    whatHappens: [
+      "Salary and package negotiation between both parties",
+      "Start date confirmation",
+      "Counter-offer handling, where relevant",
+    ],
+  },
+  {
+    number: "07",
+    icon: "fileSignature",
+    name: "Contract & onboarding",
+    summary: "We support through to signature and beyond, to help the placement stick.",
+    whatHappens: [
+      "Contract issued and signed",
+      "Check-ins at 30, 60, and 90 days post-start",
+    ],
+  },
+  {
+    number: "08",
+    icon: "shieldCheck",
+    name: "Guarantee period",
+    summary:
+      "If a placed candidate leaves within the agreed window, we run a replacement search at no additional fee.",
+    whatHappens: [],
+    note: {
+      prefix: "Guarantee length depends on your engagement type — ",
+      linkLabel: "see hiring options",
+      linkHref: "/hire-with-abroader#services",
+    },
+  },
+];
+
+export const OUR_PROCESS_PATH = "/our-process" as const;
+
+export const ourProcessMetadata = {
+  title: "Abroader — Our Recruitment Process",
+  description:
+    "A clear, structured walkthrough of how Abroader runs a search — all eight phases, how not-progressed candidates are handled, and how we protect your data.",
+} as const;
+
+export const ourProcessContent = {
+  eyebrow: "How we work",
+  headline: "A clear, structured recruitment process.",
+  subtext:
+    "Every search follows the same eight phases, so you always know what happens next. What changes is the detail — interview rounds, assessment type, and sourcing channels are shaped around the specific role, not applied as a template.",
+  pointOfContact: {
+    headline: "Your point of contact",
+    columns: [
+      {
+        tag: "One voice",
+        title: "A single dedicated recruiter",
+        description:
+          "You're assigned one recruiter as your point of contact for the entire search. All updates, questions, and decisions run through them — no chasing multiple inboxes, no repeating yourself to different people.",
+        icon: "userCheck" as const,
+      },
+      {
+        tag: "Full team",
+        title: "Backed by more hands",
+        description:
+          "Behind that one contact, several recruiters work the role in parallel — sourcing, screening, and building the shortlist together. You get the speed of a full team, with the simplicity of dealing with just one person.",
+        icon: "users" as const,
+      },
+    ],
+  },
+  phasesEyebrow: "The process",
+  phasesHeadline: "Eight phases.",
+  phasesSubtext:
+    "Phases 3 to 5 include what happens to candidates who aren't taken forward — every one of them gets feedback and a place in our talent pool.",
+  phases: processPhases,
+  feedbackLoop: {
+    headline: "Nothing is a dead end",
+    body: "Whenever a candidate isn't progressed, at any phase, we give them constructive feedback and add them to our talent pool. That means strong candidates who weren't right for this role are already warm for the next one — which speeds up every search that follows.",
+  },
+  dataProtection: {
+    headline: "Data protection & confidentiality",
+    body: "All candidate data is handled in line with GDPR. CVs and personal information are stored securely, used only for the purposes of the search, and retained in line with our data retention policy. Searches can be run on a confidential basis on request.",
+    linkLabel: "Read our privacy policy",
+    linkHref: "/privacy",
+  },
+} as const;
+
+export const processTeaserContent = {
+  eyebrow: "How we work",
+  headline: "A clear, structured recruitment process.",
+  subtext:
+    "Eight phases from brief to guarantee period, one dedicated point of contact, and a full team behind every search.",
+  cta: "See our full process",
+} as const;
+
 export const servicesContent = {
   headline: "Two ways to hire.",
   subtext: "Same quality recruiters — different commercial models depending on how you hire.",
@@ -187,5 +368,12 @@ export const companyFinalCtaContent = {
   headline: "Ready to talk about your hiring needs?",
   supporting:
     "Book a short call with Abroader. We'll walk through your roles, explain both options, and help you choose the right model — no obligation.",
+  primaryCta: "Book a call",
+} as const;
+
+export const becomeClientCtaContent = {
+  headline: "Ready to become a client?",
+  supporting:
+    "Book a short call and we'll get in touch to take it from there — no obligation.",
   primaryCta: "Book a call",
 } as const;

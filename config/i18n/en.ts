@@ -114,6 +114,7 @@ const en: Translations = {
   languageSwitcher: {
     switchToEnglish: "Switch to English",
     switchToDanish: "Switch to Danish",
+    switchToPolish: "Switch to Polish",
   },
   metadata: {
     title: "International Recruitment Specialist | Abroader",

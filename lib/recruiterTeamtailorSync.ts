@@ -38,19 +38,25 @@ function mergeProfile(config: RecruiterConfig, profile: TeamtailorUserProfile): 
     title: {
       en: titleEn,
       da: config.title.da === config.title.en ? titleEn : config.title.da,
+      ...(config.title.pl !== undefined
+        ? { pl: config.title.pl === config.title.en ? titleEn : config.title.pl }
+        : {}),
     },
     photoUrl: profile.photoUrl || config.photoUrl,
     shortBio: {
       en: shortBioFromLongBio(longBioEn),
       da: config.shortBio.da,
+      ...(config.shortBio.pl !== undefined ? { pl: config.shortBio.pl } : {}),
     },
     longBio: {
       en: longBioEn,
       da: config.longBio.da,
+      ...(config.longBio.pl !== undefined ? { pl: config.longBio.pl } : {}),
     },
     pullQuote: {
       en: `${titleEn} — building long-term talent pipelines across international markets.`,
       da: config.pullQuote.da,
+      ...(config.pullQuote.pl !== undefined ? { pl: config.pullQuote.pl } : {}),
     },
     email: profile.email || config.email,
     linkedIn: config.hideLinkedIn ? "" : profile.linkedIn || config.linkedIn,

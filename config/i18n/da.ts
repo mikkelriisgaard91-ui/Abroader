@@ -114,6 +114,7 @@ const da: Translations = {
   languageSwitcher: {
     switchToEnglish: "Skift til engelsk",
     switchToDanish: "Skift til dansk",
+    switchToPolish: "Skift til polsk",
   },
   metadata: {
     title: "International Rekrutteringsspecialist | Abroader",

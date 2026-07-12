@@ -1,6 +1,6 @@
-export type Locale = "en" | "da";
+export type Locale = "en" | "da" | "pl";
 
-export const LOCALES: Locale[] = ["en", "da"];
+export const LOCALES: Locale[] = ["en", "da", "pl"];
 
 export const LOCALE_COOKIE = "locale";
 
@@ -78,6 +78,7 @@ export type Translations = {
   languageSwitcher: {
     switchToEnglish: string;
     switchToDanish: string;
+    switchToPolish: string;
   };
   metadata: {
     title: string;

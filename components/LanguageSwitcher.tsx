@@ -25,10 +25,26 @@ function FlagDa({ className }: { className?: string }) {
   );
 }
 
+function FlagPl({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 16" aria-hidden="true">
+      <rect width="24" height="8" fill="#fff" />
+      <rect y="8" width="24" height="8" fill="#DC143C" />
+    </svg>
+  );
+}
+
 const options: { locale: Locale; Flag: typeof FlagEn; label: string }[] = [
   { locale: "en", Flag: FlagEn, label: "EN" },
   { locale: "da", Flag: FlagDa, label: "DA" },
+  { locale: "pl", Flag: FlagPl, label: "PL" },
 ];
+
+const ariaLabels: Record<Locale, "switchToEnglish" | "switchToDanish" | "switchToPolish"> = {
+  en: "switchToEnglish",
+  da: "switchToDanish",
+  pl: "switchToPolish",
+};
 
 export default function LanguageSwitcher({ className = "" }: { className?: string }) {
   const { locale, setLocale, t } = useLocale();
@@ -41,10 +57,7 @@ export default function LanguageSwitcher({ className = "" }: { className?: strin
     >
       {options.map(({ locale: optionLocale, Flag, label }) => {
         const active = locale === optionLocale;
-        const ariaLabel =
-          optionLocale === "en"
-            ? t.languageSwitcher.switchToEnglish
-            : t.languageSwitcher.switchToDanish;
+        const ariaLabel = t.languageSwitcher[ariaLabels[optionLocale]];
 
         return (
           <button
