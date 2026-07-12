@@ -22,7 +22,7 @@ export default function CommissionSection() {
         <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {commissionContent.cards.map((card, i) => (
             <motion.div
-              key={card.rate}
+              key={card.title}
               {...fadeUpWithDelay(i * 0.08)}
               className={`relative rounded-3xl p-6 lg:p-7 transition-all duration-300 ${
                 card.highlighted

@@ -25,8 +25,8 @@ export default function BrandLogo({
       <Image
         src="/logo.svg"
         alt=""
-        width={36}
-        height={32}
+        width={177}
+        height={160}
         priority
         className="h-8 w-auto"
         aria-hidden

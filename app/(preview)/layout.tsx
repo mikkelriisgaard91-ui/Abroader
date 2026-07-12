@@ -21,10 +21,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.abroader.io"),
   title: "Abroader — International Recruitment",
   description: "Find your next opportunity abroad with Abroader.",
-  robots: {
-    index: false,
-    follow: false,
-  },
   openGraph: {
     title: "Abroader — International Recruitment",
     description: "Find your next opportunity abroad with Abroader.",
