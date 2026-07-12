@@ -97,13 +97,14 @@ export default function HomeNav() {
                 className="text-sm font-medium text-ink-muted hover:text-ink transition-colors duration-200"
               />
             ))}
-            <Link
+            <a
               href={homeNavCta.href}
               className="btn-primary text-sm px-5 py-2.5"
-              aria-current={isLinkActive(homeNavCta.href) ? "page" : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {homeNavCta.label}
-            </Link>
+            </a>
           </div>
 
           <button
@@ -140,14 +141,15 @@ export default function HomeNav() {
               onNavigate={closeMenu}
             />
           ))}
-          <Link
+          <a
             href={homeNavCta.href}
             className="btn-primary mt-4 text-xl px-10 py-4 min-h-[56px]"
             onClick={closeMenu}
-            aria-current={isLinkActive(homeNavCta.href) ? "page" : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {homeNavCta.label}
-          </Link>
+          </a>
         </div>
       )}
     </>
