@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+:root {
+  /* This site is light-themed only. Without this, some browsers (Android
+     Chrome's "force dark" in particular) auto-invert colors per-element and
+     produce inconsistent dark-on-dark text — some elements readable, others
+     not, seemingly at random. */
+  color-scheme: light;
+}
+
 @theme {
   --color-base: #f0f9fa;
   --color-accent: #fdbb37;

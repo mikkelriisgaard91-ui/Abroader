@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  colorScheme: "light",
 };
 
 export default function RootLayout({
