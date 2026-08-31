@@ -8,7 +8,8 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
-const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaId =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-7ZHL7PDJ91";
 
 export default function RootLayout({
   children,
