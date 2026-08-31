@@ -8,8 +8,6 @@ declare namespace NodeJS {
     TEAMTAILOR_REVALIDATE_SECONDS?: string;
     /** Client poll interval for /api/jobs (ms, default 60000). */
     NEXT_PUBLIC_JOBS_POLL_INTERVAL_MS?: string;
-    /** Google Analytics 4 Measurement ID (e.g. G-XXXXXXXXXX). Public — required for GA4 site-wide tracking. */
-    NEXT_PUBLIC_GA_MEASUREMENT_ID?: string;
     /** Max Teamtailor API pages to fetch when building the job index (default 10). */
     MAX_TEAMTAILOR_PAGES?: string;
     /** Optional. Default EU: `https://api.teamtailor.com/v1`. US West: `https://api.na.teamtailor.com/v1`. */
